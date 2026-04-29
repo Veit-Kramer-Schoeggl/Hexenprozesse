@@ -1,0 +1,12 @@
+{
+  "name": "hexenprozesse-homepage",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Statische Website über die steirischen Hexenprozesse (Inhalte: Siegfried Kramer).",
+  "scripts": {
+    "dev": "npx --yes live-server src --port=8080 --no-browser",
+    "build": "node tools/build.mjs",
+    "format": "npx --yes prettier --write \"src/**/*.{html,css,js,md}\""
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,38 @@
+# Build / dist
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Node / package manager
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Local environment
+.env
+.env.local
+
+# Word/Office artefacts (when re-importing from old HTML)
+*~
+*.tmp
+~$*
+
+# Don't track large source archives — keep them outside the repo
+*.zip
+*.rar
+*.7z
