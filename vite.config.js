@@ -1,21 +1,35 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readdirSync } from "node:fs";
 import { defineConfig } from "vite";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const fromSrc = (...parts) => resolve(__dirname, "src", ...parts);
 
-// Multi-page Build:
-// jede HTML-Datei wird zu einem Entry. Beim Hinzufügen neuer Seiten den
-// `input`-Eintrag ergänzen — sonst werden sie nicht gebaut.
+// Auto-discover all HTML pages under src/ so new prozess-/themen-Seiten
+// automatisch ins Build wandern. Es muss nur die Datei in src/pages/...
+// existieren — kein Eintrag hier nötig.
+function collectHtmlEntries() {
+  const entries = { main: fromSrc("index.html") };
+
+  const walk = (relDir, prefix) => {
+    const abs = fromSrc(relDir);
+    for (const f of readdirSync(abs, { withFileTypes: true })) {
+      if (f.isDirectory()) {
+        walk(`${relDir}/${f.name}`, `${prefix}${f.name}/`);
+      } else if (f.name.endsWith(".html")) {
+        const slug = (prefix + f.name.replace(/\.html$/, "")).replace(/\//g, "-");
+        entries[slug] = fromSrc(relDir, f.name);
+      }
+    }
+  };
+  walk("pages", "");
+  return entries;
+}
+
 export default defineConfig({
   root: "src",
-  // base "/" für Deployment auf Domain-Root (z. B. https://hexenprozesse.at/).
-  // Falls die Site in einem Unterordner läuft, hier "./" oder den Pfad setzen.
   base: "/",
-  // publicDir: src/assets/ wird beim Build 1:1 (ohne Hashing) nach dist/
-  // kopiert. Bilder daher als <img src="/images/foo.jpg"> referenzieren —
-  // physisch unter src/assets/images/foo.jpg.
   publicDir: "assets",
 
   build: {
@@ -23,12 +37,7 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: false,
     rollupOptions: {
-      input: {
-        main: fromSrc("index.html"),
-        kontakt: fromSrc("pages/kontakt.html"),
-        prozesseIndex: fromSrc("pages/prozesse/index.html"),
-        zechner: fromSrc("pages/prozesse/zechner.html"),
-      },
+      input: collectHtmlEntries(),
     },
   },
 

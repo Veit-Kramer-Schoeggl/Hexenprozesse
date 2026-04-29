@@ -218,6 +218,65 @@ code {
   margin-bottom: var(--space-lg);
 }
 
+/* ---- Migrated content (figures, tables, raw HTML imports) ---- */
+.prozess figure,
+.container figure {
+  margin: var(--space-lg) 0;
+  text-align: center;
+}
+.prozess figure img,
+.container figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+  background: #fff;
+}
+.prozess figcaption,
+.container figcaption {
+  margin-top: var(--space-xs);
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  font-style: italic;
+}
+.prozess table,
+.container table {
+  border-collapse: collapse;
+  margin: var(--space-md) 0;
+  max-width: 100%;
+}
+.prozess table td,
+.container table td {
+  padding: var(--space-xs) var(--space-sm);
+  vertical-align: top;
+}
+.prozess img,
+.container img {
+  max-width: 100%;
+  height: auto;
+}
+.prozess blockquote,
+.container blockquote {
+  margin: var(--space-md) 0;
+  padding: var(--space-sm) var(--space-md);
+  border-left: 3px solid var(--color-accent);
+  background: #fff8e8;
+  font-style: italic;
+}
+
+/* Card multi-link list */
+.card-links {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0 0;
+}
+.card-links li {
+  padding: 0.25rem 0;
+}
+.card-links a {
+  font-family: var(--font-sans);
+  text-decoration: none;
+}
+
 /* ---- Footer ---- */
 .site-footer {
   margin-top: var(--space-xl);
