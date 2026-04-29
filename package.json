@@ -1,12 +1,19 @@
 {
   "name": "hexenprozesse-homepage",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "type": "module",
   "description": "Statische Website über die steirischen Hexenprozesse (Inhalte: Siegfried Kramer).",
   "scripts": {
-    "dev": "npx --yes live-server src --port=8080 --no-browser",
-    "build": "node tools/build.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "format": "npx --yes prettier --write \"src/**/*.{html,css,js,md}\""
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "vite": "^8.0.10"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
 }

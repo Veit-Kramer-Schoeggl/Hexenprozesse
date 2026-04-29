@@ -11,36 +11,50 @@ nur als Inhalts­quellen referenziert (siehe `docs/content-quellen.md`).
 ## Schnellstart
 
 ```bash
-# Lokalen Dev-Server starten (öffnet src/ unter http://localhost:8080)
+# Einmalig: Abhängigkeiten installieren (Vite v8)
+npm install
+
+# Lokalen Dev-Server starten (Hot-Reload, http://localhost:8080)
 npm run dev
+
+# Produktions-Build erzeugen -> dist/
+npm run build
+
+# Den Produktions-Build lokal vorschauen
+npm run preview
 
 # Quellcode formatieren
 npm run format
 ```
 
-`npm run dev` ruft `npx live-server` ohne weitere Installation auf — es muss
-nur Node.js (>= 18) auf dem Rechner sein.
+Voraussetzung: Node.js ≥ 20.19.
 
 ## Verzeichnis­struktur
 
 ```
 Homepage_Repo/
-├── src/                    Quelldateien der Site (das, was deployt wird)
+├── src/                    Quelldateien (das, was im Editor angefasst wird)
 │   ├── index.html          Startseite
 │   ├── pages/
 │   │   ├── kontakt.html
 │   │   └── prozesse/       Eine Datei je Hexenprozess
-│   ├── partials/           Wiederverwendbare HTML-Schnipsel (Header/Footer)
+│   ├── partials/           Wiederverwendbare HTML-Schnipsel
 │   ├── styles/             CSS (main.css ist Einstiegspunkt)
-│   ├── scripts/            Optional JavaScript
-│   └── assets/             Bilder, Fonts, Downloads
-├── docs/                   Dokumentation für Entwickler
-├── .gitignore
-├── .gitattributes
-├── .editorconfig
-├── package.json
+│   ├── scripts/            JavaScript-Module
+│   └── assets/             Bilder, Fonts, Downloads (publicDir)
+├── dist/                   ← Build-Output (gitignored, von Plesk gehostet)
+├── docs/                   Dokumentation
+├── vite.config.js          Build-Konfiguration (MPA-Setup)
+├── package.json            npm-Scripts + Dependencies
+├── package-lock.json       reproducible builds (committed!)
+├── .gitignore .gitattributes .editorconfig
 └── README.md
 ```
+
+**Trennung Quelle / Output:**
+- Editiert wird ausschließlich in `src/`.
+- `npm run build` erzeugt `dist/` (HTML + gehashte CSS/JS-Bundles).
+- `dist/` wird **nicht** ins Git committed — auf dem Server entsteht es per Build.
 
 ## Designprinzipien
 
@@ -78,13 +92,32 @@ Eine Zuordnung der alten Dateien zu Prozessen findet sich in
 
 ## Deployment
 
-Die Site ist Static-HTML — folgende Optionen funktionieren ohne Anpassung:
+### Plesk (mit Git-Integration + Auto-Build)
 
-| Hoster | Verfahren |
-|---|---|
-| Netlify, Cloudflare Pages, Vercel | Repo verbinden, Publish-Dir auf `src` setzen |
-| GitHub Pages | Branch `main`, Ordner `/src` als Pages-Root |
-| Klassisches Webhosting (FTP) | Inhalt von `src/` per FTP hochladen |
+1. In Plesk → **Websites & Domains** → Domain wählen → **Git**.
+2. Repository hinzufügen (HTTPS- oder SSH-URL des Repos).
+3. **Bereitstellungsmodus:** *Automatisch beim Push*.
+4. **Bereitstellungspfad:** `httpdocs/dist`
+   *(damit Plesk nur das Build-Output ausliefert, nicht den Quellcode).*
+5. **Zusätzliche Bereitstellungsaktionen** aktivieren und eintragen:
+   ```
+   npm install && npm run build
+   ```
+6. In den Plesk-Einstellungen sicherstellen, dass eine Node.js-Version ≥ 20.19
+   verfügbar ist (Plesk → Node.js-Toolkit oder NodeJS-Erweiterung).
+
+Bei jedem Push nach `main` läuft auf dem Server `npm install && npm run build`,
+und `httpdocs/dist/` enthält danach die fertige Site.
+
+### Andere Hoster
+
+| Hoster              | Build-Befehl   | Publish-Dir |
+|---------------------|---------------|-------------|
+| Netlify             | `npm run build` | `dist`      |
+| Cloudflare Pages    | `npm run build` | `dist`      |
+| Vercel              | `npm run build` | `dist`      |
+| GitHub Pages        | über Action `npm run build` | `dist`  |
+| Klassisches FTP     | lokal `npm run build` | Inhalt von `dist/` per FTP |
 
 ## Lizenz / Urheberrecht
 

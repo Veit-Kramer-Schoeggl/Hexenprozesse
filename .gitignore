@@ -8,8 +8,8 @@ build/
 node_modules/
 npm-debug.log*
 yarn-error.log*
-package-lock.json
 yarn.lock
+# package-lock.json wird committed -> reproducible builds (Plesk!)
 
 # Editor / OS
 .vscode/
