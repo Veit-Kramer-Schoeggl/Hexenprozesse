@@ -105,6 +105,12 @@ Eine Zuordnung der alten Dateien zu Prozessen findet sich in
    ```
 6. In den Plesk-Einstellungen sicherstellen, dass eine Node.js-Version ≥ 20.19
    verfügbar ist (Plesk → Node.js-Toolkit oder NodeJS-Erweiterung).
+   
+### Worflow
+  npm install        # einmalig
+  npm run dev        # http://localhost:8080 mit Hot-Reload
+  npm run build      # → dist/
+  npm run preview    # Production-Build lokal testen
 
 Bei jedem Push nach `main` läuft auf dem Server `npm install && npm run build`,
 und `httpdocs/dist/` enthält danach die fertige Site.
