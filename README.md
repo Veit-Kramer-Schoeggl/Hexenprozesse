@@ -1,7 +1,7 @@
 # Hexenprozesse — Homepage
 
 Statische Website über die steirischen Hexenprozesse. Inhalte ursprünglich
-von Siegfried Kramer, ehemals unter `hexenprozesse.at` veröffentlicht.
+von Dr. phil. Siegfried Kramer, ehemals unter `hexenprozesse.at` veröffentlicht.
 
 Dieses Repository ist die **moderne Neufassung** der Site. Die historischen
 Originaldateien liegen *außerhalb* des Repos unter
@@ -32,96 +32,97 @@ Voraussetzung: Node.js ≥ 20.19.
 ## Verzeichnis­struktur
 
 ```
-Homepage_Repo/
+Hexenprozesse/
 ├── src/                    Quelldateien (das, was im Editor angefasst wird)
 │   ├── index.html          Startseite
 │   ├── pages/
-│   │   ├── kontakt.html
-│   │   └── prozesse/       Eine Datei je Hexenprozess
-│   ├── partials/           Wiederverwendbare HTML-Schnipsel
-│   ├── styles/             CSS (main.css ist Einstiegspunkt)
-│   ├── scripts/            JavaScript-Module
-│   └── assets/             Bilder, Fonts, Downloads (publicDir)
-├── dist/                   ← Build-Output (gitignored, von Plesk gehostet)
+│   │   ├── kontakt.html, impressum.html, ueberblick.html, ...
+│   │   ├── prozesse/       Eine Datei je Hexenprozess (41 Stück)
+│   │   └── themen/         Gerichtswesen, Bannrichter, Literatur
+│   ├── partials/           Wiederverwendbare HTML-Schnipsel (Header, Footer)
+│   ├── styles/main.css     Stylesheet
+│   ├── scripts/main.js     JavaScript
+│   └── assets/images/      Bilder (werden nach dist/ kopiert)
+├── dist/                   Build-Output (committed als Fallback)
 ├── docs/                   Dokumentation
-├── vite.config.js          Build-Konfiguration (MPA-Setup)
-├── package.json            npm-Scripts + Dependencies
-├── package-lock.json       reproducible builds (committed!)
-├── .gitignore .gitattributes .editorconfig
+│   ├── architektur.md
+│   └── content-quellen.md
+├── vite.config.js          Build-Konfiguration mit HTML-Include-Plugin
+├── package.json
+├── package-lock.json
+├── CLAUDE.md               Kontext für Claude Code
 └── README.md
 ```
 
-**Trennung Quelle / Output:**
-- Editiert wird ausschließlich in `src/`.
-- `npm run build` erzeugt `dist/` (HTML + gehashte CSS/JS-Bundles).
-- `dist/` wird **nicht** ins Git committed — auf dem Server entsteht es per Build.
+## Partials-System
+
+Header und Footer werden zentral in `src/partials/` definiert und per
+Vite-Plugin zur Build-Zeit in alle Seiten eingefügt.
+
+**Verwendung in HTML:**
+```html
+@@include('header')
+<!-- Seiteninhalt -->
+@@include('footer')
+```
+
+**Vorteile:**
+- Änderungen an der Navigation nur an einer Stelle (`partials/header.html`)
+- Konsistente Links durch absolute Pfade (`/pages/...`)
+- Kein JavaScript-Laden zur Laufzeit (SEO-freundlich)
 
 ## Designprinzipien
 
-1. **Statisch & portabel** — reine HTML/CSS, keine Runtime-Abhängigkeit.
-   Lässt sich auf jedem Webhoster (auch Static-Hosting wie Netlify, Cloudflare
-   Pages, GitHub Pages) ohne Server deployen.
-2. **Quelle vs. Build** — `src/` ist die Wahrheit; alles andere ist generiert
-   oder Doku. Editiert wird ausschließlich in `src/`.
-3. **Wiederverwendung über Partials** — Header und Footer sind je einmal in
-   `src/partials/` definiert und werden in jede Seite eingebunden (entweder
-   manuell beim Bauen oder per `<iframe>`/`fetch`-Pattern; siehe Footer in
-   `src/index.html`).
-4. **Inhalte vom Layout trennen** — Texte und Datenfelder in HTML; das Layout
-   in CSS. Keine Inline-Styles.
-5. **Mobile-first, responsive** — `main.css` startet mit Mobile-Layout,
-   Media-Queries erweitern für größere Screens.
-6. **Keine Build-Pflicht** — die Site läuft auch ohne Build-Schritt direkt
-   aus `src/` heraus. Ein optionales `tools/build.mjs` (noch nicht
-   implementiert) kann Partials einfügen, Bilder optimieren etc.
+1. **Statisch & portabel** — reine HTML/CSS, keine Runtime-Abhängigkeit
+2. **Quelle vs. Build** — `src/` ist die Wahrheit; editiert wird nur dort
+3. **Wiederverwendung über Partials** — Header/Footer zentral definiert
+4. **Mobile-first, responsive** — `main.css` mit Design-Tokens
+5. **Keine Build-Pflicht für Inhalt** — Partials werden beim Build ersetzt
 
-## Inhalte migrieren
+## dist/ ist committed (bewusste Entscheidung)
 
-Die alten Word-HTML-Dateien aus `../01_Archiv/PHPsicherung/` enthalten viel
-Layout-Müll (`MsoNormal`-Klassen, inline `<font>`-Tags, etc.). Beim Migrieren
-gilt:
+`dist/` wurde aus der `.gitignore` entfernt. Plesk pulled den fertigen Build
+mit und führt zusätzlich `npm install && npm run build` aus. Das ist ein
+Sicherheitsnetz: falls der Server Node-Probleme hat, läuft die Site trotzdem.
 
-1. **Text** ins entsprechende `src/pages/prozesse/<name>.html` übernehmen
-2. **Strukturierende Tags** behalten (`<h1>`, `<h2>`, `<p>`, `<ul>`, `<table>`)
-3. **Word-Klassen entfernen** (`class="MsoNormal"`, `style="..."` u. ä.)
-4. **Bilder** nach `src/assets/images/<prozess>/` legen und Pfade anpassen
-5. Layout kommt aus `src/styles/main.css` — nicht inline
-
-Eine Zuordnung der alten Dateien zu Prozessen findet sich in
-`docs/content-quellen.md`.
+**Wichtig:** Vor jedem Commit `npm run build` laufen lassen!
 
 ## Deployment
 
 ### Plesk (mit Git-Integration + Auto-Build)
 
-1. In Plesk → **Websites & Domains** → Domain wählen → **Git**.
-2. Repository hinzufügen (HTTPS- oder SSH-URL des Repos).
-3. **Bereitstellungsmodus:** *Automatisch beim Push*.
-4. **Bereitstellungspfad:** `httpdocs/dist`
-   *(damit Plesk nur das Build-Output ausliefert, nicht den Quellcode).*
-5. **Zusätzliche Bereitstellungsaktionen** aktivieren und eintragen:
+1. In Plesk → **Websites & Domains** → Domain → **Git**
+2. Repository hinzufügen (SSH-URL)
+3. **Bereitstellungsmodus:** Automatisch beim Push
+4. **Bereitstellungspfad:** `httpdocs` (Repo wird hier geklont)
+5. **Document Root:** `httpdocs/dist` (nur Build-Output ausliefern)
+6. **Zusätzliche Bereitstellungsaktionen:**
    ```
    npm install && npm run build
    ```
-6. In den Plesk-Einstellungen sicherstellen, dass eine Node.js-Version ≥ 20.19
-   verfügbar ist (Plesk → Node.js-Toolkit oder NodeJS-Erweiterung).
-  
-
-Bei jedem Push nach `main` läuft auf dem Server `npm install && npm run build`,
-und `httpdocs/dist/` enthält danach die fertige Site.
+7. Node.js ≥ 20.19 aktivieren (Plesk Node.js-Toolkit)
 
 ### Andere Hoster
 
-| Hoster              | Build-Befehl   | Publish-Dir |
-|---------------------|---------------|-------------|
+| Hoster              | Build-Befehl    | Publish-Dir |
+|---------------------|-----------------|-------------|
 | Netlify             | `npm run build` | `dist`      |
 | Cloudflare Pages    | `npm run build` | `dist`      |
 | Vercel              | `npm run build` | `dist`      |
-| GitHub Pages        | über Action `npm run build` | `dist`  |
-| Klassisches FTP     | lokal `npm run build` | Inhalt von `dist/` per FTP |
+| GitHub Pages        | via Action      | `dist`      |
+
+## Neue Seite hinzufügen
+
+1. HTML-Datei in `src/pages/` anlegen (bestehende als Vorlage)
+2. `@@include('header')` und `@@include('footer')` verwenden
+3. `npm run build` ausführen
+4. Commit und Push
+
+Kein Eintrag in `vite.config.js` nötig — das Plugin entdeckt alle `.html`
+automatisch.
 
 ## Lizenz / Urheberrecht
 
-Inhalte: Siegfried Kramer (Forschungsergebnisse, Übersetzungen, Texte) — nicht
-ohne Rücksprache weitergeben. Code (HTML/CSS/JS): MIT — siehe `LICENSE`
-sobald gesetzt.
+**Inhalte:** Dr. phil. Siegfried Kramer — CC BY 4.0 (siehe `LICENSE.md`)
+
+**Code:** MIT
