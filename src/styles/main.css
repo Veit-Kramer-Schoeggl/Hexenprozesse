@@ -335,17 +335,66 @@ code {
   list-style: none;
   padding: 0;
   margin: var(--space-lg) 0;
+  display: grid;
+  gap: var(--space-lg);
 }
-.literatur-eintrag {
-  padding: var(--space-sm) 0;
-  border-bottom: 1px solid var(--color-border);
+.literatur-karte {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.literatur-karte:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.literatur-cover {
+  flex-shrink: 0;
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+.literatur-cover-placeholder {
+  flex-shrink: 0;
+  width: 80px;
+  height: 120px;
+  background: linear-gradient(135deg, #e8e4dc 0%, #d4cfc4 100%);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--color-muted);
+}
+.literatur-details {
+  flex: 1;
   line-height: 1.5;
 }
-.literatur-eintrag em {
+.literatur-autor {
+  font-weight: 600;
+  color: var(--color-accent-dark);
+}
+.literatur-titel {
   font-style: italic;
 }
-.literatur-eintrag a {
+.literatur-meta {
   font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-top: var(--space-xs);
+}
+.literatur-hinweis {
+  display: inline-block;
+  margin-top: var(--space-xs);
+  font-size: 0.85rem;
+  color: var(--color-accent);
 }
 
 /* ---- Footer ---- */
