@@ -8,32 +8,7 @@
     <link rel="stylesheet" href="../../styles/main.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <a class="brand" href="../../index.html">Hexenprozesse</a>
-                <nav class="site-nav" aria-label="Hauptnavigation">
-          <a href="../../index.html">Start</a>
-          <a href="../prozesse/index.html">Prozesse</a>
-          <a href="../ueberblick.html">Überblick</a>
-          <div class="nav-dropdown">
-            <button class="nav-dropdown-toggle">Themen</button>
-            <div class="nav-dropdown-menu">
-              <a href="../themen/gerichtswesen.html">Das Gerichtswesen</a>
-              <a href="../themen/bannrichter.html">Die Bannrichter</a>
-              <a href="../themen/literatur.html">Literatur-Empfehlungen</a>
-            </div>
-          </div>
-          <div class="nav-dropdown">
-            <button class="nav-dropdown-toggle">Werkzeuge</button>
-            <div class="nav-dropdown-menu">
-              <a href="../fragenkatalog.html">Fragenliste</a>
-              <a href="../links.html">Linksammlung</a>
-            </div>
-          </div>
-          <a href="../kontakt.html">Kontakt</a>
-        </nav>
-      </div>
-    </header>
+    @@include('header')
 
     <main class="container">
       <article class="prozess">
@@ -48,11 +23,6 @@ Städte, Diözesen und Klöster. Terretoriale Zuständigkeit.
       </article>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
-        <p><a href="../../pages/impressum.html">Impressum</a></p>
-      </div>
-    </footer>
+    @@include('footer')
   </body>
 </html>
