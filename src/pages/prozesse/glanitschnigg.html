@@ -8,24 +8,14 @@
     <link rel="stylesheet" href="../../styles/main.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <a class="brand" href="../../index.html">Hexenprozesse</a>
-        <nav class="site-nav" aria-label="Hauptnavigation">
-          <a href="../../index.html">Start</a>
-          <a href="../../pages/prozesse/index.html">Prozesse</a>
-          <a href="../../pages/ueberblick.html">Überblick</a>
-          <a href="../../pages/kontakt.html">Kontakt</a>
-        </nav>
-      </div>
-    </header>
+    @@include('header')
 
     <main class="container">
       <article class="prozess">
         <header class="prozess-header">
           <h1>Helena Glanitschnigg</h1>
         </header>
-<h1> </h1>
+<h2> </h2>
 <h1><em><br/>
 </em><strong>Prozess gegen Helena Glanitschnigg wegen Zauberei</strong></h1>
 <h2 dir="ltr"><strong>Dreifaltigkeit bei Lichtenegg (Gorca in Slowenien)</strong> <em>1701</em><br/>
@@ -363,11 +353,6 @@ Sie wird weiters genauer befragt und zwar erstens, wie lang es her sei, dass sie
       </article>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
-        <p><a href="../../pages/impressum.html">Impressum</a></p>
-      </div>
-    </footer>
+    @@include('footer')
   </body>
 </html>

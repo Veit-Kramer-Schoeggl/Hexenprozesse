@@ -5,20 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Metnitz — Hexenprozesse</title>
     <meta name="description" content="Metnitz" />
-    <link rel="stylesheet" crossorigin href="/assets/main-bda6uE_q.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-CkQDL3w7.css">
   </head>
   <body>
     <header class="site-header">
-      <div class="container">
-        <a class="brand" href="../../index.html">Hexenprozesse</a>
-        <nav class="site-nav" aria-label="Hauptnavigation">
-          <a href="../../index.html">Start</a>
-          <a href="../../pages/prozesse/index.html">Prozesse</a>
-          <a href="../../pages/ueberblick.html">Überblick</a>
-          <a href="../../pages/kontakt.html">Kontakt</a>
-        </nav>
+  <div class="container">
+    <a class="brand" href="/index.html">Hexenprozesse</a>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="/index.html">Start</a>
+      <a href="/pages/prozesse/index.html">Prozesse</a>
+      <a href="/pages/ueberblick.html">Überblick</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Themen</button>
+        <div class="nav-dropdown-menu">
+          <a href="/pages/themen/gerichtswesen.html">Das Gerichtswesen</a>
+          <a href="/pages/themen/bannrichter.html">Die Bannrichter</a>
+          <a href="/pages/themen/literatur.html">Literatur-Empfehlungen</a>
+        </div>
       </div>
-    </header>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Werkzeuge</button>
+        <div class="nav-dropdown-menu">
+          <a href="/pages/fragenkatalog.html">Fragenliste</a>
+          <a href="/pages/links.html">Linksammlung</a>
+        </div>
+      </div>
+      <a href="/pages/kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
     <main class="container">
       <article class="prozess">
@@ -90,10 +105,25 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
-        <p><a href="../../pages/impressum.html">Impressum</a></p>
-      </div>
-    </footer>
+  <div class="container">
+    <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
+    <p><a href="/pages/impressum.html">Impressum</a> · <a href="/pages/kontakt.html">Kontakt</a></p>
+  </div>
+</footer>
+<script>
+// Dropdown-Navigation Toggle
+document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const dropdown = toggle.closest(".nav-dropdown");
+    const isOpen = dropdown.classList.contains("open");
+    document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+    if (!isOpen) dropdown.classList.add("open");
+  });
+});
+document.addEventListener("click", () => {
+  document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+});
+</script>
   </body>
 </html>

@@ -5,20 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fragenliste für Hexenprozesse — Hexenprozesse</title>
     <meta name="description" content="Fragenliste für Hexenprozesse" />
-    <link rel="stylesheet" crossorigin href="/assets/main-bda6uE_q.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-CkQDL3w7.css">
   </head>
   <body>
     <header class="site-header">
-      <div class="container">
-        <a class="brand" href="../index.html">Hexenprozesse</a>
-        <nav class="site-nav" aria-label="Hauptnavigation">
-          <a href="../index.html">Start</a>
-          <a href="../pages/prozesse/index.html">Prozesse</a>
-          <a href="../pages/ueberblick.html">Überblick</a>
-          <a href="../pages/kontakt.html">Kontakt</a>
-        </nav>
+  <div class="container">
+    <a class="brand" href="/index.html">Hexenprozesse</a>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="/index.html">Start</a>
+      <a href="/pages/prozesse/index.html">Prozesse</a>
+      <a href="/pages/ueberblick.html">Überblick</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Themen</button>
+        <div class="nav-dropdown-menu">
+          <a href="/pages/themen/gerichtswesen.html">Das Gerichtswesen</a>
+          <a href="/pages/themen/bannrichter.html">Die Bannrichter</a>
+          <a href="/pages/themen/literatur.html">Literatur-Empfehlungen</a>
+        </div>
       </div>
-    </header>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Werkzeuge</button>
+        <div class="nav-dropdown-menu">
+          <a href="/pages/fragenkatalog.html">Fragenliste</a>
+          <a href="/pages/links.html">Linksammlung</a>
+        </div>
+      </div>
+      <a href="/pages/kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
     <main class="container">
       <article class="prozess">
@@ -106,22 +121,47 @@
 <figure><img alt="Hinrichtungsstätte" src="/images/fragenkatalog/dkulturgesch-58k.JPG"/><figcaption>Richtstätte mit Galgen und Rad um 1500 (Hans Burgkmair und Kunstgenossen)</figcaption></figure>
 <p><strong>65. Ob er glaube, dass ihm diese nicht vergeben werden? Ob er alle seine Untaten gestehe ohne Untaten unterzumischen und böserweise seine Taten zu verschweigen?</strong></p>
 <p><strong>66. Was er glaubt, dadurch verdient zu haben?</strong></p>
-<strong><br/>
-</strong>
-<p><strong><em>Anmerkung</em>:<br/>
-<em><br/>
-</em></strong><em><strong>Dieses sogenannte Interrogatorium vom Juni 1680 stammt von Dr. Thomas Welz und  befindet sich im 
-    Haus-, Hof- und Staatsarchiv in Wien und  wurde von Siegfried Kramer möglichst wortgetreu mit Unterstützung von Dr. Bernhard Reismann (dem ich für die Korrektur herzlich danke) in unsere heutige Sprache übertragen.</strong></em></p>
-<h4><em>      Den vorliegenden Text finden Sie im Original in der Arbeit "Der Teufel und die Hexen müssen aus dem Land" , über frühneuzeitliche Hexenverfolgung in Liechtenstein, von Manfred Tschaikner: </em><a href="http://www.eliechtensteinensia.li/JBHV/1998/96/Der_Teufel_und_die_Hexen_muessen_aus_dem_Land.pdf">http://www.eliechtensteinensia.li/JBHV/1998/96/Der_Teufel_und_die_Hexen_muessen_aus_dem_Land.pdf</a></h4>
-<h1> </h1>
+
+<h3>Anmerkung</h3>
+<p>Dieses sogenannte Interrogatorium vom Juni 1680 stammt von Dr. Thomas Welz und befindet sich im Haus-, Hof- und Staatsarchiv in Wien. Es wurde von Siegfried Kramer möglichst wortgetreu mit Unterstützung von Dr. Bernhard Reismann (dem ich für die Korrektur herzlich danke) in unsere heutige Sprache übertragen.</p>
+
+<h3>Quelle</h3>
+<ul class="literatur-liste">
+  <li>
+    <a href="http://www.eliechtensteinensia.li/JBHV/1998/96/Der_Teufel_und_die_Hexen_muessen_aus_dem_Land.pdf" class="literatur-karte" rel="noopener" target="_blank">
+      <div class="literatur-cover-placeholder">📄</div>
+      <div class="literatur-details">
+        <div class="literatur-autor">Tschaikner, Manfred</div>
+        <div class="literatur-titel">„Der Teufel und die Hexen müssen aus dem Land". Frühneuzeitliche Hexenverfolgung in Liechtenstein.</div>
+        <div class="literatur-meta">In: Jahrbuch des Historischen Vereins für das Fürstentum Liechtenstein, Bd. 96 (1998), S. 1–197.</div>
+        <span class="literatur-hinweis">→ PDF auf eLiechtensteinensia.li ansehen</span>
+      </div>
+    </a>
+  </li>
+</ul>
       </article>
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
-        <p><a href="../pages/impressum.html">Impressum</a></p>
-      </div>
-    </footer>
+  <div class="container">
+    <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
+    <p><a href="/pages/impressum.html">Impressum</a> · <a href="/pages/kontakt.html">Kontakt</a></p>
+  </div>
+</footer>
+<script>
+// Dropdown-Navigation Toggle
+document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const dropdown = toggle.closest(".nav-dropdown");
+    const isOpen = dropdown.classList.contains("open");
+    document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+    if (!isOpen) dropdown.classList.add("open");
+  });
+});
+document.addEventListener("click", () => {
+  document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+});
+</script>
   </body>
 </html>

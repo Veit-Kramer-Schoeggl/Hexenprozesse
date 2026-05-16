@@ -16,18 +16,7 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <a class="brand" href="./index.html">Hexenprozesse</a>
-        <nav class="site-nav" aria-label="Hauptnavigation">
-          <a href="./index.html" aria-current="page">Start</a>
-          <a href="./pages/prozesse/index.html">Prozesse</a>
-          <a href="./pages/ueberblick.html">Überblick</a>
-          <a href="./pages/themen/gerichtswesen.html">Themen</a>
-          <a href="./pages/kontakt.html">Kontakt</a>
-        </nav>
-      </div>
-    </header>
+    @@include('header')
 
     <main class="container">
       <section class="hero">
@@ -82,13 +71,6 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
-        <p><a href="./pages/impressum.html">Impressum</a> · <a href="./pages/kontakt.html">Kontakt</a></p>
-      </div>
-    </footer>
-
-    <script type="module" src="scripts/main.js"></script>
+    @@include('footer')
   </body>
 </html>

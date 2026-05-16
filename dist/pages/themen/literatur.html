@@ -4,46 +4,165 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Literatur-Empfehlungen — Hexenprozesse</title>
-    <meta name="description" content="Literatur-Empfehlungen" />
-    <link rel="stylesheet" crossorigin href="/assets/main-bda6uE_q.css">
+    <meta name="description" content="Literatur-Empfehlungen zur Geschichte der Hexenprozesse in der Steiermark" />
+    <link rel="stylesheet" crossorigin href="/assets/main-CkQDL3w7.css">
   </head>
   <body>
     <header class="site-header">
-      <div class="container">
-        <a class="brand" href="../../index.html">Hexenprozesse</a>
-        <nav class="site-nav" aria-label="Hauptnavigation">
-          <a href="../../index.html">Start</a>
-          <a href="../../pages/prozesse/index.html">Prozesse</a>
-          <a href="../../pages/ueberblick.html">Überblick</a>
-          <a href="../../pages/kontakt.html">Kontakt</a>
-        </nav>
+  <div class="container">
+    <a class="brand" href="/index.html">Hexenprozesse</a>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="/index.html">Start</a>
+      <a href="/pages/prozesse/index.html">Prozesse</a>
+      <a href="/pages/ueberblick.html">Überblick</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Themen</button>
+        <div class="nav-dropdown-menu">
+          <a href="/pages/themen/gerichtswesen.html">Das Gerichtswesen</a>
+          <a href="/pages/themen/bannrichter.html">Die Bannrichter</a>
+          <a href="/pages/themen/literatur.html">Literatur-Empfehlungen</a>
+        </div>
       </div>
-    </header>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Werkzeuge</button>
+        <div class="nav-dropdown-menu">
+          <a href="/pages/fragenkatalog.html">Fragenliste</a>
+          <a href="/pages/links.html">Linksammlung</a>
+        </div>
+      </div>
+      <a href="/pages/kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
     <main class="container">
       <article class="prozess">
         <header class="prozess-header">
           <h1>Literatur-Empfehlungen</h1>
         </header>
-<p class="western" lang="de-DE">
-<b>Alfred Seebacher-Mesaritsch</b>:</p>
-<p class="western" lang="de-DE">
-Hexen-Report 
-</p>
-<p class="western" lang="de-DE">
-Bericht über eine Massentragödie in der Steiermark</p>
-<p class="western" lang="de-DE">
-1425-1746</p>
-<p class="western" lang="de-DE">
-Leykam-Verlag, Graz (1972)</p>
+
+        <p>Ausgewählte Werke zur Geschichte der Hexenprozesse in der Steiermark und Österreich.</p>
+
+        <div class="sortier-leiste">
+          <span class="sortier-label">Sortieren:</span>
+          <button class="sortier-btn active" data-sort="autor" data-order="asc">
+            <span class="sortier-text">Autor</span>
+            <span class="sortier-pfeile"><span class="pfeil-auf">▲</span><span class="pfeil-ab aktiv">▼</span></span>
+          </button>
+          <button class="sortier-btn" data-sort="titel" data-order="asc">
+            <span class="sortier-text">Titel</span>
+            <span class="sortier-pfeile"><span class="pfeil-auf">▲</span><span class="pfeil-ab">▼</span></span>
+          </button>
+          <button class="sortier-btn" data-sort="jahr" data-order="desc">
+            <span class="sortier-text">Jahr</span>
+            <span class="sortier-pfeile"><span class="pfeil-auf">▲</span><span class="pfeil-ab">▼</span></span>
+          </button>
+        </div>
+
+        <ul class="literatur-liste" id="literatur-liste">
+          <li data-autor="Seebacher-Mesaritsch" data-titel="Hexen-Report" data-jahr="1972">
+            <a href="https://d-nb.info/720262682" class="literatur-karte" rel="noopener" target="_blank">
+              <img src="/images/literatur/hexen-report.jpg" alt="Buchcover Hexen-Report" class="literatur-cover"
+                   onerror="this.outerHTML='<div class=\'literatur-cover-placeholder\'>📖</div>'">
+              <div class="literatur-details">
+                <div class="literatur-autor">Seebacher-Mesaritsch, Alfred</div>
+                <div class="literatur-titel">Hexen-Report. Bericht über eine Massentragödie in der Steiermark 1425–1746.</div>
+                <div class="literatur-meta">Leykam, Graz 1972. 272 S. — ISBN 3-7011-7030-4</div>
+                <span class="literatur-hinweis">→ In der Deutschen Nationalbibliothek ansehen</span>
+              </div>
+            </a>
+          </li>
+          <li data-autor="Tschaikner" data-titel="Der Teufel und die Hexen müssen aus dem Land" data-jahr="1998">
+            <a href="http://www.eliechtensteinensia.li/JBHV/1998/96/Der_Teufel_und_die_Hexen_muessen_aus_dem_Land.pdf" class="literatur-karte" rel="noopener" target="_blank">
+              <div class="literatur-cover-placeholder">📄</div>
+              <div class="literatur-details">
+                <div class="literatur-autor">Tschaikner, Manfred</div>
+                <div class="literatur-titel">„Der Teufel und die Hexen müssen aus dem Land". Frühneuzeitliche Hexenverfolgung in Liechtenstein.</div>
+                <div class="literatur-meta">In: Jahrbuch des Historischen Vereins für das Fürstentum Liechtenstein, Bd. 96 (1998), S. 1–197.</div>
+                <span class="literatur-hinweis">→ PDF auf eLiechtensteinensia.li ansehen</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+
       </article>
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
-        <p><a href="../../pages/impressum.html">Impressum</a></p>
-      </div>
-    </footer>
+  <div class="container">
+    <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
+    <p><a href="/pages/impressum.html">Impressum</a> · <a href="/pages/kontakt.html">Kontakt</a></p>
+  </div>
+</footer>
+<script>
+// Dropdown-Navigation Toggle
+document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const dropdown = toggle.closest(".nav-dropdown");
+    const isOpen = dropdown.classList.contains("open");
+    document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+    if (!isOpen) dropdown.classList.add("open");
+  });
+});
+document.addEventListener("click", () => {
+  document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+});
+</script>
+
+    <script>
+    // Literatur-Sortierung
+    document.querySelectorAll('.sortier-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sortKey = btn.dataset.sort;
+        let order = btn.dataset.order;
+
+        // Wenn gleicher Button nochmal geklickt, Reihenfolge umkehren
+        if (btn.classList.contains('active')) {
+          order = order === 'asc' ? 'desc' : 'asc';
+          btn.dataset.order = order;
+        }
+
+        // Alle Buttons deaktivieren
+        document.querySelectorAll('.sortier-btn').forEach(b => {
+          b.classList.remove('active');
+          b.querySelectorAll('.pfeil-auf, .pfeil-ab').forEach(p => p.classList.remove('aktiv'));
+        });
+
+        // Aktuellen Button aktivieren
+        btn.classList.add('active');
+        if (order === 'asc') {
+          btn.querySelector('.pfeil-ab').classList.add('aktiv');
+        } else {
+          btn.querySelector('.pfeil-auf').classList.add('aktiv');
+        }
+
+        // Sortieren
+        const liste = document.getElementById('literatur-liste');
+        const items = Array.from(liste.querySelectorAll('li'));
+
+        items.sort((a, b) => {
+          let valA = a.dataset[sortKey];
+          let valB = b.dataset[sortKey];
+
+          if (sortKey === 'jahr') {
+            valA = parseInt(valA);
+            valB = parseInt(valB);
+            return order === 'asc' ? valA - valB : valB - valA;
+          } else {
+            valA = valA.toLowerCase();
+            valB = valB.toLowerCase();
+            if (order === 'asc') {
+              return valA.localeCompare(valB, 'de');
+            } else {
+              return valB.localeCompare(valA, 'de');
+            }
+          }
+        });
+
+        items.forEach(item => liste.appendChild(item));
+      });
+    });
+    </script>
   </body>
 </html>

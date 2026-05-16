@@ -8,17 +8,7 @@
     <link rel="stylesheet" href="../../styles/main.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <a class="brand" href="../../index.html">Hexenprozesse</a>
-        <nav class="site-nav" aria-label="Hauptnavigation">
-          <a href="../../index.html">Start</a>
-          <a href="../../pages/prozesse/index.html">Prozesse</a>
-          <a href="../../pages/ueberblick.html">Überblick</a>
-          <a href="../../pages/kontakt.html">Kontakt</a>
-        </nav>
-      </div>
-    </header>
+    @@include('header')
 
     <main class="container">
       <article class="prozess">
@@ -29,7 +19,7 @@
 
 
 
-<h1>Der Prozess in St. Lambrecht im Jahr 1653</h1>
+<h2>Der Prozess in St. Lambrecht im Jahr 1653</h2>
 <span lang="DE">Es war keine gute   Zeit damals, im 17. Jahrhundert. Das Wetter war hundsmiserabel. Die Bettler   rannten den Bauern die Türen ein. Die hatten aber selbst kaum genug zu essen.   Immer wieder wurde die Ernte durch Unwetter vernichtet. Die Kleine Eiszeit war   in Europa. Damals hatte man andere Erklärungen. Zauberer waren unterwegs, die   das Wetter schlecht machen konnten, weil sie einen Pakt mit dem Teufel, mit dem   Bösen Geist hatten. Da machte man kurzen Prozess. Zum Beispiel dem <strong><a href="/pages/prozesse/steger.html">Lorenz   Steger (</a></strong><a href="steger1.html">Prozessprotokoll</a></span><a href="steger1.html">)
 </a>
 
@@ -56,11 +46,6 @@
       </article>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
-        <p><a href="../../pages/impressum.html">Impressum</a></p>
-      </div>
-    </footer>
+    @@include('footer')
   </body>
 </html>
