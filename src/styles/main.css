@@ -99,6 +99,7 @@ p {
   border-left: 3px solid var(--color-accent);
   padding: var(--space-sm) var(--space-md);
   font-size: 0.95rem;
+  font-family: var(--font-sans);
 }
 
 code {
@@ -412,6 +413,7 @@ code {
   background: #fff;
   text-decoration: none;
   color: var(--color-text);
+  font-family: var(--font-sans);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .literatur-karte:hover {
@@ -460,6 +462,173 @@ code {
   margin-top: var(--space-xs);
   font-size: 0.85rem;
   color: var(--color-accent);
+}
+
+/* ---- Prozess: Verhandlungstage & direkte Rede ---- */
+/* Jeder Prozesstag ist eine eigene Box; die Datumsleiste bleibt beim
+   Scrollen oben kleben (sticky), bis der nächste Tag sie verdrängt. */
+/* --- Basis-Variante: schlichte Box (weiß) --- */
+.prozess-tag {
+  margin: var(--space-lg) 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.prozess-tag-datum {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  margin: 0;
+  padding: var(--space-sm) var(--space-md);
+  /* opaker Kopf-Streifen, damit beim Scrollen kein Text durchscheint */
+  background-color: #eef1f6;
+  color: var(--color-accent-dark);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+/* --- Variante: vergilbte Buchseite (per .stil-papier am <article>) --- */
+/* Opaker Grundton + Pergament-Textur; zur Mitte hin (hinter dem Text)
+   ruhiger/opaker für Lesbarkeit, zum Rand hin gealtert. Die Textur ist
+   ein selbst-enthaltenes SVG und lässt sich durch ein echtes Scan-Bild
+   ersetzen — nur die URL tauschen. */
+.stil-papier .prozess-tag {
+  border-color: #cbb98d;
+  background-color: #f4ecd6;
+  background-image:
+    radial-gradient(130% 130% at 50% 50%, rgba(120, 90, 40, 0) 58%, rgba(120, 90, 40, 0.1) 100%),
+    radial-gradient(120% 125% at 50% 42%, rgba(244, 236, 214, 0.88) 28%, rgba(244, 236, 214, 0) 78%),
+    url("/images/ui/parchment.svg");
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-size: auto, auto, 320px 320px;
+  box-shadow:
+    0 4px 14px rgba(70, 50, 20, 0.18),
+    0 1px 4px rgba(70, 50, 20, 0.12);
+}
+.stil-papier .prozess-tag-datum {
+  background-color: #ece0c2;
+  border-bottom-color: #cbb98d;
+}
+
+/* --- Stil-Umschalter (nur zum Vergleich) --- */
+.stil-umschalter {
+  display: flex;
+  gap: var(--space-xs);
+  align-items: center;
+  margin: var(--space-md) 0;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+.stil-umschalter span {
+  color: var(--color-muted);
+  margin-right: var(--space-xs);
+}
+.stil-umschalter button {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--color-text);
+  cursor: pointer;
+}
+.stil-umschalter button.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+.prozess-tag-inhalt {
+  padding: var(--space-md);
+}
+.prozess-tag-inhalt > :first-child {
+  margin-top: 0;
+}
+.prozess-tag-inhalt > :last-child {
+  margin-bottom: 0;
+}
+.prozess-tag-inhalt h4 {
+  margin-top: var(--space-lg);
+  color: var(--color-accent-dark);
+}
+
+/* Direkte Rede — immer kursiv, Sprechername (fett) davor */
+.rede {
+  margin: 0 0 var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  border-left: 3px solid var(--color-border);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+}
+.rede .redner {
+  font-style: normal;
+  font-weight: 700;
+  font-family: var(--font-serif);
+}
+.rede .regie {
+  font-style: normal;
+  color: var(--color-muted);
+  font-size: 0.95em;
+}
+
+/* Erzähltext / Regieanweisung zwischen den Reden — normaler Fließtext */
+.regie-text {
+  margin: 0 0 var(--space-sm);
+}
+
+/* Sprecher-Farben — bewusst sehr dezent, nur Rand + Name eingefärbt */
+.rede-kommissar {
+  border-left-color: #4f81bd;
+  background: rgba(79, 129, 189, 0.06);
+}
+.rede-kommissar .redner {
+  color: #2f5c8a;
+}
+.rede-zechner {
+  border-left-color: #b07a45;
+  background: rgba(176, 122, 69, 0.08);
+}
+.rede-zechner .redner {
+  color: #8a5525;
+}
+
+/* Beisitzer-Liste (zwei Spalten) */
+.beisitzer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  margin: var(--space-sm) 0 var(--space-md);
+}
+.beisitzer-spalte {
+  min-width: 12rem;
+  line-height: 1.7;
+}
+.beisitzer-seite {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: var(--space-xs);
+}
+
+/* Unterschrift (Bannrichter etc.) */
+.signatur {
+  margin: var(--space-md) 0 0;
+  color: var(--color-accent-dark);
+}
+
+/* ---- Editorische Stimme (Kommentare von Siegfried Kramer) ---- */
+/* Alles, was NICHT der historische Prozesstext ist, steht ohne Serifen,
+   damit sich Vaters Anmerkungen klar vom „Buch“ abheben. */
+.kommentar {
+  font-family: var(--font-sans);
+  color: var(--color-muted);
+}
+.kommentar h3 {
+  font-family: var(--font-sans);
 }
 
 /* ---- Footer ---- */
