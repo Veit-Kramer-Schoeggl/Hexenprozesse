@@ -11,17 +11,10 @@
     @@include('header')
 
     <main class="container">
-      <article class="prozess stil-papier">
+      <article class="prozess">
         <header class="prozess-header">
           <h1>Andreas Zechner I</h1>
         </header>
-
-        <!-- Nur zum Vergleich der beiden Darstellungen — kann später raus -->
-        <div class="stil-umschalter" role="group" aria-label="Darstellung der Prozesstage">
-          <span>Darstellung:</span>
-          <button type="button" data-stil="papier" class="active">Buchseite</button>
-          <button type="button" data-stil="box">Schlichte Box</button>
-        </div>
 
         <h2>Der Prozess gegen Stefan Zechner (vulgo „Steffl am Hoff“)</h2>
 
@@ -186,20 +179,5 @@
     </main>
 
     @@include('footer')
-    <script>
-      // Nur für den Vergleich: schaltet zwischen Buchseite und schlichter Box um
-      (function () {
-        var art = document.querySelector(".prozess");
-        document.querySelectorAll(".stil-umschalter button").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            var papier = btn.dataset.stil === "papier";
-            art.classList.toggle("stil-papier", papier);
-            document.querySelectorAll(".stil-umschalter button").forEach(function (b) {
-              b.classList.toggle("active", b === btn);
-            });
-          });
-        });
-      })();
-    </script>
   </body>
 </html>
