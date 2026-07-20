@@ -426,6 +426,11 @@ code {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
+/* Karte, die selbst kein Link ist, weil sie mehrere Links enthaelt */
+.literatur-karte--statisch:hover {
+  transform: none;
+  box-shadow: none;
+}
 .literatur-cover {
   flex-shrink: 0;
   width: 80px;
