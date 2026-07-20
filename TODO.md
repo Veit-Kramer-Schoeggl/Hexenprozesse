@@ -14,20 +14,31 @@ Punkte löschen (die Historie steht in Git).
   nicht, den Untertitel ehrlicher fassen.
   (Stand Juli 2026: Veit vermutet, dass kein weiteres Material existiert.)
 
-## Fehlende Dateien
+## Fehlende Dateien — PDFs wiederherstellen
 
-- **Fünf tote PDF-Links.** Im Repo liegt unter `src/assets/` keine
-  einzige PDF-Datei, es wird aber an fünf Stellen auf welche verlinkt.
-  Vermutlich bei der Migration von der alten Site nicht mitgekommen.
-  Betroffen:
-  - `/images/fragenkatalog/fragenkatalog.pdf` (Fragenkatalog-Seite)
-  - `/images/lipp/lipp.pdf`
-  - `/images/neubauer/neubauer.pdf`
-  - `/images/rauch/rauch.pdf`
-  - `/images/wed-2/wed2.pdf` — Link ist bereits entfernt, da tot;
-    wieder einbauen, sobald die Datei da ist.
+**Fünf tote PDF-Links.** Im Repo liegt unter `src/assets/` keine einzige
+PDF-Datei, es wird aber an fünf Stellen auf welche verlinkt. Bei der
+Migration von der alten Site nicht mitgekommen.
 
-  Zu prüfen: liegen die PDFs unter `~/Desktop/Papa/Hexenprozesse/`?
+Zweck laut Link-Text: es sind **Druckfassungen der jeweiligen
+Protokolle** („Als PDF-Datei ausdrucken“ bzw. slowenisch „Natisniti kot
+PDF datoteko“) — also der Seiteninhalt als Download zum Ausdrucken.
+
+| Erwarteter Pfad | Seite |
+|---|---|
+| `/images/fragenkatalog/fragenkatalog.pdf` | Fragenkatalog |
+| `/images/lipp/lipp.pdf` | Michael Lipp |
+| `/images/neubauer/neubauer.pdf` | Ursula Neubauer |
+| `/images/rauch/rauch.pdf` | Veronika Rauch |
+| `/images/wed-2/wed2.pdf` | Dorothea Wed (slovensko) |
+
+Die Links bleiben bewusst im Code stehen — die Dateien sollen
+wiederhergestellt werden. Sobald sie da sind, einfach unter den obigen
+Pfaden in `src/assets/` ablegen, dann greifen alle fünf Links wieder.
+
+Suche bisher erfolglos: das Archiv unter `~/Desktop/Papa/` existiert auf
+dem aktuellen Rechner nicht (Stand Juli 2026). Dort zuerst nachsehen,
+sonst in der alten Live-Sicherung (`01_Archiv/PHPsicherung`).
 
 ## Maske ausrollen
 

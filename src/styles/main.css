@@ -561,6 +561,27 @@ code {
 .rede-zechner .redner {
   color: #8a5525;
 }
+/* generische Rollen — Gericht/Obrigkeit und beschuldigte Person */
+.rede-gericht {
+  border-left-color: #4f81bd;
+  background: rgba(79, 129, 189, 0.06);
+}
+.rede-gericht .redner {
+  color: #2f5c8a;
+}
+.rede-beschuldigt {
+  border-left-color: #b07a45;
+  background: rgba(176, 122, 69, 0.08);
+}
+.rede-beschuldigt .redner {
+  color: #8a5525;
+}
+/* Protokolle in indirekter Rede (Konjunktiv) stehen aufrecht, nicht
+   kursiv — kursiv bleibt der wörtlichen Rede vorbehalten. */
+.rede-indirekt {
+  font-style: normal;
+}
+
 /* dritte Stimme (Zeugen, weitere Beteiligte) */
 .rede-dritt {
   border-left-color: #7a6a86;
