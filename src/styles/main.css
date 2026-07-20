@@ -276,6 +276,12 @@ code {
   padding-bottom: var(--space-sm);
   margin-bottom: var(--space-lg);
 }
+/* Titel und Untertitel der Seite mittig; Abschnitts-Überschriften
+   (z. B. in Kommentarblöcken) bleiben linksbündig. */
+.prozess h1,
+.prozess > h2 {
+  text-align: center;
+}
 
 /* ---- Migrated content (figures, tables, raw HTML imports) ---- */
 .prozess figure,
@@ -656,8 +662,8 @@ code {
   padding: 0;
   margin: var(--space-md) 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-  gap: var(--space-sm);
+  grid-template-columns: 1fr;
+  gap: var(--space-xs);
 }
 .kapitel-index a,
 .kapitel-index .kap-leer {
