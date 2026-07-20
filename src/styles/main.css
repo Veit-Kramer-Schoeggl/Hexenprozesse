@@ -293,6 +293,9 @@ code {
 .container figure img {
   max-width: 100%;
   height: auto;
+  /* img ist global display:block — ohne auto-Rand wirkt das
+     text-align:center der figure nicht und das Bild klebt am Rand. */
+  margin-inline: auto;
   border: 1px solid var(--color-border);
   background: #fff;
 }
@@ -318,6 +321,7 @@ code {
 .container img {
   max-width: 100%;
   height: auto;
+  margin-inline: auto;
 }
 .prozess blockquote,
 .container blockquote {
