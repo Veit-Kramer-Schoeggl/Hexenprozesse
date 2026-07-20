@@ -14,6 +14,27 @@ Punkte löschen (die Historie steht in Git).
   nicht, den Untertitel ehrlicher fassen.
   (Stand Juli 2026: Veit vermutet, dass kein weiteres Material existiert.)
 
+## Slowenische Übersetzungen ergänzen
+
+Mehrere Prozesse wurden auf heute slowenischem Gebiet verhandelt, liegen
+aber nur auf Deutsch vor. Für diese wäre eine slowenische Fassung
+wünschenswert — so wie sie für Dorothea Wed bereits existiert
+(übersetzt von **Carmen Weissenstein**).
+
+| Prozess | Ort | Jahr |
+|---|---|---|
+| [Helena Glanitschnigg](src/pages/prozesse/glanitschnigg.html) | Dreifaltigkeit bei Lichtenegg (Gorca) | 1701 |
+| [Gera Kopschitsch](src/pages/prozesse/kopschitsch.html) | Gutenhag, Rohitschberg (Donačka gora) | 1661 |
+
+Weitere Kandidaten mit slowenischem Bezug, noch zu sichten: Gera Scherb
+und Marina Hörk (Luttenberg / Ljutomer), Gera Gregoritsch (Freyenthurn,
+Krain), Türk (Luttenberg), Wukinetz.
+
+Recherche bisher ergebnislos: Weder im Repo noch im Netz findet sich ein
+Hinweis, dass Carmen Weissenstein außer Dorothea Wed noch weitere dieser
+Prozesse übersetzt hat (Stand Juli 2026). Falls Kontakt zu ihr besteht,
+wäre das der kürzeste Weg.
+
 ## Fehlende Dateien — PDFs wiederherstellen
 
 **Fünf tote PDF-Links.** Im Repo liegt unter `src/assets/` keine einzige
