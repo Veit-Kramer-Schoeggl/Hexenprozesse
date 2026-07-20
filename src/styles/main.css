@@ -606,6 +606,58 @@ code {
   color: var(--color-muted);
 }
 
+/* ---- Byloff: wissenschaftlicher Apparat & Kapitelverzeichnis ---- */
+/* Byloffs Archivsignaturen, Kontextangaben und Fußnoten. Dritte Stimme
+   neben dem Quellentext (Serifen) und den Anmerkungen des Bearbeiters. */
+.apparat {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  border-left: 2px solid var(--color-border);
+  padding-left: var(--space-sm);
+  margin: 0 0 var(--space-md);
+}
+.kap-jahr {
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.kapitel-index {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+}
+.kapitel-index li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  gap: var(--space-xs);
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.kapitel-index .kap-nr {
+  min-width: 2.2rem;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+.kapitel-index .kap-jahr {
+  margin-left: auto;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+.kapitel-index .kap-fehlt,
+.kapitel-index .kap-fehlt .kap-nr {
+  color: #a09a8e;
+}
+.kap-status {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #a09a8e;
+  margin-left: auto;
+}
+
 /* ---- Footer ---- */
 .site-footer {
   margin-top: var(--space-xl);
