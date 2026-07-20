@@ -582,6 +582,15 @@ code {
   margin-bottom: var(--space-xs);
 }
 
+/* Name der/des Angeklagten, im Protokoll eigens herausgestellt */
+.angeklagter {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: var(--space-md) 0;
+}
+
 /* Unterschrift (Bannrichter etc.) */
 .signatur {
   margin: var(--space-md) 0 0;
@@ -622,56 +631,77 @@ code {
   opacity: 0.75;
 }
 
-/* Kapitel-Kopf: erste Zeile Nummer + Jahr, darunter der Kapitelname */
+/* Kopfzeile einer Buchseite: oben mittig Ort/Nummer + Jahr,
+   darunter die Bezeichnung des Aktenstücks bzw. Kapitels. */
 .prozess-tag-datum .kap-kopf {
   display: block;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 400;
-  letter-spacing: 0.14em;
-  opacity: 0.8;
-  margin-bottom: 0.2rem;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
 }
 .prozess-tag-datum .kap-name {
   display: block;
   text-align: center;
+  font-size: 1.2rem;
   line-height: 1.3;
 }
 
+/* Kapitelverzeichnis: jedes Kapitel ein eigenes Kästchen, oben mittig
+   Nummer und Jahr, darunter der Kapitelname. */
 .kapitel-index {
   list-style: none;
   padding: 0;
   margin: var(--space-md) 0;
-  font-family: var(--font-sans);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: var(--space-sm);
+}
+.kapitel-index a,
+.kapitel-index .kap-leer {
+  display: block;
+  height: 100%;
+  padding: var(--space-sm);
+  border: 1px solid #cbb98d;
+  border-radius: var(--radius);
+  background-color: #f4ecd6;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.kapitel-index a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(70, 50, 20, 0.15);
+}
+.kapitel-index .kap-kopf {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
+  margin-bottom: 0.25rem;
+}
+.kapitel-index .kap-name {
+  display: block;
+  font-weight: 700;
   font-size: 0.95rem;
+  line-height: 1.3;
 }
-.kapitel-index li {
-  padding: 0.3rem 0;
-  border-bottom: 1px solid var(--color-border);
-  display: flex;
-  gap: var(--space-xs);
-  align-items: baseline;
-  flex-wrap: wrap;
-}
-.kapitel-index .kap-nr {
-  min-width: 2.2rem;
-  color: var(--color-muted);
-  font-variant-numeric: tabular-nums;
-}
-.kapitel-index .kap-jahr {
-  margin-left: auto;
-  color: var(--color-muted);
-  font-variant-numeric: tabular-nums;
-}
-.kapitel-index .kap-fehlt,
-.kapitel-index .kap-fehlt .kap-nr {
+/* nicht übertragene Kapitel: sichtbar, aber zurückgenommen */
+.kapitel-index .kap-leer {
+  background-color: #f2efe6;
+  border-style: dashed;
+  border-color: #d8d0bd;
   color: #a09a8e;
 }
-.kap-status {
-  font-size: 0.85rem;
+.kapitel-index .kap-status {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
   font-style: italic;
   color: #a09a8e;
-  margin-left: auto;
 }
 
 /* ---- Footer ---- */
