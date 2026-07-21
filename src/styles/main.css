@@ -1099,3 +1099,181 @@ code {
   justify-content: space-between;
   gap: var(--space-sm);
 }
+
+/* ---- Prozessliste als Kacheln, chronologisch ---- */
+.fall-epoche {
+  margin: var(--space-xl) 0;
+}
+.fall-epoche > h2 {
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-xs);
+}
+.epoche-text {
+  font-family: var(--font-sans);
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+}
+.fall-kacheln {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-lg) 0 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+@media (min-width: 640px) {
+  .fall-kacheln { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 980px) {
+  .fall-kacheln { grid-template-columns: repeat(3, 1fr); }
+}
+/* Die Kachel traegt denselben Buchseiten-Look wie die Prozess-Kaesten */
+.fall-kachel > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #cbb98d;
+  border-radius: var(--radius);
+  background-color: #f4ecd6;
+  background-image:
+    radial-gradient(120% 125% at 50% 42%, rgba(244, 236, 214, 0.9) 30%, rgba(244, 236, 214, 0) 80%),
+    url("/images/ui/parchment.svg");
+  background-repeat: no-repeat, repeat;
+  background-size: auto, 320px 320px;
+  box-shadow: 0 3px 12px rgba(70, 50, 20, 0.16);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.fall-kachel > a:hover,
+.fall-kachel > a:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(70, 50, 20, 0.26);
+  outline: none;
+}
+/* Feste Bildhoehe, damit die Textbloecke aller Kacheln auf gleicher Hoehe
+   beginnen. Der Selektor muss spezifischer sein als `.container img`. */
+.fall-kacheln .fall-bild {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid #cbb98d;
+}
+.fall-inhalt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: var(--space-sm) var(--space-md) var(--space-md);
+  flex: 1;
+  text-align: center;
+}
+.fall-jahr {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--color-muted);
+}
+.fall-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-accent-dark);
+  line-height: 1.25;
+}
+.fall-ort {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.35;
+  margin-bottom: var(--space-xs);
+}
+/* Der Ausgang steht immer unten buendig, egal wie lang der Ortsname ist */
+.fall-ausgang {
+  margin-top: auto;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  padding-top: var(--space-xs);
+  border-top: 1px solid rgba(120, 90, 40, 0.2);
+}
+.fall-ausgang--tod { color: #7a2b20; }
+.fall-ausgang--leben { color: #2f5d3a; }
+.fall-ausgang--offen { color: var(--color-muted); font-style: italic; }
+
+/* ---- Personenregister ---- */
+.register-werkzeuge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+  margin: var(--space-lg) 0 var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+}
+.register-suche {
+  flex: 1 1 14rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font: inherit;
+}
+.register-zahl {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+.register-tabelle {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.97rem;
+}
+.register-tabelle th {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-align: left;
+  border-bottom: 2px solid var(--color-accent-dark);
+  padding: var(--space-xs) var(--space-sm) var(--space-xs) 0;
+  position: sticky;
+  top: var(--kopf-hoehe, 0px);
+  background: var(--color-bg);
+  z-index: 2;
+}
+.register-tabelle th button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--color-accent-dark);
+  cursor: pointer;
+}
+.register-tabelle th button::after {
+  content: " ↕";
+  opacity: 0.4;
+  font-size: 0.85em;
+}
+.register-tabelle th[aria-sort="ascending"] button::after { content: " ↑"; opacity: 1; }
+.register-tabelle th[aria-sort="descending"] button::after { content: " ↓"; opacity: 1; }
+.register-tabelle td {
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-xs) var(--space-sm) var(--space-xs) 0;
+  vertical-align: top;
+}
+.register-tabelle tr[hidden] { display: none; }
+.register-rolle {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+.register-unsicher {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: #8a6b1f;
+}
+@media (max-width: 719px) {
+  .register-tabelle .spalte-rolle { display: none; }
+}

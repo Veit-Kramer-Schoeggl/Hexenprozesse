@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personenregister — Hexenprozesse</title>
+    <meta name="description" content="Register aller in den Prozessakten genannten Personen — Beschuldigte, Bannrichter, Beisitzer, Zeugen und Denunzianten" />
+    <link rel="stylesheet" href="../styles/main.css" />
+  </head>
+  <body>
+    @@include('header')
+
+    <main class="container">
+      <header class="prozess-header">
+        <h1>Personenregister</h1>
+      </header>
+
+      <p class="lead">@@personenAnzahl Personen aus den Akten dieser Sammlung — Beschuldigte, Bannrichter, Beisitzer, Zeugen, Denunzianten und alle, die in den Verhören namentlich genannt werden.</p>
+
+      <div class="kommentar">
+        <p>Das Register wird aus der von Hand gepflegten Kartei <code>denunziationen.json</code> erzeugt. Jeder Eintrag stammt aus einem Protokoll; nichts ist ergänzt oder erschlossen. Wo eine Zuordnung nur naheliegt — etwa weil zwei Protokolle denselben Vulgonamen verschieden schreiben —, steht <span class="register-unsicher">(unsicher)</span> dahinter.</p>
+        <p><strong>Die Spalte „gestorben“ ist zurückhaltend gefüllt.</strong> Ein Datum steht nur dort, wo die Person in einem dokumentierten Verfahren beschuldigt war und dieses Verfahren mit ihrem Tod endete — durch Hinrichtung oder in der Haft. Ein Strich heißt nicht, dass jemand überlebt hat; er heißt, dass die Akten dazu nichts sagen. Von den meisten hier genannten Menschen wissen wir nur, dass ihr Name einmal in einem Verhör gefallen ist.</p>
+        <p>Die 37 Namen der <a href="/pages/prozesse/pindter.html">Opferliste von Gleichenberg</a> sind mit aufgenommen. Zu 35 von ihnen ist nichts überliefert außer Name, Vulgoname und Herkunftsort.</p>
+      </div>
+
+      <div class="register-werkzeuge">
+        <label class="visually-hidden" for="register-suche">Im Register suchen</label>
+        <input class="register-suche" id="register-suche" type="search" placeholder="Name, Vulgoname oder Rolle suchen …" autocomplete="off" />
+        <span class="register-zahl" id="register-zahl"></span>
+      </div>
+
+      <table class="register-tabelle" id="register">
+        <thead>
+          <tr>
+            <th scope="col" aria-sort="ascending" data-sortiere="name"><button type="button">Name</button></th>
+            <th scope="col" class="spalte-rolle" data-sortiere="vorname"><button type="button">Vorname</button></th>
+            <th scope="col" data-sortiere="tod"><button type="button">gestorben</button></th>
+          </tr>
+        </thead>
+        <tbody>
+@@personenregister
+        </tbody>
+      </table>
+
+      <p class="hint"><em>Hinweis: Der Name verweist auf das Verfahren, in dem die Person vorkommt. Bei Personen, die in mehreren Verfahren genannt werden, führt der Verweis auf die eigene Prozessseite, sofern es eine gibt, sonst auf das erste Verfahren.</em></p>
+
+      <p><a href="/pages/prozesse/index.html"><strong>&rarr; Zur chronologischen Prozessliste</strong></a></p>
+    </main>
+
+    @@include('footer')
+    <script type="module" src="../scripts/register.js"></script>
+  </body>
+</html>
