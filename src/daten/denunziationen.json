@@ -1494,6 +1494,79 @@
       "seite": null,
       "anmerkung": "Von Katharina Zenz genannt; unter demselben Namen auch im Jantscher-Protokoll als Anfuehrer der Hexengesellschaft.",
       "status": "geprueft"
+    },
+    "mosegger-martha": {
+      "name": "Martha Mosegger",
+      "varianten": [
+        "Martha Moseggerin",
+        "Martha, die Witwe des Thomas Mosegger"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "amt": "Heil- und Kraeuterkundige in Geistthal",
+      "seite": "mosegger.html",
+      "anmerkung": "104 Jahre alt beim Verhoer, 40 Jahre verheiratet und 40 Jahre Witwe, sieben Kinder. Liest im Kristall, welches Kraut hilft. Bestreitet jeden Schadenzauber bis zuletzt. Seit 2003 erinnert der Frauenbrunnen in Geistthal an sie.",
+      "status": "geprueft"
+    },
+    "mosegger-thomas": {
+      "name": "Thomas Mosegger",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "amt": "Koehler aus Poellau",
+      "seite": null,
+      "anmerkung": "Ehemann; beim Prozess bereits seit rund 40 Jahren tot.",
+      "status": "geprueft"
+    },
+    "waldstein-frau-von": {
+      "name": "die Frau von Waldstein",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "amt": "Herrin auf Schloss Waldstein",
+      "seite": null,
+      "anmerkung": "Kaufte den Kristall von einem 'kleinen Mandl mit einem langen Bart', gab ihn der Dienstmagd mit auf die Alm und lehrte sie das Gebet dazu. Gegen sie selbst wurde nicht ermittelt.",
+      "status": "geprueft"
+    },
+    "klos-frau": {
+      "name": "Frau Klos",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "amt": "frueher Pflegerin in Greißenegg",
+      "seite": null,
+      "anmerkung": "Mosegger soll sie krank und ihren Sohn blind gemacht haben; sie bestreitet das und sagt, sie habe beide geheilt.",
+      "status": "geprueft"
+    },
+    "ruedin-frau-hauptmann": {
+      "name": "Frau Hauptmann Rüdin",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Liess Mosegger zweimal holen; bezahlte mit einer Staertin Wein.",
+      "status": "geprueft"
+    },
+    "uhrl-kaspar": {
+      "name": "Kaspar Uhrl",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "In seiner Keuschen in Geistthal lebte Mosegger zuletzt mit sechs weiteren Personen.",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -2672,6 +2745,45 @@
       },
       "fundstelle": "Prozess Peter Paar nach Fritz Byloff, Graz 1902; die uebrigen fuenf Protokolle im Archiv des Stiftes Rein",
       "gruppe": "gratwein-1686",
+      "status": "geprueft"
+    },
+    "mosegger.html": {
+      "beschuldigte": [
+        "mosegger-martha"
+      ],
+      "jahr": 1647,
+      "ort": "Herrschaft und Landgerichtshoheit Ober-Voitsberg",
+      "koordinaten": {
+        "lat": 47.0504742,
+        "lon": 15.1474771,
+        "quelle": "OSM-Geocoder, Voitsberg"
+      },
+      "bannrichter": [
+        "barth-johann-andreas"
+      ],
+      "zeugen": [],
+      "nennt": [
+        "mosegger-thomas",
+        "waldstein-frau-von",
+        "klos-frau",
+        "ruedin-frau-hauptmann",
+        "uhrl-kaspar"
+      ],
+      "typus": "heilkundig",
+      "anlass": [
+        "heiltaetigkeit"
+      ],
+      "anklage": [
+        "zauberei",
+        "wahrsagerei",
+        "segensprechen"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "Juli 1647",
+        "anmerkung": "Mit dem Schwert hingerichtet, danach verbrannt. Die Unterfertigung des Urteils traegt das Datum 9. Juli 1647 und liegt damit vor den Verhoeren vom 16. und 17. Juli - der Widerspruch steht so in der Vorlage."
+      },
+      "fundstelle": "Verhoer am 16. und 17. Juli 1647; Original im Archiv des Stiftes Rein",
       "status": "geprueft"
     }
   },

@@ -7,7 +7,7 @@
     <meta name="description" content="Verhör und Hinrichtung des 84-jährigen Hirten und Wolfsbanners Thomas Heiser, Landgericht St. Lambrecht 1653" />
     <script type="module" crossorigin src="/assets/chunk-7Wa1foeI.js"></script>
     <script type="module" crossorigin src="/assets/ortskarte-BPYxiFPV.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CXvGDFjO.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-D8WwfMDY.css">
   </head>
   <body>
     <header class="site-header">
@@ -267,6 +267,54 @@ document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
 document.addEventListener("click", () => {
   document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
 });
+
+// Wischen auf Touch-Geraeten: nach links zum naechsten Fall, nach rechts zum
+// vorherigen. Nutzt dieselben Ziele wie die Pfeile am Bildschirmrand.
+(() => {
+  const nav = document.querySelector("nav.fall-nav");
+  if (!nav || !window.matchMedia("(pointer: coarse)").matches) return;
+
+  const vor = nav.querySelector(".fall-nav-vor");
+  const zurueck = nav.querySelector(".fall-nav-zurueck");
+  if (!vor && !zurueck) return;
+
+  const MINDEST = 80; // zurueckgelegte Strecke in px
+  const STEILHEIT = 1.6; // waagrecht muss deutlich groesser sein als senkrecht
+  let x0 = 0, y0 = 0, aktiv = false;
+
+  // Innerhalb waagrecht scrollbarer Bereiche (Tabellen, Karte) nicht greifen
+  const inScrollbarem = (el) => {
+    for (let n = el; n && n !== document.body; n = n.parentElement) {
+      if (n.classList && n.classList.contains("ortskarte")) return true;
+      if (n.scrollWidth > n.clientWidth + 2) {
+        const ox = getComputedStyle(n).overflowX;
+        if (ox === "auto" || ox === "scroll") return true;
+      }
+    }
+    return false;
+  };
+
+  document.addEventListener("touchstart", (e) => {
+    aktiv = false;
+    if (e.touches.length !== 1) return;
+    const t = e.touches[0];
+    if (inScrollbarem(t.target)) return;
+    x0 = t.clientX; y0 = t.clientY; aktiv = true;
+  }, { passive: true });
+
+  document.addEventListener("touchend", (e) => {
+    if (!aktiv) return;
+    aktiv = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - x0, dy = t.clientY - y0;
+    if (Math.abs(dx) < MINDEST || Math.abs(dx) < Math.abs(dy) * STEILHEIT) return;
+    const ziel = dx < 0 ? vor : zurueck;
+    if (!ziel) return;
+    // kurz aufleuchten lassen, damit die Richtung erkennbar bleibt
+    ziel.classList.add("fall-nav-aktiv");
+    setTimeout(() => { window.location.href = ziel.href; }, 120);
+  }, { passive: true });
+})();
 </script>
   </body>
 </html>

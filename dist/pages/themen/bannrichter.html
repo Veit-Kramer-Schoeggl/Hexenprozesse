@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Die Bannrichter — Hexenprozesse</title>
     <meta name="description" content="Die Bannrichter der steirischen Zaubereiprozesse und die Verfahren, die sie geführt haben" />
-    <link rel="stylesheet" crossorigin href="/assets/main-CXvGDFjO.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-D8WwfMDY.css">
   </head>
   <body>
     <header class="site-header">
@@ -104,24 +104,26 @@
 
         <section class="prozess-tag" id="barth">
           <h3 class="prozess-tag-datum">
-            <span class="kap-kopf">Steiermark &middot; 1652–1664</span>
+            <span class="kap-kopf">Steiermark &middot; 1647–1664</span>
             <span class="kap-name">Johann Andreas Barth</span>
           </h3>
           <div class="prozess-tag-inhalt">
             <p>Bannrichter in der Steiermark, in den Protokollen auch als „Johann Andre Barth“ geführt. Sein Name kommt auf zwölf der hier dokumentierten Seiten vor — ob er überall den Vorsitz führte oder teils nur erwähnt wird, ist noch nicht durchgehend geprüft.</p>
-            <p>Das früheste bisher belegte Verfahren ist das gegen <a href="../prozesse/walburga.html">Walburga Moritz-Bärtl</a> 1652 am Stift- und Landgericht Rein — fünf Jahre vor dem bislang ältesten Nachweis.</p>
+            <p>Das früheste bisher belegte Verfahren ist das gegen <a href="../prozesse/mosegger.html">Martha Mosegger</a> 1647 am Landgericht Ober-Voitsberg — zehn Jahre vor dem ursprünglich ältesten Nachweis.</p>
+            <p><strong>Zweimal eine Heilerin.</strong> Mosegger 1647 und <a href="../prozesse/walburga.html">Walburga Moritz-Bärtl</a> 1652 sind beide keine Teufelsbund-Verfahren, sondern richten sich gegen die Heil- und Segenspraxis selbst. Beide Frauen sprechen einen Segen, der rückwärts zählt, bis nichts mehr übrig ist.</p>
             <p><strong>Auffällig:</strong> Er führte 1657 in Kapfenberg das Verfahren, in dem Marx Rueprecht unter Folter den „Steffl am Hoff“ denunzierte — und drei Jahre später in St. Peter Freienstein jenes gegen ebendiesen <a href="../prozesse/zechner-andreas-1.html">Stefan Zechner</a>, das mit dessen Hinrichtung endete. Derselbe Richter hörte also die Beschuldigung und vollstreckte sie.</p>
 
             <table class="todesliste">
               <caption>Bisher gesicherte Verfahren</caption>
               <tbody>
+                <tr><td><a href="../prozesse/mosegger.html">Martha Mosegger</a> <span class="glosse">(104 Jahre alt)</span></td><td>Juli 1647</td></tr>
                 <tr><td><a href="../prozesse/walburga.html">Walburga Moritz-Bärtl</a> <span class="glosse">(Vorsitz belegt, Ausgang nicht überliefert)</span></td><td>September 1652</td></tr>
                 <tr><td><a href="../prozesse/rueprecht.html">Marx Rueprecht</a> <span class="glosse">(Vorsitz belegt, Ausgang offen)</span></td><td>November 1657</td></tr>
                 <tr><td><a href="../prozesse/zechner-andreas-1.html">Stefan Zechner</a> („Steffl am Hoff“)</td><td>15. April 1660</td></tr>
                 <tr><td><a href="../prozesse/keyditsch.html">Margaretha Keyditsch</a></td><td>22. Juni 1661</td></tr>
                 <tr><td><a href="../prozesse/keyditsch.html">Apollonia</a></td><td>27. Juni 1661</td></tr>
                 <tr><td><a href="../prozesse/poellinger.html">Lorenz Pöllinger</a></td><td>20. März 1664</td></tr>
-                <tr class="summe"><td>Vollstreckte Todesurteile</td><td>4 belegt, weitere offen</td></tr>
+                <tr class="summe"><td>Vollstreckte Todesurteile</td><td>5 belegt, weitere offen</td></tr>
               </tbody>
             </table>
           </div>
@@ -264,6 +266,54 @@ document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
 document.addEventListener("click", () => {
   document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
 });
+
+// Wischen auf Touch-Geraeten: nach links zum naechsten Fall, nach rechts zum
+// vorherigen. Nutzt dieselben Ziele wie die Pfeile am Bildschirmrand.
+(() => {
+  const nav = document.querySelector("nav.fall-nav");
+  if (!nav || !window.matchMedia("(pointer: coarse)").matches) return;
+
+  const vor = nav.querySelector(".fall-nav-vor");
+  const zurueck = nav.querySelector(".fall-nav-zurueck");
+  if (!vor && !zurueck) return;
+
+  const MINDEST = 80; // zurueckgelegte Strecke in px
+  const STEILHEIT = 1.6; // waagrecht muss deutlich groesser sein als senkrecht
+  let x0 = 0, y0 = 0, aktiv = false;
+
+  // Innerhalb waagrecht scrollbarer Bereiche (Tabellen, Karte) nicht greifen
+  const inScrollbarem = (el) => {
+    for (let n = el; n && n !== document.body; n = n.parentElement) {
+      if (n.classList && n.classList.contains("ortskarte")) return true;
+      if (n.scrollWidth > n.clientWidth + 2) {
+        const ox = getComputedStyle(n).overflowX;
+        if (ox === "auto" || ox === "scroll") return true;
+      }
+    }
+    return false;
+  };
+
+  document.addEventListener("touchstart", (e) => {
+    aktiv = false;
+    if (e.touches.length !== 1) return;
+    const t = e.touches[0];
+    if (inScrollbarem(t.target)) return;
+    x0 = t.clientX; y0 = t.clientY; aktiv = true;
+  }, { passive: true });
+
+  document.addEventListener("touchend", (e) => {
+    if (!aktiv) return;
+    aktiv = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - x0, dy = t.clientY - y0;
+    if (Math.abs(dx) < MINDEST || Math.abs(dx) < Math.abs(dy) * STEILHEIT) return;
+    const ziel = dx < 0 ? vor : zurueck;
+    if (!ziel) return;
+    // kurz aufleuchten lassen, damit die Richtung erkennbar bleibt
+    ziel.classList.add("fall-nav-aktiv");
+    setTimeout(() => { window.location.href = ziel.href; }, 120);
+  }, { passive: true });
+})();
 </script>
   </body>
 </html>

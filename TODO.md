@@ -152,6 +152,27 @@ Herrschaft Neudau / Landgericht Burgau im Steiermärkischen Landesarchiv.
 Repo und ist auch im Internet Archive nicht auffindbar (Stand Juli 2026).
 Alle anderen fehlenden Bilder wurden von dort zurückgeholt.
 
+**Wischen zwischen den Fällen — noch nicht am Gerät geprüft.** Die
+Touch-Geste ist im Footer-Partial umgesetzt (wischen nach links = nächster
+Fall, nach rechts = vorheriger). Sie greift nur bei `pointer: coarse`, also
+nicht mit der Maus, und lässt waagrecht scrollbare Bereiche (Tabellen,
+Ortskarte) in Ruhe. Getestet ist bisher nur, dass der Code auf allen 37
+Prozessseiten ankommt — **auf einem echten Telefon ausprobieren**, vor
+allem: Kommt man beim seitlichen Scrollen der Kostentabellen versehentlich
+auf die nächste Seite? Ist die Mindeststrecke von 80 px passend?
+
+**Seitentitel „Peter Paar" passt nicht ganz zum Inhalt.** Die Seite
+[schoeckl.html](src/pages/prozesse/schoeckl.html) heißt in der Prozessliste
+nach Peter Paar, versammelt aber sechs Verfahren des Landgerichts Rein
+unter dem gemeinsamen Thema „Der Schöckl als Versammlungsort": Peter Paar
+(vollständig), dazu Katharina Zenz, Maria Nunner, Walburga Koch, Sebastian
+Anderhub und Simon Moyses in Auszügen. Das bricht mit der Konvention
+„eine Seite = eine Person". Drei Möglichkeiten: so lassen, die Seite in
+„Der Schöckl" umbenennen, oder die fünf Auszüge auf eigene Seiten
+aufteilen (dafür müssten die Originale im Stiftsarchiv Rein nachgesehen
+werden, die Auszüge allein tragen keine eigene Seite). Vorerst bewusst
+so gelassen (Stand Juli 2026).
+
 **Probst von Gurk: 200 Zauberer?** Thomas Heiser gibt 1653 zu Protokoll
 (Punkt 47), der frühere Probst von Gurk habe an die zweihundert Zauberer,
 Wettermacher und Wolfsbanner unterhalten und jährlich bewirtet, sei

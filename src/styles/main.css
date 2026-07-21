@@ -916,9 +916,14 @@ code {
   background: transparent;
   transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 }
-.fall-nav-pfeil:hover {
+.fall-nav-pfeil:hover,
+.fall-nav-pfeil.fall-nav-aktiv {
   background: rgba(120, 90, 40, 0.1);
   color: var(--color-accent-dark);
+}
+/* Rueckmeldung beim Wischen auf Touch-Geraeten */
+.fall-nav-pfeil.fall-nav-aktiv {
+  background: rgba(120, 90, 40, 0.22);
 }
 .fall-nav-vor {
   margin-left: auto;
