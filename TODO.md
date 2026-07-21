@@ -147,15 +147,21 @@ benutzt hat. Eine kurze Websuche bringt nur die eigene Seite zurück.
 Nächster Schritt wäre das Original: Hofkanzlei- bzw. Regierungsakten zur
 Herrschaft Neudau / Landgericht Burgau im Steiermärkischen Landesarchiv.
 
-**Opferliste von Gleichenberg in das Todeslisten-Format bringen.** Auf der
-Seite [Susanne Pindter](src/pages/prozesse/pindter.html) steht eine
-Liste von 37 Namen — mit Vulgonamen und Herkunftsort, aber ohne Daten.
-Sie gehört in das Format der Todeslisten (Namen links, Datum rechts,
-dicker Strich, Summe) und in die Kartei. Zwei der 37 haben ein erhaltenes
-Protokoll: Susanne Pindter (hingerichtet 31. März 1689) und Veronika
-Rauch (25. Mai 1689). Ein Bannrichter wird in beiden Protokollen nicht
-genannt — die Liste lässt sich also keinem Bannrichter zuordnen. Beim
-Überführen der Pindter-Seite miterledigen.
+**Aufnahmeort eines Bildes unbekannt.** Auf der Seite
+[Veronika Rauch](src/pages/prozesse/rauch.html) steht ein Foto eines
+Wappens an einem Grabdenkmal (`IMG_0658k.JPG`). Wo es aufgenommen wurde,
+ist nirgends vermerkt; die Bildnummern liegen nahe bei den Aufnahmen der
+Pfarrkirche Trautmannsdorf, das ist aber nur eine Vermutung. Die
+Bildunterschrift nennt deshalb keinen Ort. Veit weiß es nicht (Stand
+Juli 2026). Falls sich der Ort klären lässt, Bildunterschrift ergänzen.
+
+**Jakob Sommer / Jakob Summer — Namensgleichheit oder mehr?** Auf der
+Opferliste von Gleichenberg steht ein „Jakob Sommer aus Waldsberg“. Der
+Landgerichtsverwalter, der beide erhaltenen Verhöre führt, heißt „Jakob
+Summer“. Die Schreibweisen unterscheiden sich, und der Name war häufig —
+es ist also vermutlich Zufall. Weil es aber, falls doch nicht, ein sehr
+auffälliger Befund wäre, hier notiert. Auf der Seite steht dazu bewusst
+nichts.
 
 ## Fehlende Dateien — PDFs wiederherstellen
 

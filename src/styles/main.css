@@ -716,6 +716,11 @@ code {
   padding-top: var(--space-sm);
   font-weight: 700;
 }
+/* Variante mit Herkunftsorten statt Daten in der rechten Spalte:
+   Ortsnamen dürfen umbrechen, sonst sprengen sie schmale Displays */
+.todesliste--orte td + td {
+  white-space: normal;
+}
 /* Todesfälle in Haft zählen nicht als Hinrichtung und stehen abgesetzt */
 .todesliste .kein-urteil td {
   color: var(--color-muted);

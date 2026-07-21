@@ -1016,6 +1016,278 @@
         "schepp.html",
         "glanitschnigg.html"
       ]
+    },
+    "gleichenberg-1689": {
+      "titel": "Landgericht Gleichenberg 1689",
+      "beschreibung": "Eine Verfolgungswelle unter der graeflichen Herrschaft Trautmannsdorf und der Landgerichtshoheit Gleichenberg. Verhoert wurde vor dem Landgerichtsverwalter Jakob Summer; Peter Staudacher, Ratsbuerger von Gnas, sass in beiden erhaltenen Verfahren als Beisitzer. Die Gestaendnisse nennen uebereinstimmend den Gleichenberger und den Stradner Kogel als Versammlungsorte, Veronika Rauch dazu den Schoeckl. Ein Bannrichter wird in keinem der beiden Protokolle genannt.",
+      "seiten": [
+        "pindter.html",
+        "rauch.html"
+      ],
+      "opferliste": {
+        "hinweis": "37 Namen, im Pindter-Protokoll ueberliefert. Ohne Daten und ohne Zuordnung zu einem Bannrichter. Nur zwei der 37 haben ein erhaltenes Verhoerprotokoll; die uebrigen 35 stehen bewusst nicht unter 'personen', weil sie genau einmal vorkommen und keine Verbindung zwischen Prozessen stiften.",
+        "namen": [
+          {
+            "name": "Susanna Pindter",
+            "vulgo": "Raidly",
+            "ort": "Merkendorf",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Maria Ladler",
+            "vulgo": "Gollabitsch",
+            "ort": "Haager Greitdorn",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Ursula Gindl",
+            "vulgo": "Grandl",
+            "ort": "Sulz",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Hans Gindl",
+            "vulgo": "Grandl",
+            "ort": "Sulz",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Peter Fossolt",
+            "vulgo": "Tarkner",
+            "ort": "Merkendorf",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Susanna Repp",
+            "vulgo": null,
+            "ort": "Haager Greitdorn",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Ursula Fossolt",
+            "vulgo": null,
+            "ort": "Merkendorf",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Veronika Rauch",
+            "vulgo": null,
+            "ort": "Merkendorf",
+            "geschlecht": "w",
+            "seite": "rauch.html"
+          },
+          {
+            "name": "Matthias Schwanz",
+            "vulgo": null,
+            "ort": "Waldsberg",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Eva Legenstein",
+            "vulgo": null,
+            "ort": "Haag",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Hans Kropf",
+            "vulgo": null,
+            "ort": "Waldsberg",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Afra Schwanz",
+            "vulgo": null,
+            "ort": "Wilhelmsdorf",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Veronika Schwanz",
+            "vulgo": null,
+            "ort": "Waldsberg",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Eva List",
+            "vulgo": null,
+            "ort": "Haag",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Gertraud Hoffer",
+            "vulgo": null,
+            "ort": "Plödenbach",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Rosina Schwanz",
+            "vulgo": "Holzapfl",
+            "ort": "Waldsberg",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Veronika Takner",
+            "vulgo": null,
+            "ort": null,
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Andre Hirschmann",
+            "vulgo": "Schlosser Anderl",
+            "ort": "Bairisch Kölldorf",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Katharina Lackner",
+            "vulgo": "Amtmännin",
+            "ort": "Waldsberg",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Jakob Furtmüller",
+            "vulgo": null,
+            "ort": "Waldsberg",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Hans Scheer",
+            "vulgo": null,
+            "ort": "Wilhelmsdorf",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Franz Schwanz",
+            "vulgo": null,
+            "ort": "Wilhelmsdorf",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Jakob Sommer",
+            "vulgo": null,
+            "ort": "Waldsberg",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Barbara Hakl",
+            "vulgo": null,
+            "ort": "Merkendorf",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Maria Friz",
+            "vulgo": null,
+            "ort": "Waldsberg",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Maria Keinz",
+            "vulgo": null,
+            "ort": "Waldsberg",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Eva Stürk",
+            "vulgo": null,
+            "ort": "Haargreith",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Adam Großschedl",
+            "vulgo": null,
+            "ort": "Karbach",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Katharina Kumer",
+            "vulgo": null,
+            "ort": "Haarbergen",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Michael Reiber",
+            "vulgo": null,
+            "ort": "Grub",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Magdalena Kindler",
+            "vulgo": "Gollabitsch",
+            "ort": "Dirnbach",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Margaretha Scher",
+            "vulgo": null,
+            "ort": "Krusdorf",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Michael Hauer",
+            "vulgo": null,
+            "ort": "Grabergergen",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Mathias Stradner",
+            "vulgo": "Oswaldhiasl",
+            "ort": "Kuhgraben",
+            "geschlecht": "m",
+            "seite": null
+          },
+          {
+            "name": "Barbara Playhießl",
+            "vulgo": "Gutscheber",
+            "ort": "Dirnbach",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Kunigunde Matholt",
+            "vulgo": "Rabl",
+            "ort": "Karbach",
+            "geschlecht": "w",
+            "seite": null
+          },
+          {
+            "name": "Maria Neuwirth",
+            "vulgo": "Flaschker",
+            "ort": "Dirnbach",
+            "geschlecht": "w",
+            "seite": null
+          }
+        ]
+      }
     }
   },
   "prozesse": {
