@@ -114,6 +114,11 @@ dem OSM-Geocoder. Für einzelne historische Gebäude liefert er nichts:
   als ungesichert gekennzeichnet. Die Befestigung ist 1249 als
   „Luetenberch“ erwähnt — ob und wo Reste stehen, wäre zu klären.
 
+- **Herrschaft Admontbichl** — Prozessort des Verfahrens gegen Matthias
+  und Eva Hacker 1695. OpenStreetMap kennt den Namen nicht. Der
+  Kartenpunkt zeigt auf Obdach, wo alle Bilder der Seite aufgenommen
+  sind, und ist als ungesichert gekennzeichnet.
+
 ## Fehlende Seite: steger1.html
 
 Auf der Einführungsseite [St. Lambrecht 1653](src/pages/themen/lambrecht-1653.html)

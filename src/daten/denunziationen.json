@@ -78,8 +78,9 @@
       "rollen": [
         "bannrichter"
       ],
+      "amt": "Kaiserlicher Bannrichter in der Steiermark",
       "seite": null,
-      "status": "offen"
+      "status": "geprueft"
     },
     "guisinger-johann-jakob": {
       "name": "Dr. Johann Jakob Guisinger",
@@ -542,6 +543,27 @@
       ],
       "seite": "mschoepfer.html",
       "anmerkung": "Aus Hinteregg bei Oberwoelz; bei Byloff als Viehhalter gefuehrt",
+      "status": "geprueft"
+    },
+    "hacker-matthias": {
+      "name": "Matthias Hacker",
+      "varianten": [
+        "blauer Hiesele"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "hacker.html",
+      "anmerkung": "frueherer Bewohner der Kathal Taz Hube",
+      "status": "geprueft"
+    },
+    "hacker-eva": {
+      "name": "Eva Hacker",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "hacker.html",
+      "anmerkung": "Ehefrau des Matthias Hacker. Am 10. Dezember 1694 mit ihm gefangen genommen und am 22. Jaenner 1695 mit ihm hingerichtet. Ihr Verhoer ist nicht ueberliefert - sie erscheint in den Akten nur im Unkosten-Verzeichnis.",
       "status": "geprueft"
     }
   },
@@ -1087,6 +1109,41 @@
       },
       "fundstelle": "Protokoll vom 13. und 14. August 1614",
       "status": "geprueft"
+    },
+    "hacker.html": {
+      "beschuldigte": [
+        "hacker-matthias",
+        "hacker-eva"
+      ],
+      "jahr": 1695,
+      "ort": "Herrschaft und Landgerichts-Hoheit Admontbichl",
+      "koordinaten": {
+        "lat": 47.0683385,
+        "lon": 14.69537,
+        "quelle": "OSM-Geocoder, Obdach; Lage der Herrschaft Admontbichl nicht gesichert"
+      },
+      "bannrichter": [
+        "pistory-gottfried-jeremias"
+      ],
+      "zeugen": [],
+      "nennt": [],
+      "typus": "ortsansaessig",
+      "anlass": [],
+      "anklage": [
+        "wolfsbannerei"
+      ],
+      "kosten": {
+        "landgericht": "33 fl. 5 ß 18 d",
+        "scharfrichter": "41 fl. 48 kr.",
+        "anmerkung": "Rechnet durchgehend fuer zwei Personen ab"
+      },
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "22. Jänner 1695",
+        "anmerkung": "Matthias und Eva Hacker, gefangen seit 10. Dezember 1694"
+      },
+      "fundstelle": "Protokoll vom 13. bis 19. Jaenner 1695",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -1271,6 +1328,21 @@
         "name": "Marx Heen",
         "datum": "Mai 1683",
         "art": "hingerichtet"
+      }
+    ],
+    "pistory-gottfried-jeremias": [
+      {
+        "seite": "hacker.html",
+        "name": "Matthias Hacker",
+        "datum": "22. Jänner 1695",
+        "art": "hingerichtet"
+      },
+      {
+        "seite": "hacker.html",
+        "name": "Eva Hacker",
+        "datum": "22. Jänner 1695",
+        "art": "hingerichtet",
+        "anmerkung": "nur im Kostenverzeichnis belegt"
       }
     ]
   },
