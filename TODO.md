@@ -162,6 +162,19 @@ aufteilen (dafür müssten die Originale im Stiftsarchiv Rein nachgesehen
 werden, die Auszüge allein tragen keine eigene Seite). Vorerst bewusst
 so gelassen (Stand Juli 2026).
 
+**Wo lag die Herrschaft Freyenthurn von 1694?** Die Seite
+[Gera Gregoritsch](src/pages/prozesse/freyenthurn.html) folgt der
+Zuordnung Siegfried Kramers nach Klagenfurt, von wo auch die Bilder
+stammen. Der Protokolltext weist aber deutlich nach Krain: Der Schreiber
+unterzeichnet als „Banngerichtsschreiber in Krain“, verhandelt wird um
+das Landgericht Mattling (Möttling, heute Metlika in Bela krajina), als
+Versammlungsberg dient der Klek bei Ogulin in Kroatien, und alle fünf
+Angeklagten tragen slawische Namen. Entfernungen: Metlika–Klek 45 km,
+Klagenfurt–Klek 172 km. Zu klären wäre, ob es eine gleichnamige
+Herrschaft in Krain gab. Die Karte auf der Seite zeigt vorerst
+Klagenfurt und ist als fraglich gekennzeichnet; die Anmerkung legt die
+Indizien offen.
+
 **Probst von Gurk: 200 Zauberer?** Thomas Heiser gibt 1653 zu Protokoll
 (Punkt 47), der frühere Probst von Gurk habe an die zweihundert Zauberer,
 Wettermacher und Wolfsbanner unterhalten und jährlich bewirtet, sei
@@ -227,14 +240,26 @@ Suche bisher erfolglos: das Archiv unter `~/Desktop/Papa/` existiert auf
 dem aktuellen Rechner nicht (Stand Juli 2026). Dort zuerst nachsehen,
 sonst in der alten Live-Sicherung (`01_Archiv/PHPsicherung`).
 
-## Maske ausrollen
+## Maske ausrollen — Reststand
 
-Die einheitliche Prozess-Maske (Buchseiten-Boxen, Serif für den
-Quellentext, serifenlos für Kommentare) ist bisher angewandt auf:
+Die einheitliche Prozess-Maske (Buchseiten-Kästen, Serif für den
+Quellentext, serifenlos für Kommentare) ist auf **allen 36
+Prozessseiten** angewandt, ebenso auf den vier Byloff-Teilen und der
+Bannrichter-Seite.
 
-- Andreas Zechner I und II
-- Dionys und die Greschl
-- Byloff, Volkskundliches (alle vier Teile)
+Offen sind nur noch die **Ortskarten** auf sieben Seiten. Beim Nachziehen
+wird jede Seite ohnehin ganz gelesen und dabei die Kartei
+(`src/daten/denunziationen.json`) ergänzt und auf Querverweise sowie
+Byloff-Bezüge geprüft:
 
-Offen: die übrigen Prozessseiten, darunter Dorothea Wed (deutsch und
-slowenisch), bei denen bisher nur die Sprachauszeichnung korrigiert ist.
+| Seite | offen |
+|---|---|
+| [Gera Kopschitsch](src/pages/prozesse/kopschitsch.html) | Karte, Kartei, Querverweise |
+| [Gregor Heiser](src/pages/prozesse/heiser-2.html) | Karte, Kartei, Querverweise |
+| [Hans Glaser](src/pages/prozesse/glaser.html) | Karte, Kartei, Querverweise |
+| [Helena Glanitschnigg](src/pages/prozesse/glanitschnigg.html) | Karte, Querverweise (Kartei steht) |
+| [Lorenz Pöllinger](src/pages/prozesse/poellinger.html) | Karte, Kartei, Querverweise |
+| [Sebastian Kügl](src/pages/prozesse/kuegl.html) | Karte, Kartei, Querverweise |
+
+Erledigt in diesem Durchgang: Zechner II, Dionys, Wed (deutsch und
+slowenisch), Freyenthurn.

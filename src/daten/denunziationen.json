@@ -116,7 +116,8 @@
       "amt": "Vereidigter Banngerichtsschreiber in Krain",
       "seite": null,
       "status": "geprueft",
-      "geschlecht": "m"
+      "geschlecht": "m",
+      "anmerkung": "Unterfertigt das Freyenthurner Protokoll von 1694."
     },
     "posch-christina": {
       "name": "Christina Posch",
@@ -1961,6 +1962,121 @@
       "geschlecht": "m",
       "seite": null,
       "status": "geprueft"
+    },
+    "gregoritsch-gera": {
+      "name": "Gera Gregoritsch",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "amt": "Zimmermädchen im Schloss",
+      "seite": "freyenthurn.html",
+      "anmerkung": "Soll dem Grafen im Schlaf Haare ausgerupft und das vergiftete Pulver sowie die Pogatsche in die Kueche gebracht haben.",
+      "status": "geprueft"
+    },
+    "sittiher-anna": {
+      "name": "Anna Sittiher",
+      "varianten": [
+        "Anna Logkaiz",
+        "Anna Lagkaiza",
+        "Anna Lokaiz",
+        "Schneiders Frau"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "seite": "freyenthurn.html",
+      "anmerkung": "Sagte aus, die Graefin von Wazenberg habe sie zum Giftmord am Grafen von Purgstall anstiften wollen und ihr dafuer eine Krone geschickt.",
+      "status": "geprueft"
+    },
+    "valetko-kathra": {
+      "name": "Kathra Valetko",
+      "varianten": [
+        "Cathra Voletki"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "seite": "freyenthurn.html",
+      "anmerkung": "Bezeichnet sich als Anfuehrerin und seit 30 Jahren Zauberin. Nennt als Motiv der Gruppe die Furcht, von der Herrschaft hingerichtet zu werden, nachdem diese die Haelfte des Landgerichts Mattling uebernommen hatte.",
+      "status": "geprueft"
+    },
+    "nescha-anthans": {
+      "name": "Agnes oder Nescha Schuschiz",
+      "varianten": [
+        "Nescha, die Frau des Anthans"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "seite": "freyenthurn.html",
+      "anmerkung": "Erst vor eineinhalb bis zwei Jahren 'verfuehrt'. Bat den Grafen beim oeffentlichen Banngericht um Verzeihung.",
+      "status": "geprueft"
+    },
+    "bora-suppan": {
+      "name": "Bora, die alte Suppan",
+      "varianten": [
+        "Bora Adleschitsch",
+        "die alte Verwalterin"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "amt": "Verwalterin",
+      "seite": "freyenthurn.html",
+      "anmerkung": "Hat sich bis zu ihrer letzten Stunde stumm gestellt und nichts gestanden. Trotzdem hingerichtet.",
+      "status": "geprueft"
+    },
+    "wazenberg-graefin-von": {
+      "name": "die Gräfin von Wazenberg",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Im Protokoll des Giftmordversuchs am Grafen von Purgstall und der Vergiftung der Graefin beschuldigt - aus Eifersucht. Ob gegen sie ermittelt wurde, ist nicht ueberliefert.",
+      "vermutlich": true,
+      "status": "unsicher"
+    },
+    "purgstall-graf-freyenthurn": {
+      "name": "der Graf von Purgstall (Freyenthurn)",
+      "varianten": [],
+      "rollen": [
+        "grundherr"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Herr der Herrschaft; seine Frau starb angeblich durch die Zauberei, er selbst blieb krank. Namensgleich mit dem Regierungskommissaer im Fall Michael Lipp - ein Zusammenhang der beiden Familienzweige ist nicht geprueft.",
+      "vermutlich": true,
+      "status": "unsicher"
+    },
+    "purgstall-graefin-von": {
+      "name": "die Gräfin von Purgstall",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Starb ein Jahr vor dem Prozess; ihr Tod ist der Anlass des Verfahrens.",
+      "status": "geprueft"
+    },
+    "pfarrer-von-zirknitz": {
+      "name": "der Pfarrer von Zirknitz",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Fand die Zaubersachen in den Betten der Herrschaft; zum Zeitpunkt des Prozesses bereits verstorben.",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -3463,6 +3579,51 @@
       "status": "geprueft",
       "sprache": "sl",
       "anmerkung": "Slowenische Fassung derselben Akte, uebersetzt von Carmen Weissenstein."
+    },
+    "freyenthurn.html": {
+      "beschuldigte": [
+        "gregoritsch-gera",
+        "sittiher-anna",
+        "valetko-kathra",
+        "nescha-anthans",
+        "bora-suppan"
+      ],
+      "jahr": 1694,
+      "ort": "Landgerichtliche Herrschaft Freyenthurn",
+      "koordinaten": {
+        "lat": 46.6257441,
+        "lon": 14.2571949,
+        "quelle": "OSM-Geocoder, Schloss Freyenthurn bei Klagenfurt - Zuordnung fraglich. Der Text weist nach Krain: Banngerichtsschreiber in Krain, Landgericht Mattling (Metlika), Versammlungsberg Klek bei Ogulin, durchwegs slawische Namen."
+      },
+      "bannrichter": [],
+      "gerichtsschreiber": [
+        "remigk-joh-bapt"
+      ],
+      "zeugen": [],
+      "nennt": [
+        "wazenberg-graefin-von",
+        "purgstall-graf-freyenthurn",
+        "purgstall-graefin-von",
+        "pfarrer-von-zirknitz"
+      ],
+      "typus": "dienend",
+      "anlass": [
+        "krankheit-im-umfeld"
+      ],
+      "anklage": [
+        "zauberei",
+        "giftmord",
+        "wetterzauber",
+        "hostienfrevel",
+        "kindstoetung"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "4. Dezember 1694",
+        "anmerkung": "Fuenf Frauen an einem Tag. Bora, die alte Suppan, hat bis zuletzt geschwiegen und wurde dennoch hingerichtet."
+      },
+      "fundstelle": "Auszug aus dem Banngerichtsprotokoll vom 4. Dezember 1694; abgedruckt bei Hammer-Purgstall, Die Gallerin auf der Riegersburg (Wien 1849)",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
