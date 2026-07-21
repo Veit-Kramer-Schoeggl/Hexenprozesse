@@ -306,6 +306,88 @@
       "amt": "Marktrichter in St. Lambrecht",
       "seite": null,
       "status": "geprueft"
+    },
+    "tuerk-katharina": {
+      "name": "Katharina Türk",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": null,
+      "anmerkung": "ca. 45 Jahre, Eltern aus Schützendorf; bestreitet",
+      "status": "geprueft"
+    },
+    "samoritsch-marina": {
+      "name": "Marina Samoritsch",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": null,
+      "anmerkung": "Witwe aus Zweng, ca. 30 Jahre; gesteht",
+      "status": "geprueft"
+    },
+    "obran-urscha": {
+      "name": "Urscha, Witwe des Georg Obran",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": null,
+      "anmerkung": "aus Jessern, ca. 47 Jahre; gesteht, wurde gefoltert",
+      "status": "geprueft"
+    },
+    "vidanitsch-urscha": {
+      "name": "Urscha, Ehefrau des Jury Vidanitsch",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": null,
+      "anmerkung": "aus Schützendorf, ca. 30 Jahre; gesteht",
+      "status": "geprueft"
+    },
+    "pillay-margaretha": {
+      "name": "Margaretha, Frau des Hans Pillay",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": null,
+      "anmerkung": "aus Braunegendorf, ca. 48 Jahre",
+      "status": "geprueft"
+    },
+    "scherschen-margaretha": {
+      "name": "Margaretha Scherschen",
+      "rollen": [
+        "beschuldigt",
+        "denunziantin"
+      ],
+      "seite": null,
+      "anmerkung": "vor 1672 verbrannt; belastet drei der Inhaftierten",
+      "status": "geprueft"
+    },
+    "krainz-eva": {
+      "name": "Eva Krainz",
+      "rollen": [
+        "beschuldigt",
+        "denunziantin"
+      ],
+      "seite": null,
+      "anmerkung": "vor 1672 hingerichtet; belastet zwei der Inhaftierten",
+      "status": "geprueft"
+    },
+    "scherb-gera": {
+      "name": "Gera Scherb",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "scherb.html",
+      "status": "geprueft"
+    },
+    "hoerk-marina": {
+      "name": "Marina Hörk",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "hoerk.html",
+      "anmerkung": "Schwester von Gera Scherb",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -347,6 +429,16 @@
         "dionys.html",
         "metnitz.html",
         "mschoepfer.html"
+      ]
+    },
+    "luttenberg-1672": {
+      "titel": "Luttenberg (Ljutomer) 1672",
+      "beschreibung": "Eine zusammenhängende Verfolgungswelle des Landgerichts Luttenberg. Die Prozesse gegen Gera Scherb, ihre Schwester Marina Hörk und die elf im April inhaftierten Frauen sind im selben Aktenbestand COP 1672-IV-59 überliefert. Die Belastungen stützen sich durchweg auf Aussagen bereits Hingerichteter, die zum Zeitpunkt der Verhöre nicht mehr befragt werden konnten.",
+      "archivsignatur": "COP 1672-IV-59",
+      "seiten": [
+        "scherb.html",
+        "hoerk.html",
+        "tuerk.html"
       ]
     }
   },
@@ -484,6 +576,38 @@
         "anmerkung": "mit dem Schwert, danach Verbrennung des Körpers"
       },
       "fundstelle": "Protokoll vom 2. und 3. September 1604",
+      "status": "geprueft"
+    },
+    "tuerk.html": {
+      "beschuldigte": [
+        "tuerk-katharina",
+        "samoritsch-marina",
+        "vidanitsch-urscha",
+        "obran-urscha",
+        "pillay-margaretha"
+      ],
+      "jahr": 1672,
+      "ort": "Schloss Luttenberg (Ljutomer, Slowenien)",
+      "koordinaten": {
+        "lat": 46.5187046,
+        "lon": 16.1967404,
+        "quelle": "OSM-Geocoder, Ljutomer"
+      },
+      "bannrichter": [],
+      "zeugen": [],
+      "gruppe": "luttenberg-1672",
+      "anmerkung": "Sammelverfahren gegen elf Frauen; nur fuenf sind namentlich eindeutig fassbar, die uebrigen werden ueber Ehemann oder Verwandtschaft bezeichnet.",
+      "denunziertVon": [
+        "scherschen-margaretha",
+        "krainz-eva",
+        "scherb-gera"
+      ],
+      "nennt": [],
+      "ausgang": {
+        "art": "nicht-ueberliefert",
+        "anmerkung": "Auf dieser Seite kein Urteil überliefert"
+      },
+      "fundstelle": "Verhör vom 27. April 1672",
       "status": "geprueft"
     }
   },
