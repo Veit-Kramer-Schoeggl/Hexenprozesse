@@ -451,8 +451,8 @@
     "paar-peter": {
       "name": "Peter Paar",
       "varianten": [
-        "Schupfer",
-        "der Schupfer"
+        "vulgo Schupfer",
+        "Peter Schupfer"
       ],
       "rollen": [
         "beschuldigt"
@@ -1336,12 +1336,170 @@
       "amt": "Inhaber der Herrschaft Gutenhag",
       "seite": null,
       "status": "geprueft"
+    },
+    "zenz-katharina": {
+      "name": "Katharina Zenz",
+      "varianten": [
+        "vulgo Ederin"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "amt": "wohnhaft in Stübing",
+      "seite": "schoeckl.html",
+      "anmerkung": "25 Jahre alt, fuenf Kinder. Nur im Auszug ueberliefert.",
+      "status": "geprueft"
+    },
+    "nunner-maria": {
+      "name": "Maria Nunner",
+      "varianten": [
+        "vulgo Huberin"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "amt": "wohnhaft in Stübing, keiner Herrschaft untertan",
+      "seite": "schoeckl.html",
+      "anmerkung": "37 Jahre alt. Witwe des hingerichteten Huber, danach wieder verheiratet.",
+      "status": "geprueft"
+    },
+    "koch-walburga": {
+      "name": "Walburga Koch",
+      "varianten": [
+        "vulgo Schmelzer"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "amt": "wohnhaft in Geistthal, keiner Herrschaft untertan",
+      "seite": "schoeckl.html",
+      "anmerkung": "40 Jahre alt. Ohne Folter verhoert.",
+      "status": "geprueft"
+    },
+    "anderhub-sebastian": {
+      "name": "Sebastian Anderhub",
+      "varianten": [
+        "vulgo Mathl"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "amt": "Untertan des Stiftes Rein",
+      "seite": "schoeckl.html",
+      "anmerkung": "58 Jahre alt, sechs Kinder.",
+      "status": "geprueft"
+    },
+    "moyses-simon": {
+      "name": "Simon Moyses",
+      "varianten": [
+        "vulgo Hueber"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "amt": "wohnhaft in Stübing, Untertan von Rein",
+      "seite": "schoeckl.html",
+      "anmerkung": "60 Jahre alt.",
+      "status": "geprueft"
+    },
+    "stullpacher-mathes": {
+      "name": "Mathes Stullpacher",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Nur ueber die Banngerichts-Taxe von 1686 bekannt.",
+      "status": "geprueft"
+    },
+    "zoetl-adam": {
+      "name": "Adam Zötl",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Nur ueber die Banngerichts-Taxe von 1686 bekannt.",
+      "status": "geprueft"
+    },
+    "klobner-lena": {
+      "name": "Lena Klobner",
+      "varianten": [
+        "vulgo Pieter",
+        "die Lena"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Auf der Banngerichts-Taxe. Peter Paar nennt eine bereits hingerichtete 'Lena' und einen hingerichteten 'Pieter' - vermutlich dieselbe Person.",
+      "vermutlich": true,
+      "status": "unsicher"
+    },
+    "weiss-margareth": {
+      "name": "Margareth Weiss",
+      "varianten": [
+        "vulgo Pair"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Nur ueber die Banngerichts-Taxe von 1686 bekannt.",
+      "status": "geprueft"
+    },
+    "paar-andre": {
+      "name": "Andre Paar",
+      "varianten": [
+        "vulgo Grabenanderl"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Auf der Banngerichts-Taxe, gleicher Familienname wie Peter Paar; ein Verwandtschaftsverhaeltnis ist nicht belegt.",
+      "status": "geprueft"
+    },
+    "paanhaepp-andre": {
+      "name": "Andre Paanhäpp",
+      "varianten": [],
+      "rollen": [
+        "scharfrichter"
+      ],
+      "geschlecht": "m",
+      "amt": "steirischer Scharfrichter",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "ringshalmer-sebastian-amtmann": {
+      "name": "Sebastian Ringshalbmer",
+      "varianten": [
+        "Sebastian Ringshalmer"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "amt": "Amtmann",
+      "seite": null,
+      "anmerkung": "Von Katharina Zenz genannt; unter demselben Namen auch im Jantscher-Protokoll als Anfuehrer der Hexengesellschaft.",
+      "status": "geprueft"
     }
   },
   "gruppen": {
     "gratwein-1686": {
       "titel": "Gratwein, Stübing und Rein 1686",
-      "beschreibung": "Eine Reihe von Verfahren desselben Jahres im Raum nördlich von Graz, alle unter dem Bannrichter Dr. Johann Tillerich. Als Versammlungsort der „Hexengesellschaft“ nennen die Geständnisse übereinstimmend den Pleschkogel und den Schöckl.",
+      "beschreibung": "Eine Reihe von Verfahren desselben Jahres im Raum nördlich von Graz, alle unter dem Bannrichter Dr. Johann Tillerich. Als Versammlungsort der „Hexengesellschaft“ nennen die Geständnisse übereinstimmend den Pleschkogel und den Schöckl. Die Banngerichts-Taxe von 1686 (auf der Seite zu Peter Paar) nennt acht namentlich abgerechnete Personen, die Scharfrichter-Taxe verrechnet acht Hinrichtungen; mit Christina Posch sind damit neun Hinrichtungen dieser Welle belegt.",
       "seiten": [
         "posch.html",
         "jantscher.html",
@@ -2456,6 +2614,64 @@
       },
       "fundstelle": "Verhoere am 18., 19. und 20. August sowie 5. und 6. Dezember 1661, Urteil 10. Dezember 1661; abgedruckt in den Steiermaerkischen Geschichtsblaettern 1882, S. 148ff",
       "gruppe": "gutenhag-1661",
+      "status": "geprueft"
+    },
+    "schoeckl.html": {
+      "beschuldigte": [
+        "paar-peter",
+        "zenz-katharina",
+        "nunner-maria",
+        "koch-walburga",
+        "anderhub-sebastian",
+        "moyses-simon"
+      ],
+      "jahr": 1686,
+      "ort": "Stifts- und Landgerichts-Hoheit Rein",
+      "koordinaten": {
+        "lat": 47.1231264,
+        "lon": 15.3304611,
+        "quelle": "OSM-Geocoder, Gratwein-Straßengel"
+      },
+      "bannrichter": [
+        "tillerich-johann"
+      ],
+      "scharfrichter": [
+        "paanhaepp-andre"
+      ],
+      "zeugen": [],
+      "nennt": [
+        "stullpacher-mathes",
+        "zoetl-adam",
+        "klobner-lena",
+        "weiss-margareth",
+        "prantauerin",
+        "paar-andre",
+        "jantscher-margareth",
+        "ringshalmer-sebastian-amtmann",
+        "brunnbaeurin",
+        "muralterin"
+      ],
+      "typus": "ortsansaessig",
+      "anlass": [
+        "wetterschaden"
+      ],
+      "anklage": [
+        "zauberei",
+        "teufelsbund",
+        "wetterzauber"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "4. April 1686",
+        "anmerkung": "Peter Paar mit dem Strang. Die Scharfrichter-Taxe verrechnet insgesamt fuenf Hinrichtungen mit dem Schwert und drei mit dem Strang sowie acht Verbrennungen - acht Hingerichtete im selben Verfahrenszusammenhang."
+      },
+      "kosten": {
+        "banngericht": "179 fl. 37 kr. fuer acht Personen",
+        "scharfrichter": "50 fl. 7 kr.",
+        "anmerkung": "Die auf der Seite aufgezaehlten Posten der Scharfrichter-Taxe ergeben 18 fl. 15 kr.; der Rest entfaellt laut Kopfzeile auf Liefergeld, Essen und Entlohnung. Nachgerechnet."
+      },
+      "fundstelle": "Prozess Peter Paar nach Fritz Byloff, Graz 1902; die uebrigen fuenf Protokolle im Archiv des Stiftes Rein",
+      "gruppe": "gratwein-1686",
       "status": "geprueft"
     }
   },
