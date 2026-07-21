@@ -2482,6 +2482,97 @@
       "seite": null,
       "anmerkung": "Unterzeichnet den Befehl vom 11. Dezember 1663, den Denunzianten Pistrich zu untersuchen und Poellingers Geisteszustand zu pruefen.",
       "status": "geprueft"
+    },
+    "kuegl-sebastian": {
+      "name": "Sebastian Kügl",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "amt": "aus der Veitsch, fahrend",
+      "seite": "kuegl.html",
+      "anmerkung": "19 Jahre alt. Kein Zauberei-Vorwurf: verurteilt wegen Opferstockraub und Hostienfrevel. War zwei Jahre zuvor in Heiligenkreuz schon bestraft und 'ausgestochen' worden. Gemeinsam mit Marx Rueprecht in Spital am Semmering ertappt - gegen diesen wurde daraufhin ein Zaubereiprozess gefuehrt.",
+      "status": "geprueft"
+    },
+    "kuegl-kunigunde": {
+      "name": "Kunigunde",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Mutter des Sebastian Kuegl. Er sagt aus, sie habe ihn zweimal zur Unzucht genoetigt; sie floh ueber den Semmering nach Niederoesterreich. Ein Verfahren gegen sie ist nicht ueberliefert.",
+      "status": "geprueft"
+    },
+    "kuegl-andreas": {
+      "name": "Andreas Kügl",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "amt": "Knecht bei einem Bauern in der Veitsch",
+      "seite": null,
+      "anmerkung": "Bruder des Sebastian Kuegl.",
+      "status": "geprueft"
+    },
+    "lutschinger-andreas": {
+      "name": "Andreas Lutschinger",
+      "varianten": [],
+      "rollen": [
+        "landgerichtsverwalter"
+      ],
+      "geschlecht": "m",
+      "amt": "Verwalter der Herrschaft Kapfenberg",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "monzello-michael": {
+      "name": "Michael Monzello",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Marktrichter in Kapfenberg",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "lutschinger-thomas": {
+      "name": "Thomas Lutschinger",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbürger in Kapfenberg",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "kronstoffer-koloman": {
+      "name": "Koloman Kronstoffer",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbürger in Kapfenberg",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "peter-bettler": {
+      "name": "Peter",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "amt": "Bettler, im Spital von Neunkirchen angetroffen",
+      "seite": null,
+      "anmerkung": "Kamerad des Sebastian Kuegl bei mehreren Opferstockdiebstaehlen.",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -4246,6 +4337,51 @@
       },
       "fundstelle": "Verhoere 10. September bis 10. Oktober 1663, Befehl der Regierung 11. Dezember 1663, Vernehmung des Denunzianten 10. Jaenner 1664, Urteil 20. Maerz 1664; Originale im Schwarzenbergischen Archiv, Schloss Murau",
       "status": "geprueft"
+    },
+    "kuegl.html": {
+      "beschuldigte": [
+        "kuegl-sebastian"
+      ],
+      "jahr": 1657,
+      "ort": "Herrschaft und Landgerichtshoheit Kapfenberg",
+      "koordinaten": {
+        "lat": 47.4405481,
+        "lon": 15.2901669,
+        "quelle": "OSM-Geocoder, Kapfenberg"
+      },
+      "bannrichter": [],
+      "beisitzer": [
+        "lutschinger-andreas",
+        "monzello-michael",
+        "lutschinger-thomas",
+        "kronstoffer-koloman"
+      ],
+      "zeugen": [],
+      "nennt": [
+        "rueprecht-marx",
+        "kuegl-kunigunde",
+        "kuegl-andreas",
+        "peter-bettler"
+      ],
+      "typus": "fahrend",
+      "anlass": [
+        "ergriffen-bei-anderer-tat"
+      ],
+      "anklage": [
+        "opferstockraub",
+        "hostienfrevel",
+        "unzucht"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "8. November 1657",
+        "anmerkung": "Auf dem Scheiterhaufen mit Seilen erdrosselt und verbrannt. Kein Zauberei-Vorwurf im Verfahren."
+      },
+      "fundstelle": "Verhoere 1657, zweites Verhoer 26. Oktober, Urteil vollstreckt 8. November 1657; Original im Steiermaerkischen Landesarchiv",
+      "verwandt": [
+        "rueprecht.html"
+      ],
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -4542,6 +4678,12 @@
       "prozess": "heiser-1.html",
       "beleg": "Gestaendnis des Wolfbanners Blasius Puerhinger mit der Formel zur Aufloesung des Bannes; Heiser wird 1653 wegen derselben Praktik hingerichtet.",
       "prozess2": "heiser-2.html"
+    },
+    "teil-1#kap-12": {
+      "jahr": 1485,
+      "titel": "JUDENEXKREMENTE UND LEICHENTEILE NEUGEBORENER KINDER ALS ZAUBERMITTEL",
+      "prozess": "kuegl.html",
+      "beleg": "Derselbe Motivkreis der Hostienfrevel-Legende, der im Kuegl-Protokoll dreimal als Verkauf geraubter Hostien 'an die Juden' erscheint - ohne dass je ein Kaeufer benannt oder die Angabe geprueft wird."
     }
   }
 }

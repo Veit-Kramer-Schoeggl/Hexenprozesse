@@ -304,21 +304,21 @@ python3 -c "import json;d=json.load(open('src/daten/denunziationen.json',encodin
 - **Schloss Luttenberg** und **das Wappenbild bei Rauch** — eigene
   Punkte weiter oben.
 
-## Maske ausrollen — Reststand
+## Maske ausrollen — abgeschlossen
 
-Die einheitliche Prozess-Maske (Buchseiten-Kästen, Serif für den
-Quellentext, serifenlos für Kommentare) ist auf **allen 36
-Prozessseiten** angewandt, ebenso auf den vier Byloff-Teilen und der
-Bannrichter-Seite.
+Die einheitliche Prozess-Maske ist auf **allen 36 Prozessseiten**
+angewandt, ebenso auf den vier Byloff-Teilen und der Bannrichter-Seite.
+**Alle 36 Seiten haben Ortskarten** mit über den OSM-Geocoder geprüften
+Koordinaten; wo eine Zuordnung nur naheliegt, ist sie im Kartentext als
+unsicher gekennzeichnet und im Abschnitt „Unsichere Zuordnungen" oben
+gesammelt.
 
-Offen sind nur noch die **Ortskarten** auf sieben Seiten. Beim Nachziehen
-wird jede Seite ohnehin ganz gelesen und dabei die Kartei
-(`src/daten/denunziationen.json`) ergänzt und auf Querverweise sowie
-Byloff-Bezüge geprüft:
+Beim Durchgehen wurde jede Seite ganz gelesen und dabei die Kartei
+`src/daten/denunziationen.json` ergänzt — sie steht jetzt bei
+**219 Personen und 33 Prozessen** — sowie auf Querverweise und
+Byloff-Bezüge geprüft.
 
-| Seite | offen |
-|---|---|
-| [Sebastian Kügl](src/pages/prozesse/kuegl.html) | Karte, Kartei, Querverweise |
-
-Erledigt in diesem Durchgang: Zechner II, Dionys, Wed (deutsch und
-slowenisch), Freyenthurn, Kopschitsch, Gregor Heiser, Glaser, Glanitschnigg, Pöllinger.
+Was als Nächstes ansteht, ist der ursprüngliche Plan: das
+**Personenregister** (sortierbar nach Vor-/Nachname und Todesdatum) und
+die **chronologische Prozessliste als Kästen**, eventuell in vier
+Abschnitte gegliedert wie bei Byloff.
