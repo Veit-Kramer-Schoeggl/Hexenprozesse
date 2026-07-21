@@ -534,6 +534,15 @@
       ],
       "seite": "zechner-andreas-1.html",
       "status": "geprueft"
+    },
+    "schoepfer-marx": {
+      "name": "Marx Schöpfer",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "mschoepfer.html",
+      "anmerkung": "Aus Hinteregg bei Oberwoelz; bei Byloff als Viehhalter gefuehrt",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -649,7 +658,11 @@
       "ausgang": {
         "art": "hingerichtet",
         "datum": "27. April 1686"
-      }
+      },
+      "typus": "ortsansaessig",
+      "anlass": [
+        "denunziation-unter-folter"
+      ]
     },
     "schauberg.html": {
       "beschuldigte": [
@@ -697,7 +710,11 @@
         "anmerkung": "Urteil gefällt und vollzogen"
       },
       "fundstelle": "Protokoll vom 7.–18. November 1661",
-      "status": "geprueft"
+      "status": "geprueft",
+      "typus": "ortsansaessig",
+      "anlass": [
+        "denunziation-unter-folter"
+      ]
     },
     "metnitz.html": {
       "beschuldigte": [
@@ -730,7 +747,11 @@
         "anmerkung": "mit dem Schwert, danach Verbrennung des Körpers"
       },
       "fundstelle": "Protokoll vom 2. und 3. September 1604",
-      "status": "geprueft"
+      "status": "geprueft",
+      "typus": "fahrend",
+      "anlass": [
+        "wetterschaden"
+      ]
     },
     "tuerk.html": {
       "beschuldigte": [
@@ -762,7 +783,11 @@
         "anmerkung": "Auf dieser Seite kein Urteil überliefert"
       },
       "fundstelle": "Verhör vom 27. April 1672",
-      "status": "geprueft"
+      "status": "geprueft",
+      "typus": "ortsansaessig",
+      "anlass": [
+        "denunziation-unter-folter"
+      ]
     },
     "jantscher.html": {
       "beschuldigte": [
@@ -808,7 +833,11 @@
         "anmerkung": "mit dem Strick, danach Verbrennung"
       },
       "fundstelle": "Verhoer vom 5. und 6. April 1686",
-      "status": "geprueft"
+      "status": "geprueft",
+      "typus": "ortsansaessig",
+      "anlass": [
+        "denunziation-unter-folter"
+      ]
     },
     "keyditsch.html": {
       "beschuldigte": [
@@ -843,7 +872,11 @@
         "anmerkung": "Keyditsch am 22., Apollonia am 27. Juni"
       },
       "fundstelle": "Protokoll vom 14. bis 27. Juni 1661",
-      "status": "geprueft"
+      "status": "geprueft",
+      "typus": "ortsansaessig",
+      "anlass": [
+        "feindschaft"
+      ]
     },
     "hoerk.html": {
       "beschuldigte": [
@@ -883,7 +916,11 @@
         "anmerkung": "Byloff ediert das Verleumdungsverfahren vom 2. Juni 1671 in Radkersburg, in dem Michael Hoerk, Marina und Gera als Klaeger gegen Michael Gregoritsch auftreten - sieben Monate vor ihrer eigenen Verurteilung."
       },
       "fundstelle": "Protokoll vom 11. bis 23. Jaenner 1672",
-      "status": "geprueft"
+      "status": "geprueft",
+      "typus": "ortsansaessig",
+      "anlass": [
+        "denunziation-unter-folter"
+      ]
     },
     "schepp.html": {
       "beschuldigte": [
@@ -911,7 +948,9 @@
         "datum": "1695"
       },
       "fundstelle": "Protokoll vom 28. Juni 1695",
-      "status": "geprueft"
+      "status": "geprueft",
+      "typus": "ortsansaessig",
+      "anlass": []
     },
     "glanitschnigg.html": {
       "beschuldigte": [],
@@ -928,7 +967,11 @@
         "art": "hingerichtet",
         "datum": "10. Dezember 1701"
       },
-      "status": "geprueft"
+      "status": "geprueft",
+      "typus": "ortsansaessig",
+      "anlass": [
+        "denunziation-unter-folter"
+      ]
     },
     "heen.html": {
       "beschuldigte": [
@@ -956,7 +999,11 @@
         "anmerkung": "mit dem Strick an einem eigens auf dem Scheiterhaufen errichteten Galgen"
       },
       "fundstelle": "Protokoll vom 13. bis 15. Mai 1683",
-      "status": "geprueft"
+      "status": "geprueft",
+      "typus": "fahrend",
+      "anlass": [
+        "ergriffen-bei-anderer-tat"
+      ]
     },
     "rueprecht.html": {
       "beschuldigte": [
@@ -998,6 +1045,47 @@
         "anmerkung": "Auf dieser Seite kein Urteil ueberliefert; nach dem Widerruf kehrten die Denunzierten zunaechst frei nach Hause"
       },
       "fundstelle": "Protokoll vom 25. Oktober bis 6. November 1657",
+      "status": "geprueft",
+      "typus": "fahrend",
+      "anlass": [
+        "ergriffen-bei-anderer-tat"
+      ]
+    },
+    "mschoepfer.html": {
+      "beschuldigte": [
+        "schoepfer-marx"
+      ],
+      "jahr": 1614,
+      "ort": "Landgericht des Stiftes St. Lambrecht",
+      "koordinaten": {
+        "lat": 47.072029,
+        "lon": 14.2990842,
+        "quelle": "OSM-Geocoder, Sankt Lambrecht"
+      },
+      "bannrichter": [
+        "schaller-georg"
+      ],
+      "beisitzer": [
+        "offner-caspar"
+      ],
+      "zeugen": [],
+      "gruppe": "st-lambrecht-landgericht",
+      "nennt": [],
+      "typus": "dienend",
+      "anlass": [
+        "wetterschaden"
+      ],
+      "byloffBezug": {
+        "kapitel": 30,
+        "teil": 2,
+        "titel": "Vieh- und Milchzauber",
+        "anmerkung": "Byloff ediert einen Abschnitt dieses Protokolls und fuehrt Schoepfer als Viehhalter."
+      },
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "18. August 1614"
+      },
+      "fundstelle": "Protokoll vom 13. und 14. August 1614",
       "status": "geprueft"
     }
   },
@@ -1126,8 +1214,8 @@
       {
         "seite": "mschoepfer.html",
         "name": "Marx Schöpfer",
-        "datum": null,
-        "art": "offen"
+        "datum": "18. August 1614",
+        "art": "hingerichtet"
       }
     ],
     "barth-johann-andreas": [
@@ -1212,6 +1300,24 @@
       "prozess": "hoerk.html",
       "prozess2": "scherb.html",
       "beleg": "Klagsache des Michael Hoerg samt Ehegattin Marina und deren Schwester Gera gegen Michael Gregoritsch, Radkersburg 2. Juni 1671"
+    }
+  },
+  "_merkmale": {
+    "hinweis": "Zwei wiederkehrende Muster, die beim Bearbeiten der Protokolle auffielen. Nur eintragen, was das jeweilige Protokoll hergibt; unklare Faelle bleiben leer.",
+    "typus": {
+      "fahrend": "Bettler, Landstreicher, wandernde Knechte - ohne festen Wohnsitz und ohne Fuersprecher",
+      "dienend": "Hirten, Viehhalter, Knechte und Maegde in Dienstverhaeltnissen",
+      "ortsansaessig": "Bauern, Baeuerinnen und Witwen mit festem Wohnsitz in der Gemeinde",
+      "wohlhabend": "begueterte Bauern; bei ihnen steht oft auch Besitz im Spiel",
+      "amtstraeger": "Personen in einem Amt oder mit oeffentlicher Stellung"
+    },
+    "anlass": {
+      "denunziation-unter-folter": "benannt von einer anderen beschuldigten Person, haeufig einer bereits Hingerichteten",
+      "feindschaft": "vorausgegangener Streit, Raufhandel oder Nachbarschaftskonflikt",
+      "wetterschaden": "Hagel oder Unwetter, fuer das ein Schuldiger gesucht wurde",
+      "krankheit-im-umfeld": "Erkrankung oder Tod eines Nachbarn, Dienstherrn oder Tieres",
+      "erzwungenes-gestaendnis": "Gestaendnis durch Drohung oder List eines Privatmanns herbeigefuehrt",
+      "ergriffen-bei-anderer-tat": "zunaechst wegen Diebstahls ergriffen, Zauberei kam im Verhoer dazu"
     }
   }
 }
