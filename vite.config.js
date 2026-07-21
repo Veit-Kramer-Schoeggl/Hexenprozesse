@@ -27,6 +27,51 @@ function htmlIncludePlugin() {
   };
 }
 
+// Plugin: Ersetzt @@prozessAnzahl / @@prozessErster / @@prozessLetzter durch
+// die tatsächlichen Werte aus der Prozessliste. So bleiben Angaben wie
+// "35 dokumentierte Prozesse" automatisch richtig, sobald eine Seite dazu
+// kommt oder wegfällt — es genügt der normale Build.
+//
+// Bewusst zur Bauzeit und nicht per fetch() im Browser: die Seite ist
+// statisch und wird bei jedem Deployment ohnehin neu gebaut. Damit gibt es
+// keine zusätzliche Anfrage, kein Nachladen sichtbarer Zahlen und die
+// Angaben stehen auch ohne JavaScript im Quelltext.
+function prozessZahlenPlugin() {
+  const listePfad = fromSrc("pages", "prozesse", "index.html");
+
+  const lesen = () => {
+    const html = readFileSync(listePfad, "utf-8");
+    const eintraege = [];
+    const re = /<li([^>]*)><a href="\.\/[^"]+">([\s\S]*?)<\/a><\/li>/g;
+    let m;
+    while ((m = re.exec(html)) !== null) {
+      // Sprachvarianten sind derselbe Fall in einer anderen Sprache
+      if (/data-sprachvariante/.test(m[1])) continue;
+      const name = m[2]
+        .replace(/<[^>]*>/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+      if (name) eintraege.push(name);
+    }
+    return {
+      "@@prozessAnzahl": String(eintraege.length),
+      "@@prozessErster": eintraege[0] || "",
+      "@@prozessLetzter": eintraege[eintraege.length - 1] || "",
+    };
+  };
+
+  return {
+    name: "prozess-zahlen",
+    transformIndexHtml(html) {
+      const werte = lesen();
+      return html.replace(
+        /@@(prozessAnzahl|prozessErster|prozessLetzter)/g,
+        (treffer) => werte[treffer] ?? treffer,
+      );
+    },
+  };
+}
+
 // Auto-discover all HTML pages under src/ so new prozess-/themen-Seiten
 // automatisch ins Build wandern. Es muss nur die Datei in src/pages/...
 // existieren — kein Eintrag hier nötig.
@@ -52,7 +97,7 @@ export default defineConfig({
   root: "src",
   base: "/",
   publicDir: "assets",
-  plugins: [htmlIncludePlugin()],
+  plugins: [htmlIncludePlugin(), prozessZahlenPlugin()],
 
   build: {
     outDir: resolve(__dirname, "dist"),
