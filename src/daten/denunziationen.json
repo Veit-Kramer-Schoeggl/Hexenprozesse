@@ -1841,6 +1841,126 @@
       "seite": null,
       "anmerkung": "Von Dionys bei Obdach im Wald erschlagen; er nahm ihm 2 Gulden 10 Kreuzer ab. Das einzige Toetungsdelikt, das in dieser Sammlung gestanden wird.",
       "status": "geprueft"
+    },
+    "wed-dorothea": {
+      "name": "Dorothea Wed",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "amt": "Bürgerin von Polsterau (Središče)",
+      "seite": "wed.html",
+      "anmerkung": "70 Jahre alt. Drei verschaerfte Folterungen und 24 Stunden Hexenstuhl ohne Gestaendnis. Am 2. Mai 1677 tot aufgefunden, mit blauen und schwarzen Zeichen am Hals; das Protokoll nennt den Befund, erklaert den Tod aber mit dem Wirken boeser Geister. Leichnam am 3. Mai verbrannt.",
+      "status": "geprueft"
+    },
+    "wed-gera": {
+      "name": "Gera",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Tochter der Dorothea Wed, zum Zeitpunkt des Verhoers bereits gestorben.",
+      "status": "geprueft"
+    },
+    "samoda-martin": {
+      "name": "Martin Samoda",
+      "varianten": [],
+      "rollen": [
+        "denunziant"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Seine Erkrankung ist der Ausloeser des Verfahrens; er redete vor mehreren Frauen so, als haette die Wed sie ihm angehext.",
+      "status": "geprueft"
+    },
+    "wogonitsch-margareta": {
+      "name": "Margareta Wogonitsch",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Zum Zeitpunkt des Verhoers bereits gestorben; die Wed soll sie nachts mit eisernen Ruten und lebenden Schlangen gepeitscht haben.",
+      "status": "geprueft"
+    },
+    "repesch-barbara": {
+      "name": "Barbara Repesch",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "amt": "nächste Nachbarin der Dorothea Wed",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "repscha-adam": {
+      "name": "Adam Repscha",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "lagusch-marco": {
+      "name": "Marco Lagusch",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Gab der Wed das seltsame Gebaeck, das spaeter als Indiz gilt; vor 7 oder 8 Jahren gestorben.",
+      "status": "geprueft"
+    },
+    "kinck-jakob": {
+      "name": "Jakob Kinck",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Stadtrichter in Friedau",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "habitsch-martin": {
+      "name": "Martin Habitsch",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Rat in Friedau",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "dopusch-georg": {
+      "name": "Georg Dopusch",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Rat in Friedau",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "koleritsch-martin": {
+      "name": "Martin Koleritsch",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -3102,7 +3222,10 @@
       },
       "fundstelle": "Verhoere ab 1. Februar 1673, Akt geschlossen 20. Dezember 1673; abgedruckt in den Steiermaerkischen Geschichtsblaettern 1882, S. 158ff",
       "gruppe": "gutenhag-1661",
-      "status": "geprueft"
+      "status": "geprueft",
+      "verwandt": [
+        "wed.html"
+      ]
     },
     "steger.html": {
       "beschuldigte": [
@@ -3241,6 +3364,105 @@
       "fundstelle": "Verhoere am 29. und 31. Juli 1602, Urteile 5. August 1602; abgedruckt in den Steiermaerkischen Geschichtsblaettern 1882, S. 129ff. Die Aussage der Greschl auch bei Byloff, Kapitel 25.",
       "gruppe": "st-lambrecht-landgericht",
       "status": "geprueft"
+    },
+    "wed.html": {
+      "beschuldigte": [
+        "wed-dorothea"
+      ],
+      "jahr": 1677,
+      "ort": "Landgerichtsherrschaft Friedau (Ormož)",
+      "koordinaten": {
+        "lat": 46.4392811,
+        "lon": 16.1224517,
+        "quelle": "OSM-Geocoder, Ormož"
+      },
+      "bannrichter": [
+        "will-johann-georg-franz-von"
+      ],
+      "beisitzer": [
+        "kinck-jakob",
+        "habitsch-martin",
+        "dopusch-georg",
+        "koleritsch-martin"
+      ],
+      "zeugen": [],
+      "nennt": [
+        "wed-gera",
+        "samoda-martin",
+        "wogonitsch-margareta",
+        "repesch-barbara",
+        "repscha-adam",
+        "lagusch-marco"
+      ],
+      "typus": "ortsansaessig",
+      "anlass": [
+        "krankheit-im-umfeld",
+        "feindschaft"
+      ],
+      "anklage": [
+        "zauberei"
+      ],
+      "ausgang": {
+        "art": "in-haft-gestorben",
+        "datum": "2. Mai 1677",
+        "anmerkung": "Kein Gestaendnis, kein Urteil ueber die Lebende. Tot aufgefunden mit blauen und schwarzen Zeichen am Hals; der Leichnam wurde am 3. Mai 1677 verbrannt. Der Bannrichter deutet das Ausbleiben des Gestaendnisses als Sieg der boesen Geister ueber die Justiz - dieselbe Denkfigur wie bei Marina Wukinetz 1673."
+      },
+      "fundstelle": "Verhoere vom 15. Maerz bis 28. April 1677, Bericht des Bannrichters vom 2. Mai 1677",
+      "verwandt": [
+        "wukinetz.html",
+        "wed-2.html"
+      ],
+      "status": "geprueft"
+    },
+    "wed-2.html": {
+      "beschuldigte": [
+        "wed-dorothea"
+      ],
+      "jahr": 1677,
+      "ort": "Landgerichtsherrschaft Friedau (Ormož)",
+      "koordinaten": {
+        "lat": 46.4392811,
+        "lon": 16.1224517,
+        "quelle": "OSM-Geocoder, Ormož"
+      },
+      "bannrichter": [
+        "will-johann-georg-franz-von"
+      ],
+      "beisitzer": [
+        "kinck-jakob",
+        "habitsch-martin",
+        "dopusch-georg",
+        "koleritsch-martin"
+      ],
+      "zeugen": [],
+      "nennt": [
+        "wed-gera",
+        "samoda-martin",
+        "wogonitsch-margareta",
+        "repesch-barbara",
+        "repscha-adam",
+        "lagusch-marco"
+      ],
+      "typus": "ortsansaessig",
+      "anlass": [
+        "krankheit-im-umfeld",
+        "feindschaft"
+      ],
+      "anklage": [
+        "zauberei"
+      ],
+      "ausgang": {
+        "art": "in-haft-gestorben",
+        "datum": "2. Mai 1677",
+        "anmerkung": "Kein Gestaendnis, kein Urteil ueber die Lebende. Tot aufgefunden mit blauen und schwarzen Zeichen am Hals; der Leichnam wurde am 3. Mai 1677 verbrannt. Der Bannrichter deutet das Ausbleiben des Gestaendnisses als Sieg der boesen Geister ueber die Justiz - dieselbe Denkfigur wie bei Marina Wukinetz 1673."
+      },
+      "fundstelle": "Verhoere vom 15. Maerz bis 28. April 1677, Bericht des Bannrichters vom 2. Mai 1677",
+      "verwandt": [
+        "wed.html"
+      ],
+      "status": "geprueft",
+      "sprache": "sl",
+      "anmerkung": "Slowenische Fassung derselben Akte, uebersetzt von Carmen Weissenstein."
     }
   },
   "_nochZuPruefen": {
