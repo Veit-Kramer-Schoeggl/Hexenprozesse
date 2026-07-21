@@ -7,7 +7,7 @@
     <meta name="description" content="Verhör und Hinrichtung der Ursula Kollar, Herrschaft Gutenhag (Hrastovec) 1661" />
     <script type="module" crossorigin src="/assets/chunk-7Wa1foeI.js"></script>
     <script type="module" crossorigin src="/assets/ortskarte-BPYxiFPV.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-D8WwfMDY.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-D2wwD-F9.css">
   </head>
   <body>
     <header class="site-header">
@@ -203,6 +203,18 @@ document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
 document.addEventListener("click", () => {
   document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
 });
+
+// Hoehe der klebenden Kopfzeile bereitstellen, damit die Kastenkoepfe
+// darunter kleben statt darunter zu verschwinden.
+(() => {
+  const kopf = document.querySelector(".site-header");
+  if (!kopf) return;
+  const setzen = () =>
+    document.documentElement.style.setProperty("--kopf-hoehe", kopf.offsetHeight + "px");
+  setzen();
+  if (window.ResizeObserver) new ResizeObserver(setzen).observe(kopf);
+  window.addEventListener("resize", setzen);
+})();
 
 // Wischen auf Touch-Geraeten: nach links zum naechsten Fall, nach rechts zum
 // vorherigen. Nutzt dieselben Ziele wie die Pfeile am Bildschirmrand.

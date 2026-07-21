@@ -20,6 +20,18 @@ document.addEventListener("click", () => {
   document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
 });
 
+// Hoehe der klebenden Kopfzeile bereitstellen, damit die Kastenkoepfe
+// darunter kleben statt darunter zu verschwinden.
+(() => {
+  const kopf = document.querySelector(".site-header");
+  if (!kopf) return;
+  const setzen = () =>
+    document.documentElement.style.setProperty("--kopf-hoehe", kopf.offsetHeight + "px");
+  setzen();
+  if (window.ResizeObserver) new ResizeObserver(setzen).observe(kopf);
+  window.addEventListener("resize", setzen);
+})();
+
 // Wischen auf Touch-Geraeten: nach links zum naechsten Fall, nach rechts zum
 // vorherigen. Nutzt dieselben Ziele wie die Pfeile am Bildschirmrand.
 (() => {

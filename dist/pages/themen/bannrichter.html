@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Die Bannrichter — Hexenprozesse</title>
     <meta name="description" content="Die Bannrichter der steirischen Zaubereiprozesse und die Verfahren, die sie geführt haben" />
-    <link rel="stylesheet" crossorigin href="/assets/main-D8WwfMDY.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-D2wwD-F9.css">
   </head>
   <body>
     <header class="site-header">
@@ -58,6 +58,7 @@
           <div class="prozess-tag-inhalt">
             <p>1673 von Radkersburger Bürgern zum Stadtrichter gemacht. Bannrichter der Herrschaft Gutenhag <span class="glosse">(heute Hrastovec, Slowenien)</span> unter Erasmus Friedrich Graf von Herberstein. Sein Rivale <strong>Johannes Wendtseisen</strong> machte ihm 1672 einen Prozess streitig.</p>
             <p>Bei Schauberg und Wukinetz führt ihn das Protokoll als Bannrichter, bei Kollar und Kopschitsch dagegen als Urteilssprecher des Gerichtstags — die Rolle wechselt und ist deshalb eigens vermerkt.</p>
+            <p><strong>Der Fall <a href="../prozesse/wukinetz.html">Marina Wukinetz</a> ist der einzige der Sammlung, in dem ein Bannrichter selbst in der Ich-Form Buch führt</strong> — Tag für Tag: abbinden, zureden, wieder anbinden, den Sitz „schärfen“, brennende Talgpflaster an die Fußsohlen. Zwölf Tage lang, ohne Geständnis. Als die Frau stirbt, folgert er, gerade die teuflischen Anfechtungen ihrer letzten Nächte bewiesen, dass sie „gleichwohl eindeutig eine Hexe gewesen sein muss“ — und hält fest, wäre sie am Leben geblieben, hätte man einen neuen Prozess gegen sie führen müssen.</p>
 
             <table class="todesliste">
               <caption>Auf dieser Seite dokumentierte Verfahren</caption>
@@ -65,7 +66,7 @@
                 <tr><td><a href="../prozesse/schauberg.html">Elenka Schauberg</a></td><td>18. November 1661</td></tr>
                 <tr><td><a href="../prozesse/kollar.html">Ursula Kollar</a> <span class="glosse">(als Urteilssprecher)</span></td><td>10. Dezember 1661</td></tr>
                 <tr><td><a href="../prozesse/kopschitsch.html">Gera Kopschitsch</a> <span class="glosse">(als Urteilssprecher)</span></td><td>10. Dezember 1661</td></tr>
-                <tr class="kein-urteil"><td><a href="../prozesse/wukinetz.html">Marina Wukinetz</a> — in der Haft gestorben, nachts begraben</td><td>19. Dezember 1673</td></tr>
+                <tr class="kein-urteil"><td><a href="../prozesse/wukinetz.html">Marina Wukinetz</a> — nach zwölf Tagen Hexenstuhl in der Haft gestorben, ohne Geständnis, nachts verscharrt</td><td>19. Februar 1673</td></tr>
                 <tr class="kein-urteil"><td>Juliane — vor der Verurteilung im Kerker gestorben</td><td>1661</td></tr>
                 <tr class="summe"><td>Vollstreckte Todesurteile</td><td>3</td></tr>
               </tbody>
@@ -266,6 +267,18 @@ document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
 document.addEventListener("click", () => {
   document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
 });
+
+// Hoehe der klebenden Kopfzeile bereitstellen, damit die Kastenkoepfe
+// darunter kleben statt darunter zu verschwinden.
+(() => {
+  const kopf = document.querySelector(".site-header");
+  if (!kopf) return;
+  const setzen = () =>
+    document.documentElement.style.setProperty("--kopf-hoehe", kopf.offsetHeight + "px");
+  setzen();
+  if (window.ResizeObserver) new ResizeObserver(setzen).observe(kopf);
+  window.addEventListener("resize", setzen);
+})();
 
 // Wischen auf Touch-Geraeten: nach links zum naechsten Fall, nach rechts zum
 // vorherigen. Nutzt dieselben Ziele wie die Pfeile am Bildschirmrand.

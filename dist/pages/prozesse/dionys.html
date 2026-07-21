@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dionys und die Greschl — Hexenprozesse</title>
     <meta name="description" content="Prozess gegen Dionys und gegen die zehnjährige Greschl wegen Zauberei und Wettermacherei, St. Lambrecht 1602" />
-    <link rel="stylesheet" crossorigin href="/assets/main-D8WwfMDY.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-D2wwD-F9.css">
   </head>
   <body>
     <header class="site-header">
@@ -196,6 +196,18 @@ document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
 document.addEventListener("click", () => {
   document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
 });
+
+// Hoehe der klebenden Kopfzeile bereitstellen, damit die Kastenkoepfe
+// darunter kleben statt darunter zu verschwinden.
+(() => {
+  const kopf = document.querySelector(".site-header");
+  if (!kopf) return;
+  const setzen = () =>
+    document.documentElement.style.setProperty("--kopf-hoehe", kopf.offsetHeight + "px");
+  setzen();
+  if (window.ResizeObserver) new ResizeObserver(setzen).observe(kopf);
+  window.addEventListener("resize", setzen);
+})();
 
 // Wischen auf Touch-Geraeten: nach links zum naechsten Fall, nach rechts zum
 // vorherigen. Nutzt dieselben Ziele wie die Pfeile am Bildschirmrand.

@@ -277,7 +277,10 @@
       ],
       "seite": "wukinetz.html",
       "status": "geprueft",
-      "geschlecht": "w"
+      "geschlecht": "w",
+      "varianten": [],
+      "amt": "Weingartenbesitzerin am Gamsgassenberg (Navarda), Untertanin der Herrschaft Gutenhag",
+      "anmerkung": "57 Jahre alt. Hat trotz zwoelf Tagen Hexenstuhl, geschaerftem Sitz und brennenden Talgpflastern an den Fusssohlen nichts gestanden. Starb am 19. Februar 1673 in der Haft und wurde in derselben Nacht verscharrt."
     },
     "juliane-gutenhag": {
       "name": "Juliane",
@@ -1567,6 +1570,89 @@
       "seite": null,
       "anmerkung": "In seiner Keuschen in Geistthal lebte Mosegger zuletzt mit sechs weiteren Personen.",
       "status": "geprueft"
+    },
+    "tschernick-urscha": {
+      "name": "Urscha Tschernick",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt",
+        "denunziantin"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Nach einem Streit um eine Kuh mit Wukinetz zerstritten, spaeter selbst in Gutenhag hingerichtet (um 1661). Ihre Aussage bei der Gegenueberstellung fuehrte zwoelf Jahre spaeter zur Verhaftung der Wukinetz.",
+      "status": "geprueft"
+    },
+    "schosser-georg": {
+      "name": "Georg Schosser",
+      "varianten": [
+        "Georg Schosster"
+      ],
+      "rollen": [
+        "landgerichtsverwalter"
+      ],
+      "geschlecht": "m",
+      "amt": "Landgerichtsverwalter der Herrschaft Gutenhag",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "risner-primus": {
+      "name": "Primus Risner",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "amt": "Spitalverwalter der Herrschaft Gutenhag in St. Leonhard",
+      "seite": null,
+      "anmerkung": "Wachte mit dem Landgerichtsverwalter in den letzten beiden Naechten bei der Sterbenden.",
+      "status": "geprueft"
+    },
+    "schmalz-frau-des-lorenz": {
+      "name": "Frau des Lorenz Schmalz",
+      "varianten": [],
+      "rollen": [
+        "zeuge"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Entlastete Wukinetz ausdruecklich: nicht sie, sondern ihre Schwester Gera habe den Kindern das Fieber gesenkt; sie habe von Wukinetz nie eine Arznei verlangt.",
+      "status": "geprueft"
+    },
+    "gera-schwester-schmalz": {
+      "name": "Gera, Schwester der Frau des Lorenz Schmalz",
+      "varianten": [],
+      "rollen": [
+        "zeuge"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Widersprach der Beschuldigung ebenfalls.",
+      "status": "geprueft"
+    },
+    "ferlitsch-thomas": {
+      "name": "Thomas Ferlitsch",
+      "varianten": [],
+      "rollen": [
+        "zeuge"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Sagte aus, Wukinetz habe in seinem Haus ueber 'Hexenweiber' geredet.",
+      "status": "geprueft"
+    },
+    "kunaetsch-polonia": {
+      "name": "Polonia Kunätsch",
+      "varianten": [
+        "Apollonia Kunätsch"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Im Protokoll zweimal unterschiedlich benannt.",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -2784,6 +2870,49 @@
         "anmerkung": "Mit dem Schwert hingerichtet, danach verbrannt. Die Unterfertigung des Urteils traegt das Datum 9. Juli 1647 und liegt damit vor den Verhoeren vom 16. und 17. Juli - der Widerspruch steht so in der Vorlage."
       },
       "fundstelle": "Verhoer am 16. und 17. Juli 1647; Original im Archiv des Stiftes Rein",
+      "status": "geprueft"
+    },
+    "wukinetz.html": {
+      "beschuldigte": [
+        "wukinetz-marina"
+      ],
+      "jahr": 1673,
+      "ort": "Herrschaft Gutenhag des Erasmus Friedrich Graf von Herberstein; Haft zuletzt in St. Leonhard",
+      "koordinaten": {
+        "lat": 46.5644802,
+        "lon": 15.7868015,
+        "quelle": "OSM-Geocoder, Hrastovec v Slovenskih Goricah"
+      },
+      "bannrichter": [
+        "laempertitsch-wolf-lorenz"
+      ],
+      "zeugen": [
+        "schmalz-frau-des-lorenz",
+        "gera-schwester-schmalz",
+        "ferlitsch-thomas"
+      ],
+      "nennt": [
+        "tschernick-urscha",
+        "schosser-georg",
+        "risner-primus",
+        "kunaetsch-polonia",
+        "herberstein-erasmus-friedrich"
+      ],
+      "typus": "ortsansaessig",
+      "anlass": [
+        "denunziation-unter-folter",
+        "feindschaft"
+      ],
+      "anklage": [
+        "zauberei"
+      ],
+      "ausgang": {
+        "art": "in-haft-gestorben",
+        "datum": "19. Februar 1673",
+        "anmerkung": "Kein Gestaendnis, kein Urteil. Zwoelf Tage Hexenstuhl mit geschaerftem Sitz und brennenden Talgpflastern. In derselben Nacht vom Scharfrichter in einem kleinen Grabloch verscharrt. Der Bannrichter deutet die Anfechtungen ihrer letzten Naechte als Beweis der Schuld."
+      },
+      "fundstelle": "Verhoere ab 1. Februar 1673, Akt geschlossen 20. Dezember 1673; abgedruckt in den Steiermaerkischen Geschichtsblaettern 1882, S. 158ff",
+      "gruppe": "gutenhag-1661",
       "status": "geprueft"
     }
   },
