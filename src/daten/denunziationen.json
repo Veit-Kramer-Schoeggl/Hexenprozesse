@@ -612,6 +612,62 @@
       "seite": null,
       "anmerkung": "Im Begleitschreiben nur mit dem Familiennamen genannt, kein Vorname überliefert.",
       "status": "geprueft"
+    },
+    "neubauer-ursula": {
+      "name": "Ursula Neubauer",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "amt": "Toepferin in Wörth, Untertanin der Herrschaft Neudau",
+      "seite": "neubauer.html",
+      "anmerkung": "Nach fast einem Jahr Haft in Burgau ohne Ergebnis auf Lebenszeit aus der Steiermark verbannt; bittet den Kaiser um Rueckkehr.",
+      "status": "geprueft"
+    },
+    "neubauer-matthias": {
+      "name": "Matthias Neubauer",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "amt": "Toepfer in Wörth in der Steiermark",
+      "seite": null,
+      "anmerkung": "Ehemann der Ursula Neubauer; bleibt mit den kleinen Kindern zurueck.",
+      "status": "geprueft"
+    },
+    "dornschuster-frau": {
+      "name": "Frau des Georg Dornschuster",
+      "varianten": [
+        "die Dornschuster",
+        "die Dornschusterin"
+      ],
+      "rollen": [
+        "denunziantin"
+      ],
+      "amt": "Nachbarin in Wörth",
+      "seite": null,
+      "anmerkung": "Hat der Neubauer Geschirr im Wert von drei Groschen weggenommen und sie, zur Rede gestellt, der Zauberei bezichtigt.",
+      "status": "geprueft"
+    },
+    "gager-matthias": {
+      "name": "Matthias Gager",
+      "varianten": [],
+      "rollen": [
+        "denunziant"
+      ],
+      "amt": "Nachbar in Wörth",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "rathall-georg-julius-von": {
+      "name": "Georg Julius von Rathall",
+      "varianten": [],
+      "rollen": [
+        "grundherr"
+      ],
+      "amt": "Inhaber der Herrschaft Neudau",
+      "seite": null,
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -1224,6 +1280,42 @@
       },
       "fundstelle": "Aussage Abraham Hartmanns, Riegersburg 28. Mai 1675, und undatiertes Begleitschreiben; abgedruckt bei Hammer-Purgstall, Die Gallerin auf der Riegersburg (Wien 1849)",
       "status": "geprueft"
+    },
+    "neubauer.html": {
+      "beschuldigte": [
+        "neubauer-ursula"
+      ],
+      "jahr": 1644,
+      "ort": "Herrschaft Neudau, Verfahren am Landgericht Burgau",
+      "koordinaten": {
+        "lat": 47.1795071,
+        "lon": 16.1001998,
+        "quelle": "OSM-Geocoder, Schloss Neudau; Landgericht Burgau 47.1430636 / 16.0985464"
+      },
+      "bannrichter": [],
+      "zeugen": [],
+      "nennt": [
+        "neubauer-matthias",
+        "dornschuster-frau",
+        "gager-matthias",
+        "rathall-georg-julius-von"
+      ],
+      "typus": "ortsansaessig",
+      "anlass": [
+        "feindschaft",
+        "sippenverdacht"
+      ],
+      "anklage": [
+        "zauberei",
+        "milchzauber"
+      ],
+      "ausgang": {
+        "art": "verbannt",
+        "datum": "Pfingsten 1644",
+        "anmerkung": "Ein Jahr weniger vier Wochen Haft in Burgau ohne Ergebnis, danach Ausweisung auf Lebenszeit aus der ganzen Steiermark. Rueckkehr nur durch kaiserliche Gnade moeglich; ob der Bittschrift stattgegeben wurde, ist nicht ueberliefert."
+      },
+      "fundstelle": "Bittschrift an Kaiser Ferdinand III., abgedruckt in den Steiermaerkischen Geschichtsblaettern 1882, S. 155ff",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -1469,7 +1561,8 @@
       "wetterschaden": "Hagel oder Unwetter, fuer das ein Schuldiger gesucht wurde",
       "krankheit-im-umfeld": "Erkrankung oder Tod eines Nachbarn, Dienstherrn oder Tieres",
       "erzwungenes-gestaendnis": "Gestaendnis durch Drohung oder List eines Privatmanns herbeigefuehrt",
-      "ergriffen-bei-anderer-tat": "zunaechst wegen Diebstahls ergriffen, Zauberei kam im Verhoer dazu"
+      "ergriffen-bei-anderer-tat": "zunaechst wegen Diebstahls ergriffen, Zauberei kam im Verhoer dazu",
+      "sippenverdacht": "Vater, Mutter oder Verwandte wurden frueher hingerichtet; der Verdacht wird auf die Nachkommen uebertragen"
     }
   }
 }

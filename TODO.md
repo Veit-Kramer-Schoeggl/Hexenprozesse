@@ -147,17 +147,31 @@ Zweck laut Link-Text: es sind **Druckfassungen der jeweiligen
 Protokolle** („Als PDF-Datei ausdrucken“ bzw. slowenisch „Natisniti kot
 PDF datoteko“) — also der Seiteninhalt als Download zum Ausdrucken.
 
-| Erwarteter Pfad | Seite |
-|---|---|
-| `/images/fragenkatalog/fragenkatalog.pdf` | Fragenkatalog |
-| `/images/lipp/lipp.pdf` | Michael Lipp |
-| `/images/neubauer/neubauer.pdf` | Ursula Neubauer |
-| `/images/rauch/rauch.pdf` | Veronika Rauch |
-| `/images/wed-2/wed2.pdf` | Dorothea Wed (slovensko) |
+| Erwarteter Pfad | Seite | auf der Seite kenntlich gemacht |
+|---|---|---|
+| `/images/fragenkatalog/fragenkatalog.pdf` | Fragenkatalog | nein |
+| `/images/lipp/lipp.pdf` | Michael Lipp | ja |
+| `/images/neubauer/neubauer.pdf` | Ursula Neubauer | nein |
+| `/images/rauch/rauch.pdf` | Veronika Rauch | nein |
+| `/images/wed-2/wed2.pdf` | Dorothea Wed (slovensko) | nein |
 
 Die Links bleiben bewusst im Code stehen — die Dateien sollen
 wiederhergestellt werden. Sobald sie da sind, einfach unter den obigen
 Pfaden in `src/assets/` ablegen, dann greifen alle fünf Links wieder.
+
+**Konvention beim Überführen in die Maske:** der Link bleibt stehen,
+bekommt aber einen sichtbaren Zusatz, damit niemand ins Leere klickt —
+so wie auf der Lipp-Seite:
+
+```html
+<p class="hint"><a href="/images/lipp/lipp.pdf">Druckfassung als PDF</a> —
+<em>die Datei ist bei der Übersiedlung der Website verloren gegangen und
+soll wiederhergestellt werden.</em></p>
+```
+
+Die Spalte oben mitführen. Sobald eine PDF-Datei wieder da ist: den
+Zusatz auf der betreffenden Seite entfernen und die Zeile aus der
+Tabelle streichen.
 
 Suche bisher erfolglos: das Archiv unter `~/Desktop/Papa/` existiert auf
 dem aktuellen Rechner nicht (Stand Juli 2026). Dort zuerst nachsehen,
