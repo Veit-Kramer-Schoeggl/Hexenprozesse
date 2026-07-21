@@ -496,6 +496,44 @@
       "seite": "heen.html",
       "anmerkung": "26 bis 28 Jahre, ledig, geboren beim Kollbauern in Neuberg",
       "status": "geprueft"
+    },
+    "rueprecht-marx": {
+      "name": "Marx Rueprecht",
+      "rollen": [
+        "beschuldigt",
+        "denunziant"
+      ],
+      "seite": "rueprecht.html",
+      "status": "geprueft"
+    },
+    "rumpl-andreas": {
+      "name": "Andreas Rumpl",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": null,
+      "anmerkung": "Amtmann in Neustift bei St. Veit; von Rueprecht benannt, bestritt bei der Gegenueberstellung",
+      "status": "geprueft"
+    },
+    "prantauerin": {
+      "name": "Die Prantauerin",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": null,
+      "anmerkung": "Wirtin aus Graz; von Rueprecht und Glaser genannt",
+      "status": "geprueft"
+    },
+    "zechner-stefan": {
+      "name": "Stefan Zechner",
+      "varianten": [
+        "Steffl am Hoff"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "zechner-andreas-1.html",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -919,6 +957,48 @@
       },
       "fundstelle": "Protokoll vom 13. bis 15. Mai 1683",
       "status": "geprueft"
+    },
+    "rueprecht.html": {
+      "beschuldigte": [
+        "rueprecht-marx"
+      ],
+      "jahr": 1657,
+      "ort": "Landgericht Kapfenberg",
+      "koordinaten": {
+        "lat": 47.4400227,
+        "lon": 15.2934225,
+        "quelle": "OSM-Geocoder, Burg Oberkapfenberg"
+      },
+      "bannrichter": [
+        "barth-johann-andreas"
+      ],
+      "zeugen": [],
+      "anklage": [
+        "diebstahl-und-raub",
+        "zauberei"
+      ],
+      "nennt": [
+        {
+          "person": "zechner-stefan",
+          "art": "denunziert",
+          "anmerkung": "spaeter relativiert; Zechner 1660 unter demselben Bannrichter hingerichtet"
+        },
+        {
+          "person": "rumpl-andreas",
+          "art": "denunziert",
+          "anmerkung": "bestritt bei der Gegenueberstellung"
+        },
+        {
+          "person": "prantauerin",
+          "art": "denunziert"
+        }
+      ],
+      "ausgang": {
+        "art": "nicht-ueberliefert",
+        "anmerkung": "Auf dieser Seite kein Urteil ueberliefert; nach dem Widerruf kehrten die Denunzierten zunaechst frei nach Hause"
+      },
+      "fundstelle": "Protokoll vom 25. Oktober bis 6. November 1657",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -1051,6 +1131,13 @@
       }
     ],
     "barth-johann-andreas": [
+      {
+        "seite": "rueprecht.html",
+        "name": "Marx Rueprecht",
+        "datum": "November 1657",
+        "art": "offen",
+        "rolle": "bannrichter"
+      },
       {
         "seite": "zechner-andreas-1.html",
         "name": "Stefan Zechner",
