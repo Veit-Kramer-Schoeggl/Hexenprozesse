@@ -14,6 +14,39 @@ Punkte löschen (die Historie steht in Git).
   nicht, den Untertitel ehrlicher fassen.
   (Stand Juli 2026: Veit vermutet, dass kein weiteres Material existiert.)
 
+## Mehrsprachigkeit — eigenes Projekt
+
+**Ziel:** Die Seite durchgängig auf Deutsch, Slowenisch und Englisch,
+mit Umschalter. Heute gibt es genau eine slowenische Seite (Dorothea
+Wed), die als Einzelstück daneben steht.
+
+Das ist bewusst als **eigenes Vorhaben** notiert, nicht als Nebenarbeit
+— zur Einordnung des Umfangs:
+
+- **Struktur:** Sprachverzeichnisse (`/de/`, `/sl/`, `/en/`) statt der
+  heutigen flachen Ablage. Betrifft jeden Pfad, jeden internen Link, die
+  Vite-Konfiguration und das Plesk-Deployment.
+- **Gemeinsames Gerüst:** Navigation, Fußzeile und wiederkehrende
+  Bausteine müssen aus Sprachdateien gespeist werden, statt wie jetzt
+  fest im Partial zu stehen.
+- **Umschalter:** muss auf die *entsprechende* Seite der anderen Sprache
+  zeigen, nicht auf deren Startseite — braucht also eine Zuordnung je
+  Seite.
+- **Technisch machbar** mit dem bestehenden Vite-Setup; es bleibt eine
+  statische Seite, kein Server nötig.
+
+**Der eigentliche Aufwand ist nicht technisch, sondern inhaltlich:** Es
+sind rund 36 Prozessseiten plus Themenseiten. Die Protokolle sind
+Übertragungen historischer Quellen in heutiges Deutsch — sie zu
+übersetzen ist Fachübersetzung, keine Fleißarbeit, und maschinell nicht
+seriös zu leisten. Für die slowenische Fassung von Dorothea Wed hat
+**Carmen Weissenstein** übersetzt; ein Anhaltspunkt, wen man ansprechen
+könnte.
+
+**Sinnvolle Reihenfolge:** zuerst das Gerüst mehrsprachfähig machen und
+mit den wenigen vorhandenen Übersetzungen bestücken, danach Seite für
+Seite ergänzen. Dann bleibt die Seite in jedem Zwischenstand benutzbar.
+
 ## Slowenische Übersetzungen ergänzen
 
 Mehrere Prozesse wurden auf heute slowenischem Gebiet verhandelt, liegen
