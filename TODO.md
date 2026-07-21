@@ -35,6 +35,24 @@ Hinweis, dass Carmen Weissenstein außer Dorothea Wed noch weitere dieser
 Prozesse übersetzt hat (Stand Juli 2026). Falls Kontakt zu ihr besteht,
 wäre das der kürzeste Weg.
 
+## Fehlende Seite: steger1.html
+
+Auf der Einführungsseite [St. Lambrecht 1653](src/pages/themen/lambrecht-1653.html)
+verwies der Text auf ein **eigenes Prozessprotokoll zu Lorenz Steger**
+unter `steger1.html` — diese Datei hat es im Repo nie gegeben. Der Satz
+lautete: „Da machte man kurzen Prozess. Zum Beispiel dem Lorenz Steger
+(Prozessprotokoll)“, wobei „Lorenz Steger“ auf `steger.html` zeigte und
+„Prozessprotokoll“ auf das fehlende `steger1.html`.
+
+Es gab also offenbar **zwei** Steger-Seiten: eine Beschreibung und das
+Protokoll selbst. Vorhanden ist nur `steger.html`. Der tote Link ist
+vorerst entfernt.
+
+Zu prüfen: Liegt in der alten Live-Sicherung (`01_Archiv/PHPsicherung`)
+oder im Stand von 2017 (`03_Bearbeitung_Aktuell/HP 2017-09`) eine Datei
+`steger1.htm`? Falls ja, als eigene Prozessseite ergänzen und den Link
+wiederherstellen.
+
 ## Fehlende Dateien — PDFs wiederherstellen
 
 **Fünf tote PDF-Links.** Im Repo liegt unter `src/assets/` keine einzige
