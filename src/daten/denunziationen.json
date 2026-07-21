@@ -130,8 +130,9 @@
         "beschuldigt"
       ],
       "seite": null,
-      "anmerkung": "Vor 1686 hingerichtet.",
-      "status": "geprueft"
+      "anmerkung": "Vor 1686 hingerichtet. Sehr wahrscheinlich identisch mit Margareth Jantscher, die im Verfahren gegen Peter Paar als 'Margret Jantscher vulgo Christanderl' gefuehrt wird.",
+      "status": "geprueft",
+      "vermutlich": "jantscher-margareth"
     },
     "joergbaeurin": {
       "name": "die Jörgbäurin",
@@ -388,6 +389,40 @@
       "seite": "hoerk.html",
       "anmerkung": "Schwester von Gera Scherb",
       "status": "geprueft"
+    },
+    "jantscher-margareth": {
+      "name": "Margareth Jantscher",
+      "varianten": [
+        "Christandlerin",
+        "Margret Jantscher vulgo Christanderl"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "jantscher.html",
+      "anmerkung": "ueber 50 Jahre, wohnhaft in Stuebing, Untertanin von Rein",
+      "status": "geprueft"
+    },
+    "paar-peter": {
+      "name": "Peter Paar",
+      "varianten": [
+        "Schupfer",
+        "der Schupfer"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "schoeckl.html",
+      "status": "geprueft"
+    },
+    "ringshalmer-sebastian": {
+      "name": "Sebastian Ringshalmer",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": null,
+      "anmerkung": "ehemaliger Amtmann; von Jantscher als Anfuehrer der Versammlungen bezeichnet",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -609,6 +644,52 @@
       },
       "fundstelle": "Verhör vom 27. April 1672",
       "status": "geprueft"
+    },
+    "jantscher.html": {
+      "beschuldigte": [
+        "jantscher-margareth"
+      ],
+      "jahr": 1686,
+      "ort": "Stifts- und Landgerichts-Hoheit Rein, verhoert in Gratwein",
+      "koordinaten": {
+        "lat": 47.1350879,
+        "lon": 15.2860084,
+        "quelle": "OSM-Geocoder, Stift Rein"
+      },
+      "bannrichter": [
+        "tillerich-johann"
+      ],
+      "zeugen": [],
+      "gruppe": "gratwein-1686",
+      "nennt": [
+        {
+          "person": "paar-peter",
+          "art": "mitbeschuldigt",
+          "anmerkung": "als 'der inzwischen hingerichtete Schupfer'"
+        },
+        {
+          "person": "brunnbaeurin",
+          "art": "mitbeschuldigt",
+          "anmerkung": "soll das Allerheiligste zur Versammlung gebracht haben"
+        },
+        {
+          "person": "muralterin",
+          "art": "mitbeschuldigt",
+          "anmerkung": "soll sie verfuehrt haben"
+        },
+        {
+          "person": "ringshalmer-sebastian",
+          "art": "mitbeschuldigt",
+          "anmerkung": "als Anfuehrer bezeichnet"
+        }
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "8. April 1686",
+        "anmerkung": "mit dem Strick, danach Verbrennung"
+      },
+      "fundstelle": "Verhoer vom 5. und 6. April 1686",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -685,22 +766,22 @@
     ],
     "tillerich-johann": [
       {
-        "seite": "posch.html",
-        "name": "Christina Posch",
-        "datum": "27. April 1686",
+        "seite": "schoeckl.html",
+        "name": "Peter Paar (vulgo Schupfer)",
+        "datum": "4. April 1686",
         "art": "hingerichtet"
       },
       {
         "seite": "jantscher.html",
-        "name": "Margareth Jantscher",
-        "datum": null,
-        "art": "offen"
+        "name": "Margareth Jantscher (vulgo Christandlerin)",
+        "datum": "8. April 1686",
+        "art": "hingerichtet"
       },
       {
-        "seite": "schoeckl.html",
-        "name": "Peter Paar",
-        "datum": null,
-        "art": "offen"
+        "seite": "posch.html",
+        "name": "Christina Posch",
+        "datum": "27. April 1686",
+        "art": "hingerichtet"
       },
       {
         "seite": "zechner-andreas-2.html",

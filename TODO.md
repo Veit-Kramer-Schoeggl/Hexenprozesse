@@ -103,6 +103,17 @@ auch ein Abschnitt „Verbindungen zu anderen Prozessen“ je Seite
 erzeugen. Beim Bearbeiten der restlichen Seiten fallen die Verbindungen
 ohnehin auf und können gleich miterfasst werden.
 
+## Ortskoordinaten, die noch fehlen
+
+Die Ortskarten der Prozessseiten arbeiten mit geprüften Koordinaten aus
+dem OSM-Geocoder. Für einzelne historische Gebäude liefert er nichts:
+
+- **Schloss Luttenberg** (Ljutomer, Slowenien) — Prozessort der Verfahren
+  von 1672. OpenStreetMap kennt dort keine Burg und kein Schloss, nur den
+  Ort selbst. Der Kartenpunkt zeigt deshalb vorerst auf Ljutomer und ist
+  als ungesichert gekennzeichnet. Die Befestigung ist 1249 als
+  „Luetenberch“ erwähnt — ob und wo Reste stehen, wäre zu klären.
+
 ## Fehlende Seite: steger1.html
 
 Auf der Einführungsseite [St. Lambrecht 1653](src/pages/themen/lambrecht-1653.html)
