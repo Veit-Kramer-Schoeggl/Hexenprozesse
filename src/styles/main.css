@@ -713,6 +713,15 @@ code {
   font-family: var(--font-sans);
   color: var(--color-muted);
 }
+/* Ganze Seite in der Stimme des Bearbeiters (einführende Texte statt
+   Quellenabdruck): serifenlos wie jeder Kommentar, aber in voller
+   Textfarbe — als Haupttext gelesen, nicht als Randbemerkung. */
+.kommentar-seite {
+  font-family: var(--font-sans);
+}
+.kommentar-seite .lead {
+  font-family: var(--font-sans);
+}
 .kommentar h3 {
   font-family: var(--font-sans);
 }
