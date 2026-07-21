@@ -673,6 +673,55 @@ code {
   padding-top: var(--space-md);
 }
 
+/* ---- Bannrichter: Box je Person mit Todesliste ---- */
+.richter-name {
+  text-align: center;
+  font-size: 1.3rem;
+}
+.richter-amt {
+  display: block;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-muted);
+  margin-top: 0.2rem;
+}
+.todesliste {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-md) 0 0;
+}
+.todesliste caption {
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  padding-bottom: var(--space-xs);
+}
+.todesliste td {
+  padding: var(--space-xs) 0;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(120, 90, 40, 0.18);
+}
+/* Datum rechtsbündig, damit die Spalte wie eine Abrechnung liest */
+.todesliste td + td {
+  text-align: right;
+  white-space: nowrap;
+  padding-left: var(--space-sm);
+  font-variant-numeric: tabular-nums;
+}
+.todesliste .summe td {
+  border-top: 3px double var(--color-accent-dark);
+  border-bottom: 0;
+  padding-top: var(--space-sm);
+  font-weight: 700;
+}
+/* Todesfälle in Haft zählen nicht als Hinrichtung und stehen abgesetzt */
+.todesliste .kein-urteil td {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
 /* Beisitzer-Liste (zwei Spalten) */
 .beisitzer {
   display: flex;
