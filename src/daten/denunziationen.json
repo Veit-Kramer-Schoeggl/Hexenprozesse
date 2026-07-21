@@ -240,7 +240,8 @@
       ],
       "seite": "kollar.html",
       "status": "geprueft",
-      "geschlecht": "w"
+      "geschlecht": "w",
+      "anmerkung": "36 Jahre alt. Bestritt zwei Tage lang alles; gestand erst am dritten. Nahm am Tag der Hinrichtung die Beschuldigung gegen Gregor Diviak zurueck."
     },
     "luzia-winzerin-thesalan": {
       "name": "Lucia, die Winzerin des Thesalan",
@@ -1165,6 +1166,176 @@
       "anmerkung": "Thomas Heiser gibt vom Hoerensagen an, dieser habe an die 200 Zauberer, Wettermacher und Wolfsbanner unterhalten und sei in Kaernten hingerichtet worden. Nicht ueberprueft.",
       "vermutlich": true,
       "status": "unsicher"
+    },
+    "wolwek-ursula": {
+      "name": "Ursula Wolwek",
+      "varianten": [
+        "die alte Wolwek"
+      ],
+      "rollen": [
+        "beschuldigt",
+        "denunziantin"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Im Kollar-Protokoll ausdruecklich als deren 'Verfuehrerin' gefuehrt; ihre Aussage loest das Verfahren aus.",
+      "status": "geprueft"
+    },
+    "kreatsch-lukas": {
+      "name": "Lukas Kreatsch",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Bei der Zusammenkunft Kellner und Geiger; auch Wirt, aus dessen Wirtshaus Kollar und Ferk kommen.",
+      "status": "geprueft"
+    },
+    "kreatsch-marina": {
+      "name": "Marina Kreatsch",
+      "varianten": [
+        "die Kreatsch"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Ehefrau des Lukas Kreatsch; habe bei der Zusammenkunft gekocht und Brot gebacken.",
+      "status": "geprueft"
+    },
+    "marina-winzerin-gerlin": {
+      "name": "Marina, die frühere Winzerin des Gerlin",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Zuletzt Kleinbaeuerin des Stadtpfarrers von Graz.",
+      "status": "geprueft"
+    },
+    "triplat-gera": {
+      "name": "Gera, Frau des Jensche Triplat",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Aus Gradisch; besitzt einen Weingarten von der Burg Marburg.",
+      "status": "geprueft"
+    },
+    "kampfer-katharina": {
+      "name": "Katharina, Frau des Blasius Kampfer",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Der Burg Schleinitz (Slivnica) zugehoerig.",
+      "status": "geprueft"
+    },
+    "drosg-martha": {
+      "name": "Martha Drosg",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "unbekannt",
+      "seite": null,
+      "anmerkung": "Im Protokoll als 'die Frau des Martha Drosg' gefuehrt - die Stelle ist unklar, moeglicherweise ein Uebertragungsfehler.",
+      "vermutlich": true,
+      "status": "unsicher"
+    },
+    "agatha-winzerin-stgeorgen": {
+      "name": "Agatha, Frau des Adam",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "amt": "Frau des Winzers der St. Georgen Kirche",
+      "status": "geprueft"
+    },
+    "tschok-michael": {
+      "name": "Michael Tschok",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "diviak-gregor": {
+      "name": "Gregor Diviak",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Von Kollar belastet und am Tag ihrer Hinrichtung, dem 10. Dezember 1661, ausdruecklich wieder vollstaendig entlastet.",
+      "status": "geprueft"
+    },
+    "mlineritsch-jakob": {
+      "name": "Jakob Mlineritsch",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "pater-suniz": {
+      "name": "Pater Suniz",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Ein Moench im Ordensgewand mit Diener; Kollar kennt ihn nicht selbst, der Name stammt von Ferk und Wolwek.",
+      "vermutlich": true,
+      "status": "unsicher"
+    },
+    "megitsch": {
+      "name": "die Megitsch",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Soll auf Bitte von Kollars Ehemann den Bolosch Sorda mit Zauberei toeten - Rache fuer eine Rauferei.",
+      "status": "geprueft"
+    },
+    "sorda-bolosch": {
+      "name": "Bolosch Sorda",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Hat Kollars Ehemann in einer Rauferei die Hand gebrochen.",
+      "status": "geprueft"
+    },
+    "herberstein-erasmus-friedrich": {
+      "name": "Erasmus Friedrich Graf von Herberstein",
+      "varianten": [],
+      "rollen": [
+        "grundherr"
+      ],
+      "geschlecht": "m",
+      "amt": "Inhaber der Herrschaft Gutenhag",
+      "seite": null,
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -2232,6 +2403,59 @@
         "heiser-2.html",
         "steger.html"
       ],
+      "status": "geprueft"
+    },
+    "kollar.html": {
+      "beschuldigte": [
+        "kollar-ursula"
+      ],
+      "jahr": 1661,
+      "ort": "Herrschaft Gutenhag des Erasmus Friedrich Graf von Herberstein",
+      "koordinaten": {
+        "lat": 46.5644802,
+        "lon": 15.7868015,
+        "quelle": "OSM-Geocoder, Hrastovec v Slovenskih Goricah"
+      },
+      "bannrichter": [],
+      "urteilssprecher": [
+        "laempertitsch-wolf-lorenz"
+      ],
+      "zeugen": [],
+      "nennt": [
+        "wolwek-ursula",
+        "ferk-magdalena",
+        "kreatsch-lukas",
+        "kreatsch-marina",
+        "marina-winzerin-gerlin",
+        "triplat-gera",
+        "kampfer-katharina",
+        "drosg-martha",
+        "agatha-winzerin-stgeorgen",
+        "tschok-michael",
+        "diviak-gregor",
+        "mlineritsch-jakob",
+        "pater-suniz",
+        "megitsch",
+        "sorda-bolosch",
+        "herberstein-erasmus-friedrich"
+      ],
+      "typus": "ortsansaessig",
+      "anlass": [
+        "denunziation-unter-folter"
+      ],
+      "anklage": [
+        "zauberei",
+        "teufelsbund",
+        "wetterzauber",
+        "schadenzauber"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "10. Dezember 1661",
+        "anmerkung": "Auf dem Scheiterhaufen erwuergt und verbrannt. Am selben Tag entlastete sie Gregor Diviak."
+      },
+      "fundstelle": "Verhoere am 18., 19. und 20. August sowie 5. und 6. Dezember 1661, Urteil 10. Dezember 1661; abgedruckt in den Steiermaerkischen Geschichtsblaettern 1882, S. 148ff",
+      "gruppe": "gutenhag-1661",
       "status": "geprueft"
     }
   },
