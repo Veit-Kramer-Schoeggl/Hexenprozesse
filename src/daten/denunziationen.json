@@ -1654,6 +1654,68 @@
       "seite": null,
       "anmerkung": "Im Protokoll zweimal unterschiedlich benannt.",
       "status": "geprueft"
+    },
+    "zechner-andreas": {
+      "name": "Andreas Zechner",
+      "varianten": [
+        "Zechner Anderl"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "amt": "Untertan der Herrschaft Thannhausen bei Weiz",
+      "seite": "zechner-andreas-2.html",
+      "anmerkung": "Sohn des 1660 hingerichteten Stefan Zechner. Sass rund 36 Stunden zweimal auf dem Hexenstuhl, gestand nichts und wurde freigelassen; 19 Wochen arbeitsunfaehig, weil die Stricke die Haut abgeloest hatten. Bei einer spaeteren Gegenueberstellung schwankte der Anklaeger - daraufhin endgueltig frei.",
+      "status": "geprueft"
+    },
+    "hornegger-maria": {
+      "name": "Maria Hornegger",
+      "varianten": [
+        "die Horneggerin"
+      ],
+      "rollen": [
+        "beschuldigt",
+        "denunziantin"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Sagte im geheimen und im offenen Recht gegen Andreas Zechner aus und starb dafuer. Der Bannrichter liess sie hinrichten, ohne die Anordnung der Regierung abzuwarten, die das fehlende Verhoerprotokoll beanstandet hatte.",
+      "status": "geprueft"
+    },
+    "paur-koloman": {
+      "name": "Koloman Paur",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt",
+        "denunziant"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Sagte vierzehn Tage nach Hornegger gegen Andreas Zechner aus, blieb bei der Aussage und wurde ebenfalls hingerichtet. Nicht zu verwechseln mit dem 'Andre Paar vulgo Grabenanderl' der Banngerichts-Taxe - anderer Vorname.",
+      "status": "geprueft"
+    },
+    "winterin": {
+      "name": "die Winterin",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Vom Bannrichter Tillerich als Beispiel angefuehrt: habe zwei Jahre zuvor alle ihre Kinder zur Hexengesellschaft gebracht, bereits hingerichtet.",
+      "status": "geprueft"
+    },
+    "schadin": {
+      "name": "die Schadin",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Von Tillerich zusammen mit der Winterin genannt.",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -2960,6 +3022,46 @@
         "heiser-2.html"
       ],
       "gruppe": "st-lambrecht-1653",
+      "status": "geprueft"
+    },
+    "zechner-andreas-2.html": {
+      "beschuldigte": [
+        "zechner-andreas"
+      ],
+      "jahr": 1686,
+      "ort": "Landgericht Waldstein, Verfahren fortgesetzt in Stübing und Thannhausen bei Weiz",
+      "koordinaten": {
+        "lat": 47.2223527,
+        "lon": 15.2912802,
+        "quelle": "OSM-Geocoder, Schloss Waldstein"
+      },
+      "bannrichter": [
+        "tillerich-johann"
+      ],
+      "zeugen": [
+        "hornegger-maria",
+        "paur-koloman"
+      ],
+      "nennt": [
+        "zechner-stefan",
+        "winterin",
+        "schadin"
+      ],
+      "typus": "ortsansaessig",
+      "anlass": [
+        "denunziation-unter-folter",
+        "sippenverdacht"
+      ],
+      "anklage": [
+        "zauberei"
+      ],
+      "ausgang": {
+        "art": "freigelassen",
+        "datum": "1686",
+        "anmerkung": "Nach rund 36 Stunden Hexenstuhl ohne Gestaendnis freigelassen; nach einer weiteren Anzeige und einer Gegenueberstellung, bei der der Anklaeger schwankte, endgueltig frei. Beide Belastungszeugen wurden hingerichtet."
+      },
+      "fundstelle": "Banngerichtsprotokoll vom 24. Juli 1686, Verlaufsbericht und Begleitschreiben des Bannrichters; Original im Steiermaerkischen Landesarchiv, GBI4346 und Ea-1686-VII-4",
+      "gruppe": "gratwein-1686",
       "status": "geprueft"
     }
   },
