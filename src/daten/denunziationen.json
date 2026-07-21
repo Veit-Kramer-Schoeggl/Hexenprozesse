@@ -2338,5 +2338,26 @@
       "m": "maennlich",
       "unbekannt": "aus dem Protokoll nicht zu erschliessen"
     }
+  },
+  "_byloffMotive": {
+    "hinweis": "Byloff-Kapitel, die nicht dasselbe Verfahren betreffen, aber dieselbe Praktik beschreiben wie eine Prozessseite. Am Text geprueft. Getrennt von _byloffQuerverweise gefuehrt, wo Kapitel und Prozess derselbe Fall sind.",
+    "teil-3#kap-45": {
+      "jahr": 1666,
+      "titel": "TEILE VON HENKERGERAETEN ALS TALISMAN UND ALS HEILZAUBER. DIEBSEGEN",
+      "prozess": "walburga.html",
+      "beleg": "Zauberbuechlein eines 'Halters aus der Steiermark': Holz und Stricke vom Galgen lassen Ware rasch verkaufen - Walburga raet der Kuchenbaeckerin, ihre Kuchen mit einem Henkerstrick zu raeuchern (Punkt 3). Dazu der Diebsegen."
+    },
+    "teil-2#kap-22": {
+      "jahr": 1595,
+      "titel": "BESESSENHEITSZAUBER, WETTERBESCHWOERUNG, DIEBZAUBER u. a.",
+      "prozess": "walburga.html",
+      "beleg": "Wetterwehren und Wiederbeschaffung gestohlenen Gutes - dieselben zwei Kuenste tragen das Verfahren gegen Walburga (Punkte 1, 2, 10, 19, 30)."
+    },
+    "teil-2#kap-24": {
+      "jahr": 1600,
+      "titel": "VIEHANSPRECHEN (VIEHSEGEN)",
+      "prozess": "walburga.html",
+      "beleg": "Der Viehsegen schliesst mit 'Es helf dir Gott der Vater, Gott der Sohn und Gott der heilige Geist' - dieselbe Schlussformel wie in Walburgas Zahlensegen und Wettergebet."
+    }
   }
 }
