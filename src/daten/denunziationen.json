@@ -576,7 +576,7 @@
         "beschuldigt"
       ],
       "seite": null,
-      "anmerkung": "Wirtin aus Graz; von Rueprecht und Glaser genannt",
+      "anmerkung": "Wirtin aus Graz; von Rueprecht, Glaser und Thomas Heiser genannt. Nach Heiser vermummt beim Festmahl auf dem Schoeckl - vornehme Gaeste haetten dort ihr Gesicht verhuellt. Eine eigene Akte gegen sie ist nicht ueberliefert.",
       "status": "geprueft",
       "geschlecht": "w"
     },
@@ -1064,6 +1064,107 @@
       "seite": null,
       "anmerkung": "Bat um einen Rat gegen den Vater ihres Kindes und drohte der Walburga spaeter Schlaege an, weil diese den Mann geheilt hatte.",
       "status": "geprueft"
+    },
+    "heiser-thomas": {
+      "name": "Thomas Heiser",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt",
+        "denunziant"
+      ],
+      "geschlecht": "m",
+      "amt": "Hirte, fahrend",
+      "seite": "heiser-1.html",
+      "anmerkung": "84 Jahre alt beim Verhoer. Lebte vom Beten des Wolfsegens bei den Bauern. Belastet unter der Folter seinen eigenen Sohn Gregor (Punkt 37) und nennt die Prantauerin.",
+      "status": "geprueft"
+    },
+    "heiser-gregor": {
+      "name": "Gregor Heiser",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "amt": "Sohn des Thomas Heiser",
+      "seite": "heiser-2.html",
+      "anmerkung": "Vom eigenen Vater belastet: dieser habe ihn schon im Mutterleib dem Boesen Geist versprochen.",
+      "status": "geprueft"
+    },
+    "steger-lorenz": {
+      "name": "Lorenz Steger",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "seite": "steger.html",
+      "anmerkung": "Am selben Tag mit Vater und Sohn Heiser hingerichtet.",
+      "status": "geprueft"
+    },
+    "reiter-wolff": {
+      "name": "Wolff Reiter",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "In Frauenburg hingerichtet; einer der beiden, von denen Thomas Heiser den Wolfsegen gelernt haben will.",
+      "status": "geprueft"
+    },
+    "winkler-paul": {
+      "name": "Paul Winkler",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Marktrichter in St. Lambrecht",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "haan-christoph": {
+      "name": "Christoph Haan",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "wieser-hans": {
+      "name": "Hans Wieser",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "schaffer-stlambrecht": {
+      "name": "Schaffer",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Im Protokoll nur mit dem Zunamen gefuehrt.",
+      "status": "geprueft"
+    },
+    "probst-von-gurk": {
+      "name": "der frühere Probst von Gurk",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Thomas Heiser gibt vom Hoerensagen an, dieser habe an die 200 Zauberer, Wettermacher und Wolfsbanner unterhalten und sei in Kaernten hingerichtet worden. Nicht ueberprueft.",
+      "vermutlich": true,
+      "status": "unsicher"
     }
   },
   "gruppen": {
@@ -2083,6 +2184,55 @@
       },
       "fundstelle": "Verhoer am 23. und 26. September 1652, unterfertigt 27. September 1652; Original im Archiv des Stiftes Rein",
       "status": "geprueft"
+    },
+    "heiser-1.html": {
+      "beschuldigte": [
+        "heiser-thomas"
+      ],
+      "jahr": 1653,
+      "ort": "Stift und Landgericht St. Lambrecht",
+      "koordinaten": {
+        "lat": 47.072029,
+        "lon": 14.2990842,
+        "quelle": "OSM-Geocoder, Sankt Lambrecht, Bezirk Murau"
+      },
+      "bannrichter": [],
+      "zeugen": [],
+      "beisitzer": [
+        "schaffer-stlambrecht",
+        "winkler-paul",
+        "haan-christoph",
+        "wieser-hans"
+      ],
+      "nennt": [
+        "heiser-gregor",
+        "steger-lorenz",
+        "reiter-wolff",
+        "prantauerin",
+        "probst-von-gurk"
+      ],
+      "typus": "fahrend",
+      "anlass": [
+        "ergriffen-als-fahrender"
+      ],
+      "anklage": [
+        "zauberei",
+        "wolfsbannerei",
+        "wetterzauber",
+        "teufelsbund",
+        "hostienfrevel"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "4. August 1653",
+        "anmerkung": "Vor dem Scheiterhaufen mit gluehenden Zangen gebrannt, dann erwuergt und verbrannt. Gemeinsam mit dem Sohn Gregor Heiser und Lorenz Steger."
+      },
+      "fundstelle": "Verhoer am 28. Juli 1653, Urteil vollstreckt 4. August 1653; Original im Steiermaerkischen Landesarchiv, EA 1657-XI-23",
+      "verwandt": [
+        "heiser-2.html",
+        "steger.html"
+      ],
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -2331,7 +2481,8 @@
       "erzwungenes-gestaendnis": "Gestaendnis durch Drohung oder List eines Privatmanns herbeigefuehrt",
       "ergriffen-bei-anderer-tat": "zunaechst wegen Diebstahls ergriffen, Zauberei kam im Verhoer dazu",
       "sippenverdacht": "Vater, Mutter oder Verwandte wurden frueher hingerichtet; der Verdacht wird auf die Nachkommen uebertragen",
-      "heiltaetigkeit": "die eigene Heil-, Segens- oder Wahrsagepraxis wird zum Gegenstand des Verfahrens"
+      "heiltaetigkeit": "die eigene Heil-, Segens- oder Wahrsagepraxis wird zum Gegenstand des Verfahrens",
+      "ergriffen-als-fahrender": "als Bettler oder Landstreicher aufgegriffen; die Zauberei kam erst im Verhoer dazu"
     },
     "geschlecht": {
       "w": "weiblich",
@@ -2358,6 +2509,18 @@
       "titel": "VIEHANSPRECHEN (VIEHSEGEN)",
       "prozess": "walburga.html",
       "beleg": "Der Viehsegen schliesst mit 'Es helf dir Gott der Vater, Gott der Sohn und Gott der heilige Geist' - dieselbe Schlussformel wie in Walburgas Zahlensegen und Wettergebet."
+    },
+    "teil-2#kap-31": {
+      "jahr": 1615,
+      "titel": "WOLFSEGEN",
+      "prozess": "heiser-1.html",
+      "beleg": "Zwei Wolfsegen, 1615 zwei Landstreichern abgenommen. Thomas Heiser lernte den seinen um 1603 von einem Kameraden, 'der habe vom Beten des Wolf-Segens bei den Bauern gelebt' - dasselbe Milieu und derselbe Broterwerb."
+    },
+    "teil-2#kap-32": {
+      "jahr": 1635,
+      "titel": "AUFLOESUNG DES WOLFBANNES (WOLFSEGEN)",
+      "prozess": "heiser-1.html",
+      "beleg": "Gestaendnis des Wolfbanners Blasius Puerhinger mit der Formel zur Aufloesung des Bannes; Heiser wird 1653 wegen derselben Praktik hingerichtet."
     }
   }
 }

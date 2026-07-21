@@ -152,6 +152,15 @@ Herrschaft Neudau / Landgericht Burgau im Steiermärkischen Landesarchiv.
 Repo und ist auch im Internet Archive nicht auffindbar (Stand Juli 2026).
 Alle anderen fehlenden Bilder wurden von dort zurückgeholt.
 
+**Probst von Gurk: 200 Zauberer?** Thomas Heiser gibt 1653 zu Protokoll
+(Punkt 47), der frühere Probst von Gurk habe an die zweihundert Zauberer,
+Wettermacher und Wolfsbanner unterhalten und jährlich bewirtet, sei
+inzwischen in Kärnten hingerichtet worden, und „gleichsam halb Kärnten“
+sei wegen solcher Zauberei verhaftet worden. Er hat das vom Hörensagen
+eines Weggefährten. In der Kartei als unsicher geführt. Ob dahinter ein
+realer Kärntner Fall steht, wäre nachzugehen — die Kärntner
+Zaubererjackl-Wellen fallen zeitlich in die Nähe.
+
 **Aufnahmeort eines Bildes unbekannt.** Auf der Seite
 [Veronika Rauch](src/pages/prozesse/rauch.html) steht ein Foto eines
 Wappens an einem Grabdenkmal (`IMG_0658k.JPG`). Wo es aufgenommen wurde,
