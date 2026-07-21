@@ -27,7 +27,8 @@
       ],
       "amt": "Bannrichter in der Steiermark",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "tillerich-johann": {
       "name": "Dr. Johann Tillerich",
@@ -40,7 +41,8 @@
       ],
       "amt": "Kaiserlicher steirischer Bannrichter",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "schaller-georg": {
       "name": "Georg Schaller",
@@ -49,7 +51,8 @@
       ],
       "amt": "Bannrichter in der Steiermark",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "apostelen-pl": {
       "name": "Dr. Peter Lucrety von Apostelen",
@@ -62,7 +65,8 @@
       ],
       "amt": "Kaiserlicher Bannrichter im Viertel Cilli",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "will-johann-georg-franz-von": {
       "name": "Johann Georg Franz von Will",
@@ -71,7 +75,8 @@
       ],
       "amt": "Eingesetzter Bannrichter in Friedau (Ormož)",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "pistory-gottfried-jeremias": {
       "name": "Gottfried Jeremias Pistory",
@@ -80,7 +85,8 @@
       ],
       "amt": "Kaiserlicher Bannrichter in der Steiermark",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "guisinger-johann-jakob": {
       "name": "Dr. Johann Jakob Guisinger",
@@ -89,7 +95,8 @@
       ],
       "amt": "Kaiserlicher Bannrichter",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "caluuci": {
       "name": "Kommissar Caluuci",
@@ -98,7 +105,8 @@
       ],
       "amt": "Regierungskommissär der Innerösterreichischen Regierung",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "remigk-joh-bapt": {
       "name": "Joh. Bapt. Remigk",
@@ -107,7 +115,8 @@
       ],
       "amt": "Vereidigter Banngerichtsschreiber in Krain",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "posch-christina": {
       "name": "Christina Posch",
@@ -115,7 +124,8 @@
         "beschuldigt"
       ],
       "seite": "posch.html",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "brunnbaeurin": {
       "name": "die Brunnbäurin",
@@ -124,7 +134,8 @@
       ],
       "seite": null,
       "anmerkung": "Vor 1686 hingerichtet. Kommt in mehreren Verfahren des Raums Gratwein vor.",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "christanderl": {
       "name": "die Christanderl",
@@ -134,7 +145,8 @@
       "seite": null,
       "anmerkung": "Vor 1686 hingerichtet. Sehr wahrscheinlich identisch mit Margareth Jantscher, die im Verfahren gegen Peter Paar als 'Margret Jantscher vulgo Christanderl' gefuehrt wird.",
       "status": "geprueft",
-      "vermutlich": "jantscher-margareth"
+      "vermutlich": "jantscher-margareth",
+      "geschlecht": "w"
     },
     "joergbaeurin": {
       "name": "die Jörgbäurin",
@@ -142,7 +154,8 @@
         "beschuldigt"
       ],
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "pongraetzbaeurin": {
       "name": "die Pongrätzbäurin",
@@ -150,7 +163,8 @@
         "beschuldigt"
       ],
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "muralterin": {
       "name": "die Muralterin",
@@ -158,7 +172,8 @@
         "beschuldigt"
       ],
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "heyger": {
       "name": "der Heyger",
@@ -166,7 +181,8 @@
         "beschuldigt"
       ],
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "reitermahr-jodl": {
       "name": "der Reitermahr Jodl",
@@ -174,7 +190,8 @@
         "beschuldigt"
       ],
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "laempertitsch-wolf-lorenz": {
       "name": "Wolf Lorenz Lämpertitsch",
@@ -183,7 +200,8 @@
       ],
       "amt": "Bannrichter der Herrschaft Gutenhag; 1673 Stadtrichter in Radkersburg",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "wendtseisen-johannes": {
       "name": "Johannes Wendtseisen",
@@ -192,7 +210,8 @@
       ],
       "anmerkung": "Rivale von Lämpertitsch, machte ihm 1672 einen Prozess streitig",
       "seite": null,
-      "status": "offen"
+      "status": "offen",
+      "geschlecht": "m"
     },
     "schauberg-elenka": {
       "name": "Elenka Schauberg",
@@ -200,7 +219,8 @@
         "beschuldigt"
       ],
       "seite": "schauberg.html",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "ferk-magdalena": {
       "name": "Magdalena Ferk",
@@ -210,7 +230,8 @@
       ],
       "seite": null,
       "anmerkung": "Ihre Geständnisse lösten weitere Verfahren in Gutenhag aus",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "kollar-ursula": {
       "name": "Ursula Kollar",
@@ -218,7 +239,8 @@
         "beschuldigt"
       ],
       "seite": "kollar.html",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "luzia-winzerin-thesalan": {
       "name": "Lucia, die Winzerin des Thesalan",
@@ -226,7 +248,8 @@
         "beschuldigt"
       ],
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "rotter": {
       "name": "die Rotter",
@@ -234,7 +257,8 @@
         "beschuldigt"
       ],
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "wagner-ursula": {
       "name": "Ursula Wagner",
@@ -242,7 +266,8 @@
         "beschuldigt"
       ],
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "wukinetz-marina": {
       "name": "Marina Wukinetz",
@@ -250,7 +275,8 @@
         "beschuldigt"
       ],
       "seite": "wukinetz.html",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "juliane-gutenhag": {
       "name": "Juliane",
@@ -259,7 +285,8 @@
       ],
       "seite": null,
       "anmerkung": "1661 vor der Verurteilung im Kerker gestorben",
-      "status": "offen"
+      "status": "offen",
+      "geschlecht": "w"
     },
     "hans-aus-der-metnitz": {
       "name": "Hans aus der Metnitz",
@@ -272,7 +299,8 @@
       ],
       "seite": "metnitz.html",
       "anmerkung": "73 oder 74 Jahre alt; zwei Jahre zuvor schon einmal gefangen und gegen Eid freigelassen",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "wurm-ludwig": {
       "name": "Ludwig Wurm",
@@ -281,7 +309,8 @@
       ],
       "amt": "Sekretär und Hofrichter des Stiftes St. Lambrecht",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "offner-caspar": {
       "name": "Caspar Offner",
@@ -290,7 +319,8 @@
       ],
       "amt": "Bürger von St. Lambrecht",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "rainer-albrecht": {
       "name": "Albrecht Rainer",
@@ -299,7 +329,8 @@
       ],
       "amt": "Ratsbürger in St. Lambrecht",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "mugg-hans": {
       "name": "Hans Mugg",
@@ -308,7 +339,8 @@
       ],
       "amt": "Marktrichter in St. Lambrecht",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "tuerk-katharina": {
       "name": "Katharina Türk",
@@ -317,7 +349,8 @@
       ],
       "seite": null,
       "anmerkung": "ca. 45 Jahre, Eltern aus Schützendorf; bestreitet",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "samoritsch-marina": {
       "name": "Marina Samoritsch",
@@ -326,7 +359,8 @@
       ],
       "seite": null,
       "anmerkung": "Witwe aus Zweng, ca. 30 Jahre; gesteht",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "obran-urscha": {
       "name": "Urscha, Witwe des Georg Obran",
@@ -335,7 +369,8 @@
       ],
       "seite": null,
       "anmerkung": "aus Jessern, ca. 47 Jahre; gesteht, wurde gefoltert",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "vidanitsch-urscha": {
       "name": "Urscha, Ehefrau des Jury Vidanitsch",
@@ -344,7 +379,8 @@
       ],
       "seite": null,
       "anmerkung": "aus Schützendorf, ca. 30 Jahre; gesteht",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "pillay-margaretha": {
       "name": "Margaretha, Frau des Hans Pillay",
@@ -353,7 +389,8 @@
       ],
       "seite": null,
       "anmerkung": "aus Braunegendorf, ca. 48 Jahre",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "scherschen-margaretha": {
       "name": "Margaretha Scherschen",
@@ -363,7 +400,8 @@
       ],
       "seite": null,
       "anmerkung": "vor 1672 verbrannt; belastet drei der Inhaftierten",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "krainz-eva": {
       "name": "Eva Krainz",
@@ -373,7 +411,8 @@
       ],
       "seite": null,
       "anmerkung": "vor 1672 hingerichtet; belastet zwei der Inhaftierten",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "scherb-gera": {
       "name": "Gera Scherb",
@@ -381,7 +420,8 @@
         "beschuldigt"
       ],
       "seite": "scherb.html",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "hoerk-marina": {
       "name": "Marina Hörk",
@@ -390,7 +430,8 @@
       ],
       "seite": "hoerk.html",
       "anmerkung": "Schwester von Gera Scherb; klagte im Juni 1671 gemeinsam mit ihrem Mann und ihrer Schwester gegen die Verleumder, wurde im Jaenner 1672 selbst verurteilt",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "jantscher-margareth": {
       "name": "Margareth Jantscher",
@@ -403,7 +444,8 @@
       ],
       "seite": "jantscher.html",
       "anmerkung": "ueber 50 Jahre, wohnhaft in Stuebing, Untertanin von Rein",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "paar-peter": {
       "name": "Peter Paar",
@@ -415,7 +457,8 @@
         "beschuldigt"
       ],
       "seite": "schoeckl.html",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "ringshalmer-sebastian": {
       "name": "Sebastian Ringshalmer",
@@ -424,7 +467,8 @@
       ],
       "seite": null,
       "anmerkung": "ehemaliger Amtmann; von Jantscher als Anfuehrer der Versammlungen bezeichnet",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "keyditsch-margaretha": {
       "name": "Margaretha Keyditsch",
@@ -432,7 +476,8 @@
         "beschuldigt"
       ],
       "seite": "keyditsch.html",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "apollonia-gutenhag": {
       "name": "Apollonia",
@@ -441,7 +486,8 @@
       ],
       "seite": "keyditsch.html",
       "anmerkung": "Zuname in den Akten nicht bekannt; ca. 26 Jahre alt",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "juliana-gutenhag": {
       "name": "Juliana",
@@ -451,7 +497,8 @@
       "seite": null,
       "anmerkung": "Soll Keyditsch die Zaubermittel gegeben haben; am 18. Juni 1661 zur Gegenueberstellung gebracht, stellte sich krank. Wahrscheinlich dieselbe Juliane, die 1661 vor der Verurteilung im Kerker starb.",
       "vermutlich": "juliane-gutenhag",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "hoerk-michael": {
       "name": "Michael Hörk",
@@ -460,7 +507,8 @@
       ],
       "seite": null,
       "anmerkung": "Ehemann der Marina Hörk; klagte 1671 gemeinsam mit ihr und ihrer Schwester gegen die Verleumder",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "werluga-martin": {
       "name": "Martin Werluga",
@@ -469,7 +517,8 @@
       ],
       "seite": null,
       "anmerkung": "Nach Marina Hoerks Gestaendnis der Teufel selbst unter diesem Namen",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "gregoritsch-michael": {
       "name": "Michael Gregoritsch",
@@ -478,7 +527,8 @@
       ],
       "seite": null,
       "anmerkung": "Beklagter im Verleumdungsverfahren 1671, ediert bei Byloff Kap. 49",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "schepp-marina": {
       "name": "Marina Schepp",
@@ -487,7 +537,8 @@
       ],
       "seite": "schepp.html",
       "anmerkung": "Witwe, an die 50 Jahre alt",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "heen-marx": {
       "name": "Marx Heen",
@@ -496,7 +547,8 @@
       ],
       "seite": "heen.html",
       "anmerkung": "26 bis 28 Jahre, ledig, geboren beim Kollbauern in Neuberg",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "rueprecht-marx": {
       "name": "Marx Rueprecht",
@@ -505,7 +557,8 @@
         "denunziant"
       ],
       "seite": "rueprecht.html",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "rumpl-andreas": {
       "name": "Andreas Rumpl",
@@ -514,7 +567,8 @@
       ],
       "seite": null,
       "anmerkung": "Amtmann in Neustift bei St. Veit; von Rueprecht benannt, bestritt bei der Gegenueberstellung",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "prantauerin": {
       "name": "Die Prantauerin",
@@ -523,7 +577,8 @@
       ],
       "seite": null,
       "anmerkung": "Wirtin aus Graz; von Rueprecht und Glaser genannt",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "zechner-stefan": {
       "name": "Stefan Zechner",
@@ -534,7 +589,8 @@
         "beschuldigt"
       ],
       "seite": "zechner-andreas-1.html",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "schoepfer-marx": {
       "name": "Marx Schöpfer",
@@ -543,7 +599,8 @@
       ],
       "seite": "mschoepfer.html",
       "anmerkung": "Aus Hinteregg bei Oberwoelz; bei Byloff als Viehhalter gefuehrt",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "hacker-matthias": {
       "name": "Matthias Hacker",
@@ -555,7 +612,8 @@
       ],
       "seite": "hacker.html",
       "anmerkung": "frueherer Bewohner der Kathal Taz Hube",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "hacker-eva": {
       "name": "Eva Hacker",
@@ -564,7 +622,8 @@
       ],
       "seite": "hacker.html",
       "anmerkung": "Ehefrau des Matthias Hacker. Am 10. Dezember 1694 mit ihm gefangen genommen und am 22. Jaenner 1695 mit ihm hingerichtet. Ihr Verhoer ist nicht ueberliefert - sie erscheint in den Akten nur im Unkosten-Verzeichnis.",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "lipp-michael": {
       "name": "Michael Lipp",
@@ -574,7 +633,8 @@
       ],
       "amt": "Bauer, Untertan des Praelaten von Poellau",
       "seite": "lipp.html",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "hartmann-abraham": {
       "name": "Abraham Hartmann",
@@ -588,7 +648,8 @@
       "amt": "Steinmetz",
       "seite": null,
       "anmerkung": "Hat die Wirtshausrede des Lipp zur Anzeige gebracht und ihn dabei selbst als Zauberer bezeichnet.",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "kraiss-georg": {
       "name": "Georg Kraiß",
@@ -600,7 +661,8 @@
       ],
       "amt": "Bürger aus Riegersdorf",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "purgstall-graf-von": {
       "name": "Graf von Purgstall",
@@ -611,7 +673,8 @@
       "amt": "Regierungskommissär; Inhaber der Riegersburg, aber ohne eigenes Landgericht",
       "seite": null,
       "anmerkung": "Im Begleitschreiben nur mit dem Familiennamen genannt, kein Vorname überliefert.",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "neubauer-ursula": {
       "name": "Ursula Neubauer",
@@ -622,7 +685,8 @@
       "amt": "Toepferin in Wörth, Untertanin der Herrschaft Neudau",
       "seite": "neubauer.html",
       "anmerkung": "Nach fast einem Jahr Haft in Burgau ohne Ergebnis auf Lebenszeit aus der Steiermark verbannt; bittet den Kaiser um Rueckkehr.",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "neubauer-matthias": {
       "name": "Matthias Neubauer",
@@ -633,7 +697,8 @@
       "amt": "Toepfer in Wörth in der Steiermark",
       "seite": null,
       "anmerkung": "Ehemann der Ursula Neubauer; bleibt mit den kleinen Kindern zurueck.",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "dornschuster-frau": {
       "name": "Frau des Georg Dornschuster",
@@ -647,7 +712,8 @@
       "amt": "Nachbarin in Wörth",
       "seite": null,
       "anmerkung": "Hat der Neubauer Geschirr im Wert von drei Groschen weggenommen und sie, zur Rede gestellt, der Zauberei bezichtigt.",
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "w"
     },
     "gager-matthias": {
       "name": "Matthias Gager",
@@ -657,7 +723,8 @@
       ],
       "amt": "Nachbar in Wörth",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "geschlecht": "m"
     },
     "rathall-georg-julius-von": {
       "name": "Georg Julius von Rathall",
@@ -667,7 +734,228 @@
       ],
       "amt": "Inhaber der Herrschaft Neudau",
       "seite": null,
+      "status": "geprueft",
+      "geschlecht": "m"
+    },
+    "rauch-veronika": {
+      "name": "Veronika Rauch",
+      "varianten": [
+        "die Vroni"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "amt": "Untertanin von Gleichenberg, wohnhaft in Merkendorf",
+      "seite": "rauch.html",
+      "anmerkung": "An die 50 Jahre alt, seit 28 Jahren verheiratet, sechs lebende Kinder. Steht auch auf der Opferliste von Gleichenberg im Pindter-Protokoll.",
       "status": "geprueft"
+    },
+    "summer-jakob": {
+      "name": "Jakob Summer",
+      "varianten": [],
+      "rollen": [
+        "landgerichtsverwalter"
+      ],
+      "geschlecht": "m",
+      "amt": "Landgerichtsverwalter Gleichenberg",
+      "seite": null,
+      "anmerkung": "Fuehrt sowohl das Verhoer der Susanne Pindter (Maerz 1689) als auch das der Veronika Rauch (Mai 1689).",
+      "status": "geprueft"
+    },
+    "staudacher-peter": {
+      "name": "Peter Staudacher",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbuerger in Gnas",
+      "seite": null,
+      "anmerkung": "Beisitzer bei Pindter und bei Rauch.",
+      "status": "geprueft"
+    },
+    "weissinger-matthias": {
+      "name": "Matthias Weissinger",
+      "varianten": [
+        "Matthias Weißinger"
+      ],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbuerger von Gnas",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "rinner-georg": {
+      "name": "Georg Rinner",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbuerger von Gnas",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "pamrorth-christoph": {
+      "name": "Christoph Pamrorth",
+      "varianten": [
+        "Christoph Paamrarth"
+      ],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Marktrichter von Gnas",
+      "seite": null,
+      "anmerkung": "Im selben Protokoll zweimal unterschiedlich geschrieben.",
+      "status": "geprueft"
+    },
+    "schlecht-leopold": {
+      "name": "Leopold Schlecht",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "burg-michael": {
+      "name": "Michael Burg",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "crainer-florian": {
+      "name": "Florian Crainer",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "tommer-christoph": {
+      "name": "Christoph Tommer",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "grandl-mann": {
+      "name": "der Grandl",
+      "varianten": [
+        "Grandl aus Sulz"
+      ],
+      "rollen": [
+        "genannt",
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Von Rauch als bereits hingerichtet bezeichnet. Auf der Opferliste von Gleichenberg steht 'Hans Gindl vulgo Grandl aus Sulz' - die Gleichsetzung liegt nahe, ist aber nicht ausdruecklich belegt.",
+      "vermutlich": true,
+      "status": "unsicher"
+    },
+    "grandl-frau": {
+      "name": "die Grandl",
+      "varianten": [],
+      "rollen": [
+        "genannt",
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Vermutlich 'Ursula Gindl vulgo Grandl aus Sulz' der Opferliste.",
+      "vermutlich": true,
+      "status": "unsicher"
+    },
+    "takner-mann": {
+      "name": "der Takner",
+      "varianten": [
+        "Tarkner"
+      ],
+      "rollen": [
+        "genannt",
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Vermutlich 'Peter Fossolt vulgo Tarkner aus Merkendorf' der Opferliste.",
+      "vermutlich": true,
+      "status": "unsicher"
+    },
+    "takner-frau": {
+      "name": "die Takner",
+      "varianten": [],
+      "rollen": [
+        "genannt",
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Vermutlich 'Veronika Takner' der Opferliste. Von Rauch als noch lebend bezeichnet.",
+      "vermutlich": true,
+      "status": "unsicher"
+    },
+    "gollabitsch": {
+      "name": "die Gollabitsch",
+      "varianten": [],
+      "rollen": [
+        "genannt",
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Die Opferliste nennt zwei Traegerinnen dieses Vulgonamens: Maria Ladler aus Haager Greitdorn und Magdalena Kindler aus Dirnbach. Welche gemeint ist, geht aus dem Protokoll nicht hervor.",
+      "vermutlich": true,
+      "status": "unsicher"
+    },
+    "teschl-alte": {
+      "name": "die alte Teschl",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Laut Rauch sechs Jahre vor dem Verhoer gestorben, also um 1683; steht nicht auf der Opferliste.",
+      "status": "geprueft"
+    },
+    "hoschhansl": {
+      "name": "die Hoschhansl",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Von Rauch als noch lebend bezeichnet; auf der Opferliste nicht zu finden.",
+      "status": "geprueft"
+    },
+    "schwarz-hiasl": {
+      "name": "Hiasl, Sohn des Schwarz in Waldsberg",
+      "varianten": [],
+      "rollen": [
+        "genannt",
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Vermutlich 'Matthias Schwanz aus Waldsberg' der Opferliste - Hiasl ist die Koseform von Matthias.",
+      "vermutlich": true,
+      "status": "unsicher"
     }
   },
   "gruppen": {
@@ -1316,6 +1604,61 @@
       },
       "fundstelle": "Bittschrift an Kaiser Ferdinand III., abgedruckt in den Steiermaerkischen Geschichtsblaettern 1882, S. 155ff",
       "status": "geprueft"
+    },
+    "rauch.html": {
+      "beschuldigte": [
+        "rauch-veronika"
+      ],
+      "jahr": 1689,
+      "ort": "Hochgraefliche Herrschaft Trautmannsdorf, Landgerichtshoheit Gleichenberg",
+      "koordinaten": {
+        "lat": 46.872154,
+        "lon": 15.8839319,
+        "quelle": "OSM-Geocoder, Trautmannsdorf in Oststeiermark; Landgericht Gleichenberg 46.8744727 / 15.9049632"
+      },
+      "bannrichter": [],
+      "zeugen": [],
+      "beisitzer": [
+        "summer-jakob",
+        "schlecht-leopold",
+        "rinner-georg",
+        "weissinger-matthias",
+        "staudacher-peter",
+        "pamrorth-christoph",
+        "burg-michael",
+        "crainer-florian",
+        "tommer-christoph"
+      ],
+      "nennt": [
+        "grandl-mann",
+        "grandl-frau",
+        "takner-mann",
+        "takner-frau",
+        "gollabitsch",
+        "teschl-alte",
+        "hoschhansl",
+        "schwarz-hiasl"
+      ],
+      "typus": "ortsansaessig",
+      "anlass": [
+        "wetterschaden"
+      ],
+      "anklage": [
+        "zauberei",
+        "hagelmachen",
+        "teufelsbund",
+        "hostienfrevel"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "25. Mai 1689",
+        "anmerkung": "Auf dem Scheiterhaufen mit dem Strang hingerichtet, danach der Koerper verbrannt."
+      },
+      "fundstelle": "Verhoer am 20., 21. und 23. Mai 1689; abgedruckt bei Hammer-Purgstall, Die Gallerin auf der Riegersburg (Wien 1849)",
+      "verwandt": [
+        "pindter.html"
+      ],
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -1563,6 +1906,11 @@
       "erzwungenes-gestaendnis": "Gestaendnis durch Drohung oder List eines Privatmanns herbeigefuehrt",
       "ergriffen-bei-anderer-tat": "zunaechst wegen Diebstahls ergriffen, Zauberei kam im Verhoer dazu",
       "sippenverdacht": "Vater, Mutter oder Verwandte wurden frueher hingerichtet; der Verdacht wird auf die Nachkommen uebertragen"
+    },
+    "geschlecht": {
+      "w": "weiblich",
+      "m": "maennlich",
+      "unbekannt": "aus dem Protokoll nicht zu erschliessen"
     }
   }
 }

@@ -137,6 +137,26 @@ oder im Stand von 2017 (`03_Bearbeitung_Aktuell/HP 2017-09`) eine Datei
 `steger1.htm`? Falls ja, als eigene Prozessseite ergänzen und den Link
 wiederherstellen.
 
+## Offene Recherchefragen
+
+**Wurde Ursula Neubauer erhört?** Die Bittschrift von 1644 bricht mit der
+Bitte ab; ob der Kaiser die Verbannung aufgehoben hat und sie zu Mann und
+Kindern zurückkehren durfte, steht weder im Text noch in der Fassung der
+Steiermärkischen Geschichtsblätter 1882 (S. 155ff), die Siegfried Kramer
+benutzt hat. Eine kurze Websuche bringt nur die eigene Seite zurück.
+Nächster Schritt wäre das Original: Hofkanzlei- bzw. Regierungsakten zur
+Herrschaft Neudau / Landgericht Burgau im Steiermärkischen Landesarchiv.
+
+**Opferliste von Gleichenberg in das Todeslisten-Format bringen.** Auf der
+Seite [Susanne Pindter](src/pages/prozesse/pindter.html) steht eine
+Liste von 37 Namen — mit Vulgonamen und Herkunftsort, aber ohne Daten.
+Sie gehört in das Format der Todeslisten (Namen links, Datum rechts,
+dicker Strich, Summe) und in die Kartei. Zwei der 37 haben ein erhaltenes
+Protokoll: Susanne Pindter (hingerichtet 31. März 1689) und Veronika
+Rauch (25. Mai 1689). Ein Bannrichter wird in beiden Protokollen nicht
+genannt — die Liste lässt sich also keinem Bannrichter zuordnen. Beim
+Überführen der Pindter-Seite miterledigen.
+
 ## Fehlende Dateien — PDFs wiederherstellen
 
 **Fünf tote PDF-Links.** Im Repo liegt unter `src/assets/` keine einzige
@@ -152,7 +172,7 @@ PDF datoteko“) — also der Seiteninhalt als Download zum Ausdrucken.
 | `/images/fragenkatalog/fragenkatalog.pdf` | Fragenkatalog | nein |
 | `/images/lipp/lipp.pdf` | Michael Lipp | ja |
 | `/images/neubauer/neubauer.pdf` | Ursula Neubauer | nein |
-| `/images/rauch/rauch.pdf` | Veronika Rauch | nein |
+| `/images/rauch/rauch.pdf` | Veronika Rauch | ja |
 | `/images/wed-2/wed2.pdf` | Dorothea Wed (slovensko) | nein |
 
 Die Links bleiben bewusst im Code stehen — die Dateien sollen
