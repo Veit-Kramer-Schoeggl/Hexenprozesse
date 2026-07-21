@@ -82,12 +82,13 @@
       "status": "offen"
     },
     "guisinger-johann-jakob": {
-      "name": "Johann Jakob Guisinger",
+      "name": "Dr. Johann Jakob Guisinger",
       "rollen": [
         "bannrichter"
       ],
+      "amt": "Kaiserlicher Bannrichter",
       "seite": null,
-      "status": "offen"
+      "status": "geprueft"
     },
     "caluuci": {
       "name": "Kommissar Caluuci",
@@ -486,6 +487,15 @@
       "seite": "schepp.html",
       "anmerkung": "Witwe, an die 50 Jahre alt",
       "status": "geprueft"
+    },
+    "heen-marx": {
+      "name": "Marx Heen",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "heen.html",
+      "anmerkung": "26 bis 28 Jahre, ledig, geboren beim Kollbauern in Neuberg",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -881,6 +891,34 @@
         "datum": "10. Dezember 1701"
       },
       "status": "geprueft"
+    },
+    "heen.html": {
+      "beschuldigte": [
+        "heen-marx"
+      ],
+      "jahr": 1683,
+      "ort": "Landgericht Oberkapfenberg",
+      "koordinaten": {
+        "lat": 47.4400227,
+        "lon": 15.2934225,
+        "quelle": "OSM-Geocoder, Burg Oberkapfenberg"
+      },
+      "bannrichter": [
+        "guisinger-johann-jakob"
+      ],
+      "zeugen": [],
+      "nennt": [],
+      "anklage": [
+        "zauberei",
+        "diebstahl-und-raub"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "Mai 1683",
+        "anmerkung": "mit dem Strick an einem eigens auf dem Scheiterhaufen errichteten Galgen"
+      },
+      "fundstelle": "Protokoll vom 13. bis 15. Mai 1683",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -1049,6 +1087,14 @@
         "seite": "glanitschnigg.html",
         "name": "Helena Glanitschnigg",
         "datum": "10. Dezember 1701",
+        "art": "hingerichtet"
+      }
+    ],
+    "guisinger-johann-jakob": [
+      {
+        "seite": "heen.html",
+        "name": "Marx Heen",
+        "datum": "Mai 1683",
         "art": "hingerichtet"
       }
     ]
