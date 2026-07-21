@@ -254,7 +254,6 @@ Byloff-Bezüge geprüft:
 
 | Seite | offen |
 |---|---|
-| [Gera Kopschitsch](src/pages/prozesse/kopschitsch.html) | Karte, Kartei, Querverweise |
 | [Gregor Heiser](src/pages/prozesse/heiser-2.html) | Karte, Kartei, Querverweise |
 | [Hans Glaser](src/pages/prozesse/glaser.html) | Karte, Kartei, Querverweise |
 | [Helena Glanitschnigg](src/pages/prozesse/glanitschnigg.html) | Karte, Querverweise (Kartei steht) |
@@ -262,4 +261,4 @@ Byloff-Bezüge geprüft:
 | [Sebastian Kügl](src/pages/prozesse/kuegl.html) | Karte, Kartei, Querverweise |
 
 Erledigt in diesem Durchgang: Zechner II, Dionys, Wed (deutsch und
-slowenisch), Freyenthurn.
+slowenisch), Freyenthurn, Kopschitsch.

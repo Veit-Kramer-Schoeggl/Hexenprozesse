@@ -256,11 +256,18 @@
     "rotter": {
       "name": "die Rotter",
       "rollen": [
-        "beschuldigt"
+        "beschuldigt",
+        "denunziantin"
       ],
       "seite": null,
-      "status": "geprueft",
-      "geschlecht": "w"
+      "status": "unsicher",
+      "geschlecht": "w",
+      "varianten": [
+        "Elenka Rotev",
+        "die Roter"
+      ],
+      "anmerkung": "Von Elenka Schauberg und von Gera Kopschitsch genannt; im Kopschitsch-Protokoll als 'Elenka Rotev', deren Gestaendnis das Verfahren gegen Kopschitsch ausloest. Trotz des gleichen Vornamens wegen des abweichenden Zunamens wohl nicht mit Elenka Schauberg identisch.",
+      "vermutlich": true
     },
     "wagner-ursula": {
       "name": "Ursula Wagner",
@@ -1295,7 +1302,8 @@
       ],
       "geschlecht": "m",
       "seite": null,
-      "status": "geprueft"
+      "status": "geprueft",
+      "anmerkung": "Von Ursula Kollar genannt. Gera Kopschitsch belastete ihn ebenfalls, nahm die Aussage aber am 9. Dezember 1661 zurueck - sie habe es nur von anderen gehoert - und blieb am Tag ihrer Hinrichtung dabei."
     },
     "pater-suniz": {
       "name": "Pater Suniz",
@@ -2076,6 +2084,86 @@
       "geschlecht": "m",
       "seite": null,
       "anmerkung": "Fand die Zaubersachen in den Betten der Herrschaft; zum Zeitpunkt des Prozesses bereits verstorben.",
+      "status": "geprueft"
+    },
+    "kopschitsch-gera": {
+      "name": "Gera Kopschitsch",
+      "varianten": [
+        "die Tochter der Wolwetki"
+      ],
+      "rollen": [
+        "beschuldigt",
+        "denunziantin"
+      ],
+      "geschlecht": "w",
+      "seite": "kopschitsch.html",
+      "anmerkung": "40 Jahre alt. Sagt aus, ihre leibliche Mutter habe sie mit dem Versprechen eines leichteren Lebens hineingezogen. Beim Hexenmahl auf dem Rohitschberg ist sie die Abwaescherin. Nahm am 9. Dezember 1661 ihre Beschuldigung gegen Jakob Mlineritsch zurueck und blieb am Tag der Hinrichtung dabei.",
+      "status": "geprueft"
+    },
+    "wolwetki": {
+      "name": "die Wolwetki",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt",
+        "denunziantin"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Mutter der Gera Kopschitsch; soll sie zehn Jahre vor dem Prozess 'verfuehrt' haben. Moeglicherweise dieselbe wie Ursula Wolwek, die im Kollar-Protokoll als deren Verfuehrerin auftritt - die Namensformen unterscheiden sich, beide gehoeren zur Gutenhager Reihe von 1661.",
+      "vermutlich": true,
+      "status": "unsicher"
+    },
+    "kopschitsch-gregor": {
+      "name": "Gregor",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Bruder der Gera Kopschitsch; soll beim Gradisch-Kreuz und auf dem Rohitschberg den Wein aufgetragen haben.",
+      "status": "geprueft"
+    },
+    "kopschitsch-urscha": {
+      "name": "Urscha",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Schwester der Gera Kopschitsch.",
+      "status": "geprueft"
+    },
+    "kopschitsch-sohn-gregor": {
+      "name": "Gregor, Sohn der Gera Kopschitsch",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Damals fuenf Jahre alt; der Boese Geist habe ihn als Lohn verlangt, die Mutter habe ihn verweigert.",
+      "status": "geprueft"
+    },
+    "treatsch-marina": {
+      "name": "Marina Treatsch",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "gera-tochter-der-juliana": {
+      "name": "Gera, die Tochter der Juliana",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
       "status": "geprueft"
     }
   },
@@ -3623,6 +3711,56 @@
         "anmerkung": "Fuenf Frauen an einem Tag. Bora, die alte Suppan, hat bis zuletzt geschwiegen und wurde dennoch hingerichtet."
       },
       "fundstelle": "Auszug aus dem Banngerichtsprotokoll vom 4. Dezember 1694; abgedruckt bei Hammer-Purgstall, Die Gallerin auf der Riegersburg (Wien 1849)",
+      "status": "geprueft"
+    },
+    "kopschitsch.html": {
+      "beschuldigte": [
+        "kopschitsch-gera"
+      ],
+      "jahr": 1661,
+      "ort": "Herrschaft Gutenhag",
+      "koordinaten": {
+        "lat": 46.5644802,
+        "lon": 15.7868015,
+        "quelle": "OSM-Geocoder, Hrastovec v Slovenskih Goricah"
+      },
+      "bannrichter": [],
+      "urteilssprecher": [
+        "laempertitsch-wolf-lorenz"
+      ],
+      "zeugen": [],
+      "nennt": [
+        "wolwetki",
+        "kopschitsch-gregor",
+        "kopschitsch-urscha",
+        "kopschitsch-sohn-gregor",
+        "ferk-magdalena",
+        "wagner-ursula",
+        "rotter",
+        "kollar-ursula",
+        "juliana-gutenhag",
+        "treatsch-marina",
+        "gera-tochter-der-juliana",
+        "mlineritsch-jakob"
+      ],
+      "typus": "ortsansaessig",
+      "anlass": [
+        "denunziation-unter-folter",
+        "sippenverdacht"
+      ],
+      "anklage": [
+        "zauberei",
+        "teufelsbund",
+        "wetterzauber",
+        "hostienfrevel"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "10. Dezember 1661",
+        "anmerkung": "Am Scheiterhaufen erwuergt und verbrannt, am selben Gerichtstag wie Ursula Kollar. Beide nahmen an diesem Tag eine Beschuldigung zurueck."
+      },
+      "fundstelle": "Gestaendnis vom 29. November 1661, Bestaetigungen 1. und 2. Dezember, Widerruf 9. und 10. Dezember, Urteil 10. Dezember 1661",
+      "gruppe": "gutenhag-1661",
       "status": "geprueft"
     }
   },
