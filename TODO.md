@@ -3,17 +3,6 @@
 Gesammelte Todos aus der laufenden Überarbeitung. Kurz halten, erledigte
 Punkte löschen (die Historie steht in Git).
 
-## Inhaltlich zu klären
-
-- **Dionys: Untertitel stimmt nicht mit dem Inhalt überein.**
-  Der Untertitel lautet „Prozess gegen Dionys und seine Helferin“, aber
-  ein Verfahren gegen die Helferin **Bärbl** ist auf der Seite gar nicht
-  enthalten. Verhandelt werden Dionys und, zwei Tage später, Bärbls
-  zehnjährige Tochter Greschl. Über Bärbl selbst schweigen die Akten.
-  Zu prüfen: Gab es dazu Material im Archiv von Siegfried Kramer? Falls
-  nicht, den Untertitel ehrlicher fassen.
-  (Stand Juli 2026: Veit vermutet, dass kein weiteres Material existiert.)
-
 ## Mehrsprachigkeit — eigenes Projekt
 
 **Ziel:** Die Seite durchgängig auf Deutsch, Slowenisch und Englisch,

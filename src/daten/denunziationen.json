@@ -1716,6 +1716,131 @@
       "seite": null,
       "anmerkung": "Von Tillerich zusammen mit der Winterin genannt.",
       "status": "geprueft"
+    },
+    "dionys": {
+      "name": "Dionys",
+      "varianten": [
+        "Dionysl"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "amt": "aus Altenhofen, fahrend",
+      "seite": "dionys.html",
+      "anmerkung": "Einiges ueber 40 Jahre alt. Gestand neben dem Wetterzauber auch einen Totschlag: Er habe bei Obdach einen Schneider aus Wolfsberg erschlagen. War vor diesem Verfahren schon einmal freigelassen worden. Lebendig verbrannt - das Raedern wurde ihm 'aus Barmherzigkeit' erlassen.",
+      "status": "geprueft"
+    },
+    "greschl": {
+      "name": "die Greschl",
+      "varianten": [
+        "das Kind des Thomas Schuster"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "amt": "Tochter des Thomas Schuster aus Teufenbach und seiner Frau Bärbl",
+      "seite": "dionys.html",
+      "anmerkung": "Zwischen 10 und 12 Jahre alt, das einzige Kind vor Gericht in dieser Sammlung. Nicht hingerichtet: Das Urteil haelt fest, sie habe 'nichts Uebles begangen', und ordnet die Unterbringung in einem Kloster an. Ihre Aussage ist bei Byloff, Kapitel 25, woertlich abgedruckt.",
+      "status": "geprueft"
+    },
+    "baerbl-teufenbach": {
+      "name": "Bärbl",
+      "varianten": [
+        "die Bärbl"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "amt": "Frau des Thomas Schuster aus Teufenbach, gab sich als Näherin aus",
+      "seite": null,
+      "anmerkung": "Die eigentliche Hauptperson beider Verhoere - von Dionys als Helferin, von der eigenen Tochter ausfuehrlich als Wettermacherin beschrieben. Ein Verfahren gegen sie selbst ist nicht ueberliefert.",
+      "status": "geprueft"
+    },
+    "schuster-thomas": {
+      "name": "Thomas Schuster",
+      "varianten": [
+        "Thoman, Schuster von Teufenbach"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "amt": "Schuster in Teufenbach",
+      "seite": null,
+      "anmerkung": "Vater der Greschl. Kommt in den Verhoeren sonst nicht vor.",
+      "status": "geprueft"
+    },
+    "hilberg-niklas": {
+      "name": "Niklas Hilberg",
+      "varianten": [
+        "Niclas Hilberg"
+      ],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Marktrichter in St. Lambrecht",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "hilberg-valentin": {
+      "name": "Valentin Hilberg",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbürger in St. Lambrecht",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "seitlinger-valtan": {
+      "name": "Valtan Seitlinger",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbürger in St. Lambrecht",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "rainer-sebalt": {
+      "name": "Sebalt Rainer",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbürger in St. Lambrecht",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "tartman-primus": {
+      "name": "Primus Tartman",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "amt": "Bauer bei Obdach",
+      "seite": null,
+      "anmerkung": "Zahlte Dionys 20 Kreuzer, Brot, Kaese und Schmalz dafuer, dass das Wetter bei ihm keinen Schaden anrichte - und sollte es niemandem sagen.",
+      "status": "geprueft"
+    },
+    "peter-schneider-wolfsberg": {
+      "name": "Peter, Schneider aus Wolfsberg",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Von Dionys bei Obdach im Wald erschlagen; er nahm ihm 2 Gulden 10 Kreuzer ab. Das einzige Toetungsdelikt, das in dieser Sammlung gestanden wird.",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -3063,6 +3188,59 @@
       "fundstelle": "Banngerichtsprotokoll vom 24. Juli 1686, Verlaufsbericht und Begleitschreiben des Bannrichters; Original im Steiermaerkischen Landesarchiv, GBI4346 und Ea-1686-VII-4",
       "gruppe": "gratwein-1686",
       "status": "geprueft"
+    },
+    "dionys.html": {
+      "beschuldigte": [
+        "dionys",
+        "greschl"
+      ],
+      "jahr": 1602,
+      "ort": "Landgericht des Stiftes St. Lambrecht",
+      "koordinaten": {
+        "lat": 47.072029,
+        "lon": 14.2990842,
+        "quelle": "OSM-Geocoder, Sankt Lambrecht, Bezirk Murau"
+      },
+      "bannrichter": [
+        "schaller-georg"
+      ],
+      "hofrichter": [
+        "wurm-ludwig"
+      ],
+      "beisitzer": [
+        "hilberg-niklas",
+        "hilberg-valentin",
+        "seitlinger-valtan",
+        "rainer-sebalt",
+        "rainer-albrecht",
+        "offner-caspar",
+        "mugg-hans"
+      ],
+      "zeugen": [],
+      "nennt": [
+        "baerbl-teufenbach",
+        "schuster-thomas",
+        "tartman-primus",
+        "peter-schneider-wolfsberg"
+      ],
+      "typus": "fahrend",
+      "anlass": [
+        "ergriffen-als-fahrender"
+      ],
+      "anklage": [
+        "zauberei",
+        "wetterzauber",
+        "totschlag",
+        "diebstahl"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "5. August 1602",
+        "anmerkung": "Dionys lebendig verbrannt; das Raedern wurde 'aus Barmherzigkeit' erlassen. Die Greschl wurde NICHT hingerichtet, sondern in ein Kloster gegeben - im Urteil ausdruecklich, weil sie 'nichts Uebles begangen' habe."
+      },
+      "fundstelle": "Verhoere am 29. und 31. Juli 1602, Urteile 5. August 1602; abgedruckt in den Steiermaerkischen Geschichtsblaettern 1882, S. 129ff. Die Aussage der Greschl auch bei Byloff, Kapitel 25.",
+      "gruppe": "st-lambrecht-landgericht",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -3291,6 +3469,12 @@
       "prozess": "hoerk.html",
       "prozess2": "scherb.html",
       "beleg": "Klagsache des Michael Hoerg samt Ehegattin Marina und deren Schwester Gera gegen Michael Gregoritsch, Radkersburg 2. Juni 1671"
+    },
+    "teil-2#kap-25": {
+      "jahr": 1602,
+      "titel": "ZUSAMMENSETZUNG DER HEXENSALBE",
+      "prozess": "dionys.html",
+      "beleg": "Gibt woertlich die Aussage der '10-13 Jaehrigen Greschl, der Tochter des Thoman, Schusters von Teufenbach' vom 31. Juli 1602 vor dem Landgericht St. Lamprecht wieder - dasselbe Verhoer, das die Prozessseite vollstaendig bringt."
     }
   },
   "_merkmale": {
