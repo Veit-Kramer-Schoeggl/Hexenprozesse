@@ -565,6 +565,53 @@
       "seite": "hacker.html",
       "anmerkung": "Ehefrau des Matthias Hacker. Am 10. Dezember 1694 mit ihm gefangen genommen und am 22. Jaenner 1695 mit ihm hingerichtet. Ihr Verhoer ist nicht ueberliefert - sie erscheint in den Akten nur im Unkosten-Verzeichnis.",
       "status": "geprueft"
+    },
+    "lipp-michael": {
+      "name": "Michael Lipp",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "amt": "Bauer, Untertan des Praelaten von Poellau",
+      "seite": "lipp.html",
+      "status": "geprueft"
+    },
+    "hartmann-abraham": {
+      "name": "Abraham Hartmann",
+      "varianten": [
+        "Abraham Hartman"
+      ],
+      "rollen": [
+        "zeuge",
+        "denunziant"
+      ],
+      "amt": "Steinmetz",
+      "seite": null,
+      "anmerkung": "Hat die Wirtshausrede des Lipp zur Anzeige gebracht und ihn dabei selbst als Zauberer bezeichnet.",
+      "status": "geprueft"
+    },
+    "kraiss-georg": {
+      "name": "Georg Kraiß",
+      "varianten": [
+        "Kraiß"
+      ],
+      "rollen": [
+        "zeuge"
+      ],
+      "amt": "Bürger aus Riegersdorf",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "purgstall-graf-von": {
+      "name": "Graf von Purgstall",
+      "varianten": [],
+      "rollen": [
+        "kommissar"
+      ],
+      "amt": "Regierungskommissär; Inhaber der Riegersburg, aber ohne eigenes Landgericht",
+      "seite": null,
+      "anmerkung": "Im Begleitschreiben nur mit dem Familiennamen genannt, kein Vorname überliefert.",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -1143,6 +1190,39 @@
         "anmerkung": "Matthias und Eva Hacker, gefangen seit 10. Dezember 1694"
       },
       "fundstelle": "Protokoll vom 13. bis 19. Jaenner 1695",
+      "status": "geprueft"
+    },
+    "lipp.html": {
+      "beschuldigte": [
+        "lipp-michael"
+      ],
+      "jahr": 1675,
+      "ort": "Erhebungen an der Riegersburg, Verfahren an das Landgericht Feldbach verwiesen",
+      "koordinaten": {
+        "lat": 47.0008318,
+        "lon": 15.9359762,
+        "quelle": "OSM-Geocoder, Riegersburg (Bezirk Südoststeiermark)"
+      },
+      "bannrichter": [],
+      "zeugen": [
+        "hartmann-abraham",
+        "kraiss-georg"
+      ],
+      "nennt": [
+        "purgstall-graf-von"
+      ],
+      "typus": "ortsansaessig",
+      "anlass": [
+        "wetterschaden"
+      ],
+      "anklage": [
+        "zauberei"
+      ],
+      "ausgang": {
+        "art": "nicht-ueberliefert",
+        "anmerkung": "Ueberliefert sind nur die Zeugenaussage und das Begleitschreiben; ob Feldbach das Verhoer durchgefuehrt hat, ist nicht bekannt."
+      },
+      "fundstelle": "Aussage Abraham Hartmanns, Riegersburg 28. Mai 1675, und undatiertes Begleitschreiben; abgedruckt bei Hammer-Purgstall, Die Gallerin auf der Riegersburg (Wien 1849)",
       "status": "geprueft"
     }
   },
