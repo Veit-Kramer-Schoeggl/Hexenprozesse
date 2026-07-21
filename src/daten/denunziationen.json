@@ -387,7 +387,7 @@
         "beschuldigt"
       ],
       "seite": "hoerk.html",
-      "anmerkung": "Schwester von Gera Scherb",
+      "anmerkung": "Schwester von Gera Scherb; klagte im Juni 1671 gemeinsam mit ihrem Mann und ihrer Schwester gegen die Verleumder, wurde im Jaenner 1672 selbst verurteilt",
       "status": "geprueft"
     },
     "jantscher-margareth": {
@@ -449,6 +449,33 @@
       "seite": null,
       "anmerkung": "Soll Keyditsch die Zaubermittel gegeben haben; am 18. Juni 1661 zur Gegenueberstellung gebracht, stellte sich krank. Wahrscheinlich dieselbe Juliane, die 1661 vor der Verurteilung im Kerker starb.",
       "vermutlich": "juliane-gutenhag",
+      "status": "geprueft"
+    },
+    "hoerk-michael": {
+      "name": "Michael Hörk",
+      "rollen": [
+        "klaeger"
+      ],
+      "seite": null,
+      "anmerkung": "Ehemann der Marina Hörk; klagte 1671 gemeinsam mit ihr und ihrer Schwester gegen die Verleumder",
+      "status": "geprueft"
+    },
+    "werluga-martin": {
+      "name": "Martin Werluga",
+      "rollen": [
+        "genannt"
+      ],
+      "seite": null,
+      "anmerkung": "Nach Marina Hoerks Gestaendnis der Teufel selbst unter diesem Namen",
+      "status": "geprueft"
+    },
+    "gregoritsch-michael": {
+      "name": "Michael Gregoritsch",
+      "rollen": [
+        "beklagter"
+      ],
+      "seite": null,
+      "anmerkung": "Beklagter im Verleumdungsverfahren 1671, ediert bei Byloff Kap. 49",
       "status": "geprueft"
     }
   },
@@ -752,6 +779,46 @@
       },
       "fundstelle": "Protokoll vom 14. bis 27. Juni 1661",
       "status": "geprueft"
+    },
+    "hoerk.html": {
+      "beschuldigte": [
+        "hoerk-marina"
+      ],
+      "jahr": 1672,
+      "ort": "Landgericht Luttenberg (Ljutomer, Slowenien)",
+      "koordinaten": {
+        "lat": 46.5187046,
+        "lon": 16.1967404,
+        "quelle": "OSM-Geocoder, Ljutomer; Lage des Schlosses ungesichert"
+      },
+      "bannrichter": [],
+      "zeugen": [],
+      "gruppe": "luttenberg-1672",
+      "nennt": [
+        {
+          "person": "werluga-martin",
+          "art": "genannt",
+          "anmerkung": "als der Teufel"
+        },
+        {
+          "person": "scherb-gera",
+          "art": "mitbeschuldigt",
+          "anmerkung": "Schwester, im selben Verfahren"
+        }
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "23. Jänner 1672",
+        "anmerkung": "mit dem Schwert, danach Verbrennung"
+      },
+      "byloffBezug": {
+        "kapitel": 49,
+        "teil": 3,
+        "titel": "Der glühende Schab",
+        "anmerkung": "Byloff ediert das Verleumdungsverfahren vom 2. Juni 1671 in Radkersburg, in dem Michael Hoerk, Marina und Gera als Klaeger gegen Michael Gregoritsch auftreten - sieben Monate vor ihrer eigenen Verurteilung."
+      },
+      "fundstelle": "Protokoll vom 11. bis 23. Jaenner 1672",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -909,5 +976,33 @@
         "art": "hingerichtet"
       }
     ]
+  },
+  "_byloffQuerverweise": {
+    "hinweis": "Kapitel der Byloff-Sammlung, die dieselben Verfahren betreffen wie Prozessseiten dieser Website. Am Text geprueft, nicht ueber Namensgleichheit erraten.",
+    "teil-2#kap-30": {
+      "jahr": 1614,
+      "titel": "VIEH- UND MILCHZAUBER",
+      "prozess": "mschoepfer.html",
+      "beleg": "nennt den am 18. August 1614 vom Landgericht St. Lambrecht gerichteten Viehhalter Marx Schoepfer"
+    },
+    "teil-2#kap-39": {
+      "jahr": 1659,
+      "titel": "BETTEL-AMULETTE UND UNVERWUNDBAR MACHEN",
+      "prozess": "glaser.html",
+      "beleg": "nennt Hans Glaser, wegen Kopfgrind 'grindraudiger Hansl' genannt, Verhoersprotokoll Rottenmann 1659"
+    },
+    "teil-3#kap-40": {
+      "jahr": 1661,
+      "titel": "KRANKHEITS- UND HEILZAUBER",
+      "prozess": "keyditsch.html",
+      "beleg": "Verhoersprotokoll mit Margaretha Keyditsch, guetliches Bekenntnis vom 14. Juni 1661"
+    },
+    "teil-3#kap-49": {
+      "jahr": 1671,
+      "titel": "DER GLUEHENDE SCHAB",
+      "prozess": "hoerk.html",
+      "prozess2": "scherb.html",
+      "beleg": "Klagsache des Michael Hoerg samt Ehegattin Marina und deren Schwester Gera gegen Michael Gregoritsch, Radkersburg 2. Juni 1671"
+    }
   }
 }
