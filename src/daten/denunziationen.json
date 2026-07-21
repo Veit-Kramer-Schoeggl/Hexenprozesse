@@ -1,0 +1,160 @@
+{
+  "_hinweis": [
+    "Von Hand gepflegte Kartei der Personen und ihrer Verbindungen zwischen den",
+    "Prozessen. Bewusst nicht automatisch erzeugt: eine Suche über Nachnamen liefert",
+    "zu viele Fehltreffer (Namensvarianten wie Barth/Andre Barth/Andreas Barth,",
+    "Titel die auf Ortsnamen enden). Jeder Eintrag wird beim Bearbeiten der",
+    "jeweiligen Seite aus dem Protokoll übernommen.",
+    "",
+    "Aufbau: 'personen' ist die Kartei, 'prozesse' verweist nur mit Schlüsseln",
+    "darauf. Dadurch sind alle Beziehungen n:n — ein Bannrichter führt viele",
+    "Verfahren, und eine beschuldigte Person kann bei mehrfacher Anklage",
+    "verschiedene Bannrichter gehabt haben.",
+    "",
+    "'status' bei personen: geprueft = aus dem Protokoll übernommen,",
+    "offen = Name kommt vor, Rolle und Zuordnung noch nicht am Text verifiziert."
+  ],
+
+  "personen": {
+    "barth-johann-andreas": {
+      "name": "Johann Andreas Barth",
+      "varianten": ["Johann Andre Barth", "Andreas Barth", "Andre Barth"],
+      "rollen": ["bannrichter"],
+      "amt": "Bannrichter in der Steiermark",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "tillerich-johann": {
+      "name": "Dr. Johann Tillerich",
+      "varianten": ["Tillerich", "Dr. Joh. Tillerich"],
+      "rollen": ["bannrichter"],
+      "amt": "Kaiserlicher steirischer Bannrichter",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "schaller-georg": {
+      "name": "Georg Schaller",
+      "rollen": ["bannrichter"],
+      "amt": "Bannrichter in der Steiermark",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "apostelen-pl": {
+      "name": "Dr. Peter Lucrety von Apostelen",
+      "varianten": ["Dr. P. L. v. Apostelen", "Dr. P.L. v. Apostelen"],
+      "rollen": ["bannrichter"],
+      "amt": "Kaiserlicher Bannrichter im Viertel Cilli",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "will-johann-georg-franz-von": {
+      "name": "Johann Georg Franz von Will",
+      "rollen": ["bannrichter"],
+      "amt": "Eingesetzter Bannrichter in Friedau (Ormož)",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "pistory-gottfried-jeremias": {
+      "name": "Gottfried Jeremias Pistory",
+      "rollen": ["bannrichter"],
+      "seite": null,
+      "status": "offen"
+    },
+    "guisinger-johann-jakob": {
+      "name": "Johann Jakob Guisinger",
+      "rollen": ["bannrichter"],
+      "seite": null,
+      "status": "offen"
+    },
+    "caluuci": {
+      "name": "Kommissar Caluuci",
+      "rollen": ["kommissar"],
+      "amt": "Regierungskommissär der Innerösterreichischen Regierung",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "remigk-joh-bapt": {
+      "name": "Joh. Bapt. Remigk",
+      "rollen": ["gerichtsschreiber"],
+      "amt": "Vereidigter Banngerichtsschreiber in Krain",
+      "seite": null,
+      "status": "geprueft"
+    },
+
+    "posch-christina": {
+      "name": "Christina Posch",
+      "rollen": ["beschuldigt"],
+      "seite": "posch.html",
+      "status": "geprueft"
+    },
+    "brunnbaeurin": {
+      "name": "die Brunnbäurin",
+      "rollen": ["beschuldigt"],
+      "seite": null,
+      "anmerkung": "Vor 1686 hingerichtet. Kommt in mehreren Verfahren des Raums Gratwein vor.",
+      "status": "geprueft"
+    },
+    "christanderl": {
+      "name": "die Christanderl",
+      "rollen": ["beschuldigt"],
+      "seite": null,
+      "anmerkung": "Vor 1686 hingerichtet.",
+      "status": "geprueft"
+    },
+    "joergbaeurin": { "name": "die Jörgbäurin", "rollen": ["beschuldigt"], "seite": null, "status": "geprueft" },
+    "pongraetzbaeurin": { "name": "die Pongrätzbäurin", "rollen": ["beschuldigt"], "seite": null, "status": "geprueft" },
+    "muralterin": { "name": "die Muralterin", "rollen": ["beschuldigt"], "seite": null, "status": "geprueft" },
+    "heyger": { "name": "der Heyger", "rollen": ["beschuldigt"], "seite": null, "status": "geprueft" },
+    "reitermahr-jodl": { "name": "der Reitermahr Jodl", "rollen": ["beschuldigt"], "seite": null, "status": "geprueft" }
+  },
+
+  "gruppen": {
+    "gratwein-1686": {
+      "titel": "Gratwein, Stübing und Rein 1686",
+      "beschreibung": "Eine Reihe von Verfahren desselben Jahres im Raum nördlich von Graz, alle unter dem Bannrichter Dr. Johann Tillerich. Als Versammlungsort der „Hexengesellschaft“ nennen die Geständnisse übereinstimmend den Pleschkogel und den Schöckl.",
+      "seiten": ["posch.html", "jantscher.html", "schoeckl.html", "zechner-andreas-2.html"]
+    },
+    "st-lambrecht-1653": {
+      "titel": "St. Lambrecht 1653",
+      "beschreibung": "Drei Verfahren an einem Tag, gemeinsames Urteil und gemeinsame Hinrichtung am 4. August 1653.",
+      "einfuehrung": "/pages/themen/lambrecht-1653.html",
+      "seiten": ["steger.html", "heiser-1.html", "heiser-2.html"]
+    }
+  },
+
+  "prozesse": {
+    "posch.html": {
+      "beschuldigte": ["posch-christina"],
+      "jahr": 1686,
+      "ort": "Landgericht Rein, verhört in Gratwein",
+      "koordinaten": { "lat": 47.1231264, "lon": 15.3304611, "quelle": "OSM-Geocoder, Gratwein-Straßengel" },
+      "bannrichter": ["tillerich-johann"],
+      "zeugen": [],
+      "gruppe": "gratwein-1686",
+      "nennt": [
+        { "person": "brunnbaeurin", "art": "mitbeschuldigt", "anmerkung": "soll Posch verführt haben" },
+        { "person": "christanderl", "art": "mitbeschuldigt" },
+        { "person": "joergbaeurin", "art": "mitbeschuldigt" },
+        { "person": "pongraetzbaeurin", "art": "mitbeschuldigt" },
+        { "person": "muralterin", "art": "mitbeschuldigt" },
+        { "person": "heyger", "art": "mitbeschuldigt" },
+        { "person": "reitermahr-jodl", "art": "mitbeschuldigt" }
+      ],
+      "fundstelle": "Geständnis vom 23.–25. April 1686",
+      "status": "geprueft"
+    }
+  },
+
+  "_nochZuPruefen": {
+    "hinweis": "Namen, die beim Durchsuchen aufgefallen sind, deren Rolle im jeweiligen Verfahren aber noch am Text zu prüfen ist. Wird beim Bearbeiten der Seite aufgelöst.",
+    "barth-johann-andreas": [
+      "zechner-andreas-1.html", "poellinger.html", "walburga.html", "mosegger.html",
+      "keyditsch.html", "kollar.html", "kopschitsch.html", "schoeckl.html",
+      "glaser.html", "wukinetz.html", "rueprecht.html", "zechner-andreas-2.html"
+    ],
+    "tillerich-johann": ["jantscher.html", "schoeckl.html", "zechner-andreas-2.html"],
+    "schaller-georg": ["dionys.html", "mschoepfer.html", "metnitz.html"],
+    "apostelen-pl": ["glanitschnigg.html", "schepp.html"],
+    "seitenMitZeugen": ["hacker.html", "lipp.html", "glanitschnigg.html", "schepp.html", "zechner-andreas-2.html"]
+  }
+}

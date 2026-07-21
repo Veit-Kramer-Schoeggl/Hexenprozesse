@@ -914,7 +914,7 @@ code {
 .ortskarte {
   position: fixed;
   z-index: 40;
-  width: min(20rem, calc(100vw - 2rem));
+  width: min(34rem, calc(100vw - 2rem));
   padding: var(--space-xs);
   border: 1px solid #cbb98d;
   border-radius: var(--radius);
@@ -937,7 +937,7 @@ code {
 }
 .ortskarte-bild {
   width: 100%;
-  height: 7rem;
+  height: 12rem;
   object-fit: cover;
   display: block;
   border: 1px solid #cbb98d;
@@ -946,7 +946,7 @@ code {
 }
 /* Platzhalter, solange für den Ort kein Bild hinterlegt ist */
 .ortskarte-ohne-bild .ortskarte-bild {
-  height: 3.5rem;
+  height: 6rem;
   background: repeating-linear-gradient(
     45deg,
     #e8dcc0,
@@ -956,22 +956,22 @@ code {
   );
 }
 .ortskarte-bildtext {
-  margin-top: 0.2rem;
-  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
   line-height: 1.3;
   color: var(--color-muted);
 }
 .ortskarte-karte {
   width: 100%;
-  height: 11rem;
+  height: 19rem;
   border: 1px solid #cbb98d;
   border-radius: 3px;
   background: #e8e2d2;
 }
 .ortskarte-name {
-  padding-top: 0.35rem;
+  padding-top: 0.45rem;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-accent-dark);
 }
