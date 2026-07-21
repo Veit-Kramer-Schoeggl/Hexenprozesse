@@ -2270,6 +2270,108 @@
       "seite": null,
       "anmerkung": "Empfahl im Bericht vom 4. Juni 1659, Glaser nur auszupeitschen und des Landes zu verweisen - der Zauberei-Vorwurf kommt in seiner Begruendung nicht mehr vor.",
       "status": "geprueft"
+    },
+    "glanitschnigg-helena": {
+      "name": "Helena Glanitschnigg",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt",
+        "denunziantin"
+      ],
+      "geschlecht": "w",
+      "seite": "glanitschnigg.html",
+      "anmerkung": "44 Jahre alt. Sagt von sich, sie sei 'bloss als Dienstmagd in der Hexen- und Zauberer-Gemeinschaft verwendet worden'. Denunzierte acht Personen. Das Urteil vom 6. Oktober 1701 wurde bis zur Bestaetigung durch die Regierung ausgesetzt; die Hinrichtung erfolgte am 10. Dezember.",
+      "status": "geprueft"
+    },
+    "sirez-marina": {
+      "name": "Marina Sirez",
+      "varianten": [
+        "Marina, die Frau des Juri Sirez"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "amt": "Untertanin der Minoriten-Patres, Staraschinskidorf",
+      "seite": null,
+      "anmerkung": "Von Glanitschnigg denunziert und ihr gegenuebergestellt, danach gegen ein Geloebnis aus dem Arrest entlassen - ausdruecklich, weil eine einzelne Denunziation ohne weitere Bestaetigung fuer ein Verfahren nicht ausreiche. Der einzige Fall dieser Sammlung, in dem diese Schwelle im Text steht.",
+      "status": "geprueft"
+    },
+    "wesiak-spella": {
+      "name": "Spella Wesiak",
+      "varianten": [
+        "Spella oder Elisabeth",
+        "Spella, die Frau des Michael Wesiak"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Soll Glanitschnigg in Schlangengestalt aufgesucht und zur Gesellschaft gebracht haben.",
+      "status": "geprueft"
+    },
+    "klanetschneck-ursula": {
+      "name": "Ursula Klanetschneck",
+      "varianten": [
+        "Ursula, die Frau des Försters Andre Klanetschneck",
+        "Klanouschack",
+        "Klanetschnek"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "amt": "Frau des Försters der Minoriten-Patres",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "glanetschnigg-marina": {
+      "name": "Marina Glanetschnigg",
+      "varianten": [
+        "Marina, die Frau des Vide Glanetschnigg"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "amt": "vom Paulusberg, Weinberghube der Minoriten-Patres",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "drnovscheck-jerne": {
+      "name": "Jerne Drnovscheck",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "amt": "unter der Herrschaft Ankenstein",
+      "seite": null,
+      "anmerkung": "Soll versucht haben, die Gefangene beim grossen Hagelwetter aus dem Gefaengnis zu holen, und bei der Gesellschaft Trompeter gewesen sein.",
+      "status": "geprueft"
+    },
+    "mischka-jera": {
+      "name": "Jera Mischka",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "amt": "Schwester der Frau des Klanouschack",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "schmierz-anton": {
+      "name": "Anton Schmierz",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "amt": "herumziehender Schlossergeselle",
+      "seite": null,
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -2952,7 +3054,9 @@
       "anlass": []
     },
     "glanitschnigg.html": {
-      "beschuldigte": [],
+      "beschuldigte": [
+        "glanitschnigg-helena"
+      ],
       "jahr": 1701,
       "ort": "Hl. Dreifaltigkeit im Unteren Amt (Gorca)",
       "bannrichter": [
@@ -2960,17 +3064,45 @@
       ],
       "gruppe": "lichtenegg",
       "kosten": {
-        "summe": "25 fl. 45 kr."
+        "bannrichter": "10 fl. 30 kr.",
+        "gerichtsschreiber": "5 fl. 30 kr.",
+        "scharfrichter": "9 fl. 45 kr.",
+        "summe": "25 fl. 45 kr.",
+        "anmerkung": "Alle drei Teilsummen und die Endsumme nachgerechnet und richtig. Widerspruch: Der Scharfrichter verrechnet die Hinrichtung 'mit dem Schwert', das Urteil ordnet das Erdrosseln mit dem Strick an."
       },
       "ausgang": {
         "art": "hingerichtet",
-        "datum": "10. Dezember 1701"
+        "datum": "10. Dezember 1701",
+        "anmerkung": "Urteil am 6. Oktober 1701, Vollstreckung bis zur Bestaetigung durch die Innerösterreichische Regierung ausgesetzt; am 8. Oktober erneutes Verhoer durch eine Regierungskommission. Hinrichtung erst am 10. Dezember."
       },
       "status": "geprueft",
       "typus": "ortsansaessig",
       "anlass": [
         "denunziation-unter-folter"
-      ]
+      ],
+      "koordinaten": {
+        "lat": 46.3343837,
+        "lon": 15.8668857,
+        "quelle": "OSM-Geocoder, Gorca bei Podlehnik"
+      },
+      "zeugen": [],
+      "nennt": [
+        "sirez-marina",
+        "wesiak-spella",
+        "klanetschneck-ursula",
+        "glanetschnigg-marina",
+        "drnovscheck-jerne",
+        "mischka-jera",
+        "schmierz-anton"
+      ],
+      "anklage": [
+        "zauberei",
+        "teufelsbund",
+        "hostienfrevel",
+        "wetterzauber",
+        "wahrsagerei"
+      ],
+      "fundstelle": "Verhoere 30. September bis 8. Oktober 1701, Urteil 6. Oktober, Hinrichtung 10. Dezember 1701"
     },
     "heen.html": {
       "beschuldigte": [
