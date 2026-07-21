@@ -35,6 +35,41 @@ Hinweis, dass Carmen Weissenstein außer Dorothea Wed noch weitere dieser
 Prozesse übersetzt hat (Stand Juli 2026). Falls Kontakt zu ihr besteht,
 wäre das der kürzeste Weg.
 
+## Denunziations-Netz: Querverweise zwischen den Prozessen
+
+**Idee:** Wenn in einem Verhör eine Person genannt wird, zu der es eine
+eigene Prozessseite gibt, sollte der Name direkt dorthin verlinken. Dazu
+eine kleine Datenbasis, die je Prozess festhält, **wer wen beschuldigt
+hat** — damit sich beide Richtungen zeigen lassen: „X hat Y denunziert“
+und auf Y's Seite „Y wurde von X denunziert“.
+
+**Das Material trägt die Idee.** Belegte Verbindungen, die beim
+Bearbeiten schon aufgefallen sind:
+
+| Verbindung | Beleg |
+|---|---|
+| Stefan Zechner („Steffl am Hoff“) | genannt in Glaser, Rueprecht, St. Lambrecht, Heiser |
+| Marx Rueprecht → Stefan Zechner | sagt unter Folter gegen ihn aus |
+| Hans Glaser („grindiger Hansl“) → Stefan Zechner | Denunziation 1657, später zurückgenommen |
+| Marina Hörk ↔ Gera Scherb | Schwestern, gemeinsam angeklagt 1672 |
+| Thomas Heiser → Gregor Heiser | Aussage des Vaters wird zum Todesurteil des Sohnes |
+| Sebastian Kügl ↔ Marx Rueprecht | gemeinsam beim Opferstockraub ertappt |
+| Helena Glanitschnigg | denunziert namentlich acht weitere Personen |
+
+**Automatisch geht das nicht zuverlässig.** Ein Testlauf über alle Seiten,
+der schlicht nach Nachnamen sucht, meldet 71 Verbindungen — darunter
+grobe Fehltreffer, weil einige Seitentitel auf ein gewöhnliches Wort
+oder einen Ort enden („Katharina Türk **und weitere**“, „Hans aus der
+**Metnitz**“). Auch Namensvarianten stehen dagegen: Rueprecht/Rüprecht,
+Steffl am Hoff/Stefan Zechner, Klanetschneck/Klanetschnek/Klanouschack.
+
+**Vorschlag:** eine gepflegte Datei `src/daten/denunziationen.json`, in
+der jede Verbindung von Hand eingetragen und mit Fundstelle belegt ist —
+statt sie zu raten. Aus ihr lassen sich dann sowohl die Inline-Links als
+auch ein Abschnitt „Verbindungen zu anderen Prozessen“ je Seite
+erzeugen. Beim Bearbeiten der restlichen Seiten fallen die Verbindungen
+ohnehin auf und können gleich miterfasst werden.
+
 ## Fehlende Seite: steger1.html
 
 Auf der Einführungsseite [St. Lambrecht 1653](src/pages/themen/lambrecht-1653.html)

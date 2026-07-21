@@ -899,6 +899,87 @@ code {
   }
 }
 
+/* ---- Ortskarte (Hover über dem Prozessort) ---- */
+.ort {
+  cursor: help;
+  border-bottom: 1px dotted currentColor;
+  text-decoration: none;
+}
+.ort:hover,
+.ort:focus-visible {
+  border-bottom-style: solid;
+  outline: none;
+}
+
+.ortskarte {
+  position: fixed;
+  z-index: 40;
+  width: min(20rem, calc(100vw - 2rem));
+  padding: var(--space-xs);
+  border: 1px solid #cbb98d;
+  border-radius: var(--radius);
+  background-color: #f4ecd6;
+  box-shadow: 0 8px 28px rgba(70, 50, 20, 0.32);
+  font-family: var(--font-sans);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+}
+.ortskarte.sichtbar {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.ortskarte-bild-rahmen {
+  margin: 0 0 var(--space-xs);
+  text-align: center;
+}
+.ortskarte-bild {
+  width: 100%;
+  height: 7rem;
+  object-fit: cover;
+  display: block;
+  border: 1px solid #cbb98d;
+  border-radius: 3px;
+  background: #fff;
+}
+/* Platzhalter, solange für den Ort kein Bild hinterlegt ist */
+.ortskarte-ohne-bild .ortskarte-bild {
+  height: 3.5rem;
+  background: repeating-linear-gradient(
+    45deg,
+    #e8dcc0,
+    #e8dcc0 8px,
+    #ded0ae 8px,
+    #ded0ae 16px
+  );
+}
+.ortskarte-bildtext {
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--color-muted);
+}
+.ortskarte-karte {
+  width: 100%;
+  height: 11rem;
+  border: 1px solid #cbb98d;
+  border-radius: 3px;
+  background: #e8e2d2;
+}
+.ortskarte-name {
+  padding-top: 0.35rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+}
+/* Leaflet-Bedienelemente an die Schriftgröße der Karte anpassen */
+.ortskarte .leaflet-control-attribution {
+  font-size: 0.65rem;
+}
+
 /* ---- Footer ---- */
 .site-footer {
   margin-top: var(--space-xl);
