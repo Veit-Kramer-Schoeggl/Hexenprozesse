@@ -1092,14 +1092,17 @@
     },
     "heiser-gregor": {
       "name": "Gregor Heiser",
-      "varianten": [],
+      "varianten": [
+        "Gregor Geiser"
+      ],
       "rollen": [
-        "beschuldigt"
+        "beschuldigt",
+        "denunziant"
       ],
       "geschlecht": "m",
-      "amt": "Sohn des Thomas Heiser",
+      "amt": "Ziegen- und Schafhirte in der Krakau",
       "seite": "heiser-2.html",
-      "anmerkung": "Vom eigenen Vater belastet: dieser habe ihn schon im Mutterleib dem Boesen Geist versprochen.",
+      "anmerkung": "18 oder 19 Jahre alt. Seine Mutter schickte ihn nach St. Lambrecht, den Vater zu suchen und heimzubringen - dort wurde er neben dem Vater verhaftet. Belastet unter der Folter auch die eigene Mutter. Schliesst seine Namensliste mit dem Satz, er habe seinen Verdacht nur vom Hoerensagen.",
       "status": "geprueft"
     },
     "steger-lorenz": {
@@ -2164,6 +2167,78 @@
       ],
       "geschlecht": "w",
       "seite": null,
+      "status": "geprueft"
+    },
+    "heiser-gertraud": {
+      "name": "Gertraud",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Mutter des Gregor, Frau des Thomas Heiser. Schickte den Sohn nach St. Lambrecht, den Vater zu holen. Von Gregor unter der Folter belastet: sie sei dreimal mitgeflogen; das letzte Mal nicht, 'denn damals habe sein Vater die Mutter geschlagen'. Ein Verfahren gegen sie ist nicht ueberliefert.",
+      "status": "geprueft"
+    },
+    "katzenpuffer-lorenz": {
+      "name": "Lorenz Katzenpuffer",
+      "varianten": [
+        "der Lorenz, sonst Katzenbuffer genannt"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "amt": "Korbmacher, im Lungau",
+      "seite": null,
+      "anmerkung": "Von Thomas Heiser (Punkt 17) und von Gregor Heiser genannt - eine der Ueberschneidungen zwischen den beiden Protokollen.",
+      "status": "geprueft"
+    },
+    "katzenpuffer-jodl": {
+      "name": "Jodl Katzenpuffer",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "riz": {
+      "name": "der Riz",
+      "varianten": [
+        "der Ritz"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Von Gregor Heiser als Anfuehrer bezeichnet; zum Zeitpunkt des Verhoers bereits tot.",
+      "status": "geprueft"
+    },
+    "stoeber-blasi": {
+      "name": "Stöber Blasi",
+      "varianten": [
+        "Staber Blasi"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Bereits tot.",
+      "status": "geprueft"
+    },
+    "marx-im-greith": {
+      "name": "der Marx im Greith bei Neumarkt",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "seite": null,
+      "anmerkung": "Mit zwei Soehnen, Lamprecht und Anderl. Thomas Heiser nennt in Punkt 33 'einer mit dem Namen Lamprecht, der Sohn des Marx' - dieselbe Familie.",
       "status": "geprueft"
     }
   },
@@ -3762,6 +3837,59 @@
       "fundstelle": "Gestaendnis vom 29. November 1661, Bestaetigungen 1. und 2. Dezember, Widerruf 9. und 10. Dezember, Urteil 10. Dezember 1661",
       "gruppe": "gutenhag-1661",
       "status": "geprueft"
+    },
+    "heiser-2.html": {
+      "beschuldigte": [
+        "heiser-gregor"
+      ],
+      "jahr": 1653,
+      "ort": "Stift und Landgericht St. Lambrecht",
+      "koordinaten": {
+        "lat": 47.072029,
+        "lon": 14.2990842,
+        "quelle": "OSM-Geocoder, Sankt Lambrecht, Bezirk Murau"
+      },
+      "bannrichter": [],
+      "beisitzer": [
+        "schaffer-stlambrecht",
+        "winkler-paul",
+        "haan-christoph",
+        "wieser-hans"
+      ],
+      "zeugen": [],
+      "nennt": [
+        "heiser-thomas",
+        "heiser-gertraud",
+        "steger-lorenz",
+        "katzenpuffer-lorenz",
+        "katzenpuffer-jodl",
+        "riz",
+        "stoeber-blasi",
+        "marx-im-greith"
+      ],
+      "typus": "dienend",
+      "anlass": [
+        "sippenverdacht"
+      ],
+      "anklage": [
+        "zauberei",
+        "wolfsbannerei",
+        "wetterzauber",
+        "teufelsbund",
+        "hostienfrevel"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "4. August 1653",
+        "anmerkung": "Am Scheiterhaufen erwuergt und verbrannt, gemeinsam mit dem Vater Thomas Heiser und Lorenz Steger. Er war 18 oder 19 Jahre alt."
+      },
+      "fundstelle": "Verhoer am 28. und 29. Juli 1653, Urteil vollstreckt 4. August 1653; Original im Steiermaerkischen Landesarchiv",
+      "verwandt": [
+        "heiser-1.html",
+        "steger.html"
+      ],
+      "gruppe": "st-lambrecht-1653",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -4049,13 +4177,15 @@
       "jahr": 1615,
       "titel": "WOLFSEGEN",
       "prozess": "heiser-1.html",
-      "beleg": "Zwei Wolfsegen, 1615 zwei Landstreichern abgenommen. Thomas Heiser lernte den seinen um 1603 von einem Kameraden, 'der habe vom Beten des Wolf-Segens bei den Bauern gelebt' - dasselbe Milieu und derselbe Broterwerb."
+      "beleg": "Zwei Wolfsegen, 1615 zwei Landstreichern abgenommen. Thomas Heiser lernte den seinen um 1603 von einem Kameraden, 'der habe vom Beten des Wolf-Segens bei den Bauern gelebt' - dasselbe Milieu und derselbe Broterwerb.",
+      "prozess2": "heiser-2.html"
     },
     "teil-2#kap-32": {
       "jahr": 1635,
       "titel": "AUFLOESUNG DES WOLFBANNES (WOLFSEGEN)",
       "prozess": "heiser-1.html",
-      "beleg": "Gestaendnis des Wolfbanners Blasius Puerhinger mit der Formel zur Aufloesung des Bannes; Heiser wird 1653 wegen derselben Praktik hingerichtet."
+      "beleg": "Gestaendnis des Wolfbanners Blasius Puerhinger mit der Formel zur Aufloesung des Bannes; Heiser wird 1653 wegen derselben Praktik hingerichtet.",
+      "prozess2": "heiser-2.html"
     }
   }
 }
