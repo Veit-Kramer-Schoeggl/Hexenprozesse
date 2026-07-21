@@ -2372,6 +2372,116 @@
       "amt": "herumziehender Schlossergeselle",
       "seite": null,
       "status": "geprueft"
+    },
+    "poellinger-lorenz": {
+      "name": "Lorenz Pöllinger",
+      "varianten": [
+        "der singende Bursch"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "m",
+      "amt": "fahrend, sang in Gasthaeusern",
+      "seite": "poellinger.html",
+      "anmerkung": "Von einem Privatmann angehalten und zum Gestaendnis gedraengt. Litt an 'dem Hinfallenden' (Epilepsie). Widerrief mehrfach, brach nach einer Woche Folter zusammen, widerrief nach der Urteilsverkuendung erneut. Vom Geheimen Rat zwischenzeitlich freigesprochen, blieb aber in Haft. Am 20. Maerz 1664 verurteilt - nicht wegen des Fliegens, sondern wegen Hostienfrevels und 'widernatuerlicher Unzucht'.",
+      "status": "geprueft"
+    },
+    "pistrich-georg": {
+      "name": "Georg Pistrich",
+      "varianten": [
+        "Georg Pistrich am Ocheling"
+      ],
+      "rollen": [
+        "denunziant"
+      ],
+      "geschlecht": "m",
+      "amt": "Bauer am Ocheling",
+      "seite": null,
+      "anmerkung": "Hielt Poellinger auf offener Strasse an, drohte ihm mit Erschiessen, versprach ihm Straffreiheit und eine Stelle als Viehhueter und zahlte ihm zwei Mass Wein. Wurde auf Befehl der Innerösterreichischen Regierung selbst vernommen und im Urteil vom 20. Maerz 1664 zur Rueckerstattung der Prozesskosten verurteilt - der einzige verurteilte Denunziant dieser Sammlung.",
+      "status": "geprueft"
+    },
+    "diewalt-georg": {
+      "name": "Hans Georg Diewalt",
+      "varianten": [
+        "Georg Diewalt"
+      ],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Stadtrichter in Murau",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "gaestl-veit": {
+      "name": "Veit Gästl",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsmitglied in Murau",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "weyrer-matthias": {
+      "name": "Matthias Weyrer",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsmitglied in Murau",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "kolb-niklas": {
+      "name": "Niklas Kolb",
+      "varianten": [
+        "Niklas Kolbe"
+      ],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsmitglied in Murau",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "stainer-paul": {
+      "name": "Paul Stainer",
+      "varianten": [],
+      "rollen": [
+        "gerichtsschreiber"
+      ],
+      "geschlecht": "m",
+      "amt": "Stadtschreiber in Murau",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "leitner-adam": {
+      "name": "Adam Leitner",
+      "varianten": [],
+      "rollen": [
+        "landgerichtsverwalter"
+      ],
+      "geschlecht": "m",
+      "amt": "Verwalter der Herrschaft Murau",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "wuerzburger-johann-carl": {
+      "name": "Johann Carl Würzburger",
+      "varianten": [],
+      "rollen": [
+        "amtstraeger"
+      ],
+      "geschlecht": "m",
+      "amt": "Kanzler der Innerösterreichischen Regierung",
+      "seite": null,
+      "anmerkung": "Unterzeichnet den Befehl vom 11. Dezember 1663, den Denunzianten Pistrich zu untersuchen und Poellingers Geisteszustand zu pruefen.",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -4090,6 +4200,51 @@
         "anmerkung": "Kein Todesurteil. Der Regierungskommissaer Angelati empfahl am 4. Juni 1659 Auspeitschen mit Ruten und Landesverweis, ausdruecklich unter Beruecksichtigung der ausgestandenen Folterqualen und der Monate in Eisenketten. Glaser hatte zuvor alles widerrufen."
       },
       "fundstelle": "Verhoere Februar bis Mai 1659 vor dem Stadtgericht Rottenmann; Transliteration von Helfried Valentinitsch. Auch bei Byloff, Kapitel 39.",
+      "status": "geprueft"
+    },
+    "poellinger.html": {
+      "beschuldigte": [
+        "poellinger-lorenz"
+      ],
+      "jahr": 1664,
+      "ort": "Landgericht Murau",
+      "koordinaten": {
+        "lat": 47.1116172,
+        "lon": 14.1691579,
+        "quelle": "OSM-Geocoder, Schloss Obermurau"
+      },
+      "bannrichter": [
+        "barth-johann-andreas"
+      ],
+      "beisitzer": [
+        "diewalt-georg",
+        "gaestl-veit",
+        "weyrer-matthias",
+        "kolb-niklas",
+        "stainer-paul",
+        "leitner-adam"
+      ],
+      "zeugen": [
+        "pistrich-georg"
+      ],
+      "nennt": [
+        "wuerzburger-johann-carl"
+      ],
+      "typus": "fahrend",
+      "anlass": [
+        "erzwungenes-gestaendnis"
+      ],
+      "anklage": [
+        "zauberei",
+        "hostienfrevel",
+        "unzucht"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "20. März 1664",
+        "anmerkung": "Mit dem Strick hingerichtet und verbrannt. Zuvor mehrfach widerrufen, vom Geheimen Rat zwischenzeitlich freigesprochen, dennoch in Haft geblieben. Im selben Urteil wurde der Denunziant Georg Pistrich zur Rueckerstattung der Prozesskosten verurteilt."
+      },
+      "fundstelle": "Verhoere 10. September bis 10. Oktober 1663, Befehl der Regierung 11. Dezember 1663, Vernehmung des Denunzianten 10. Jaenner 1664, Urteil 20. Maerz 1664; Originale im Schwarzenbergischen Archiv, Schloss Murau",
       "status": "geprueft"
     }
   },

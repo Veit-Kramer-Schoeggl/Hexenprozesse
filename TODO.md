@@ -318,8 +318,7 @@ Byloff-Bezüge geprüft:
 
 | Seite | offen |
 |---|---|
-| [Lorenz Pöllinger](src/pages/prozesse/poellinger.html) | Karte, Kartei, Querverweise |
 | [Sebastian Kügl](src/pages/prozesse/kuegl.html) | Karte, Kartei, Querverweise |
 
 Erledigt in diesem Durchgang: Zechner II, Dionys, Wed (deutsch und
-slowenisch), Freyenthurn, Kopschitsch, Gregor Heiser, Glaser, Glanitschnigg.
+slowenisch), Freyenthurn, Kopschitsch, Gregor Heiser, Glaser, Glanitschnigg, Pöllinger.
