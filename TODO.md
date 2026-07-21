@@ -147,6 +147,11 @@ benutzt hat. Eine kurze Websuche bringt nur die eigene Seite zurück.
 Nächster Schritt wäre das Original: Hofkanzlei- bzw. Regierungsakten zur
 Herrschaft Neudau / Landgericht Burgau im Steiermärkischen Landesarchiv.
 
+**Ein Bild fehlt noch: `hexen-report.jpg`.** Die Literaturseite verweist auf
+`/images/literatur/hexen-report.jpg` (Buchcover). Die Datei liegt nicht im
+Repo und ist auch im Internet Archive nicht auffindbar (Stand Juli 2026).
+Alle anderen fehlenden Bilder wurden von dort zurückgeholt.
+
 **Aufnahmeort eines Bildes unbekannt.** Auf der Seite
 [Veronika Rauch](src/pages/prozesse/rauch.html) steht ein Foto eines
 Wappens an einem Grabdenkmal (`IMG_0658k.JPG`). Wo es aufgenommen wurde,

@@ -727,6 +727,21 @@ code {
   font-style: italic;
 }
 
+/* Wörtlich überlieferte Segen, Sprüche und Gebete: abgesetzt wie ein Zitat */
+.spruch {
+  margin: var(--space-sm) 0 var(--space-sm) var(--space-md);
+  padding-left: var(--space-sm);
+  border-left: 2px solid var(--color-accent-dark);
+  font-style: italic;
+}
+/* Durchnummerierte Bekenntnispunkte: die Ziffer bleibt sichtbar, aber leise */
+.punkt {
+  font-family: var(--font-sans);
+  font-size: 0.85em;
+  color: var(--color-muted);
+  margin-right: 0.45em;
+}
+
 /* Beisitzer-Liste (zwei Spalten) */
 .beisitzer {
   display: flex;

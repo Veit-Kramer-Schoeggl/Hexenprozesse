@@ -956,6 +956,114 @@
       "anmerkung": "Vermutlich 'Matthias Schwanz aus Waldsberg' der Opferliste - Hiasl ist die Koseform von Matthias.",
       "vermutlich": true,
       "status": "unsicher"
+    },
+    "moritz-baertl-walburga": {
+      "name": "Walburga Moritz-Bärtl",
+      "varianten": [],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "geschlecht": "w",
+      "amt": "Hebamme und Heilerin, Besitzerin eines kleinen Berggutes bei Plankenwarth",
+      "seite": "walburga.html",
+      "anmerkung": "An die 60 Jahre alt, 30 Jahre verheiratet, sechs Kinder (drei am Leben). Zehn Jahre Hebamme, ueber 30 Geburten. Kein Teufelsbund im Protokoll - beschuldigt wird die Heiltaetigkeit selbst.",
+      "status": "geprueft"
+    },
+    "moritz-bartholomaeus": {
+      "name": "Bartholomäus Moritz",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "m",
+      "amt": "Ehemann der Walburga Moritz-Bärtl",
+      "seite": null,
+      "anmerkung": "Gibt selbst einen Zauberrat weiter (Punkt 1), schlaegt seine Frau aber, weil sie den Leuten hilft (Punkt 32).",
+      "status": "geprueft"
+    },
+    "stuergkh-hans-christoph": {
+      "name": "Hans Christoph Stürgkh",
+      "varianten": [],
+      "rollen": [
+        "grundherr"
+      ],
+      "geschlecht": "m",
+      "amt": "Freiherr zu Plankenwarth, Grundherr der Beschuldigten",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "ferstl-christoph": {
+      "name": "Christoph Ferstl",
+      "varianten": [
+        "Christopher Ferstl"
+      ],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbürger in Gratwein",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "poetsch-hans": {
+      "name": "Hans Pötsch",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbürger in Gratwein",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "krallinger-jakob": {
+      "name": "Jakob Krallinger",
+      "varianten": [],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbürger in Gratwein",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "witman-sebastian": {
+      "name": "Sebastian Witman",
+      "varianten": [
+        "Sebastian Weitman"
+      ],
+      "rollen": [
+        "beisitzer"
+      ],
+      "geschlecht": "m",
+      "amt": "Ratsbürger in Gratwein",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "christiana-hinterberg": {
+      "name": "Christiana in Hinterberg",
+      "varianten": [
+        "Frau Christian in Hinterberg"
+      ],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "seite": null,
+      "anmerkung": "Lehrerin der Walburga Moritz-Bärtl in zwei der bekannten Kuenste; zum Zeitpunkt des Verhoers bereits gestorben.",
+      "status": "geprueft"
+    },
+    "schwarze-urschl": {
+      "name": "die schwarze Urschl",
+      "varianten": [],
+      "rollen": [
+        "genannt"
+      ],
+      "geschlecht": "w",
+      "amt": "aus Graz",
+      "seite": null,
+      "anmerkung": "Bat um einen Rat gegen den Vater ihres Kindes und drohte der Walburga spaeter Schlaege an, weil diese den Mann geheilt hatte.",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -1931,6 +2039,50 @@
         "pindter.html"
       ],
       "status": "geprueft"
+    },
+    "walburga.html": {
+      "beschuldigte": [
+        "moritz-baertl-walburga"
+      ],
+      "jahr": 1652,
+      "ort": "Fuerstliche Stift- und Landgerichts-Hoheit Rein, unterfertigt in Gratwein",
+      "koordinaten": {
+        "lat": 47.1350879,
+        "lon": 15.2860084,
+        "quelle": "OSM-Geocoder, Stift Rein; Gratwein 47.1295033 / 15.3189614"
+      },
+      "bannrichter": [
+        "barth-johann-andreas"
+      ],
+      "zeugen": [],
+      "beisitzer": [
+        "ferstl-christoph",
+        "poetsch-hans",
+        "krallinger-jakob",
+        "witman-sebastian"
+      ],
+      "nennt": [
+        "moritz-bartholomaeus",
+        "stuergkh-hans-christoph",
+        "christiana-hinterberg",
+        "schwarze-urschl"
+      ],
+      "typus": "heilkundig",
+      "anlass": [
+        "heiltaetigkeit"
+      ],
+      "anklage": [
+        "zauberei",
+        "wahrsagerei",
+        "segensprechen",
+        "wetterzauber"
+      ],
+      "ausgang": {
+        "art": "nicht-ueberliefert",
+        "anmerkung": "Das Protokoll endet mit der Unterschrift des Bannrichters am 27. September 1652. Kein Urteil, kein Vollzugsvermerk. Dreimal gefoltert."
+      },
+      "fundstelle": "Verhoer am 23. und 26. September 1652, unterfertigt 27. September 1652; Original im Archiv des Stiftes Rein",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -2168,7 +2320,8 @@
       "dienend": "Hirten, Viehhalter, Knechte und Maegde in Dienstverhaeltnissen",
       "ortsansaessig": "Bauern, Baeuerinnen und Witwen mit festem Wohnsitz in der Gemeinde",
       "wohlhabend": "begueterte Bauern; bei ihnen steht oft auch Besitz im Spiel",
-      "amtstraeger": "Personen in einem Amt oder mit oeffentlicher Stellung"
+      "amtstraeger": "Personen in einem Amt oder mit oeffentlicher Stellung",
+      "heilkundig": "Hebammen, Segensprecherinnen und Kraeuterkundige - beschuldigt wegen der Taetigkeit selbst, nicht wegen eines Teufelsbundes"
     },
     "anlass": {
       "denunziation-unter-folter": "benannt von einer anderen beschuldigten Person, haeufig einer bereits Hingerichteten",
@@ -2177,7 +2330,8 @@
       "krankheit-im-umfeld": "Erkrankung oder Tod eines Nachbarn, Dienstherrn oder Tieres",
       "erzwungenes-gestaendnis": "Gestaendnis durch Drohung oder List eines Privatmanns herbeigefuehrt",
       "ergriffen-bei-anderer-tat": "zunaechst wegen Diebstahls ergriffen, Zauberei kam im Verhoer dazu",
-      "sippenverdacht": "Vater, Mutter oder Verwandte wurden frueher hingerichtet; der Verdacht wird auf die Nachkommen uebertragen"
+      "sippenverdacht": "Vater, Mutter oder Verwandte wurden frueher hingerichtet; der Verdacht wird auf die Nachkommen uebertragen",
+      "heiltaetigkeit": "die eigene Heil-, Segens- oder Wahrsagepraxis wird zum Gegenstand des Verfahrens"
     },
     "geschlecht": {
       "w": "weiblich",
