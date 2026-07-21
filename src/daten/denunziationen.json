@@ -423,6 +423,33 @@
       "seite": null,
       "anmerkung": "ehemaliger Amtmann; von Jantscher als Anfuehrer der Versammlungen bezeichnet",
       "status": "geprueft"
+    },
+    "keyditsch-margaretha": {
+      "name": "Margaretha Keyditsch",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "keyditsch.html",
+      "status": "geprueft"
+    },
+    "apollonia-gutenhag": {
+      "name": "Apollonia",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "keyditsch.html",
+      "anmerkung": "Zuname in den Akten nicht bekannt; ca. 26 Jahre alt",
+      "status": "geprueft"
+    },
+    "juliana-gutenhag": {
+      "name": "Juliana",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": null,
+      "anmerkung": "Soll Keyditsch die Zaubermittel gegeben haben; am 18. Juni 1661 zur Gegenueberstellung gebracht, stellte sich krank. Wahrscheinlich dieselbe Juliane, die 1661 vor der Verurteilung im Kerker starb.",
+      "vermutlich": "juliane-gutenhag",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -448,12 +475,12 @@
     },
     "gutenhag-1661": {
       "titel": "Gutenhag (Hrastovec) 1661–1673",
-      "beschreibung": "Eine Reihe von Verfahren der Herrschaft Gutenhag unter Bannrichter Wolf Lorenz Lämpertitsch. Die Geständnisse nennen übereinstimmend das Gradisch-Kreuz und den Rohitschberg (Donačka gora) als Versammlungsorte; Magdalena Ferk erscheint mehrfach als Denunziantin.",
+      "beschreibung": "Eine Reihe von Verfahren der Herrschaft Gutenhag. Die Rollen wechseln: bei Schauberg und Wukinetz fuehrt Wolf Lorenz Laempertitsch als Bannrichter, bei Keyditsch und Apollonia zeichnet Johann Andre Barth als Bannrichter und Laempertitsch sitzt unter den Beisitzern, bei Kollar und Kopschitsch ist er Urteilssprecher. Die Gestaendnisse nennen uebereinstimmend das Gradisch-Kreuz und den Rohitschberg als Versammlungsorte.",
       "seiten": [
+        "keyditsch.html",
         "schauberg.html",
         "kollar.html",
         "kopschitsch.html",
-        "keyditsch.html",
         "wukinetz.html"
       ]
     },
@@ -690,6 +717,41 @@
       },
       "fundstelle": "Verhoer vom 5. und 6. April 1686",
       "status": "geprueft"
+    },
+    "keyditsch.html": {
+      "beschuldigte": [
+        "keyditsch-margaretha",
+        "apollonia-gutenhag"
+      ],
+      "jahr": 1661,
+      "ort": "Herrschaft Gutenhag (Hrastovec, Slowenien)",
+      "koordinaten": {
+        "lat": 46.5644802,
+        "lon": 15.7868015,
+        "quelle": "OSM-Geocoder, Hrastovec v Slovenskih Goricah"
+      },
+      "bannrichter": [
+        "barth-johann-andreas"
+      ],
+      "beisitzer": [
+        "laempertitsch-wolf-lorenz"
+      ],
+      "zeugen": [],
+      "gruppe": "gutenhag-1661",
+      "nennt": [
+        {
+          "person": "juliana-gutenhag",
+          "art": "mitbeschuldigt",
+          "anmerkung": "soll die Zaubermittel gegeben haben"
+        }
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "22. und 27. Juni 1661",
+        "anmerkung": "Keyditsch am 22., Apollonia am 27. Juni"
+      },
+      "fundstelle": "Protokoll vom 14. bis 27. Juni 1661",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -737,31 +799,36 @@
         "seite": "schauberg.html",
         "name": "Elenka Schauberg",
         "datum": "18. November 1661",
-        "art": "hingerichtet"
+        "art": "hingerichtet",
+        "rolle": "bannrichter"
       },
       {
         "seite": "kollar.html",
         "name": "Ursula Kollar",
         "datum": "10. Dezember 1661",
-        "art": "hingerichtet"
+        "art": "hingerichtet",
+        "rolle": "urteilssprecher"
       },
       {
         "seite": "kopschitsch.html",
         "name": "Gera Kopschitsch",
         "datum": "10. Dezember 1661",
-        "art": "hingerichtet"
+        "art": "hingerichtet",
+        "rolle": "urteilssprecher"
       },
       {
         "seite": "wukinetz.html",
         "name": "Marina Wukinetz",
         "datum": "19. Dezember 1673",
-        "art": "in-haft-gestorben"
+        "art": "in-haft-gestorben",
+        "rolle": "bannrichter"
       },
       {
         "seite": null,
         "name": "Juliane",
         "datum": "1661",
-        "art": "in-haft-gestorben"
+        "art": "in-haft-gestorben",
+        "rolle": "unbekannt"
       }
     ],
     "tillerich-johann": [
@@ -814,6 +881,32 @@
         "name": "Marx Schöpfer",
         "datum": null,
         "art": "offen"
+      }
+    ],
+    "barth-johann-andreas": [
+      {
+        "seite": "zechner-andreas-1.html",
+        "name": "Stefan Zechner",
+        "datum": "15. April 1660",
+        "art": "hingerichtet"
+      },
+      {
+        "seite": "keyditsch.html",
+        "name": "Margaretha Keyditsch",
+        "datum": "22. Juni 1661",
+        "art": "hingerichtet"
+      },
+      {
+        "seite": "keyditsch.html",
+        "name": "Apollonia",
+        "datum": "27. Juni 1661",
+        "art": "hingerichtet"
+      },
+      {
+        "seite": "poellinger.html",
+        "name": "Lorenz Pöllinger",
+        "datum": "20. März 1664",
+        "art": "hingerichtet"
       }
     ]
   }
