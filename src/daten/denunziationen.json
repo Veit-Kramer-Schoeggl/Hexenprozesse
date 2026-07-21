@@ -1102,8 +1102,9 @@
       ],
       "geschlecht": "m",
       "seite": "steger.html",
-      "anmerkung": "Am selben Tag mit Vater und Sohn Heiser hingerichtet.",
-      "status": "geprueft"
+      "anmerkung": "40 Jahre alt. Gesteht fuenfzehn Unwetter mit Ortsangabe - fast alle in Kaernten. Nennt als Kameraden ausdruecklich 'alte Bettler, die bei den Bauern herum betteln gingen'. Am selben Tag mit Vater und Sohn Heiser hingerichtet.",
+      "status": "geprueft",
+      "amt": "fahrend, im Umfeld von Bettlern und Landsknechten"
     },
     "reiter-wolff": {
       "name": "Wolff Reiter",
@@ -2720,7 +2721,8 @@
         "heiser-2.html",
         "steger.html"
       ],
-      "status": "geprueft"
+      "status": "geprueft",
+      "gruppe": "st-lambrecht-1653"
     },
     "kollar.html": {
       "beschuldigte": [
@@ -2913,6 +2915,51 @@
       },
       "fundstelle": "Verhoere ab 1. Februar 1673, Akt geschlossen 20. Dezember 1673; abgedruckt in den Steiermaerkischen Geschichtsblaettern 1882, S. 158ff",
       "gruppe": "gutenhag-1661",
+      "status": "geprueft"
+    },
+    "steger.html": {
+      "beschuldigte": [
+        "steger-lorenz"
+      ],
+      "jahr": 1653,
+      "ort": "Stift und Landgericht St. Lambrecht",
+      "koordinaten": {
+        "lat": 47.072029,
+        "lon": 14.2990842,
+        "quelle": "OSM-Geocoder, Sankt Lambrecht, Bezirk Murau"
+      },
+      "bannrichter": [],
+      "zeugen": [],
+      "beisitzer": [
+        "schaffer-stlambrecht",
+        "winkler-paul",
+        "haan-christoph",
+        "wieser-hans"
+      ],
+      "nennt": [
+        "heiser-thomas",
+        "heiser-gregor"
+      ],
+      "typus": "fahrend",
+      "anlass": [
+        "ergriffen-als-fahrender"
+      ],
+      "anklage": [
+        "zauberei",
+        "wetterzauber",
+        "teufelsbund"
+      ],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "4. August 1653",
+        "anmerkung": "Am Scheiterhaufen erwuergt und verbrannt, gemeinsam mit Thomas und Gregor Heiser."
+      },
+      "fundstelle": "Verhoer am 28. und 29. Juli 1653, Urteil vollstreckt 4. August 1653; Original im Steiermaerkischen Landesarchiv, EA 1657-XI-23",
+      "verwandt": [
+        "heiser-1.html",
+        "heiser-2.html"
+      ],
+      "gruppe": "st-lambrecht-1653",
       "status": "geprueft"
     }
   },

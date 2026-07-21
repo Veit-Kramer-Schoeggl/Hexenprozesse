@@ -701,39 +701,48 @@ code {
   color: var(--color-muted);
   margin-top: 0.2rem;
 }
-.todesliste {
+.todesliste,
+.aufstellung {
   width: 100%;
   border-collapse: collapse;
   margin: var(--space-md) 0 0;
 }
-.todesliste caption {
+.todesliste caption,
+.aufstellung caption {
   text-align: left;
   font-family: var(--font-sans);
   font-size: 0.9rem;
   color: var(--color-muted);
   padding-bottom: var(--space-xs);
 }
-.todesliste td {
+.todesliste td,
+.aufstellung td {
   padding: var(--space-xs) 0;
   vertical-align: top;
   border-bottom: 1px solid rgba(120, 90, 40, 0.18);
 }
 /* Datum rechtsbündig, damit die Spalte wie eine Abrechnung liest */
-.todesliste td + td {
+.todesliste td + td,
+.aufstellung td + td {
   text-align: right;
   white-space: nowrap;
   padding-left: var(--space-sm);
   font-variant-numeric: tabular-nums;
 }
-.todesliste .summe td {
+.todesliste .summe td,
+.aufstellung .summe td {
   border-top: 3px double var(--color-accent-dark);
   border-bottom: 0;
   padding-top: var(--space-sm);
   font-weight: 700;
 }
-/* Variante mit Herkunftsorten statt Daten in der rechten Spalte:
+/* .aufstellung teilt die Gestaltung der Todesliste, meint aber keine
+   Toten - etwa die Liste der von einem Beschuldigten genannten Wetter.
+
+   Variante mit Herkunftsorten statt Daten in der rechten Spalte:
    Ortsnamen dürfen umbrechen, sonst sprengen sie schmale Displays */
-.todesliste--orte td + td {
+.todesliste--orte td + td,
+.aufstellung--orte td + td {
   white-space: normal;
 }
 /* Todesfälle in Haft zählen nicht als Hinrichtung und stehen abgesetzt */
