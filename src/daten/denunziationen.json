@@ -477,6 +477,15 @@
       "seite": null,
       "anmerkung": "Beklagter im Verleumdungsverfahren 1671, ediert bei Byloff Kap. 49",
       "status": "geprueft"
+    },
+    "schepp-marina": {
+      "name": "Marina Schepp",
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "schepp.html",
+      "anmerkung": "Witwe, an die 50 Jahre alt",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -528,6 +537,14 @@
         "scherb.html",
         "hoerk.html",
         "tuerk.html"
+      ]
+    },
+    "lichtenegg": {
+      "titel": "Hl. Dreifaltigkeit unter Lichtenegg 1695–1701",
+      "beschreibung": "Zwei Verfahren am Landgericht der Dominikaner-Patres von Pettau bei der Hl. Dreifaltigkeit (Gorca bei Podlehnik), beide unter Bannrichter Dr. Peter Lucrety von Apostelen. Von beiden ist die Kostenaufstellung des Bannrichters erhalten.",
+      "seiten": [
+        "schepp.html",
+        "glanitschnigg.html"
       ]
     }
   },
@@ -819,6 +836,51 @@
       },
       "fundstelle": "Protokoll vom 11. bis 23. Jaenner 1672",
       "status": "geprueft"
+    },
+    "schepp.html": {
+      "beschuldigte": [
+        "schepp-marina"
+      ],
+      "jahr": 1695,
+      "ort": "Landgericht der Dominikaner-Patres, Hl. Dreifaltigkeit unter Lichtenegg",
+      "koordinaten": {
+        "lat": 46.334537,
+        "lon": 15.8672848,
+        "quelle": "OSM-Geocoder, Sveta Trojica, Gorca bei Podlehnik"
+      },
+      "bannrichter": [
+        "apostelen-pl"
+      ],
+      "zeugen": [],
+      "gruppe": "lichtenegg",
+      "nennt": [],
+      "kosten": {
+        "summe": "37 fl. 45 kr.",
+        "quittiert": "4. Juli 1695"
+      },
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "1695"
+      },
+      "fundstelle": "Protokoll vom 28. Juni 1695",
+      "status": "geprueft"
+    },
+    "glanitschnigg.html": {
+      "beschuldigte": [],
+      "jahr": 1701,
+      "ort": "Hl. Dreifaltigkeit im Unteren Amt (Gorca)",
+      "bannrichter": [
+        "apostelen-pl"
+      ],
+      "gruppe": "lichtenegg",
+      "kosten": {
+        "summe": "25 fl. 45 kr."
+      },
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "10. Dezember 1701"
+      },
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -973,6 +1035,20 @@
         "seite": "poellinger.html",
         "name": "Lorenz Pöllinger",
         "datum": "20. März 1664",
+        "art": "hingerichtet"
+      }
+    ],
+    "apostelen-pl": [
+      {
+        "seite": "schepp.html",
+        "name": "Marina Schepp",
+        "datum": "1695",
+        "art": "hingerichtet"
+      },
+      {
+        "seite": "glanitschnigg.html",
+        "name": "Helena Glanitschnigg",
+        "datum": "10. Dezember 1701",
         "art": "hingerichtet"
       }
     ]
