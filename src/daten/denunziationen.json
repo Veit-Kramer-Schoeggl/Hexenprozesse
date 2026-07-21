@@ -588,7 +588,7 @@
         "beschuldigt"
       ],
       "seite": null,
-      "anmerkung": "Wirtin aus Graz; von Rueprecht, Glaser und Thomas Heiser genannt. Nach Heiser vermummt beim Festmahl auf dem Schoeckl - vornehme Gaeste haetten dort ihr Gesicht verhuellt. Eine eigene Akte gegen sie ist nicht ueberliefert.",
+      "anmerkung": "Wirtin aus Graz; von Rueprecht, Glaser und Thomas Heiser genannt. Nach Heiser vermummt beim Festmahl auf dem Schoeckl. Hans Glaser hat seine Aussage gegen sie 1659 ausdruecklich widerrufen: Er kenne sie gar nicht und habe ueber sie gelogen. Eine eigene Akte gegen sie ist nicht ueberliefert.",
       "status": "geprueft",
       "geschlecht": "w"
     },
@@ -2240,6 +2240,36 @@
       "seite": null,
       "anmerkung": "Mit zwei Soehnen, Lamprecht und Anderl. Thomas Heiser nennt in Punkt 33 'einer mit dem Namen Lamprecht, der Sohn des Marx' - dieselbe Familie.",
       "status": "geprueft"
+    },
+    "glaser-hans": {
+      "name": "Hans Glaser",
+      "varianten": [
+        "der grindige Hansl",
+        "der grindraudige Hansl"
+      ],
+      "rollen": [
+        "beschuldigt",
+        "denunziant"
+      ],
+      "geschlecht": "m",
+      "amt": "Bettler und Landstreicher",
+      "seite": "glaser.html",
+      "anmerkung": "Etwa 22 Jahre alt, am 7. Februar 1659 in Rottenmann gefangen. Hat am Osterabend 1659 alles widerrufen, was er unter der Folter gestanden hatte, und ist bis zuletzt dabei geblieben - auch aufgehaengt in der Folterkammer. Nicht hingerichtet, sondern auf Empfehlung des Regierungskommissaers mit Ruten ausgepeitscht und des Landes verwiesen.",
+      "status": "geprueft"
+    },
+    "angelati-hieronymus": {
+      "name": "Dr. Hieronymus Angelati",
+      "varianten": [
+        "Dr. Hieronimy Angelati"
+      ],
+      "rollen": [
+        "kommissar"
+      ],
+      "geschlecht": "m",
+      "amt": "Regierungskommissär der Innerösterreichischen Regierung",
+      "seite": null,
+      "anmerkung": "Empfahl im Bericht vom 4. Juni 1659, Glaser nur auszupeitschen und des Landes zu verweisen - der Zauberei-Vorwurf kommt in seiner Begruendung nicht mehr vor.",
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -3889,6 +3919,45 @@
         "steger.html"
       ],
       "gruppe": "st-lambrecht-1653",
+      "status": "geprueft"
+    },
+    "glaser.html": {
+      "beschuldigte": [
+        "glaser-hans"
+      ],
+      "jahr": 1659,
+      "ort": "Stadtgericht Rottenmann",
+      "koordinaten": {
+        "lat": 47.524226,
+        "lon": 14.3585643,
+        "quelle": "OSM-Geocoder, Rottenmann, Bezirk Liezen"
+      },
+      "bannrichter": [],
+      "kommissar": [
+        "angelati-hieronymus"
+      ],
+      "zeugen": [],
+      "nennt": [
+        "zechner-stefan",
+        "prantauerin",
+        "rumpl-andreas"
+      ],
+      "typus": "fahrend",
+      "anlass": [
+        "ergriffen-bei-anderer-tat"
+      ],
+      "anklage": [
+        "diebstahl",
+        "kirchenraub",
+        "zauberei",
+        "mord"
+      ],
+      "ausgang": {
+        "art": "freigelassen",
+        "datum": "1659",
+        "anmerkung": "Kein Todesurteil. Der Regierungskommissaer Angelati empfahl am 4. Juni 1659 Auspeitschen mit Ruten und Landesverweis, ausdruecklich unter Beruecksichtigung der ausgestandenen Folterqualen und der Monate in Eisenketten. Glaser hatte zuvor alles widerrufen."
+      },
+      "fundstelle": "Verhoere Februar bis Mai 1659 vor dem Stadtgericht Rottenmann; Transliteration von Helfried Valentinitsch. Auch bei Byloff, Kapitel 39.",
       "status": "geprueft"
     }
   },
