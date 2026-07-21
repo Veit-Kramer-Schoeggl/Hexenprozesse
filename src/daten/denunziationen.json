@@ -257,6 +257,55 @@
       "seite": null,
       "anmerkung": "1661 vor der Verurteilung im Kerker gestorben",
       "status": "offen"
+    },
+    "hans-aus-der-metnitz": {
+      "name": "Hans aus der Metnitz",
+      "varianten": [
+        "Hansl aus der Metnitz",
+        "Hans von der Metnitz"
+      ],
+      "rollen": [
+        "beschuldigt"
+      ],
+      "seite": "metnitz.html",
+      "anmerkung": "73 oder 74 Jahre alt; zwei Jahre zuvor schon einmal gefangen und gegen Eid freigelassen",
+      "status": "geprueft"
+    },
+    "wurm-ludwig": {
+      "name": "Ludwig Wurm",
+      "rollen": [
+        "hofrichter"
+      ],
+      "amt": "Sekretär und Hofrichter des Stiftes St. Lambrecht",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "offner-caspar": {
+      "name": "Caspar Offner",
+      "rollen": [
+        "beisitzer"
+      ],
+      "amt": "Bürger von St. Lambrecht",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "rainer-albrecht": {
+      "name": "Albrecht Rainer",
+      "rollen": [
+        "beisitzer"
+      ],
+      "amt": "Ratsbürger in St. Lambrecht",
+      "seite": null,
+      "status": "geprueft"
+    },
+    "mugg-hans": {
+      "name": "Hans Mugg",
+      "rollen": [
+        "beisitzer"
+      ],
+      "amt": "Marktrichter in St. Lambrecht",
+      "seite": null,
+      "status": "geprueft"
     }
   },
   "gruppen": {
@@ -289,6 +338,15 @@
         "kopschitsch.html",
         "keyditsch.html",
         "wukinetz.html"
+      ]
+    },
+    "st-lambrecht-landgericht": {
+      "titel": "Landgericht St. Lambrecht 1602–1614",
+      "beschreibung": "Verfahren des Stiftsgerichts unter Bannrichter Georg Schaller. Hofrichter Ludwig Wurm und mehrere Beisitzer, darunter Caspar Offner, wirken über Jahre hinweg in denselben Rollen mit.",
+      "seiten": [
+        "dionys.html",
+        "metnitz.html",
+        "mschoepfer.html"
       ]
     }
   },
@@ -394,6 +452,39 @@
       },
       "fundstelle": "Protokoll vom 7.–18. November 1661",
       "status": "geprueft"
+    },
+    "metnitz.html": {
+      "beschuldigte": [
+        "hans-aus-der-metnitz"
+      ],
+      "jahr": 1604,
+      "ort": "Landgericht des Stiftes St. Lambrecht",
+      "koordinaten": {
+        "lat": 47.072029,
+        "lon": 14.2990842,
+        "quelle": "OSM-Geocoder, Sankt Lambrecht, Bezirk Murau"
+      },
+      "bannrichter": [
+        "schaller-georg"
+      ],
+      "hofrichter": [
+        "wurm-ludwig"
+      ],
+      "beisitzer": [
+        "mugg-hans",
+        "rainer-albrecht",
+        "offner-caspar"
+      ],
+      "zeugen": [],
+      "gruppe": "st-lambrecht-landgericht",
+      "nennt": [],
+      "ausgang": {
+        "art": "hingerichtet",
+        "datum": "6. September 1604",
+        "anmerkung": "mit dem Schwert, danach Verbrennung des Körpers"
+      },
+      "fundstelle": "Protokoll vom 2. und 3. September 1604",
+      "status": "geprueft"
     }
   },
   "_nochZuPruefen": {
@@ -492,6 +583,32 @@
         "name": "Andreas Zechner",
         "datum": "1686",
         "art": "freigelassen"
+      }
+    ],
+    "schaller-georg": [
+      {
+        "seite": "dionys.html",
+        "name": "Dionys",
+        "datum": "5. August 1602",
+        "art": "hingerichtet"
+      },
+      {
+        "seite": "dionys.html",
+        "name": "die Greschl",
+        "datum": "5. August 1602",
+        "art": "ins-kloster"
+      },
+      {
+        "seite": "metnitz.html",
+        "name": "Hans aus der Metnitz",
+        "datum": "6. September 1604",
+        "art": "hingerichtet"
+      },
+      {
+        "seite": "mschoepfer.html",
+        "name": "Marx Schöpfer",
+        "datum": null,
+        "art": "offen"
       }
     ]
   }
