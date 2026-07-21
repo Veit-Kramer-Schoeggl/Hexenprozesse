@@ -240,6 +240,70 @@ Suche bisher erfolglos: das Archiv unter `~/Desktop/Papa/` existiert auf
 dem aktuellen Rechner nicht (Stand Juli 2026). Dort zuerst nachsehen,
 sonst in der alten Live-Sicherung (`01_Archiv/PHPsicherung`).
 
+## Unsichere Zuordnungen in der Kartei
+
+In `src/daten/denunziationen.json` sind Einträge, deren Identifizierung
+nur naheliegt, mit `"status": "unsicher"` und `"vermutlich": true`
+markiert. Sie sind hier gesammelt, damit sie nicht in der Datei
+verschwinden. **Keiner dieser Punkte ist auf den Seiten als Tatsache
+behauptet** — überall steht der Vorbehalt im Text. Wer eine dieser
+Fragen klärt, sollte den Eintrag auf `geprueft` setzen und ihn hier
+streichen.
+
+Abfragen lässt sich der aktuelle Stand jederzeit so:
+
+```bash
+python3 -c "import json;d=json.load(open('src/daten/denunziationen.json',encoding='utf-8'));[print(k,'|',v['name']) for k,v in d['personen'].items() if v.get('status')=='unsicher']"
+```
+
+**Personen, die dieselbe sein könnten**
+
+| Frage | Wo | Stand |
+|---|---|---|
+| „die Christanderl" = Margareth Jantscher? | Peter Paar / Jantscher 1686 | sehr wahrscheinlich |
+| „die Wolwetki" (Mutter der Kopschitsch) = Ursula Wolwek (Kollars Verführerin)? | Gutenhag 1661 | Namensformen weichen ab |
+| „Elenka Rotev" = „die Rotter"? Und ist sie Elenka Schauberg? | Gutenhag 1661 | erstes wahrscheinlich, zweites eher nicht (anderer Zuname) |
+| „Lena Klobner vulgo Pieter" = die „Lena" und der „Pieter", die Peter Paar als hingerichtet nennt? | Gratwein 1686 | offen |
+| „der Grandl" / „die Grandl" = Hans und Ursula Gindl vulgo Grandl aus Sulz? | Gleichenberg 1689 | naheliegend |
+| „der Takner" = Peter Fossolt vulgo Tarkner? „die Takner" = Veronika Takner? | Gleichenberg 1689 | naheliegend |
+| „die Gollabitsch" — die Opferliste nennt **zwei** Trägerinnen des Vulgonamens | Gleichenberg 1689 | nicht entscheidbar |
+| „Hiasl, Sohn des Schwarz in Waldsberg" = Matthias Schwanz aus Waldsberg? | Rauch 1689 | Hiasl ist die Koseform von Matthias |
+| „Jakob Sommer" (Opferliste) und „Jakob Summer" (Landgerichtsverwalter) | Gleichenberg 1689 | vermutlich Zufall, siehe eigener Punkt oben |
+
+**Angaben, die sich nicht überprüfen ließen**
+
+- **„Pater Suniz"** (Kollar 1661) — ein Mönch mit Diener auf dem
+  Rohitschberg. Kollar kennt ihn nicht selbst; der Name stammt von Ferk
+  und Wolwek. Ein Ordensmann dieses Namens ist nicht nachgewiesen.
+- **„Martha Drosg"** (Kollar 1661) — im Protokoll steht „die Frau des
+  Martha Drosg". Die Stelle ist grammatisch unklar, möglicherweise ein
+  Übertragungsfehler. Deshalb ist auch das Geschlecht offen.
+- **„Juliana"** (Gutenhag 1661) — soll Keyditsch die Zaubermittel
+  gegeben haben, stellte sich bei der Gegenüberstellung krank. Ob sie
+  mit einer der beiden anderen Julianen der Gutenhager Reihe identisch
+  ist, ist nicht geklärt.
+- **Der Graf von Purgstall in Freyenthurn** trägt denselben Namen wie
+  der Regierungskommissär im Fall Michael Lipp und wie der Autor der
+  Quelle, Joseph von Hammer-Purgstall. Ob und wie die Familienzweige
+  zusammenhängen, ist nicht geprüft.
+- **Die Gräfin von Wazenberg** wird im Freyenthurner Protokoll des
+  versuchten Giftmordes bezichtigt. Ob gegen sie je ermittelt wurde,
+  steht nirgends.
+
+**Ortszuordnungen mit Vorbehalt**
+
+- **Herrschaft Admontbichl** (Hacker 1695) — Karte zeigt Obdach, die
+  Lage der Herrschaft ist nicht gesichert.
+- **Herrschaft Freyenthurn** (1694) — Karte zeigt Klagenfurt, der Text
+  weist nach Krain. Eigener Punkt weiter oben.
+- **Das „Gradisch-Kreuz"** der Gutenhager Verfahren — die Karte zeigt
+  Gradišče v Slovenskih goricah, 3,6 km von Hrastovec. Naheliegend, aber
+  nicht belegt.
+- **„Kerment"** (Wed 1677) — als Körmend in Ungarn kartiert, der Name
+  lässt sich nicht zweifelsfrei auflösen.
+- **Schloss Luttenberg** und **das Wappenbild bei Rauch** — eigene
+  Punkte weiter oben.
+
 ## Maske ausrollen — Reststand
 
 Die einheitliche Prozess-Maske (Buchseiten-Kästen, Serif für den
