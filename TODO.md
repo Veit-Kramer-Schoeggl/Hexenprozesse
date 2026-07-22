@@ -216,45 +216,28 @@ es ist also vermutlich Zufall. Weil es aber, falls doch nicht, ein sehr
 auffälliger Befund wäre, hier notiert. Auf der Seite steht dazu bewusst
 nichts.
 
-## Fehlende Dateien — PDFs wiederherstellen
+## Druckfassungen — erledigt durch ein Druck-Stylesheet
 
-**Fünf tote PDF-Links.** Im Repo liegt unter `src/assets/` keine einzige
-PDF-Datei, es wird aber an fünf Stellen auf welche verlinkt. Bei der
-Migration von der alten Site nicht mitgekommen.
+Auf fünf Seiten stand früher ein Link „Als PDF-Datei ausdrucken" auf
+Dateien, die bei der Migration verlorengegangen sind (Fragenkatalog,
+Lipp, Neubauer, Rauch, Wed slovensko). Statt sie wiederzubeschaffen oder
+neu zu erzeugen, gibt es jetzt eine **Druckfassung für jede Seite**:
+`@media print` im Stylesheet blendet Navigation, Pfeile, Ortskarten und
+Suchfelder aus, setzt die Kastenköpfe statisch, verhindert Umbrüche
+mitten in Bildern und Tabellen und schreibt bei externen Links die
+Adresse mit aus.
 
-Zweck laut Link-Text: es sind **Druckfassungen der jeweiligen
-Protokolle** („Als PDF-Datei ausdrucken“ bzw. slowenisch „Natisniti kot
-PDF datoteko“) — also der Seiteninhalt als Download zum Ausdrucken.
+Am Fuß jedes Ausdrucks steht automatisch eine Quellenzeile mit Titel,
+Adresse und Abrufdatum — damit ist ein Ausdruck oder ein über „Drucken →
+Als PDF sichern" erzeugtes Dokument zitierfähig.
 
-| Erwarteter Pfad | Seite | auf der Seite kenntlich gemacht |
-|---|---|---|
-| `/images/fragenkatalog/fragenkatalog.pdf` | Fragenkatalog | nein |
-| `/images/lipp/lipp.pdf` | Michael Lipp | ja |
-| `/images/neubauer/neubauer.pdf` | Ursula Neubauer | nein |
-| `/images/rauch/rauch.pdf` | Veronika Rauch | ja |
-| `/images/wed-2/wed2.pdf` | Dorothea Wed (slovensko) | nein |
+Das hat gegenüber vorerzeugten PDFs drei Vorteile: Es veraltet nicht,
+gilt für alle Seiten statt für fünf, und es muss nichts gepflegt werden.
+Die alten toten Links sind entfernt.
 
-Die Links bleiben bewusst im Code stehen — die Dateien sollen
-wiederhergestellt werden. Sobald sie da sind, einfach unter den obigen
-Pfaden in `src/assets/` ablegen, dann greifen alle fünf Links wieder.
-
-**Konvention beim Überführen in die Maske:** der Link bleibt stehen,
-bekommt aber einen sichtbaren Zusatz, damit niemand ins Leere klickt —
-so wie auf der Lipp-Seite:
-
-```html
-<p class="hint"><a href="/images/lipp/lipp.pdf">Druckfassung als PDF</a> —
-<em>die Datei ist bei der Übersiedlung der Website verloren gegangen und
-soll wiederhergestellt werden.</em></p>
-```
-
-Die Spalte oben mitführen. Sobald eine PDF-Datei wieder da ist: den
-Zusatz auf der betreffenden Seite entfernen und die Zeile aus der
-Tabelle streichen.
-
-Suche bisher erfolglos: das Archiv unter `~/Desktop/Papa/` existiert auf
-dem aktuellen Rechner nicht (Stand Juli 2026). Dort zuerst nachsehen,
-sonst in der alten Live-Sicherung (`01_Archiv/PHPsicherung`).
+**Falls die Original-PDFs doch noch auftauchen** (Suche im Archiv unter
+`~/Desktop/Papa/`, sonst in der Live-Sicherung `01_Archiv/PHPsicherung`),
+sind sie als historische Fassung interessant, aber nicht mehr nötig.
 
 ## Unsichere Zuordnungen in der Kartei
 

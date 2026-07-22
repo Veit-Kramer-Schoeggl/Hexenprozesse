@@ -9,7 +9,7 @@
     <script type="module" crossorigin src="/assets/chunk-BgCTHgpH.js"></script>
     <script type="module" crossorigin src="/assets/ortskarte-CVjHnjD8.js"></script>
     <script type="module" crossorigin src="/assets/erwaehnung-By14EChg.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CLJiUqY5.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-B2miwPlh.css">
   </head>
   <body>
     <header class="site-header">
@@ -157,15 +157,12 @@
         <ul class="literatur-liste">
           <li>
             <div class="literatur-karte literatur-karte--statisch">
-              <div class="literatur-cover-placeholder">📖</div>
+              <div class="literatur-cover-placeholder">📕</div>
               <div class="literatur-details">
                 <div class="literatur-autor"><a href="https://de.wikipedia.org/wiki/Joseph_von_Hammer-Purgstall" rel="noopener" target="_blank">Joseph von Hammer-Purgstall</a></div>
-                <div class="literatur-titel">Die Gallerin auf der Riegersburg.</div>
-                <div class="literatur-meta">Carl Gerold und Sohn, Wien 1849 (2. Auflage 1849). Übertragung in heutiges Deutsch: Siegfried Kramer, Graz 2012.</div>
-                <span class="literatur-hinweis">Digitalisat bei Google Books:
-                  <a href="https://books.google.de/books?id=A1TiAAAAMAAJ" rel="noopener nofollow" target="_blank">Bd. 1</a> ·
-                  <a href="https://books.google.de/books?id=EFXiAAAAMAAJ" rel="noopener nofollow" target="_blank">Bd. 2/3</a>
-                </span>
+                <div class="literatur-titel">Die Gallerin auf der Riegersburg</div>
+                <div class="literatur-meta">Carl Gerold und Sohn, Wien 1849 (2. Auflage). Übertragung in die heutige Sprache: Siegfried Kramer, Graz 2012.</div>
+                <span class="literatur-hinweis">Digitalisat bei Google Books: <a href="https://books.google.de/books?id=A1TiAAAAMAAJ" rel="noopener" target="_blank">Band 1</a> &middot; <a href="https://books.google.de/books?id=EFXiAAAAMAAJ" rel="noopener" target="_blank">Band 2/3</a></span>
               </div>
             </div>
           </li>
@@ -181,7 +178,9 @@
 </article>
     </main>
 
-    <footer class="site-footer">
+    <p class="druck-quelle" id="druck-quelle"></p>
+
+<footer class="site-footer">
   <div class="container">
     <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
     <p><a href="/pages/impressum.html">Impressum</a> · <a href="/pages/kontakt.html">Kontakt</a></p>
@@ -201,6 +200,25 @@ document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
 document.addEventListener("click", () => {
   document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
 });
+
+// Quellenzeile fuer den Ausdruck: Titel, Adresse und Abrufdatum. Sie ist am
+// Bildschirm unsichtbar und erscheint nur auf Papier beziehungsweise im PDF,
+// damit ein Ausdruck zitierfaehig bleibt.
+(() => {
+  const zeile = document.getElementById("druck-quelle");
+  if (!zeile) return;
+  const setzen = () => {
+    const heute = new Date().toLocaleDateString("de-AT", {
+      day: "2-digit", month: "long", year: "numeric",
+    });
+    const titel = document.title.replace(/\s*—\s*Hexenprozesse\s*$/, "");
+    zeile.textContent =
+      `${titel} · hexenprozesse.at · Forschungsarbeit von Siegfried Kramer, ` +
+      `weitergeführt von Veit Kramer-Schöggl · ${location.href.split("?")[0]} · abgerufen am ${heute}`;
+  };
+  setzen();
+  window.addEventListener("beforeprint", setzen);
+})();
 
 // Hoehe der klebenden Kopfzeile bereitstellen, damit die Kastenkoepfe
 // darunter kleben statt darunter zu verschwinden.

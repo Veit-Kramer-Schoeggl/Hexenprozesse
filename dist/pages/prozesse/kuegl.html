@@ -9,7 +9,7 @@
     <script type="module" crossorigin src="/assets/chunk-BgCTHgpH.js"></script>
     <script type="module" crossorigin src="/assets/ortskarte-CVjHnjD8.js"></script>
     <script type="module" crossorigin src="/assets/erwaehnung-By14EChg.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CLJiUqY5.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-B2miwPlh.css">
   </head>
   <body>
     <header class="site-header">
@@ -167,7 +167,9 @@
 </article>
     </main>
 
-    <footer class="site-footer">
+    <p class="druck-quelle" id="druck-quelle"></p>
+
+<footer class="site-footer">
   <div class="container">
     <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
     <p><a href="/pages/impressum.html">Impressum</a> · <a href="/pages/kontakt.html">Kontakt</a></p>
@@ -187,6 +189,25 @@ document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
 document.addEventListener("click", () => {
   document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
 });
+
+// Quellenzeile fuer den Ausdruck: Titel, Adresse und Abrufdatum. Sie ist am
+// Bildschirm unsichtbar und erscheint nur auf Papier beziehungsweise im PDF,
+// damit ein Ausdruck zitierfaehig bleibt.
+(() => {
+  const zeile = document.getElementById("druck-quelle");
+  if (!zeile) return;
+  const setzen = () => {
+    const heute = new Date().toLocaleDateString("de-AT", {
+      day: "2-digit", month: "long", year: "numeric",
+    });
+    const titel = document.title.replace(/\s*—\s*Hexenprozesse\s*$/, "");
+    zeile.textContent =
+      `${titel} · hexenprozesse.at · Forschungsarbeit von Siegfried Kramer, ` +
+      `weitergeführt von Veit Kramer-Schöggl · ${location.href.split("?")[0]} · abgerufen am ${heute}`;
+  };
+  setzen();
+  window.addEventListener("beforeprint", setzen);
+})();
 
 // Hoehe der klebenden Kopfzeile bereitstellen, damit die Kastenkoepfe
 // darunter kleben statt darunter zu verschwinden.

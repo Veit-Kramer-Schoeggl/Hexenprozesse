@@ -1306,3 +1306,94 @@ mark.erwaehnung { scroll-margin-top: calc(var(--kopf-hoehe, 0px) + 6rem); }
 }
 .fall-nav-rand:hover { background: transparent; }
 .fall-nav-rand .fall-nav-zeichen { font-size: 1rem; }
+
+/* ==========================================================================
+   Druckfassung
+   --------------------------------------------------------------------------
+   Jede Seite laesst sich damit ueber die Druckfunktion des Browsers als PDF
+   sichern — ohne dass dafuer Dateien vorerzeugt und gepflegt werden muessen.
+   Der Ausdruck traegt die Quelle und das Abrufdatum, damit er zitierfaehig
+   ist. Bildschirm-Bedienelemente (Navigation, Pfeile, Ortskarten, Suchfeld)
+   fallen weg, der Text bleibt vollstaendig.
+   ========================================================================== */
+@media print {
+  @page {
+    margin: 18mm 16mm 20mm;
+  }
+  html { font-size: 11pt; }
+  body {
+    background: #fff;
+    color: #000;
+    line-height: 1.45;
+  }
+  /* Bedienelemente, die auf Papier nichts verloren haben */
+  .site-header,
+  .site-footer,
+  .fall-nav,
+  .ortskarte,
+  .register-werkzeuge,
+  .card-link,
+  .erwaehnung-fehlt {
+    display: none !important;
+  }
+  main.container { max-width: none; padding: 0; }
+  .prozess { max-width: none; }
+
+  /* Die Kaesten behalten ihre Gliederung, verlieren aber Papier fressende
+     Hintergruende und Schatten. Der klebende Kastenkopf muss statisch werden,
+     sonst wiederholt er sich im Ausdruck an falscher Stelle. */
+  .prozess-tag {
+    background: none !important;
+    box-shadow: none !important;
+    border: 1px solid #999;
+    break-inside: auto;
+    margin-bottom: 8mm;
+  }
+  .prozess-tag-datum {
+    position: static !important;
+    background: #eee !important;
+    border-bottom: 1px solid #999;
+  }
+  .kommentar, .hint, .card, .literatur-karte, .fall-kachel > a {
+    background: none !important;
+    box-shadow: none !important;
+    border: 1px solid #bbb;
+  }
+  .spruch { border-left: 2px solid #666; }
+
+  /* Zusammengehoerendes nicht ueber Seiten reissen */
+  h1, h2, h3, h4 { break-after: avoid; }
+  figure, tr, .beisitzer, .literatur-karte { break-inside: avoid; }
+  p { orphans: 3; widows: 3; }
+  img { max-width: 100% !important; }
+  .fall-kacheln { display: block; }
+  .fall-kachel { break-inside: avoid; margin-bottom: 4mm; }
+
+  /* Links: die Adresse muss mit aufs Papier, sonst ist der Ausdruck wertlos.
+     Interne Verweise und Bildlinks bleiben ohne Zusatz. */
+  a { color: #000; text-decoration: underline; }
+  a[href^="http"]::after {
+    content: " <" attr(href) ">";
+    font-size: 0.8em;
+    word-break: break-all;
+  }
+  .literatur-karte a[href^="http"]::after { content: ""; }
+  .literatur-karte[href^="http"]::after {
+    content: " <" attr(href) ">";
+    font-size: 0.8em;
+    word-break: break-all;
+  }
+
+  /* Quellenzeile am Fuss jeder gedruckten Seite */
+  .druck-quelle {
+    display: block !important;
+    margin-top: 8mm;
+    padding-top: 3mm;
+    border-top: 1px solid #999;
+    font-family: var(--font-sans);
+    font-size: 8.5pt;
+    color: #333;
+  }
+}
+/* Am Bildschirm ist die Quellenzeile unsichtbar */
+.druck-quelle { display: none; }

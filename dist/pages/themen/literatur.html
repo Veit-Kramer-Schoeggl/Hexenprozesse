@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Literatur-Empfehlungen — Hexenprozesse</title>
     <meta name="description" content="Literatur-Empfehlungen zur Geschichte der Hexenprozesse in der Steiermark" />
-    <link rel="stylesheet" crossorigin href="/assets/main-CLJiUqY5.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-B2miwPlh.css">
   </head>
   <body>
     <header class="site-header">
@@ -100,13 +100,13 @@
             </a>
           </li>
           <li data-autor="Tschaikner" data-titel="Der Teufel und die Hexen müssen aus dem Land" data-jahr="1998">
-            <a href="http://www.eliechtensteinensia.li/JBHV/1998/96/Der_Teufel_und_die_Hexen_muessen_aus_dem_Land.pdf" class="literatur-karte" rel="noopener" target="_blank">
+            <a href="https://www.eliechtensteinensia.li/viewer/image/000000453_96/1/" class="literatur-karte" rel="noopener" target="_blank">
               <div class="literatur-cover-placeholder">📄</div>
               <div class="literatur-details">
                 <div class="literatur-autor">Tschaikner, Manfred</div>
                 <div class="literatur-titel">„Der Teufel und die Hexen müssen aus dem Land". Frühneuzeitliche Hexenverfolgung in Liechtenstein.</div>
                 <div class="literatur-meta">In: Jahrbuch des Historischen Vereins für das Fürstentum Liechtenstein, Bd. 96 (1998), S. 1–197.</div>
-                <span class="literatur-hinweis">→ PDF auf eLiechtensteinensia.li ansehen</span>
+                <span class="literatur-hinweis">→ Digitalisat auf eLiechtensteinensia.li</span>
               </div>
             </a>
           </li>
@@ -115,7 +115,9 @@
       </article>
     </main>
 
-    <footer class="site-footer">
+    <p class="druck-quelle" id="druck-quelle"></p>
+
+<footer class="site-footer">
   <div class="container">
     <p>© Siegfried Kramer (†2020) · Inhalte mit Quellenangabe. Weitergeführt von Veit Kramer-Schöggl.</p>
     <p><a href="/pages/impressum.html">Impressum</a> · <a href="/pages/kontakt.html">Kontakt</a></p>
@@ -135,6 +137,25 @@ document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
 document.addEventListener("click", () => {
   document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
 });
+
+// Quellenzeile fuer den Ausdruck: Titel, Adresse und Abrufdatum. Sie ist am
+// Bildschirm unsichtbar und erscheint nur auf Papier beziehungsweise im PDF,
+// damit ein Ausdruck zitierfaehig bleibt.
+(() => {
+  const zeile = document.getElementById("druck-quelle");
+  if (!zeile) return;
+  const setzen = () => {
+    const heute = new Date().toLocaleDateString("de-AT", {
+      day: "2-digit", month: "long", year: "numeric",
+    });
+    const titel = document.title.replace(/\s*—\s*Hexenprozesse\s*$/, "");
+    zeile.textContent =
+      `${titel} · hexenprozesse.at · Forschungsarbeit von Siegfried Kramer, ` +
+      `weitergeführt von Veit Kramer-Schöggl · ${location.href.split("?")[0]} · abgerufen am ${heute}`;
+  };
+  setzen();
+  window.addEventListener("beforeprint", setzen);
+})();
 
 // Hoehe der klebenden Kopfzeile bereitstellen, damit die Kastenkoepfe
 // darunter kleben statt darunter zu verschwinden.
