@@ -765,6 +765,13 @@ code {
   color: var(--color-muted);
   margin-right: 0.45em;
 }
+/* Im Fragenkatalog traegt die Nummer mehr Gewicht: Die Fragen sind eine
+   Liste, die man abarbeitet, und werden auch so zitiert („Frage 30"). */
+.fragenliste .punkt {
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: 0.95em;
+}
 
 /* Sprungmarken (#barth, #kap-31 ...) duerfen nicht unter der klebenden
    Kopfzeile landen */
