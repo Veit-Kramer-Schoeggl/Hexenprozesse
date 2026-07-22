@@ -130,7 +130,19 @@ function personenregisterPlugin() {
     for (const [schluessel, v] of Object.entries(d.personen)) {
       const tod = sterbedatum(schluessel);
       const seiten = [...(vorkommen.get(schluessel) ?? [])].sort();
-      const linkZiel = v.seite ? `/pages/prozesse/${v.seite}` : (seiten[0] ? `/pages/prozesse/${seiten[0]}` : null);
+      // Wer eine eigene Prozessseite hat, wird dorthin verlinkt — der Name
+      // steht dort in der Überschrift. Alle anderen werden nur im Text eines
+      // Verfahrens genannt; dorthin wird mit ?person= gesprungen, damit die
+      // erste Fundstelle angesteuert und hervorgehoben wird.
+      let linkZiel = null;
+      if (v.seite) {
+        linkZiel = `/pages/prozesse/${v.seite}`;
+      } else if (seiten[0]) {
+        const q = new URLSearchParams({ person: v.name });
+        const auch = (v.varianten ?? []).filter((s) => s && s.length >= 3);
+        if (auch.length) q.set("auch", auch.join("|"));
+        linkZiel = `/pages/prozesse/${seiten[0]}?${q.toString()}`;
+      }
       const nameZelle = linkZiel
         ? `<a href="${esc(linkZiel)}">${esc(v.sortname || v.name)}</a>`
         : esc(v.sortname || v.name);
@@ -167,8 +179,9 @@ function personenregisterPlugin() {
         ` data-sort-vorname="${esc((vor || o.name).toLowerCase())}"` +
         ` data-sort-tod="1689"` +
         ` data-suche="${esc(`${o.name} ${o.vulgo ?? ""} ${o.ort ?? ""} opferliste gleichenberg`.toLowerCase())}">` +
-        `<td>${esc(sort)}${zusatz ? ` <span class="register-rolle">(${esc(zusatz)})</span>` : ""}</td>` +
-        `<td class="spalte-rolle register-rolle"><a href="/pages/prozesse/pindter.html">Opferliste von Gleichenberg</a></td>` +
+        `<td><a href="/pages/prozesse/pindter.html?person=${encodeURIComponent(o.name)}">${esc(sort)}</a>` +
+        `${zusatz ? ` <span class="register-rolle">(${esc(zusatz)})</span>` : ""}</td>` +
+        `<td class="spalte-rolle register-rolle"><a href="/pages/prozesse/pindter.html?person=${encodeURIComponent(o.name)}">Opferliste von Gleichenberg</a></td>` +
         `<td>1689</td>`
         + `</tr>`
       );

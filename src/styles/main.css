@@ -1277,3 +1277,32 @@ code {
 @media (max-width: 719px) {
   .register-tabelle .spalte-rolle { display: none; }
 }
+
+/* Hervorhebung der Fundstelle, wenn aus dem Personenregister gesprungen wird */
+mark.erwaehnung {
+  background: #ffe9a8;
+  box-shadow: 0 0 0 3px #ffe9a8;
+  border-radius: 2px;
+  color: inherit;
+  font-weight: 700;
+  animation: erwaehnung-aufblitzen 2.4s ease-out 1;
+}
+@keyframes erwaehnung-aufblitzen {
+  0%, 40% { background: #ffd257; box-shadow: 0 0 0 6px #ffd257; }
+  100% { background: #ffe9a8; box-shadow: 0 0 0 3px #ffe9a8; }
+}
+@media (prefers-reduced-motion: reduce) {
+  mark.erwaehnung { animation: none; }
+}
+/* Sprungziel nicht unter dem klebenden Kastenkopf verstecken */
+mark.erwaehnung { scroll-margin-top: calc(var(--kopf-hoehe, 0px) + 6rem); }
+
+/* Anfang und Ende der Chronologie: kein Pfeil, sondern eine ruhige Marke */
+.fall-nav-rand {
+  color: var(--color-muted);
+  font-style: italic;
+  cursor: default;
+  opacity: 0.75;
+}
+.fall-nav-rand:hover { background: transparent; }
+.fall-nav-rand .fall-nav-zeichen { font-size: 1rem; }

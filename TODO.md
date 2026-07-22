@@ -5,8 +5,12 @@ Punkte löschen (die Historie steht in Git).
 
 ## Mehrsprachigkeit — eigenes Projekt
 
-**Ziel:** Die Seite durchgängig auf Deutsch, Slowenisch und Englisch,
-mit Umschalter. Heute gibt es genau eine slowenische Seite (Dorothea
+**Ziel:** Die Seite durchgängig auf Deutsch, Slowenisch und **Englisch**,
+mit Umschalter. Die englische Fassung ist ausdrücklich gewünscht (Veit,
+Juli 2026) — sie macht die Sammlung international zitierfähig und ist
+für die Forschung der wahrscheinlich wichtigste Zugang. Priorität nach
+der slowenischen, weil die Protokolle ohnehin auf heute slowenischem
+Gebiet spielen; der Umfang ist derselbe. Heute gibt es genau eine slowenische Seite (Dorothea
 Wed), die als Einzelstück daneben steht.
 
 Das ist bewusst als **eigenes Vorhaben** notiert, nicht als Nebenarbeit
@@ -127,6 +131,18 @@ oder im Stand von 2017 (`03_Bearbeitung_Aktuell/HP 2017-09`) eine Datei
 wiederherstellen.
 
 ## Offene Recherchefragen
+
+**Zwei tote Verweise nach außen.** Bei einer Prüfung aller 22 externen
+Links (Juli 2026) antworteten zwei nicht mehr:
+
+| Ziel | Wo | Stand |
+|---|---|---|
+| PDF „Bettlerverfolgung und Zaubereiprozesse in der Steiermark" (Land Steiermark) | Glaser, Linksammlung | 404 — der Link ist entfernt, die vollständige Literaturangabe steht dafür da |
+| `eliechtensteinensia.li` — Aufsatz „Der Teufel und die Hexen" | Fragenkatalog, Literatur | 404 — Server antwortet, die Datei fehlt |
+| `neuesland.at` — Beschreibung des Frauenbrunnens | Mosegger | 403, vermutlich Bot-Sperre; im Browser prüfen |
+
+Wer eine der Quellen anderswo findet, kann den Link ersetzen. Die
+Angaben selbst bleiben auf den Seiten stehen.
 
 **Wurde Ursula Neubauer erhört?** Die Bittschrift von 1644 bricht mit der
 Bitte ab; ob der Kaiser die Verbannung aufgehoben hat und sie zu Mann und
