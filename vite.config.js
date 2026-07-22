@@ -136,7 +136,9 @@ function personenregisterPlugin() {
       // erste Fundstelle angesteuert und hervorgehoben wird.
       let linkZiel = null;
       if (v.seite) {
-        linkZiel = `/pages/prozesse/${v.seite}`;
+        // "seite" ist normal ein Dateiname unter prozesse/, kann aber auch ein
+        // absoluter Pfad sein — etwa fuer die Themenseite zum Schoeckl.
+        linkZiel = v.seite.startsWith("/") ? v.seite : `/pages/prozesse/${v.seite}`;
       } else if (seiten[0]) {
         const q = new URLSearchParams({ person: v.name });
         const auch = (v.varianten ?? []).filter((s) => s && s.length >= 3);

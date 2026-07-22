@@ -1722,7 +1722,7 @@
       ],
       "geschlecht": "w",
       "amt": "wohnhaft in Stübing",
-      "seite": "schoeckl.html",
+      "seite": "/pages/themen/schoeckl.html",
       "anmerkung": "25 Jahre alt, fuenf Kinder. Nur im Auszug ueberliefert.",
       "status": "geprueft",
       "vorname": "Katharina",
@@ -1739,7 +1739,7 @@
       ],
       "geschlecht": "w",
       "amt": "wohnhaft in Stübing, keiner Herrschaft untertan",
-      "seite": "schoeckl.html",
+      "seite": "/pages/themen/schoeckl.html",
       "anmerkung": "37 Jahre alt. Witwe des hingerichteten Huber, danach wieder verheiratet.",
       "status": "geprueft",
       "vorname": "Maria",
@@ -1756,7 +1756,7 @@
       ],
       "geschlecht": "w",
       "amt": "wohnhaft in Geistthal, keiner Herrschaft untertan",
-      "seite": "schoeckl.html",
+      "seite": "/pages/themen/schoeckl.html",
       "anmerkung": "40 Jahre alt. Ohne Folter verhoert.",
       "status": "geprueft",
       "vorname": "Walburga",
@@ -1773,7 +1773,7 @@
       ],
       "geschlecht": "m",
       "amt": "Untertan des Stiftes Rein",
-      "seite": "schoeckl.html",
+      "seite": "/pages/themen/schoeckl.html",
       "anmerkung": "58 Jahre alt, sechs Kinder.",
       "status": "geprueft",
       "vorname": "Sebastian",
@@ -1790,7 +1790,7 @@
       ],
       "geschlecht": "m",
       "amt": "wohnhaft in Stübing, Untertan von Rein",
-      "seite": "schoeckl.html",
+      "seite": "/pages/themen/schoeckl.html",
       "anmerkung": "60 Jahre alt.",
       "status": "geprueft",
       "vorname": "Simon",
@@ -3581,6 +3581,20 @@
           }
         ]
       }
+    },
+    "schoeckl": {
+      "titel": "Der Schoeckl als Versammlungsort",
+      "beschreibung": "Sieben Verfahren aus vier Landgerichten nennen denselben Berg noerdlich von Graz - ueber dreissig Jahre hinweg und aus Entfernungen bis zu sechzig Kilometern. Zwei der Genannten haben ihre Aussage spaeter widerrufen. Eigene Themenseite: /pages/themen/schoeckl.html",
+      "einfuehrung": "/pages/themen/schoeckl.html",
+      "seiten": [
+        "schoeckl.html",
+        "glaser.html",
+        "heiser-1.html",
+        "rueprecht.html",
+        "zechner-andreas-2.html",
+        "rauch.html",
+        "jantscher.html"
+      ]
     }
   },
   "prozesse": {
@@ -4404,12 +4418,7 @@
     },
     "schoeckl.html": {
       "beschuldigte": [
-        "paar-peter",
-        "zenz-katharina",
-        "nunner-maria",
-        "koch-walburga",
-        "anderhub-sebastian",
-        "moyses-simon"
+        "paar-peter"
       ],
       "jahr": 1686,
       "ort": "Stifts- und Landgerichts-Hoheit Rein",
@@ -4458,7 +4467,8 @@
       },
       "fundstelle": "Prozess Peter Paar nach Fritz Byloff, Graz 1902; die uebrigen fuenf Protokolle im Archiv des Stiftes Rein",
       "gruppe": "gratwein-1686",
-      "status": "geprueft"
+      "status": "geprueft",
+      "anmerkung": "Die fuenf nur auszugsweise ueberlieferten Verfahren desselben Landgerichts (Zenz, Nunner, Koch, Anderhub, Moyses) stehen seit Juli 2026 auf der Themenseite /pages/themen/schoeckl.html."
     },
     "mosegger.html": {
       "beschuldigte": [

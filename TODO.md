@@ -130,6 +130,27 @@ oder im Stand von 2017 (`03_Bearbeitung_Aktuell/HP 2017-09`) eine Datei
 `steger1.htm`? Falls ja, als eigene Prozessseite ergänzen und den Link
 wiederherstellen.
 
+## Themenseite „Das Gerichtswesen" fertigstellen
+
+Die Seite [Das Gerichtswesen](src/pages/themen/gerichtswesen.html) hat
+Siegfried Kramer begonnen und nicht mehr abgeschlossen. Erhalten sind
+drei Sätze Arbeitsnotizen mit seinen eigenen Fragezeichen. Sie stehen
+unverändert auf der Seite; darüber ist ein Hinweis „noch im Aufbau"
+gesetzt und eine Gliederung, was dort hingehört — jeder Punkt mit dem
+Beleg aus den Akten, der ihn schon heute trägt:
+
+- Wem gehörte ein Landgericht (Grundherrschaft, Stift, Stadt)?
+- Was war ein Bannrichter, wie wurde er bestellt und bezahlt?
+- Wer waren die Beisitzer?
+- Welche Rolle spielte die Innerösterreichische Regierung in Graz?
+- Welche Beweisschwelle galt (Gelöbnis der Marina Sirez, 1701)?
+- Wie wurde verhört (Fragenkatalog von 1680)?
+
+**Was zu tun ist:** die Punkte ausformulieren und mit Literatur
+absichern. Seine eigenen Fragezeichen sind ein Hinweis darauf, dass er
+sich bei der Eigentumsfrage und den Ausnahmen (Adel, Priester, Fremde)
+selbst nicht sicher war — das gehört geprüft, nicht übernommen.
+
 ## Offene Recherchefragen
 
 **Zwei tote Verweise nach außen.** Bei einer Prüfung aller 22 externen
