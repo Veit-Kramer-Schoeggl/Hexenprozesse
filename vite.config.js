@@ -335,6 +335,259 @@ function seoDateienPlugin() {
   };
 }
 
+// Plugin: Erzeugt JSON-LD (schema.org) fuer jede Seite und haengt es in den
+// <head>. Das ist der eigentliche GEO-Baustein: Personen, Orte, Daten und
+// Rollen werden maschinenlesbar, statt nur im Fliesstext zu stehen.
+//
+// Alles kommt aus src/daten/denunziationen.json, wird also nie von Hand
+// gepflegt und kann nicht veralten:
+//  - Prozessseiten -> Article mit about (Beschuldigte) / mentions (uebrige
+//    genannte Personen), isBasedOn (Fundstelle), spatialCoverage (die
+//    geprueften Koordinaten), temporalCoverage (Jahr), keywords (Anklage).
+//  - Prozessliste  -> CollectionPage mit ItemList der Faelle.
+//  - Startseite    -> WebSite mit Siegfried Kramer als Urheber.
+//  - Themen/Sonst  -> WebPage.
+//  - Jede Unterseite zusaetzlich eine BreadcrumbList.
+function strukturDatenPlugin() {
+  const DOMAIN = "https://hexenprozesse.at";
+  const d = JSON.parse(readFileSync(fromSrc("daten", "denunziationen.json"), "utf-8"));
+
+  // Felder eines Prozesses, die auf Personen zeigen (ohne beschuldigte, die
+  // gesondert nach about wandern). nennt kann Strings ODER {person,...}-Objekte
+  // enthalten; beides wird auf den Kartei-Schluessel normalisiert.
+  const ROLLEN_FELDER = ["bannrichter", "beisitzer", "zeugen", "nennt", "hofrichter",
+    "gerichtsschreiber", "kommissar", "scharfrichter", "urteilssprecher", "denunziertVon"];
+
+  const ANKLAGE_LABEL = {
+    "zauberei": "Zauberei", "teufelsbund": "Teufelsbund", "hostienfrevel": "Hostienfrevel",
+    "wetterzauber": "Wetterzauber", "wahrsagerei": "Wahrsagerei", "diebstahl-und-raub": "Diebstahl und Raub",
+    "wolfsbannerei": "Wolfsbannerei", "milchzauber": "Milchzauber", "hagelmachen": "Hagelmachen",
+    "segensprechen": "Segensprechen", "schadenzauber": "Schadenzauber", "totschlag": "Totschlag",
+    "diebstahl": "Diebstahl", "giftmord": "Giftmord", "kindstoetung": "Kindstötung",
+    "kirchenraub": "Kirchenraub", "mord": "Mord", "unzucht": "Unzucht", "opferstockraub": "Opferstockraub",
+  };
+  const anklageLabel = (a) =>
+    ANKLAGE_LABEL[a] || (a.charAt(0).toUpperCase() + a.slice(1)).replace(/-/g, " ");
+
+  const seiteZuUrl = (rel) => (rel === "index.html" ? `${DOMAIN}/` : `${DOMAIN}/${rel}`);
+
+  // Personen-Schluessel aus einem Rollenfeld (String- und Objektform gemischt)
+  const schluessel = (wert) =>
+    (Array.isArray(wert) ? wert : [])
+      .map((x) => (typeof x === "string" ? x : x && x.person))
+      .filter(Boolean);
+
+  // Ein Person-Knoten fuer den Graphen. reich=true fuegt Namensvarianten hinzu
+  // (nur fuer die wenigen Beschuldigten, sonst blaeht es das JSON auf).
+  const personKnoten = (key, reich) => {
+    const p = d.personen[key];
+    if (!p) return null;
+    const k = { "@type": "Person", name: p.name };
+    if (reich && (p.varianten || []).length) {
+      k.alternateName = p.varianten.length === 1 ? p.varianten[0] : p.varianten;
+    }
+    if (p.amt) k.disambiguatingDescription = p.amt;
+    if (p.seite) {
+      const ziel = p.seite.startsWith("/") ? p.seite : `/pages/prozesse/${p.seite}`;
+      k.url = `${DOMAIN}${ziel}`;
+    }
+    return k;
+  };
+
+  // Titel/Description/Sprache aus dem fertigen Seiten-HTML lesen — so steht der
+  // Text nur einmal in der Seite und nicht zusaetzlich in der Kartei.
+  const titelAus = (html) => {
+    const m = html.match(/<title>([\s\S]*?)<\/title>/i);
+    return (m ? m[1].trim() : "").replace(/\s*[—–-]\s*Hexenprozesse\s*$/, "").trim();
+  };
+  const descAus = (html) => {
+    const m = html.match(/<meta\s+name="description"\s+content="([^"]*)"/i);
+    return m ? m[1].trim() : "";
+  };
+  const langAus = (html) => {
+    const m = html.match(/<html[^>]*\blang="([^"]+)"/i);
+    return m ? m[1] : "de";
+  };
+
+  const AUTOR = {
+    "@type": "Person",
+    name: "Siegfried Kramer",
+    description: "Übersetzung und Bearbeitung der Originalprotokolle",
+  };
+  const HERAUSGEBER = { "@type": "Organization", name: "hexenprozesse.at", url: `${DOMAIN}/` };
+  const WEBSITE = { "@type": "WebSite", name: "Hexenprozesse", url: `${DOMAIN}/` };
+
+  const artikelKnoten = (datei, rel, html) => {
+    const pr = d.prozesse[datei];
+    if (!pr) return null;
+    const url = seiteZuUrl(rel);
+
+    const beschuldigt = schluessel(pr.beschuldigte);
+    const gesehen = new Set(beschuldigt);
+    const erwaehnt = [];
+    for (const f of ROLLEN_FELDER)
+      for (const key of schluessel(pr[f]))
+        if (!gesehen.has(key)) { gesehen.add(key); erwaehnt.push(key); }
+
+    const k = {
+      "@type": "Article",
+      headline: titelAus(html),
+      inLanguage: langAus(html),
+      url,
+      mainEntityOfPage: url,
+      isPartOf: { "@type": "CollectionPage", name: "Prozesse", url: `${DOMAIN}/pages/prozesse/index.html` },
+      author: AUTOR,
+      publisher: HERAUSGEBER,
+    };
+    const desc = descAus(html);
+    if (desc) k.description = desc;
+    if (pr.fundstelle)
+      k.isBasedOn = { "@type": "CreativeWork", name: "Originalprotokoll / Archivquelle", description: pr.fundstelle };
+    if (pr.jahr) k.temporalCoverage = String(pr.jahr);
+    k.keywords = ["Hexenprozess", ...(pr.anklage || []).map(anklageLabel)];
+    if (pr.koordinaten) {
+      k.spatialCoverage = {
+        "@type": "Place",
+        name: pr.ort,
+        geo: { "@type": "GeoCoordinates", latitude: pr.koordinaten.lat, longitude: pr.koordinaten.lon },
+      };
+    } else if (pr.ort) {
+      k.spatialCoverage = { "@type": "Place", name: pr.ort };
+    }
+    const about = beschuldigt.map((key) => personKnoten(key, true)).filter(Boolean);
+    const mentions = erwaehnt.map((key) => personKnoten(key, false)).filter(Boolean);
+    if (about.length) k.about = about;
+    if (mentions.length) k.mentions = mentions;
+    return k;
+  };
+
+  const sammlungKnoten = (rel, html) => {
+    const faelle = [];
+    const re = /<li class="fall-kachel"([^>]*)>/g;
+    let m;
+    while ((m = re.exec(html)) !== null) {
+      const attr = m[1];
+      if (/data-sprachvariante/.test(attr)) continue; // Sprachvariante ist derselbe Fall
+      const datei = (attr.match(/data-datei="([^"]*)"/) || [])[1];
+      const name = (attr.match(/data-name="([^"]*)"/) || [])[1];
+      const jahr = Number((attr.match(/data-jahr="(\d+)"/) || [])[1]);
+      if (datei && name) faelle.push({ datei, name, jahr });
+    }
+    faelle.sort((a, b) => a.jahr - b.jahr);
+    return {
+      "@type": "CollectionPage",
+      name: titelAus(html) || "Prozesse",
+      url: seiteZuUrl(rel),
+      inLanguage: langAus(html),
+      isPartOf: WEBSITE,
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: faelle.length,
+        itemListElement: faelle.map((f, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: seiteZuUrl(`pages/prozesse/${f.datei}`),
+          name: f.name,
+        })),
+      },
+    };
+  };
+
+  const webpageKnoten = (rel, html) => {
+    const k = {
+      "@type": "WebPage",
+      name: titelAus(html),
+      url: seiteZuUrl(rel),
+      inLanguage: langAus(html),
+      isPartOf: WEBSITE,
+    };
+    const desc = descAus(html);
+    if (desc) k.description = desc;
+    return k;
+  };
+
+  const webseiteKnoten = (html) => {
+    const k = {
+      "@type": "WebSite",
+      name: "Hexenprozesse in der Steiermark",
+      url: `${DOMAIN}/`,
+      inLanguage: "de",
+      about: { "@type": "Thing", name: "Steirische Hexenprozesse des 17. Jahrhunderts" },
+      creator: AUTOR,
+    };
+    const desc = descAus(html);
+    if (desc) k.description = desc;
+    return k;
+  };
+
+  // Start › Prozesse › Fall usw., abgeleitet aus dem Pfad. Startseite ohne.
+  const breadcrumb = (rel, html) => {
+    const url = seiteZuUrl(rel);
+    const titel = titelAus(html);
+    const items = [{ name: "Start", url: `${DOMAIN}/` }];
+    if (rel === "pages/prozesse/index.html") {
+      items.push({ name: "Prozesse", url });
+    } else if (rel.startsWith("pages/prozesse/")) {
+      items.push({ name: "Prozesse", url: `${DOMAIN}/pages/prozesse/index.html` });
+      items.push({ name: titel, url });
+    } else if (rel.startsWith("pages/themen/byloff/")) {
+      if (rel.endsWith("byloff/index.html")) {
+        items.push({ name: "Volkskundliches (Byloff)", url });
+      } else {
+        items.push({ name: "Volkskundliches (Byloff)", url: `${DOMAIN}/pages/themen/byloff/index.html` });
+        items.push({ name: titel, url });
+      }
+    } else if (rel.startsWith("pages/")) {
+      items.push({ name: titel, url });
+    } else {
+      return null;
+    }
+    return {
+      "@type": "BreadcrumbList",
+      itemListElement: items.map((it, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: it.name,
+        item: it.url,
+      })),
+    };
+  };
+
+  return {
+    name: "struktur-daten",
+    transformIndexHtml(html, ctx) {
+      let rel = (ctx?.path || "").replace(/^\//, "");
+      if (!rel && ctx?.filename) rel = relative(fromSrc(), ctx.filename).replace(/\\/g, "/");
+      if (!rel) rel = "index.html";
+
+      const graph = [];
+      if (rel === "index.html") {
+        graph.push(webseiteKnoten(html));
+      } else if (rel === "pages/prozesse/index.html") {
+        graph.push(sammlungKnoten(rel, html));
+      } else if (rel.startsWith("pages/prozesse/") && d.prozesse[rel.slice("pages/prozesse/".length)]) {
+        graph.push(artikelKnoten(rel.slice("pages/prozesse/".length), rel, html));
+      } else {
+        graph.push(webpageKnoten(rel, html));
+      }
+      const bc = breadcrumb(rel, html);
+      if (bc) graph.push(bc);
+
+      const nutzbar = graph.filter(Boolean);
+      if (!nutzbar.length) return html;
+
+      // < in < wandeln, damit kein "</script>" aus einem Datenfeld die
+      // Einbettung aufbricht; bleibt gueltiges JSON.
+      const jsonld = JSON.stringify({ "@context": "https://schema.org", "@graph": nutzbar })
+        .replace(/</g, "\\u003c");
+      return {
+        html,
+        tags: [{ tag: "script", attrs: { type: "application/ld+json" }, children: jsonld, injectTo: "head" }],
+      };
+    },
+  };
+}
+
 // Auto-discover all HTML pages under src/ so new prozess-/themen-Seiten
 // automatisch ins Build wandern. Es muss nur die Datei in src/pages/...
 // existieren — kein Eintrag hier nötig.
@@ -360,7 +613,13 @@ export default defineConfig({
   root: "src",
   base: "/",
   publicDir: "assets",
-  plugins: [htmlIncludePlugin(), prozessZahlenPlugin(), personenregisterPlugin(), seoDateienPlugin()],
+  plugins: [
+    htmlIncludePlugin(),
+    prozessZahlenPlugin(),
+    personenregisterPlugin(),
+    seoDateienPlugin(),
+    strukturDatenPlugin(),
+  ],
 
   build: {
     outDir: resolve(__dirname, "dist"),
