@@ -588,6 +588,226 @@ function strukturDatenPlugin() {
   };
 }
 
+// Plugin: Erzeugt llms.txt und llms-full.txt beim Build.
+//
+// llms.txt      = kurzes Inhaltsverzeichnis (Projektbeschreibung + Linkliste
+//                 aller Prozesse, Themen und weiteren Seiten).
+// llms-full.txt = alle Protokolle in einem sauberen Markdown-Dokument, aus dem
+//                 sich eine KI speisen kann, ohne Einzelseiten zu crawlen.
+//
+// Beide werden aus denselben Quellen wie die uebrige Site erzeugt (die
+// Prozessseiten und die Kartei denunziationen.json). Kommt ein Fall dazu,
+// erscheint er automatisch in beiden Dateien -- nichts von Hand nachzutragen.
+function llmsDateienPlugin() {
+  const DOMAIN = "https://hexenprozesse.at";
+  const d = JSON.parse(readFileSync(fromSrc("daten", "denunziationen.json"), "utf-8"));
+  const seiteZuUrl = (rel) => (rel === "index.html" ? `${DOMAIN}/` : `${DOMAIN}/${rel}`);
+
+  // --- HTML-Fragment -> Klartext-Markdown ---------------------------------
+  const ENT = {
+    "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&apos;": "'",
+    "&nbsp;": " ", "&middot;": "·", "&rarr;": "→", "&larr;": "←",
+    "&ndash;": "–", "&mdash;": "—", "&hellip;": "…",
+    "&bdquo;": "„", "&ldquo;": "“", "&rdquo;": "”", "&sbquo;": "‚",
+    "&lsquo;": "‘", "&rsquo;": "’", "&laquo;": "«", "&raquo;": "»",
+    "&lsaquo;": "‹", "&rsaquo;": "›", "&szlig;": "ß", "&auml;": "ä",
+    "&ouml;": "ö", "&uuml;": "ü", "&Auml;": "Ä", "&Ouml;": "Ö", "&Uuml;": "Ü",
+  };
+  const dekodieren = (s) =>
+    s.replace(/&#x([0-9a-fA-F]+);/g, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+      .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+      .replace(/&[a-zA-Z]+;/g, (m) => ENT[m] ?? m);
+
+  // Inline-Fragment -> Text. Tags werden zu Leerzeichen, damit an Tag-Grenzen
+  // keine Woerter verkleben; Leerzeichen vor Satzzeichen fallen weg.
+  const nurText = (frag) =>
+    dekodieren(frag.replace(/<[^>]+>/g, " "))
+      .replace(/\s+/g, " ")
+      .replace(/ ([.,;:!?])/g, "$1")
+      .trim();
+
+  const inhaltAlsMarkdown = (html) => {
+    let m = html.match(/<article class="prozess">([\s\S]*?)<\/article>/);
+    let b = m ? m[1] : html;
+
+    // Bloecke entfernen, die nicht in den Korpus gehoeren
+    b = b
+      .replace(/<figure[\s\S]*?<\/figure>/g, "")
+      .replace(/<nav[\s\S]*?<\/nav>/g, "")
+      .replace(/<script[\s\S]*?<\/script>/g, "")
+      .replace(/<p class="hint">[\s\S]*?<\/p>/g, "")
+      .replace(/<header class="prozess-header">[\s\S]*?<\/header>/g, "") // h1 kommt aus den Metadaten
+      // Quelle-Block: die konzise Fundstelle steht schon im Metadatenkopf; die
+      // Literatur-Karte hier waere Wiederholung und schwer sauber zu extrahieren.
+      .replace(/<h3>\s*Quelle\s*<\/h3>/g, "")
+      .replace(/<ul class="literatur-liste">[\s\S]*?<\/ul>/g, "")
+      .replace(/<p>\s*<a href="\/pages\/prozesse\/index\.html">[\s\S]*?<\/p>/g, "");
+
+    // Prozess-Tag-Ueberschrift: Ort·Datum + Phasenname -> ### Zeile
+    b = b.replace(/<h3 class="prozess-tag-datum">([\s\S]*?)<\/h3>/g, (_, inner) => {
+      const kopf = (inner.match(/<span class="kap-kopf">([\s\S]*?)<\/span>/) || [])[1] || "";
+      const pname = (inner.match(/<span class="kap-name">([\s\S]*?)<\/span>/) || [])[1] || "";
+      return `\n\n### ${[nurText(kopf), nurText(pname)].filter(Boolean).join(" — ")}\n\n`;
+    });
+
+    // Untertitel (h2) -> kursive Zeile; uebrige Ueberschriften -> ###/####
+    b = b.replace(/<h2[^>]*>([\s\S]*?)<\/h2>/g, (_, t) => `\n\n*${nurText(t)}*\n\n`);
+    b = b.replace(/<h3[^>]*>([\s\S]*?)<\/h3>/g, (_, t) => `\n\n### ${nurText(t)}\n\n`);
+    b = b.replace(/<h4[^>]*>([\s\S]*?)<\/h4>/g, (_, t) => `\n\n#### ${nurText(t)}\n\n`);
+
+    // Listen und Tabellen (Todes-/Opferlisten): jede Zeile ein Listeneintrag
+    b = b.replace(/<li[^>]*>/g, "\n- ").replace(/<\/li>/g, "");
+    b = b.replace(/<tr[^>]*>/g, "\n- ").replace(/<\/td>\s*/g, " — ").replace(/<t[dhr][^>]*>/g, "");
+
+    // Absatz-/Zeilengrenzen, dann restliche Tags zu Leerzeichen
+    b = b.replace(/<br\s*\/?>/g, "\n").replace(/<\/(p|div|ul|table|section)>/g, "\n\n");
+    b = dekodieren(b.replace(/<[^>]+>/g, " "));
+
+    // Zeilen normalisieren; bei Listenzeilen die "—"-getrennten Zellen aufraeumen
+    b = b
+      .split("\n")
+      .map((z) => {
+        z = z.replace(/[ \t]+/g, " ").trim();
+        if (z.startsWith("- ") && z.includes("—")) {
+          const zellen = z.slice(2).split(/\s*—\s*/).map((s) => s.trim()).filter(Boolean);
+          z = "- " + zellen.join(" — ");
+        }
+        return z;
+      })
+      .join("\n");
+    return b.replace(/ ([.,;:!?])/g, "$1").replace(/\n{3,}/g, "\n\n").trim();
+  };
+
+  // --- Metadaten / Listen -------------------------------------------------
+  const name = (key) => d.personen[key]?.name || key;
+  const anklageLabel = (a) => (a.charAt(0).toUpperCase() + a.slice(1)).replace(/-/g, " ");
+  const AUSGANG_LABEL = {
+    "hingerichtet": "hingerichtet", "in-haft-gestorben": "in Haft gestorben",
+    "verbannt": "verbannt", "freigelassen": "freigelassen", "nicht-ueberliefert": "nicht überliefert",
+  };
+  const ausgangText = (a) =>
+    a && a.art ? (AUSGANG_LABEL[a.art] || a.art) + (a.datum ? `, ${a.datum}` : "") : "";
+
+  // Faelle chronologisch aus den Kacheln der Prozessliste (Sprachvariante raus)
+  const faelleLesen = () => {
+    const html = readFileSync(fromSrc("pages", "prozesse", "index.html"), "utf-8");
+    const faelle = [];
+    const re = /<li class="fall-kachel"([^>]*)>/g;
+    let m;
+    while ((m = re.exec(html)) !== null) {
+      const a = m[1];
+      if (/data-sprachvariante/.test(a)) continue;
+      const datei = (a.match(/data-datei="([^"]*)"/) || [])[1];
+      const kname = (a.match(/data-name="([^"]*)"/) || [])[1];
+      const jahr = Number((a.match(/data-jahr="(\d+)"/) || [])[1]);
+      if (datei && kname) faelle.push({ datei, name: dekodieren(kname), jahr });
+    }
+    faelle.sort((a, b) => a.jahr - b.jahr);
+    return faelle;
+  };
+
+  const titelVon = (rel) => {
+    try {
+      const h = readFileSync(fromSrc(rel), "utf-8");
+      const m = h.match(/<title>([\s\S]*?)<\/title>/i);
+      const roh = (m ? m[1].trim() : "").replace(/\s*[—–-]\s*Hexenprozesse\s*$/, "").trim();
+      return roh ? dekodieren(roh) : rel;
+    } catch {
+      return rel;
+    }
+  };
+  // Themenseiten (Unterordner nur mit ihrer index.html) und weitere Einzelseiten
+  const themenSeiten = () => {
+    const out = [];
+    for (const f of readdirSync(fromSrc("pages", "themen"), { withFileTypes: true })) {
+      if (f.isFile() && f.name.endsWith(".html")) out.push(`pages/themen/${f.name}`);
+      else if (f.isDirectory()) out.push(`pages/themen/${f.name}/index.html`);
+    }
+    return out.sort();
+  };
+  const weitereSeiten = () =>
+    readdirSync(fromSrc("pages"), { withFileTypes: true })
+      .filter((f) => f.isFile() && f.name.endsWith(".html"))
+      .map((f) => `pages/${f.name}`)
+      .sort();
+
+  const metaBlock = (fall) => {
+    const pr = d.prozesse[fall.datei] || {};
+    const z = [`## ${fall.name} (${fall.jahr})`, ""];
+    if (pr.ort) {
+      const ko = pr.koordinaten ? ` (${pr.koordinaten.lat.toFixed(4)}, ${pr.koordinaten.lon.toFixed(4)})` : "";
+      z.push(`- **Ort:** ${pr.ort}${ko}`);
+    }
+    const besch = (pr.beschuldigte || []).map(name);
+    if (besch.length) z.push(`- **Beschuldigte:** ${besch.join("; ")}`);
+    if ((pr.anklage || []).length) z.push(`- **Anklage:** ${pr.anklage.map(anklageLabel).join(", ")}`);
+    const aus = ausgangText(pr.ausgang);
+    if (aus) z.push(`- **Ausgang:** ${aus}`);
+    const bann = (pr.bannrichter || []).map(name);
+    if (bann.length) z.push(`- **Bannrichter:** ${bann.join(", ")}`);
+    if (pr.fundstelle) z.push(`- **Quelle:** ${pr.fundstelle}`);
+    z.push(`- **Seite:** ${seiteZuUrl(`pages/prozesse/${fall.datei}`)}`);
+    return z.join("\n") + "\n";
+  };
+
+  const KOPF =
+    "> Originalprotokolle von Prozessen gegen Hexen und Zauberer aus der\n" +
+    "> Steiermark (Österreich) und aus Slowenien im 17. Jahrhundert, transkribiert\n" +
+    "> und in heutiges Deutsch übertragen. Über zwei Jahrzehnte Forschungsarbeit\n" +
+    "> von Dr. phil. Siegfried Kramer (†2020); nach seinem Tod fortgeführt von\n" +
+    "> Veit Kramer-Schöggl. Privates, nicht-kommerzielles Forschungsprojekt,\n" +
+    "> Lizenz CC BY 4.0. Website: https://hexenprozesse.at";
+
+  const llmsIndex = (faelle) => {
+    const z = [
+      "# hexenprozesse.at — Steirische Hexenprozesse des 17. Jahrhunderts",
+      "",
+      KOPF,
+      ">",
+      "> Alle Protokolltexte in einem Dokument: https://hexenprozesse.at/llms-full.txt",
+      "",
+      "## Prozesse",
+    ];
+    for (const f of faelle) {
+      const pr = d.prozesse[f.datei] || {};
+      const zusatz = [pr.ort, ausgangText(pr.ausgang)].filter(Boolean).join(", ");
+      z.push(`- [${f.name} (${f.jahr})](${seiteZuUrl(`pages/prozesse/${f.datei}`)})${zusatz ? `: ${zusatz}` : ""}`);
+    }
+    z.push("", "## Themen");
+    for (const rel of themenSeiten()) z.push(`- [${titelVon(rel)}](${seiteZuUrl(rel)})`);
+    z.push("", "## Weitere Seiten");
+    for (const rel of weitereSeiten()) z.push(`- [${titelVon(rel)}](${seiteZuUrl(rel)})`);
+    return z.join("\n") + "\n";
+  };
+
+  const llmsVoll = (faelle) => {
+    const teile = [
+      "# Steirische Hexenprozesse — Volltext-Korpus",
+      "",
+      KOPF,
+      ">",
+      `> Automatisch beim Build erzeugt aus allen Prozessseiten: ${faelle.length} Verfahren`,
+      "> in chronologischer Folge. Je Eintrag die Eckdaten (Ort, Beschuldigte,",
+      "> Anklage, Ausgang, Quelle) und der vollständige übertragene Protokolltext.",
+      "",
+    ];
+    for (const fall of faelle) {
+      const html = readFileSync(fromSrc("pages", "prozesse", fall.datei), "utf-8");
+      teile.push("---", "", metaBlock(fall), inhaltAlsMarkdown(html), "");
+    }
+    return teile.join("\n").replace(/\n{3,}/g, "\n\n") + "\n";
+  };
+
+  return {
+    name: "llms-dateien",
+    generateBundle() {
+      const faelle = faelleLesen();
+      this.emitFile({ type: "asset", fileName: "llms.txt", source: llmsIndex(faelle) });
+      this.emitFile({ type: "asset", fileName: "llms-full.txt", source: llmsVoll(faelle) });
+    },
+  };
+}
+
 // Auto-discover all HTML pages under src/ so new prozess-/themen-Seiten
 // automatisch ins Build wandern. Es muss nur die Datei in src/pages/...
 // existieren — kein Eintrag hier nötig.
@@ -619,6 +839,7 @@ export default defineConfig({
     personenregisterPlugin(),
     seoDateienPlugin(),
     strukturDatenPlugin(),
+    llmsDateienPlugin(),
   ],
 
   build: {

@@ -1,0 +1,62 @@
+# hexenprozesse.at — Steirische Hexenprozesse des 17. Jahrhunderts
+
+> Originalprotokolle von Prozessen gegen Hexen und Zauberer aus der
+> Steiermark (Österreich) und aus Slowenien im 17. Jahrhundert, transkribiert
+> und in heutiges Deutsch übertragen. Über zwei Jahrzehnte Forschungsarbeit
+> von Dr. phil. Siegfried Kramer (†2020); nach seinem Tod fortgeführt von
+> Veit Kramer-Schöggl. Privates, nicht-kommerzielles Forschungsprojekt,
+> Lizenz CC BY 4.0. Website: https://hexenprozesse.at
+>
+> Alle Protokolltexte in einem Dokument: https://hexenprozesse.at/llms-full.txt
+
+## Prozesse
+- [Dionys und die Greschl (1602)](https://hexenprozesse.at/pages/prozesse/dionys.html): Landgericht des Stiftes St. Lambrecht, hingerichtet, 5. August 1602
+- [Hans aus der Metnitz (1604)](https://hexenprozesse.at/pages/prozesse/metnitz.html): Landgericht des Stiftes St. Lambrecht, hingerichtet, 6. September 1604
+- [Marx Schöpfer (1614)](https://hexenprozesse.at/pages/prozesse/mschoepfer.html): Landgericht des Stiftes St. Lambrecht, hingerichtet, 18. August 1614
+- [Ursula Neubauer (1644)](https://hexenprozesse.at/pages/prozesse/neubauer.html): Herrschaft Neudau, Verfahren am Landgericht Burgau, verbannt, Pfingsten 1644
+- [Martha Mosegger (1647)](https://hexenprozesse.at/pages/prozesse/mosegger.html): Herrschaft und Landgerichtshoheit Ober-Voitsberg, hingerichtet, Juli 1647
+- [Walburga Moritz-Bärtl (1652)](https://hexenprozesse.at/pages/prozesse/walburga.html): Fuerstliche Stift- und Landgerichts-Hoheit Rein, unterfertigt in Gratwein, nicht überliefert
+- [Gregor Heiser (1653)](https://hexenprozesse.at/pages/prozesse/heiser-2.html): Stift und Landgericht St. Lambrecht, hingerichtet, 4. August 1653
+- [Lorenz Steger (1653)](https://hexenprozesse.at/pages/prozesse/steger.html): Stift und Landgericht St. Lambrecht, hingerichtet, 4. August 1653
+- [Thomas Heiser (1653)](https://hexenprozesse.at/pages/prozesse/heiser-1.html): Stift und Landgericht St. Lambrecht, hingerichtet, 4. August 1653
+- [Marx Rueprecht (1657)](https://hexenprozesse.at/pages/prozesse/rueprecht.html): Landgericht Kapfenberg, nicht überliefert
+- [Sebastian Kügl (1657)](https://hexenprozesse.at/pages/prozesse/kuegl.html): Herrschaft und Landgerichtshoheit Kapfenberg, hingerichtet, 8. November 1657
+- [Hans Glaser „grindiger Hansl“ (1659)](https://hexenprozesse.at/pages/prozesse/glaser.html): Stadtgericht Rottenmann, freigelassen, 1659
+- [Andreas Zechner I (1660)](https://hexenprozesse.at/pages/prozesse/zechner-andreas-1.html): St. Peter-Freienstein, Bezirk Leoben, hingerichtet, 15. April 1660
+- [Elenka Schauberg (1661)](https://hexenprozesse.at/pages/prozesse/schauberg.html): Herrschaft Gutenhag (Hrastovec, Slowenien), hingerichtet, 18. November 1661
+- [Gera Kopschitsch (1661)](https://hexenprozesse.at/pages/prozesse/kopschitsch.html): Herrschaft Gutenhag, hingerichtet, 10. Dezember 1661
+- [Margaretha Keyditsch & Apollonia (1661)](https://hexenprozesse.at/pages/prozesse/keyditsch.html): Herrschaft Gutenhag (Hrastovec, Slowenien), hingerichtet, 22. und 27. Juni 1661
+- [Ursula Kollar (1661)](https://hexenprozesse.at/pages/prozesse/kollar.html): Herrschaft Gutenhag des Erasmus Friedrich Graf von Herberstein, hingerichtet, 10. Dezember 1661
+- [Lorenz Pöllinger (1664)](https://hexenprozesse.at/pages/prozesse/poellinger.html): Landgericht Murau, hingerichtet, 20. März 1664
+- [Gera Scherb (1672)](https://hexenprozesse.at/pages/prozesse/scherb.html): Landgericht Luttenberg (Ljutomer), nicht überliefert
+- [Katharina Türk und weitere (1672)](https://hexenprozesse.at/pages/prozesse/tuerk.html): Schloss Luttenberg (Ljutomer, Slowenien), nicht überliefert
+- [Marina Hörk (1672)](https://hexenprozesse.at/pages/prozesse/hoerk.html): Landgericht Luttenberg (Ljutomer, Slowenien), hingerichtet, 23. Jänner 1672
+- [Marina Wukinetz (1673)](https://hexenprozesse.at/pages/prozesse/wukinetz.html): Herrschaft Gutenhag des Erasmus Friedrich Graf von Herberstein; Haft zuletzt in St. Leonhard, in Haft gestorben, 19. Februar 1673
+- [Michael Lipp (1675)](https://hexenprozesse.at/pages/prozesse/lipp.html): Erhebungen an der Riegersburg, Verfahren an das Landgericht Feldbach verwiesen, nicht überliefert
+- [Dorothea Wed (1677)](https://hexenprozesse.at/pages/prozesse/wed.html): Landgerichtsherrschaft Friedau (Ormož), in Haft gestorben, 2. Mai 1677
+- [Marx Heen (1683)](https://hexenprozesse.at/pages/prozesse/heen.html): Landgericht Oberkapfenberg, hingerichtet, Mai 1683
+- [Andreas Zechner II (1686)](https://hexenprozesse.at/pages/prozesse/zechner-andreas-2.html): Landgericht Waldstein, Verfahren fortgesetzt in Stübing und Thannhausen bei Weiz, freigelassen, 1686
+- [Christina Posch (1686)](https://hexenprozesse.at/pages/prozesse/posch.html): Landgericht Rein, verhört in Gratwein, hingerichtet, 27. April 1686
+- [Margareth Jantscher (1686)](https://hexenprozesse.at/pages/prozesse/jantscher.html): Stifts- und Landgerichts-Hoheit Rein, verhoert in Gratwein, hingerichtet, 8. April 1686
+- [Peter Paar (1686)](https://hexenprozesse.at/pages/prozesse/schoeckl.html): Stifts- und Landgerichts-Hoheit Rein, hingerichtet, 4. April 1686
+- [Susanne Pindter (1689)](https://hexenprozesse.at/pages/prozesse/pindter.html): Graefliche Herrschaft Trautmannsdorf, Landgerichtshoheit Gleichenberg, hingerichtet, 31. März 1689
+- [Veronika Rauch (1689)](https://hexenprozesse.at/pages/prozesse/rauch.html): Hochgraefliche Herrschaft Trautmannsdorf, Landgerichtshoheit Gleichenberg, hingerichtet, 25. Mai 1689
+- [Gera Gregoritsch (1694)](https://hexenprozesse.at/pages/prozesse/freyenthurn.html): Landgerichtliche Herrschaft Freyenthurn, hingerichtet, 4. Dezember 1694
+- [Marina Schepp (1695)](https://hexenprozesse.at/pages/prozesse/schepp.html): Landgericht der Dominikaner-Patres, Hl. Dreifaltigkeit unter Lichtenegg, hingerichtet, 1695
+- [Matthias und Eva Hacker (1695)](https://hexenprozesse.at/pages/prozesse/hacker.html): Herrschaft und Landgerichts-Hoheit Admontbichl, hingerichtet, 22. Jänner 1695
+- [Helena Glanitschnigg (1701)](https://hexenprozesse.at/pages/prozesse/glanitschnigg.html): Hl. Dreifaltigkeit im Unteren Amt (Gorca), hingerichtet, 10. Dezember 1701
+
+## Themen
+- [Die Bannrichter](https://hexenprozesse.at/pages/themen/bannrichter.html)
+- [Volkskundliches aus Strafprozessen (Byloff)](https://hexenprozesse.at/pages/themen/byloff/index.html)
+- [Das Gerichtswesen](https://hexenprozesse.at/pages/themen/gerichtswesen.html)
+- [Die Prozesse in St. Lambrecht 1653](https://hexenprozesse.at/pages/themen/lambrecht-1653.html)
+- [Literatur-Empfehlungen](https://hexenprozesse.at/pages/themen/literatur.html)
+- [Der Schöckl](https://hexenprozesse.at/pages/themen/schoeckl.html)
+
+## Weitere Seiten
+- [Fragenliste für Hexenprozesse](https://hexenprozesse.at/pages/fragenkatalog.html)
+- [Impressum & Urheberrecht](https://hexenprozesse.at/pages/impressum.html)
+- [Kontakt](https://hexenprozesse.at/pages/kontakt.html)
+- [Linksammlung](https://hexenprozesse.at/pages/links.html)
+- [Personenregister](https://hexenprozesse.at/pages/register.html)
