@@ -1,6 +1,7 @@
-import { dirname, resolve } from "node:path";
+import { dirname, resolve, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readdirSync, readFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { defineConfig } from "vite";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -208,6 +209,132 @@ function personenregisterPlugin() {
   };
 }
 
+// Plugin: Erzeugt die SEO-Grunddateien beim Build.
+//
+// Drei Dinge, die eine statische Seite fuer Suchmaschinen und KI-Crawler
+// braucht, und die sonst von Hand gepflegt werden muessten:
+//
+//  1. rel="canonical" in jedem <head> — self-referenzierend, absolute URL.
+//     Buendelt "/" und "/index.html" auf eine Adresse.
+//  2. hreflang zwischen der deutschen und der slowenischen Wed-Seite, damit
+//     Google sie als Sprachvarianten und nicht als Duplikat wertet.
+//  3. sitemap.xml aus allen gebauten Seiten, lastmod je Seite aus dem
+//     Git-Datum der Quelldatei. Kein Handpflegen, nichts veraltet.
+//
+// Bewusst als eigenes Mini-Plugin statt als Abhaengigkeit: die Logik ist
+// klein, und so bleibt die Site ohne fremden Code auskommentierbar.
+function seoDateienPlugin() {
+  const DOMAIN = "https://hexenprozesse.at";
+
+  // Die einzige zweisprachige Seite: deutsche Fassung und slowenische
+  // Uebertragung verweisen wechselseitig aufeinander. Kommt eine englische
+  // Fassung dazu, wird hier je Seite eine Zeile ergaenzt.
+  const sprachAlternativen = {
+    "pages/prozesse/wed.html": [
+      ["de", "pages/prozesse/wed.html"],
+      ["sl", "pages/prozesse/wed-2.html"],
+      ["x-default", "pages/prozesse/wed.html"],
+    ],
+  };
+  sprachAlternativen["pages/prozesse/wed-2.html"] =
+    sprachAlternativen["pages/prozesse/wed.html"];
+
+  // Verzeichnis-Index wird zur "sauberen" Root-Adresse; alle uebrigen Seiten
+  // behalten ihren .html-Pfad, so wie sie auch intern verlinkt sind. Sitemap
+  // und Canonical benutzen dieselbe Funktion, damit sie nie auseinanderlaufen.
+  const seiteZuUrl = (rel) =>
+    rel === "index.html" ? `${DOMAIN}/` : `${DOMAIN}/${rel}`;
+
+  // Alle Seiten der Site: index.html plus jede .html unter pages/. Bewusst
+  // aus dem Quellbaum gelesen und nicht aus dem Rollup-Bundle — Vite fuegt die
+  // HTML-Dateien dem Bundle erst nach diesem Plugin hinzu, es waere zur
+  // generateBundle-Zeit noch leer. Die Partials in src/partials/ sind keine
+  // eigenen Seiten und bleiben aussen vor.
+  const seitenSammeln = () => {
+    const out = ["index.html"];
+    const walk = (relDir) => {
+      for (const f of readdirSync(fromSrc(relDir), { withFileTypes: true })) {
+        const rel = relDir ? `${relDir}/${f.name}` : f.name;
+        if (f.isDirectory()) walk(rel);
+        else if (f.name.endsWith(".html")) out.push(rel);
+      }
+    };
+    walk("pages");
+    return out;
+  };
+
+  // Letzte inhaltliche Aenderung = Git-Commit-Datum der Quelldatei. Faellt
+  // Git aus (z. B. noch nicht committete Datei), heutiges Datum als Rueckfall.
+  const letzteAenderung = (absPfad) => {
+    try {
+      const iso = execFileSync("git", ["log", "-1", "--format=%cI", "--", absPfad], {
+        cwd: __dirname,
+        encoding: "utf-8",
+      }).trim();
+      if (iso) return iso.slice(0, 10);
+    } catch {
+      /* kein Git / nicht getrackt — Rueckfall unten */
+    }
+    return new Date().toISOString().slice(0, 10);
+  };
+
+  return {
+    name: "seo-dateien",
+
+    // Canonical und (fuer die Wed-Seiten) hreflang in den <head> haengen.
+    transformIndexHtml(html, ctx) {
+      let rel = (ctx?.path || "").replace(/^\//, "");
+      if (!rel && ctx?.filename) rel = relative(fromSrc(), ctx.filename).replace(/\\/g, "/");
+      if (!rel) rel = "index.html";
+
+      const tags = [
+        { tag: "link", attrs: { rel: "canonical", href: seiteZuUrl(rel) }, injectTo: "head" },
+      ];
+      for (const [lang, ziel] of sprachAlternativen[rel] ?? []) {
+        tags.push({
+          tag: "link",
+          attrs: { rel: "alternate", hreflang: lang, href: seiteZuUrl(ziel) },
+          injectTo: "head",
+        });
+      }
+      return { html, tags };
+    },
+
+    // sitemap.xml aus der Seitenliste schreiben. hreflang-Bezug fuer das
+    // Sprachpaar als xhtml:link je Eintrag.
+    generateBundle() {
+      const seiten = seitenSammeln().sort();
+
+      const eintraege = seiten.map((rel) => {
+        const alternates = (sprachAlternativen[rel] ?? [])
+          .map(
+            ([lang, ziel]) =>
+              `    <xhtml:link rel="alternate" hreflang="${lang}" href="${seiteZuUrl(ziel)}" />`,
+          )
+          .join("\n");
+        return [
+          "  <url>",
+          `    <loc>${seiteZuUrl(rel)}</loc>`,
+          `    <lastmod>${letzteAenderung(fromSrc(rel))}</lastmod>`,
+          alternates,
+          "  </url>",
+        ]
+          .filter(Boolean)
+          .join("\n");
+      });
+
+      const xml =
+        `<?xml version="1.0" encoding="UTF-8"?>\n` +
+        `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n` +
+        `        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n` +
+        eintraege.join("\n") +
+        "\n</urlset>\n";
+
+      this.emitFile({ type: "asset", fileName: "sitemap.xml", source: xml });
+    },
+  };
+}
+
 // Auto-discover all HTML pages under src/ so new prozess-/themen-Seiten
 // automatisch ins Build wandern. Es muss nur die Datei in src/pages/...
 // existieren — kein Eintrag hier nötig.
@@ -233,7 +360,7 @@ export default defineConfig({
   root: "src",
   base: "/",
   publicDir: "assets",
-  plugins: [htmlIncludePlugin(), prozessZahlenPlugin(), personenregisterPlugin()],
+  plugins: [htmlIncludePlugin(), prozessZahlenPlugin(), personenregisterPlugin(), seoDateienPlugin()],
 
   build: {
     outDir: resolve(__dirname, "dist"),

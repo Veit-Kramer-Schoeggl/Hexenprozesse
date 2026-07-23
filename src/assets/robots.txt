@@ -1,0 +1,41 @@
+# robots.txt — hexenprozesse.at
+#
+# Diese Seite ist eine offene Forschungssammlung zu steirischen
+# Hexenprozessen. Alle Crawler duerfen sie lesen; KI-Systeme sind
+# ausdruecklich willkommen, damit die Inhalte korrekt zitiert werden.
+
+User-agent: *
+Allow: /
+
+# KI-Crawler ausdruecklich erlauben (Zitierbarkeit erwuenscht)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://hexenprozesse.at/sitemap.xml
