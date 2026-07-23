@@ -193,7 +193,13 @@ schon vorhandenen Meta-Feldern ableitbar.
 
 ---
 
-## Priorität 3 — Betrieb, nicht Code (von Veit anzustoßen)
+## Priorität 3 — Betrieb, nicht Code
+
+Diese drei Aufgaben (11 Cache, 12 Google-Index, 13 404-Seite) haben eine
+Code- und eine Hand-Komponente. Der Code-Teil steht hier kurz; die
+Schritte, die **nur Veit** durchführen kann (Plesk-Zugang, Google
+Search Console), stehen ausführlich im nächsten Abschnitt
+„Nur von Veit durchführbar“.
 
 ### 11. Plesk-/nginx-Cache prüfen
 
@@ -201,27 +207,141 @@ Der von der Review beobachtete Unterschied zwischen `/` und
 `/index.html` deutet auf einen Cache, der nicht sauber invalidiert. In
 `CLAUDE.md` ist die Caching-Falle schon dokumentiert (HTML ohne
 `Cache-Control`). Der dort notierte optionale nginx-Block (HTML
-`no-cache`, Assets `immutable`) würde genau das beheben und sollte
-gesetzt werden.
+`no-cache`, Assets `immutable`) behebt das. → Schritt M3 unten.
 
 ### 12. Alte WordPress-Version aus dem Google-Index entfernen
 
-Google hat noch eine gecachte Seite mit Login-Maske (Stand Nov. 2021,
-Rest des alten Setups) und die „Über 40“-Startseite.
-
-- Google Search Console → URL-Prüfung → Indexierung für die Startseite
-  und die wichtigsten Seiten neu beantragen.
-- Sitemap (Aufgabe 2) dort einreichen — beschleunigt das Ersetzen.
-- Sicherstellen, dass alte Pfade (`/wp-login.php`, alte Kategorie-URLs)
-  einen echten **404** liefern und nicht per Soft-404 auf die Startseite
-  umgeleitet werden. Dazu gehört eine echte 404-Seite (siehe Aufgabe 13).
+Google hat noch eine gecachte Seite mit Login-Maske (Stand Nov. 2021)
+und die „Über 40“-Startseite. Ersetzt sich mit Sitemap +
+Neuindexierung. → Schritte M1, M2, M4 unten.
 
 ### 13. Echte 404-Seite
 
 Es gibt keine `404.html`. Für ein statisches Setup auf Plesk sollte eine
-schlichte 404-Seite im Stil der Site existieren, die auch den
-HTTP-Status 404 zurückgibt (nicht 200) — sonst entstehen Soft-404s, die
-Google verwirren.
+schlichte 404-Seite im Stil der Site existieren, die den HTTP-Status
+**404** zurückgibt (nicht 200 und keinen Redirect auf die Startseite) —
+sonst entstehen Soft-404s, die Google verwirren. Der HTML-Teil (eine
+`src/404.html` im Site-Stil) ist Code; dass Plesk sie mit Status 404
+ausliefert, ist Konfiguration → Schritt M5 unten.
+
+---
+
+## Nur von Veit durchführbar — Schritt für Schritt
+
+Alles Folgende braucht Zugänge, die außerhalb des Repos liegen: Google
+Search Console und das Plesk-Panel. Diese Schritte kann Claude nicht
+ausführen, nur vorbereiten. Reihenfolge: erst M1–M2 (nach dem ersten
+Deploy mit Sitemap), dann M3, dann M4–M5.
+
+### M1 — Website in der Google Search Console anmelden
+
+Nur nötig, falls noch nicht geschehen (prüfen unter
+`search.google.com/search-console` — steht `hexenprozesse.at` schon in
+der Property-Liste oben links, weiter mit M2).
+
+Von den zwei Anmeldearten ist die **HTML-Datei-Methode** für dieses
+Setup die einfachste, weil wir Dateien in den Site-Root legen können:
+
+1. `search.google.com/search-console` öffnen, mit dem Google-Konto
+   anmelden.
+2. Oben links „Property hinzufügen“ → die Variante **„URL-Präfix“**
+   wählen (nicht „Domain“, das bräuchte einen DNS-Eintrag).
+3. `https://hexenprozesse.at` eingeben.
+4. Google bietet als Bestätigungsmethode eine **HTML-Datei** an
+   (z. B. `google1a2b3c4d.html`). Diese Datei herunterladen.
+5. Die Datei ins Repo legen: nach `src/assets/` (von dort kopiert Vite
+   sie unverändert nach `dist/`, sie ist dann unter
+   `https://hexenprozesse.at/google1a2b3c4d.html` erreichbar).
+   → *Diesen Schritt kann Claude übernehmen, sobald die Datei da ist.*
+6. `npm run build`, committen, pushen — Plesk deployt automatisch.
+7. Nach ein, zwei Minuten (bis der Deploy durch ist) in der Search
+   Console auf „Bestätigen“ klicken.
+
+Alternative (dauerhafter, aber DNS nötig): „Domain“-Property mit einem
+TXT-Eintrag beim Domain-Anbieter. Nur wählen, wenn der DNS-Zugang
+ohnehin offen ist.
+
+### M2 — Sitemap einreichen und Neuindexierung anstoßen
+
+Voraussetzung: Aufgabe 2 ist umgesetzt und deployt, also
+`https://hexenprozesse.at/sitemap.xml` liefert im Browser XML (vorher
+kurz aufrufen und prüfen).
+
+1. In der Search Console links im Menü **„Sitemaps“**.
+2. Unter „Neue Sitemap hinzufügen“ `sitemap.xml` eintippen → „Senden“.
+   (Nur der Dateiname, die Domain steht schon davor.)
+3. Status sollte nach kurzer Zeit „Erfolgreich“ zeigen und die Anzahl
+   der gefundenen URLs nennen — die muss zur Seitenzahl passen (rund 53).
+4. Die alte Startseite aktiv zur Neuindexierung anstoßen: oben die
+   **URL-Prüfung** (Suchleiste „Beliebige URL in … prüfen“),
+   `https://hexenprozesse.at/` eingeben, Enter, dann
+   **„Indexierung beantragen“**. Dasselbe für die zwei, drei
+   wichtigsten Seiten (Prozessliste, Register).
+
+Das Ersetzen der alten WordPress-Version im Index passiert danach von
+selbst über die nächsten Tage bis Wochen. Beschleunigen lässt es sich
+nicht weiter; die beantragte Neuindexierung ist das Maximum.
+
+### M3 — nginx-Cache-Regeln in Plesk setzen
+
+Behebt das Cache-Problem hinter der „/ vs /index.html“-Beobachtung.
+
+1. Plesk öffnen → Domain `hexenprozesse.at`.
+2. **„Apache & nginx Settings“** (bzw. „Apache- und nginx-Einstellungen“).
+3. Ganz unten das Feld **„Additional nginx directives“**
+   („Zusätzliche nginx-Direktiven“).
+4. Den Block aus `CLAUDE.md` (Abschnitt „Caching-Falle“) einfügen:
+   ```nginx
+   location ~* \.html$ {
+       add_header Cache-Control "no-cache, must-revalidate";
+       expires 0;
+   }
+   location ~* \.(css|js|jpg|jpeg|png|gif|woff2?)$ {
+       expires 1y;
+       add_header Cache-Control "public, immutable";
+   }
+   ```
+5. „OK“/„Übernehmen“. Wirkt sofort. Danach `/` und `/index.html` im
+   Browser mit Strg+Shift+R gegenprüfen — beide müssen jetzt denselben,
+   aktuellen Stand zeigen.
+
+### M4 — (optional) veraltete URLs sofort ausblenden
+
+Falls die alte Login-Masken-Seite oder „Über 40“ noch prominent in der
+Google-Suche auftaucht und schneller weg soll, als M2 wirkt:
+
+1. Search Console → links **„Entfernen“** (unter „Indexierung“).
+2. „Neue Anfrage“ → die betreffende alte URL eintragen → bestätigen.
+
+Das ist eine **temporäre** Ausblendung (rund 6 Monate) und ersetzt M2
+nicht — es überbrückt nur die Zeit, bis der neue Stand indexiert ist.
+
+### M5 — 404-Seite scharf schalten
+
+Voraussetzung: Aufgabe 13 ist umgesetzt, es gibt eine gebaute
+`404.html`.
+
+1. Plesk → Domain → **„Apache & nginx Settings“**.
+2. Prüfen, ob unter „Zusätzliche nginx-Direktiven“ eine `error_page`
+   nötig ist, oder ob Plesk die `404.html` im Document Root automatisch
+   nutzt. Falls nötig:
+   ```nginx
+   error_page 404 /404.html;
+   ```
+3. Gegenprobe: eine erfundene URL aufrufen
+   (`https://hexenprozesse.at/gibtsnicht`) und mit den Entwickler-Tools
+   (Netzwerk-Tab) prüfen, dass der **Statuscode 404** ist — nicht 200,
+   nicht eine Weiterleitung auf die Startseite.
+
+### M6 — (Kür) Bing Webmaster Tools
+
+Kostet zehn Minuten und deckt Bing + damit indirekt einen Teil von
+ChatGPTs Websuche ab:
+
+1. `bing.com/webmasters` öffnen, mit Microsoft- oder Google-Konto
+   anmelden.
+2. „Importieren“ aus der Google Search Console anbieten lassen — das
+   übernimmt Property und Sitemap in einem Schritt.
 
 ---
 
@@ -249,18 +369,35 @@ Google verwirren.
 
 ## Sinnvolle Reihenfolge
 
-1. **robots.txt + sitemap.xml + Canonical** (Aufgaben 1, 2, 5) — ein
-   Build-Plugin, ein Nachmittag. Löst das Duplikat-/Index-Problem an der
-   Wurzel und macht alle Seiten auffindbar.
-2. **Search Console: Sitemap einreichen, Neuindexierung** (Aufgaben 11,
-   12) — sobald die Sitemap live ist. Verdrängt die alte WP-Version.
-3. **JSON-LD + BreadcrumbList** (Aufgabe 4) — der eigentliche GEO-Gewinn,
-   aus der Kartei erzeugt.
-4. **llms.txt / llms-full.txt** (Aufgabe 3) — dito aus der Kartei; kann
-   im selben Plugin entstehen.
-5. **Kleinkram** (6, 7, 8, 9, 10, 13) — nach Zeit, einzeln.
+Verschränkt, weil Code und Handgriffe aufeinander aufbauen:
 
-Der rote Faden: Fast alles lässt sich **beim Build aus Daten erzeugen,
-die schon da sind** (`denunziationen.json`, die Prozessliste, die
-Meta-Felder). Das passt zur bestehenden Architektur — nichts muss von
-Hand gepflegt werden, nichts kann veralten.
+1. **Code:** robots.txt + sitemap.xml + Canonical (Aufgaben 1, 2, 5) —
+   ein Build-Plugin, ein Nachmittag. Deployen.
+2. **Veit:** Search Console anmelden, Sitemap einreichen,
+   Neuindexierung (Schritte M1, M2). Parallel den nginx-Cache setzen
+   (M3). Das verdrängt die alte WP-Version.
+3. **Code:** JSON-LD + BreadcrumbList (Aufgabe 4) — der eigentliche
+   GEO-Gewinn, aus der Kartei erzeugt.
+4. **Code:** llms.txt / llms-full.txt (Aufgabe 3) — dito aus der Kartei;
+   kann im selben Plugin entstehen.
+5. **Code + Veit:** 404-Seite bauen (13) und scharf schalten (M5).
+6. **Kleinkram:** Descriptions, alt-Texte, width/height, hreflang,
+   Open Graph (6, 7, 8, 9, 10) — nach Zeit, einzeln.
+7. **Kür:** Bing (M6).
+
+Der rote Faden für den Code-Teil: Fast alles lässt sich **beim Build aus
+Daten erzeugen, die schon da sind** (`denunziationen.json`, die
+Prozessliste, die Meta-Felder). Das passt zur bestehenden
+Plugin-Architektur in `vite.config.js` — nichts muss von Hand gepflegt
+werden, nichts kann veralten.
+
+---
+
+## Für die nächste Arbeits-Session
+
+Eine eigene Plan-Session (Plan-Modus) ist dafür **nicht** nötig — dieses
+Dokument ist bereits der Plan, und die Aufgaben sind mechanisch und gut
+abgegrenzt. Sinnvoll ist nur, in einem **frischen, aufgeräumten Kontext**
+zu arbeiten. Der Übergabe-Prompt dafür steht nicht hier im Repo, sondern
+wurde Veit direkt gegeben; er nennt dieses Dokument als Spezifikation und
+startet mit Priorität 1.
