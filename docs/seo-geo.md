@@ -12,6 +12,35 @@ Zitierbarkeit durch KI-Systeme (ChatGPT, Perplexity, Claude, Googles
 AI-Overviews). SEO = klassische Suchmaschinenoptimierung, hier vor allem
 für Google.
 
+## Umgesetzt (Stand Juli 2026)
+
+**Priorität 1 und der Code-Teil von Priorität 2 sind erledigt, deployt und
+live geprüft** — alles als Build-Plugins in `vite.config.js`, erzeugt aus
+den schon vorhandenen Daten, nichts von Hand zu pflegen:
+
+- ✅ **robots.txt** (Aufgabe 1) — `src/assets/robots.txt`, KI-Crawler
+  ausdrücklich erlaubt, Verweis auf die Sitemap.
+- ✅ **sitemap.xml** (Aufgabe 2) — `seoDateienPlugin`, 53 URLs, `lastmod`
+  je Seite aus dem Git-Datum, Sprachpaar mit `hreflang`.
+- ✅ **rel="canonical"** (Aufgabe 5) — auf jeder Seite, self-referenzierend
+  (Start → `/`).
+- ✅ **hreflang** wed/wed-2 (Aufgabe 9) — in den Seiten und in der Sitemap.
+- ✅ **JSON-LD** (Aufgabe 4) — `strukturDatenPlugin`, je Seite ein `@graph`
+  (Article mit `about`/`mentions`-Personen, `spatialCoverage` aus den
+  geprüften Koordinaten; CollectionPage; WebSite; WebPage) plus
+  BreadcrumbList. 53/53 Seiten mit gültigem JSON-LD.
+- ✅ **llms.txt / llms-full.txt** (Aufgabe 3) — `llmsDateienPlugin`;
+  Inhaltsverzeichnis und alle 35 Protokolle im Volltext-Korpus.
+- ✅ **M1 / M2** (Veit) — Search-Console-Property bestätigt, Sitemap
+  eingereicht, Neuindexierung angestoßen.
+
+**Noch offen** (Kleinkram, einzeln nach Zeit — Aufgaben 6, 7, 8, 10, 13):
+dünne Descriptions Zechner I/II, alt-Texte, `width`/`height`, Open Graph,
+echte 404-Seite. Dazu die Betriebs-Schritte **M3** (nginx-Cache) und **M5**
+(404 scharf schalten). Details unten in den jeweiligen Abschnitten.
+
+---
+
 ## Ausgangslage — was schon gut ist
 
 Aus der eigenen Prüfung, nicht aus den Reviews übernommen, sondern
