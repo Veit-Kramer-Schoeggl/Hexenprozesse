@@ -3,6 +3,20 @@
 Gesammelte Todos aus der laufenden Überarbeitung. Kurz halten, erledigte
 Punkte löschen (die Historie steht in Git).
 
+## SEO und GEO
+
+Auffindbarkeit für Google und korrekte Zitierbarkeit durch KI-Systeme.
+Eigene Prüfung an der Codebasis plus zwei externe Reviews sind in einer
+Aufgabenliste zusammengefasst: **[docs/seo-geo.md](docs/seo-geo.md)**.
+
+Kurz: Die technische Basis (statisches HTML, spezifische Titel,
+Cross-Linking, Quellenangaben) ist überdurchschnittlich. Es fehlen vor
+allem `robots.txt`, `sitemap.xml`, `llms.txt` und JSON-LD — alles beim
+Build aus der schon vorhandenen Kartei erzeugbar. Dazu Canonical-Tags
+und, als Betriebsaufgabe, das Verdrängen der alten WordPress-Version aus
+dem Google-Index. Details, Prioritäten und was bewusst nicht empfohlen
+wird, stehen im Dokument.
+
 ## Mehrsprachigkeit — eigenes Projekt
 
 **Ziel:** Die Seite durchgängig auf Deutsch, Slowenisch und **Englisch**,
