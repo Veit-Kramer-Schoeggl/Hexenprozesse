@@ -41,14 +41,22 @@ den schon vorhandenen Daten, nichts von Hand zu pflegen:
   Pixelmaße aus der Datei (der JS-Reader wurde gegen Pillow auf allen 528
   Bildern geprüft — identisch), 285 Bilder. Schützt vor Layout-Shift (CLS).
 - ✅ **404-Seite** (Aufgabe 13) — `src/404.html` im Site-Stil, `noindex`;
-  gebaut als `dist/404.html`. Muss noch von Plesk als error_page mit
-  Status 404 ausgeliefert werden → Schritt **M5**.
+  gebaut als `dist/404.html`. Muss noch als error_page mit Status 404
+  ausgeliefert werden → Schritt **M5**.
+- ✅ **alt-Texte** (Aufgabe 7) — 29 Inhaltsbilder mit Bildunterschrift
+  beschrieben (von Veit durchgesehen); die 36 dekorativen Kachelbilder der
+  Prozessliste bleiben WCAG-konform leer (die Kachel ist ein Link, der Name,
+  Ort und Ausgang schon als Text trägt).
 - ✅ **M1 / M2** (Veit) — Search-Console-Property bestätigt, Sitemap
   eingereicht, Neuindexierung angestoßen.
 
-**Noch offen** (Aufgabe 7): alt-Texte für die 65 leeren `alt` — brauchen
-Durchsicht, ich lege Vorschläge vor. Dazu die Betriebs-Schritte **M3**
-(nginx-Cache) und **M5** (die gebaute 404-Seite in Plesk scharf schalten).
+**Damit ist die SEO/GEO-Liste code-seitig vollständig.** Offen bleiben nur
+zwei Betriebs-Schritte, die **zusätzliche nginx-Direktiven** brauchen und
+deshalb beim Registrar liegen (nicht im Plesk-Panel steuerbar): **M3**
+(HTML-Cache) und **M5** (gebaute 404-Seite als error_page). Beide sind
+unkritisch — der 404-Status stimmt bereits, der Cache ist reine Optimierung.
+Mögliche Alternative für M5, falls Apache die Anfrage sieht: ein `.htaccess`
+mit `ErrorDocument 404 /404.html`.
 
 ---
 
