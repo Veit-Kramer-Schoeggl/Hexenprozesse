@@ -31,13 +31,19 @@ den schon vorhandenen Daten, nichts von Hand zu pflegen:
   BreadcrumbList. 53/53 Seiten mit gültigem JSON-LD.
 - ✅ **llms.txt / llms-full.txt** (Aufgabe 3) — `llmsDateienPlugin`;
   Inhaltsverzeichnis und alle 35 Protokolle im Volltext-Korpus.
+- ✅ **Open Graph / Twitter Cards** (Aufgabe 10) — je Seite im
+  `strukturDatenPlugin`, `og:image` aus dem ersten Inhaltsbild der Seite
+  (sonst ein Standardbild), `og:type` article/website, `og:locale`
+  de_AT/sl_SI. 53/53 Seiten.
+- ✅ **Descriptions Zechner I/II** (Aufgabe 6) — fallbeschreibende Sätze
+  statt der bloßen Namen.
 - ✅ **M1 / M2** (Veit) — Search-Console-Property bestätigt, Sitemap
   eingereicht, Neuindexierung angestoßen.
 
-**Noch offen** (Kleinkram, einzeln nach Zeit — Aufgaben 6, 7, 8, 10, 13):
-dünne Descriptions Zechner I/II, alt-Texte, `width`/`height`, Open Graph,
-echte 404-Seite. Dazu die Betriebs-Schritte **M3** (nginx-Cache) und **M5**
-(404 scharf schalten). Details unten in den jeweiligen Abschnitten.
+**Noch offen** (Kleinkram, einzeln nach Zeit — Aufgaben 7, 8, 13):
+alt-Texte, `width`/`height` an Bildern, echte 404-Seite. Dazu die
+Betriebs-Schritte **M3** (nginx-Cache) und **M5** (404 scharf schalten).
+Details unten in den jeweiligen Abschnitten.
 
 ---
 

@@ -348,6 +348,9 @@ function seoDateienPlugin() {
 //  - Startseite    -> WebSite mit Siegfried Kramer als Urheber.
 //  - Themen/Sonst  -> WebPage.
 //  - Jede Unterseite zusaetzlich eine BreadcrumbList.
+//
+// Ausserdem Open-Graph- und Twitter-Card-Meta je Seite (Titel, Beschreibung,
+// Bild, URL), damit Link-Vorschauen in Chats und sozialen Medien stimmen.
 function strukturDatenPlugin() {
   const DOMAIN = "https://hexenprozesse.at";
   const d = JSON.parse(readFileSync(fromSrc("daten", "denunziationen.json"), "utf-8"));
@@ -407,6 +410,14 @@ function strukturDatenPlugin() {
   const langAus = (html) => {
     const m = html.match(/<html[^>]*\blang="([^"]+)"/i);
     return m ? m[1] : "de";
+  };
+
+  // Erstes Inhaltsbild der Seite als og:image (absolute URL); sonst ein
+  // Standardbild aus der Hauptseite.
+  const STANDARD_BILD = "/images/hauptseite/Folterung-der-Schulmeisterin-Ursel---1570-k.JPG";
+  const bildAus = (html) => {
+    const m = html.match(/<img[^>]+src="(\/images\/[^"]+)"/i);
+    return `${DOMAIN}${m ? m[1] : STANDARD_BILD}`;
   };
 
   const AUTOR = {
@@ -560,6 +571,31 @@ function strukturDatenPlugin() {
       if (!rel && ctx?.filename) rel = relative(fromSrc(), ctx.filename).replace(/\\/g, "/");
       if (!rel) rel = "index.html";
 
+      // Open Graph / Twitter Card fuer Link-Vorschauen (auf jeder Seite)
+      const titel = titelAus(html);
+      const og = [
+        ["og:type", rel === "index.html" ? "website" : "article"],
+        ["og:site_name", "Hexenprozesse"],
+        ["og:locale", langAus(html) === "sl" ? "sl_SI" : "de_AT"],
+        ["og:title", titel],
+        ["og:url", seiteZuUrl(rel)],
+        ["og:image", bildAus(html)],
+        ["og:image:alt", titel],
+      ];
+      const beschreibung = descAus(html);
+      if (beschreibung) og.push(["og:description", beschreibung]);
+      const tags = og.map(([property, content]) => ({
+        tag: "meta",
+        attrs: { property, content },
+        injectTo: "head",
+      }));
+      tags.push({
+        tag: "meta",
+        attrs: { name: "twitter:card", content: "summary_large_image" },
+        injectTo: "head",
+      });
+
+      // JSON-LD-Graph je nach Seitentyp
       const graph = [];
       if (rel === "index.html") {
         graph.push(webseiteKnoten(html));
@@ -572,18 +608,20 @@ function strukturDatenPlugin() {
       }
       const bc = breadcrumb(rel, html);
       if (bc) graph.push(bc);
-
       const nutzbar = graph.filter(Boolean);
-      if (!nutzbar.length) return html;
 
-      // < in < wandeln, damit kein "</script>" aus einem Datenfeld die
-      // Einbettung aufbricht; bleibt gueltiges JSON.
-      const jsonld = JSON.stringify({ "@context": "https://schema.org", "@graph": nutzbar })
-        .replace(/</g, "\\u003c");
-      return {
-        html,
-        tags: [{ tag: "script", attrs: { type: "application/ld+json" }, children: jsonld, injectTo: "head" }],
-      };
+      if (nutzbar.length) {
+        // < zu <, damit kein "</script>" aus einem Datenfeld die Einbettung aufbricht
+        const jsonld = JSON.stringify({ "@context": "https://schema.org", "@graph": nutzbar })
+          .replace(/</g, "\\u003c");
+        tags.push({
+          tag: "script",
+          attrs: { type: "application/ld+json" },
+          children: jsonld,
+          injectTo: "head",
+        });
+      }
+      return { html, tags };
     },
   };
 }
