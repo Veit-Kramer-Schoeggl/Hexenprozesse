@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seite nicht gefunden — Hexenprozesse</title>
+    <meta
+      name="description"
+      content="Diese Seite gibt es nicht (Fehler 404). Zurück zur Startseite oder zur Übersicht aller Prozesse."
+    />
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    @@include('header')
+
+    <main class="container">
+      <section class="hero">
+        <h1>Seite nicht gefunden</h1>
+        <p class="lead">
+          Die aufgerufene Seite gibt es nicht (Fehler 404). Vielleicht wurde sie
+          verschoben, oder die Adresse enthält einen Tippfehler.
+        </p>
+        <p>Von hier kommen Sie weiter:</p>
+        <ul>
+          <li><a href="/index.html">Zur Startseite</a></li>
+          <li><a href="/pages/prozesse/index.html">Übersicht aller Prozesse</a></li>
+          <li><a href="/pages/register.html">Personenregister</a></li>
+          <li><a href="/pages/kontakt.html">Kontakt</a></li>
+        </ul>
+      </section>
+    </main>
+
+    @@include('footer')
+  </body>
+</html>

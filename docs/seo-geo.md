@@ -37,13 +37,18 @@ den schon vorhandenen Daten, nichts von Hand zu pflegen:
   de_AT/sl_SI. 53/53 Seiten.
 - ✅ **Descriptions Zechner I/II** (Aufgabe 6) — fallbeschreibende Sätze
   statt der bloßen Namen.
+- ✅ **width/height an Bildern** (Aufgabe 8) — `bildMassePlugin`, echte
+  Pixelmaße aus der Datei (der JS-Reader wurde gegen Pillow auf allen 528
+  Bildern geprüft — identisch), 285 Bilder. Schützt vor Layout-Shift (CLS).
+- ✅ **404-Seite** (Aufgabe 13) — `src/404.html` im Site-Stil, `noindex`;
+  gebaut als `dist/404.html`. Muss noch von Plesk als error_page mit
+  Status 404 ausgeliefert werden → Schritt **M5**.
 - ✅ **M1 / M2** (Veit) — Search-Console-Property bestätigt, Sitemap
   eingereicht, Neuindexierung angestoßen.
 
-**Noch offen** (Kleinkram, einzeln nach Zeit — Aufgaben 7, 8, 13):
-alt-Texte, `width`/`height` an Bildern, echte 404-Seite. Dazu die
-Betriebs-Schritte **M3** (nginx-Cache) und **M5** (404 scharf schalten).
-Details unten in den jeweiligen Abschnitten.
+**Noch offen** (Aufgabe 7): alt-Texte für die 65 leeren `alt` — brauchen
+Durchsicht, ich lege Vorschläge vor. Dazu die Betriebs-Schritte **M3**
+(nginx-Cache) und **M5** (die gebaute 404-Seite in Plesk scharf schalten).
 
 ---
 

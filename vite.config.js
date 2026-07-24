@@ -1,6 +1,6 @@
 import { dirname, resolve, relative } from "node:path";
 import { fileURLToPath } from "node:url";
-import { readdirSync, readFileSync } from "node:fs";
+import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { defineConfig } from "vite";
 
@@ -846,11 +846,80 @@ function llmsDateienPlugin() {
   };
 }
 
+// Plugin: Traegt width/height an jedes Inhaltsbild ein (aus den echten
+// Pixelmassen der Datei). Ohne diese Angaben kann der Browser vor dem Laden
+// keinen Platz reservieren -> Layout-Shift (CLS), ein Core-Web-Vitals-Wert.
+//
+// Zur Bauzeit statt einmalig ins Markup geschrieben, damit ein neu
+// hinzugefuegtes Bild automatisch seine Masse bekommt und der Quelltext der
+// Seiten schlank bleibt. Das CSS setzt img global auf height:auto, deshalb
+// skaliert das Bild weiter responsiv -- die Attribute liefern nur das
+// Seitenverhaeltnis fuer die Platzreservierung.
+function bildMassePlugin() {
+  const cache = new Map();
+
+  // JPEG/PNG-Pixelmasse aus den Dateibytes. Gegen Pillow auf allen Bildern
+  // dieses Repos geprueft (identisch) -- so bleibt der Reader ohne Abhaengigkeit.
+  const bildMasse = (buf) => {
+    if (buf.length >= 24 && buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4e && buf[3] === 0x47) {
+      return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) }; // PNG: IHDR
+    }
+    if (buf.length >= 4 && buf[0] === 0xff && buf[1] === 0xd8) {
+      let o = 2;
+      while (o + 9 < buf.length) {
+        if (buf[o] !== 0xff) { o++; continue; }
+        const marker = buf[o + 1];
+        if (marker === 0xff) { o++; continue; }
+        if (marker === 0xd8 || marker === 0xd9 || (marker >= 0xd0 && marker <= 0xd7) || marker === 0x01) {
+          o += 2; continue;
+        }
+        const len = buf.readUInt16BE(o + 2);
+        if (len < 2) break;
+        if (marker >= 0xc0 && marker <= 0xcf && marker !== 0xc4 && marker !== 0xc8 && marker !== 0xcc) {
+          return { h: buf.readUInt16BE(o + 5), w: buf.readUInt16BE(o + 7) }; // SOF
+        }
+        o += 2 + len;
+      }
+    }
+    return null;
+  };
+
+  const masse = (src) => {
+    if (cache.has(src)) return cache.get(src);
+    let res = null;
+    try {
+      res = bildMasse(readFileSync(fromSrc("assets", src.replace(/^\//, ""))));
+    } catch {
+      res = null; // Datei fehlt -> Bild bleibt ohne Masse
+    }
+    cache.set(src, res);
+    return res;
+  };
+
+  return {
+    name: "bild-masse",
+    transformIndexHtml(html) {
+      return html.replace(/<img\b[^>]*>/gi, (tag) => {
+        if (/\b(width|height)=/i.test(tag)) return tag; // schon gesetzt
+        const m = tag.match(/\ssrc="(\/images\/[^"]+)"/i);
+        if (!m) return tag;
+        const d = masse(m[1]);
+        if (!d || !d.w || !d.h) return tag;
+        return tag.replace(/<img\b/i, `<img width="${d.w}" height="${d.h}"`);
+      });
+    },
+  };
+}
+
 // Auto-discover all HTML pages under src/ so new prozess-/themen-Seiten
 // automatisch ins Build wandern. Es muss nur die Datei in src/pages/...
 // existieren — kein Eintrag hier nötig.
 function collectHtmlEntries() {
   const entries = { main: fromSrc("index.html") };
+  // 404-Seite liegt bewusst im Wurzelverzeichnis (nicht unter pages/), damit
+  // sie als dist/404.html gebaut wird und Plesk sie als error_page nutzen kann.
+  const fehlerseite = fromSrc("404.html");
+  if (existsSync(fehlerseite)) entries["404"] = fehlerseite;
 
   const walk = (relDir, prefix) => {
     const abs = fromSrc(relDir);
@@ -878,6 +947,7 @@ export default defineConfig({
     seoDateienPlugin(),
     strukturDatenPlugin(),
     llmsDateienPlugin(),
+    bildMassePlugin(),
   ],
 
   build: {
