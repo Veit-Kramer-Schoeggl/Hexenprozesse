@@ -18,10 +18,17 @@ Veit pflegt das Repo nach dem Tod des Vaters; primäres Ziel ist
 
 ## Tech-Stack
 
-- **Vite v8.0.10** als Build-Tool (Multi-Page-Setup)
+- **Vite v8.1.5** als Build-Tool (Multi-Page-Setup)
 - **Node.js ≥ 20.19** (in Plesk eingestellt)
 - **Pures HTML/CSS** — kein Framework, kein React/Vue/Astro
-- **Vanilla JS** in `src/scripts/main.js` (ein einziges Mini-Modul)
+- **Vanilla JS**, seitenspezifisch statt ein zentrales Modul: fünf
+  eigenständige Module unter `src/scripts/` (`ortskarte.js` für die
+  Leaflet-Karte, `erwaehnung.js` für Personen-Hervorhebung,
+  `register.js` für das Personenregister, `galerie.js`, `lupe.js`) werden
+  nur auf den Seiten eingebunden, die sie brauchen; seitenübergreifendes
+  Verhalten (Jahr im Footer, Dropdown-Navigation, Druck-Quellenzeile,
+  Sticky-Header, Touch-Swipe) steckt inline im `<script>` von
+  `src/partials/footer.html`.
 - **CSS** mit Design-Tokens (`:root`-Variablen), mobile-first responsive
 
 ## Verzeichnis-Struktur
@@ -36,8 +43,9 @@ Homepage_Repo/
 │   │   ├── kontakt.html, ueberblick.html, impressum.html,
 │   │   │   fragenkatalog.html, links.html
 │   ├── styles/main.css
-│   ├── scripts/main.js
-│   ├── partials/          ← header.html, footer.html (Doku-Schnipsel)
+│   ├── scripts/           ← ortskarte.js, erwaehnung.js, register.js,
+│   │                         galerie.js, lupe.js (je nach Seite eingebunden)
+│   ├── partials/          ← header.html, footer.html (inkl. Footer-Inline-Script)
 │   └── assets/
 │       └── images/
 │           ├── hauptseite/  ← 69 Bilder
@@ -89,10 +97,11 @@ wird ein veralteter `dist/` mitcommitted.
 
 ### Scripts brauchen `type="module"`
 
-Sonst überspringt Vite sie beim Bundling. Beispiel:
+Sonst überspringt Vite sie beim Bundling. Beispiel (aus einer Prozessseite
+mit Ortskarte):
 
 ```html
-<script type="module" src="scripts/main.js"></script>
+<script type="module" src="../../scripts/ortskarte.js"></script>
 ```
 
 ### Latin-1 vs. UTF-8

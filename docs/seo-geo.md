@@ -20,26 +20,26 @@ den schon vorhandenen Daten, nichts von Hand zu pflegen:
 
 - ✅ **robots.txt** (Aufgabe 1) — `src/assets/robots.txt`, KI-Crawler
   ausdrücklich erlaubt, Verweis auf die Sitemap.
-- ✅ **sitemap.xml** (Aufgabe 2) — `seoDateienPlugin`, 53 URLs, `lastmod`
-  je Seite aus dem Git-Datum, Sprachpaar mit `hreflang`.
+- ✅ **sitemap.xml** (Aufgabe 2) — `seoDateienPlugin`, 66 URLs,
+  `lastmod` je Seite aus dem Git-Datum, Sprachpaar mit `hreflang`.
 - ✅ **rel="canonical"** (Aufgabe 5) — auf jeder Seite, self-referenzierend
   (Start → `/`).
 - ✅ **hreflang** wed/wed-2 (Aufgabe 9) — in den Seiten und in der Sitemap.
 - ✅ **JSON-LD** (Aufgabe 4) — `strukturDatenPlugin`, je Seite ein `@graph`
   (Article mit `about`/`mentions`-Personen, `spatialCoverage` aus den
   geprüften Koordinaten; CollectionPage; WebSite; WebPage) plus
-  BreadcrumbList. 53/53 Seiten mit gültigem JSON-LD.
+  BreadcrumbList. 66/66 Seiten mit gültigem JSON-LD.
 - ✅ **llms.txt / llms-full.txt** (Aufgabe 3) — `llmsDateienPlugin`;
   Inhaltsverzeichnis und alle 35 Protokolle im Volltext-Korpus.
 - ✅ **Open Graph / Twitter Cards** (Aufgabe 10) — je Seite im
   `strukturDatenPlugin`, `og:image` aus dem ersten Inhaltsbild der Seite
   (sonst ein Standardbild), `og:type` article/website, `og:locale`
-  de_AT/sl_SI. 53/53 Seiten.
+  de_AT/sl_SI. 66/66 Seiten.
 - ✅ **Descriptions Zechner I/II** (Aufgabe 6) — fallbeschreibende Sätze
   statt der bloßen Namen.
 - ✅ **width/height an Bildern** (Aufgabe 8) — `bildMassePlugin`, echte
   Pixelmaße aus der Datei (der JS-Reader wurde gegen Pillow auf allen 528
-  Bildern geprüft — identisch), 285 Bilder. Schützt vor Layout-Shift (CLS).
+  Bildern geprüft — identisch), 282 Bilder. Schützt vor Layout-Shift (CLS).
 - ✅ **404-Seite** (Aufgabe 13) — `src/404.html` im Site-Stil, `noindex`;
   gebaut als `dist/404.html`. Muss noch als error_page mit Status 404
   ausgeliefert werden → Schritt **M5**.
@@ -51,12 +51,14 @@ den schon vorhandenen Daten, nichts von Hand zu pflegen:
   eingereicht, Neuindexierung angestoßen.
 
 **Damit ist die SEO/GEO-Liste code-seitig vollständig.** Offen bleiben nur
-zwei Betriebs-Schritte, die **zusätzliche nginx-Direktiven** brauchen und
+drei Betriebs-Schritte, die **zusätzliche nginx-Direktiven** brauchen und
 deshalb beim Registrar liegen (nicht im Plesk-Panel steuerbar): **M3**
-(HTML-Cache) und **M5** (gebaute 404-Seite als error_page). Beide sind
-unkritisch — der 404-Status stimmt bereits, der Cache ist reine Optimierung.
-Mögliche Alternative für M5, falls Apache die Anfrage sieht: ein `.htaccess`
-mit `ErrorDocument 404 /404.html`.
+(HTML-Cache), **M5** (gebaute 404-Seite als error_page) und **M7**
+(Alt-URLs per 301 umleiten, siehe Aufgabe 14). Alle drei sind unkritisch —
+der 404-Status stimmt bereits, der Cache ist reine Optimierung, und die
+Alt-URLs geben schon jetzt korrekt 404 zurück, ein Redirect ist nur
+Politur. Mögliche Alternative für M5, falls Apache die Anfrage sieht: ein
+`.htaccess` mit `ErrorDocument 404 /404.html`.
 
 ---
 
@@ -272,6 +274,53 @@ sonst entstehen Soft-404s, die Google verwirren. Der HTML-Teil (eine
 `src/404.html` im Site-Stil) ist Code; dass Plesk sie mit Status 404
 ausliefert, ist Konfiguration → Schritt M5 unten.
 
+### 14. Alte URLs aus der Vor-Relaunch-Struktur umleiten
+
+Ausgelöst durch die Google-Search-Console-Meldung „Seiten wurden nicht
+indexiert“ (Stand Juli 2026). Geprüft wurde jede gemeldete URL live per
+`curl` (nicht nur im Code gesucht), mit folgendem Ergebnis:
+
+- **„Duplikat – vom Nutzer nicht als kanonisch festgelegt“ (15 Seiten):**
+  Kein Bug. Die Beispiel-URLs sind durchweg die `?person=…&auch=…`-
+  Deep-Links, die `personenregisterPlugin`/`register.js` erzeugen, damit
+  ein Klick im Personenregister direkt zur passenden Stelle springt und
+  sie hervorhebt. Der `canonical`-Tag dieser Seiten verweist bereits
+  korrekt und ausnahmslos auf die query-string-freie Basis-URL (per
+  `curl` gegen `poellinger.html?person=…` bestätigt: `canonical` zeigt
+  auf `poellinger.html` ohne Parameter). Google verhält sich also exakt
+  wie gewünscht — die Deep-Links sollen nicht separat indexiert werden,
+  die Basis-Seite schon. Keine Aktion nötig.
+- **„Nicht gefunden (404)“ (7 Seiten):** Alle sieben sind Alt-URLs aus
+  einer früheren Site-Struktur (vor der Umstellung auf die heutigen
+  Slugs/Pfade), die Google noch aus der Vergangenheit kennt. Kein
+  aktueller interner Link verweist auf sie — geprüft per `grep` über
+  ganz `src/`. Zwei Fälle (`lambrecht.html`, `steger1.html`) haben eine
+  eindeutige Nachfolge-Seite unter neuem Pfad, vier weitere
+  (`byloff-1..4.html`) ebenso; die vier PDF-Links hatten keine echte
+  Nachfolge-Datei mehr (die Site bietet PDF heute über die
+  Browser-Druckfunktion statt als Datei an), landen aber sinnvoll auf der
+  passenden Prozessseite. Fix: 301-Redirects, siehe Schritt **M7** unten.
+  Einzige Ausnahme ohne Redirect: `.../BILDZAUBER` — das war nie eine
+  eigene Seite, sondern nur eine Kapitelüberschrift (kommt in
+  `byloff/teil-1.html` und `teil-4.html` an fünf verschiedenen Stellen
+  vor); ohne die alte URL-Struktur zu kennen lässt sich nicht sagen,
+  welche der fünf gemeint war — kein Redirect-Ziel eindeutig bestimmbar,
+  bei einer einzelnen betroffenen URL auch nicht der Aufwand wert.
+- **„Gecrawlt/Gefunden – zurzeit nicht indexiert“ (11 + 1):** Gemischt.
+  Ein Teil der Beispiele (`byloff-1.html` etc.) sind dieselben toten
+  Alt-URLs wie oben — Google zeigt hier offenbar einen älteren
+  Crawl-Stand, `curl` bestätigt: die URLs liefern heute 404, nicht mehr
+  200. Löst sich von selbst, sobald Google neu crawlt (durch die
+  Redirects aus M7 sogar sauberer, weil dann statt 404 ein 301 auf die
+  echte Seite kommt). Der Rest (`glaser.html`, `kuegl.html`,
+  `walburga.html`, `jantscher.html`, `teil-4.html`, `kollar.html`,
+  `gerichtswesen.html`) sind echte, funktionierende, in der Sitemap
+  gelistete Seiten ohne `noindex` — hier ist es der normale
+  Übergangszustand nach einem Relaunch (siehe Aufgabe 12): Google hat sie
+  gesehen, aber noch nicht in den Index aufgenommen. Braucht Zeit, kein
+  Code-Fix. Wer ungeduldig ist, kann pro Seite in der Search Console
+  „Indexierung beantragen“ (wie in M2 für die Startseite beschrieben).
+
 ---
 
 ## Nur von Veit durchführbar — Schritt für Schritt
@@ -279,7 +328,8 @@ ausliefert, ist Konfiguration → Schritt M5 unten.
 Alles Folgende braucht Zugänge, die außerhalb des Repos liegen: Google
 Search Console und das Plesk-Panel. Diese Schritte kann Claude nicht
 ausführen, nur vorbereiten. Reihenfolge: erst M1–M2 (nach dem ersten
-Deploy mit Sitemap), dann M3, dann M4–M5.
+Deploy mit Sitemap), dann M3, dann M4–M5, M7 bei Gelegenheit (unkritisch,
+zeitlich unabhängig von den anderen Schritten).
 
 ### M1 — Website in der Google Search Console anmelden
 
@@ -319,7 +369,8 @@ kurz aufrufen und prüfen).
 2. Unter „Neue Sitemap hinzufügen“ `sitemap.xml` eintippen → „Senden“.
    (Nur der Dateiname, die Domain steht schon davor.)
 3. Status sollte nach kurzer Zeit „Erfolgreich“ zeigen und die Anzahl
-   der gefundenen URLs nennen — die muss zur Seitenzahl passen (rund 53).
+   der gefundenen URLs nennen — die muss zur Seitenzahl passen (rund
+   66, siehe `sitemap.xml`).
 4. Die alte Startseite aktiv zur Neuindexierung anstoßen: oben die
    **URL-Prüfung** (Suchleiste „Beliebige URL in … prüfen“),
    `https://hexenprozesse.at/` eingeben, Enter, dann
@@ -391,6 +442,32 @@ ChatGPTs Websuche ab:
 2. „Importieren“ aus der Google Search Console anbieten lassen — das
    übernimmt Property und Sitemap in einem Schritt.
 
+### M7 — Alte URLs per 301 umleiten
+
+Voraussetzung: Aufgabe 14 (oben) — betrifft die sechs Alt-URLs mit
+eindeutiger Nachfolge-Seite, die Google noch anfragt.
+
+1. Plesk → Domain → **„Apache & nginx Settings“**.
+2. Im Feld „Zusätzliche nginx-Direktiven“ ergänzen (neben dem Block aus
+   M3, falls der schon gesetzt ist):
+   ```nginx
+   location = /pages/prozesse/lambrecht.html { return 301 /pages/themen/lambrecht-1653.html; }
+   location = /pages/prozesse/steger1.html { return 301 /pages/prozesse/steger.html; }
+   location = /pages/prozesse/byloff-1.html { return 301 /pages/themen/byloff/teil-1.html; }
+   location = /pages/prozesse/byloff-2.html { return 301 /pages/themen/byloff/teil-2.html; }
+   location = /pages/prozesse/byloff-3.html { return 301 /pages/themen/byloff/teil-3.html; }
+   location = /pages/prozesse/byloff-4.html { return 301 /pages/themen/byloff/teil-4.html; }
+   location = /images/neubauer/neubauer.pdf { return 301 /pages/prozesse/neubauer.html; }
+   location = /images/wed-2/wed2.pdf { return 301 /pages/prozesse/wed-2.html; }
+   location = /images/rauch/rauch.pdf { return 301 /pages/prozesse/rauch.html; }
+   location = /images/lipp/lipp.pdf { return 301 /pages/prozesse/lipp.html; }
+   ```
+3. „OK“/„Übernehmen“. Gegenprobe: `curl -I https://hexenprozesse.at/pages/prozesse/steger1.html`
+   sollte jetzt `301` mit `Location: /pages/prozesse/steger.html` zeigen
+   statt `404`.
+4. `.../BILDZAUBER` bewusst **ohne** Redirect gelassen (siehe Begründung
+   bei Aufgabe 14) — 404 bleibt dort die korrekte Antwort.
+
 ---
 
 ## Bewusst NICHT empfohlen (Reviews überbewerten das)
@@ -432,6 +509,8 @@ Verschränkt, weil Code und Handgriffe aufeinander aufbauen:
 6. **Kleinkram:** Descriptions, alt-Texte, width/height, hreflang,
    Open Graph (6, 7, 8, 9, 10) — nach Zeit, einzeln.
 7. **Kür:** Bing (M6).
+8. **Veit, bei Gelegenheit:** Alt-URLs umleiten (M7, Aufgabe 14) — kam
+   erst über die Google-Search-Console-Meldung im Juli 2026 dazu.
 
 Der rote Faden für den Code-Teil: Fast alles lässt sich **beim Build aus
 Daten erzeugen, die schon da sind** (`denunziationen.json`, die

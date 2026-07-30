@@ -7,6 +7,21 @@ import { defineConfig } from "vite";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const fromSrc = (...parts) => resolve(__dirname, "src", ...parts);
 
+// Felder eines Prozesses, die auf Personen zeigen, und die Normalisierung
+// ihrer Werte (String ODER {person,...}-Objekt) auf den Kartei-Schluessel.
+// Gemeinsame Quelle fuer personenregisterPlugin (durchsucht alle Felder,
+// inklusive beschuldigte, fuer die Fundstellen-Erfassung) und
+// strukturDatenPlugin (ohne beschuldigte, das dort gesondert nach "about"
+// wandert) - verhindert, dass die beiden Feldlisten auseinanderlaufen.
+const FELDER_MIT_PERSONEN = ["beschuldigte", "bannrichter", "beisitzer", "zeugen", "nennt",
+  "urteilssprecher", "hofrichter", "gerichtsschreiber", "kommissar",
+  "scharfrichter", "landgerichtsverwalter", "denunziertVon"];
+
+const personenSchluessel = (wert) =>
+  (Array.isArray(wert) ? wert : [])
+    .map((x) => (typeof x === "string" ? x : x && x.person))
+    .filter(Boolean);
+
 // Plugin: Ersetzt @@include('name') durch den Inhalt von src/partials/name.html
 function htmlIncludePlugin() {
   const partialsDir = fromSrc("partials");
@@ -101,10 +116,8 @@ function personenregisterPlugin() {
       vorkommen.get(schluessel).add(datei);
     };
     for (const [datei, pr] of Object.entries(d.prozesse)) {
-      for (const feld of ["beschuldigte", "bannrichter", "beisitzer", "zeugen", "nennt",
-                          "urteilssprecher", "hofrichter", "gerichtsschreiber", "kommissar",
-                          "scharfrichter", "landgerichtsverwalter"]) {
-        for (const s of pr[feld] ?? []) merken(s, datei);
+      for (const feld of FELDER_MIT_PERSONEN) {
+        for (const s of personenSchluessel(pr[feld])) merken(s, datei);
       }
     }
 
@@ -112,7 +125,7 @@ function personenregisterPlugin() {
     // und das Verfahren mit Tod endete. Sonst bleibt die Spalte leer.
     const sterbedatum = (schluessel) => {
       for (const [datei, pr] of Object.entries(d.prozesse)) {
-        if (!(pr.beschuldigte ?? []).includes(schluessel)) continue;
+        if (!personenSchluessel(pr.beschuldigte).includes(schluessel)) continue;
         const a = pr.ausgang ?? {};
         if (a.art === "hingerichtet" || a.art === "in-haft-gestorben") {
           return { datum: a.datum ?? String(pr.jahr), art: a.art };
@@ -355,11 +368,9 @@ function strukturDatenPlugin() {
   const DOMAIN = "https://hexenprozesse.at";
   const d = JSON.parse(readFileSync(fromSrc("daten", "denunziationen.json"), "utf-8"));
 
-  // Felder eines Prozesses, die auf Personen zeigen (ohne beschuldigte, die
-  // gesondert nach about wandern). nennt kann Strings ODER {person,...}-Objekte
-  // enthalten; beides wird auf den Kartei-Schluessel normalisiert.
-  const ROLLEN_FELDER = ["bannrichter", "beisitzer", "zeugen", "nennt", "hofrichter",
-    "gerichtsschreiber", "kommissar", "scharfrichter", "urteilssprecher", "denunziertVon"];
+  // Felder eines Prozesses, die auf Personen zeigen, ohne beschuldigte, die
+  // gesondert nach about wandern (siehe FELDER_MIT_PERSONEN weiter oben).
+  const ROLLEN_FELDER = FELDER_MIT_PERSONEN.filter((f) => f !== "beschuldigte");
 
   const ANKLAGE_LABEL = {
     "zauberei": "Zauberei", "teufelsbund": "Teufelsbund", "hostienfrevel": "Hostienfrevel",
@@ -373,12 +384,6 @@ function strukturDatenPlugin() {
     ANKLAGE_LABEL[a] || (a.charAt(0).toUpperCase() + a.slice(1)).replace(/-/g, " ");
 
   const seiteZuUrl = (rel) => (rel === "index.html" ? `${DOMAIN}/` : `${DOMAIN}/${rel}`);
-
-  // Personen-Schluessel aus einem Rollenfeld (String- und Objektform gemischt)
-  const schluessel = (wert) =>
-    (Array.isArray(wert) ? wert : [])
-      .map((x) => (typeof x === "string" ? x : x && x.person))
-      .filter(Boolean);
 
   // Ein Person-Knoten fuer den Graphen. reich=true fuegt Namensvarianten hinzu
   // (nur fuer die wenigen Beschuldigten, sonst blaeht es das JSON auf).
@@ -433,11 +438,11 @@ function strukturDatenPlugin() {
     if (!pr) return null;
     const url = seiteZuUrl(rel);
 
-    const beschuldigt = schluessel(pr.beschuldigte);
+    const beschuldigt = personenSchluessel(pr.beschuldigte);
     const gesehen = new Set(beschuldigt);
     const erwaehnt = [];
     for (const f of ROLLEN_FELDER)
-      for (const key of schluessel(pr[f]))
+      for (const key of personenSchluessel(pr[f]))
         if (!gesehen.has(key)) { gesehen.add(key); erwaehnt.push(key); }
 
     const k = {
@@ -589,11 +594,16 @@ function strukturDatenPlugin() {
         attrs: { property, content },
         injectTo: "head",
       }));
-      tags.push({
-        tag: "meta",
-        attrs: { name: "twitter:card", content: "summary_large_image" },
-        injectTo: "head",
-      });
+      // twitter:title/description/image separat setzen statt sich auf den
+      // OG-Fallback zu verlassen, den nicht jede Plattform garantiert liest.
+      tags.push(
+        { tag: "meta", attrs: { name: "twitter:card", content: "summary_large_image" }, injectTo: "head" },
+        { tag: "meta", attrs: { name: "twitter:title", content: titel }, injectTo: "head" },
+        { tag: "meta", attrs: { name: "twitter:image", content: bildAus(html) }, injectTo: "head" },
+      );
+      if (beschreibung) {
+        tags.push({ tag: "meta", attrs: { name: "twitter:description", content: beschreibung }, injectTo: "head" });
+      }
 
       // JSON-LD-Graph je nach Seitentyp
       const graph = [];
@@ -846,15 +856,26 @@ function llmsDateienPlugin() {
   };
 }
 
-// Plugin: Traegt width/height an jedes Inhaltsbild ein (aus den echten
-// Pixelmassen der Datei). Ohne diese Angaben kann der Browser vor dem Laden
-// keinen Platz reservieren -> Layout-Shift (CLS), ein Core-Web-Vitals-Wert.
+// Plugin: Traegt width/height sowie loading="lazy" an die Inhaltsbilder
+// einer Seite ein.
 //
-// Zur Bauzeit statt einmalig ins Markup geschrieben, damit ein neu
-// hinzugefuegtes Bild automatisch seine Masse bekommt und der Quelltext der
-// Seiten schlank bleibt. Das CSS setzt img global auf height:auto, deshalb
-// skaliert das Bild weiter responsiv -- die Attribute liefern nur das
-// Seitenverhaeltnis fuer die Platzreservierung.
+// width/height kommen aus den echten Pixelmassen der Datei. Ohne diese
+// Angaben kann der Browser vor dem Laden keinen Platz reservieren ->
+// Layout-Shift (CLS), ein Core-Web-Vitals-Wert.
+//
+// loading="lazy" bekommt jedes Bild AUSSER dem ersten der Seite: Das erste
+// Bild ist typischerweise der LCP-Kandidat (Largest Contentful Paint,
+// ebenfalls ein Core-Web-Vitals-Wert) -- wuerde ausgerechnet dieses Bild
+// lazy geladen, verzoegert der Browser bewusst die Ressource, die fuer den
+// groessten Lade-Meilenstein der Seite zaehlt. Alle folgenden Bilder sind
+// typischerweise nicht sofort sichtbar und profitieren vom Aufschub.
+//
+// Beides zur Bauzeit statt einmalig ins Markup geschrieben, damit ein neu
+// hinzugefuegtes Bild automatisch seine Masse und sein Lazy-Verhalten
+// bekommt und der Quelltext der Seiten schlank bleibt. Das CSS setzt img
+// global auf height:auto, deshalb skaliert das Bild weiter responsiv -- die
+// width/height-Attribute liefern nur das Seitenverhaeltnis fuer die
+// Platzreservierung.
 function bildMassePlugin() {
   const cache = new Map();
 
@@ -899,13 +920,30 @@ function bildMassePlugin() {
   return {
     name: "bild-masse",
     transformIndexHtml(html) {
+      let ersteSeitenBildGesehen = false;
       return html.replace(/<img\b[^>]*>/gi, (tag) => {
-        if (/\b(width|height)=/i.test(tag)) return tag; // schon gesetzt
-        const m = tag.match(/\ssrc="(\/images\/[^"]+)"/i);
-        if (!m) return tag;
-        const d = masse(m[1]);
-        if (!d || !d.w || !d.h) return tag;
-        return tag.replace(/<img\b/i, `<img width="${d.w}" height="${d.h}"`);
+        const istInhaltsbild = /\ssrc="\/images\/[^"]+"/i.test(tag);
+
+        // Schritt 1: width/height ergaenzen (unabhaengig vom Lazy-Schritt).
+        if (istInhaltsbild && !/\b(width|height)=/i.test(tag)) {
+          const m = tag.match(/\ssrc="(\/images\/[^"]+)"/i);
+          const d = m && masse(m[1]);
+          if (d && d.w && d.h) {
+            tag = tag.replace(/<img\b/i, `<img width="${d.w}" height="${d.h}"`);
+          }
+        }
+
+        // Schritt 2: loading="lazy" ergaenzen, ausser beim ersten Inhaltsbild
+        // der Seite (LCP-Kandidat, siehe Kommentar oben).
+        if (istInhaltsbild && !/\bloading=/i.test(tag)) {
+          if (ersteSeitenBildGesehen) {
+            tag = tag.replace(/<img\b/i, `<img loading="lazy"`);
+          } else {
+            ersteSeitenBildGesehen = true;
+          }
+        }
+
+        return tag;
       });
     },
   };
