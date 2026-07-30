@@ -918,14 +918,14 @@ code {
   background-color: #f2efe6;
   border-style: dashed;
   border-color: #d8d0bd;
-  color: #a09a8e;
+  color: #6f6552;
 }
 .kapitel-index .kap-status {
   display: block;
   margin-top: 0.25rem;
   font-size: 0.8rem;
   font-style: italic;
-  color: #a09a8e;
+  color: #6f6552;
 }
 
 /* ---- Navigation von Fall zu Fall ---- */
@@ -1414,3 +1414,222 @@ mark.erwaehnung { scroll-margin-top: calc(var(--kopf-hoehe, 0px) + 6rem); }
 }
 /* Am Bildschirm ist die Quellenzeile unsichtbar */
 .druck-quelle { display: none; }
+
+/* --- Bildergalerie -------------------------------------------------------
+   Vorschau-Raster mit gleich hohen Kacheln (object-fit: cover); Klick oeffnet
+   das Grossbild in der Lightbox (siehe scripts/galerie.js). Die Selektoren
+   sind bewusst spezifisch (.galerie-raster .galerie-bild img), damit sie die
+   allgemeinen .prozess/.container-figure-Regeln sicher ueberschreiben. */
+.galerie-gruppe { margin: 2.5rem 0; }
+.galerie-gruppe > .glosse { margin-bottom: 1rem; }
+.galerie-raster {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem 1.1rem;
+}
+.galerie-bild { margin: 0; }
+.galerie-raster .galerie-bild > a {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  background: #00000008;
+}
+.galerie-raster .galerie-bild img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  transition: transform 0.25s ease;
+}
+.galerie-raster .galerie-bild > a:hover img,
+.galerie-raster .galerie-bild > a:focus-visible img { transform: scale(1.05); }
+.galerie-raster .galerie-bild figcaption {
+  font-size: 0.8rem;
+  line-height: 1.35;
+  margin-top: 0.4rem;
+  color: var(--color-muted);
+}
+
+/* Lightbox (wird von galerie.js an <body> gehaengt) */
+.galerie-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(15, 15, 15, 0.92);
+}
+.galerie-lightbox[hidden] { display: none; }
+.galerie-lb-inhalt {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 92vw;
+}
+.galerie-lb-inhalt img {
+  max-width: 92vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+.galerie-lb-inhalt figcaption {
+  color: #f2f2f2;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 0.9rem;
+  max-width: 60ch;
+}
+.galerie-lb-seite {
+  display: inline-block;
+  margin-top: 0.7rem;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+.galerie-lb-seite[hidden] { display: none; }
+.galerie-lb-schliessen,
+.galerie-lb-pfeil {
+  position: absolute;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.15s ease;
+}
+.galerie-lb-schliessen:hover,
+.galerie-lb-pfeil:hover { opacity: 1; }
+.galerie-lb-schliessen {
+  top: 0.6rem;
+  right: 1rem;
+  font-size: 2.4rem;
+}
+.galerie-lb-pfeil {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  padding: 0 1rem;
+}
+.galerie-lb-prev { left: 0.3rem; }
+.galerie-lb-next { right: 0.3rem; }
+@media (max-width: 600px) {
+  .galerie-lb-pfeil { font-size: 2.2rem; padding: 0 0.5rem; }
+  .galerie-raster { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+}
+
+/* Hervorgehobene Tafel unter der Galerie (Bild + Originalvers + Uebertragung) */
+.galerie-tafel {
+  margin: 3rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+.tafel-inhalt {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 1.2rem 2rem;
+  align-items: start;
+}
+.tafel-bild { margin: 0; }
+.galerie-tafel .tafel-bild img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+.tafel-bild figcaption {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--color-muted);
+  margin-top: 0.4rem;
+}
+.tafel-vers {
+  line-height: 1.55;
+  margin: 0.2rem 0 1rem;
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--color-accent);
+}
+.tafel-vers--modern { border-left-color: var(--color-border); }
+.tafel-glossar {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+  margin-top: 0.6rem;
+}
+@media (max-width: 640px) {
+  .tafel-inhalt { grid-template-columns: 1fr; }
+}
+.galerie-nachweise { margin-top: 2.5rem; }
+.galerie-nachweise ul { font-size: 0.9rem; color: var(--color-muted); line-height: 1.55; }
+
+/* Bildseiten (einzelne Bilder mit Referenzen, gestapeltes Layout) */
+.bildseite { max-width: 720px; margin: 0 auto; }
+.bildseite-figur { width: fit-content; max-width: 100%; margin: 1.2rem auto 1.6rem; }
+.bildseite-zoom {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+.bildseite-figur .bildseite-zoom img {
+  max-width: 100%;
+  max-height: 44vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+.bildseite-figur figcaption {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+}
+.bildseite-hinweis { font-style: italic; }
+.bildseite-quelle { font-size: 0.85rem; color: var(--color-muted); }
+
+/* Lupe: Vollbild-Zoom auf den Bildseiten */
+.lupe-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(15, 15, 15, 0.94);
+  cursor: zoom-out;
+}
+.lupe-overlay[hidden] { display: none; }
+.lupe-overlay img {
+  max-width: 96vw;
+  max-height: 94vh;
+  width: auto;
+  height: auto;
+}
+.lupe-schliessen {
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: #fff;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  opacity: 0.85;
+}
+.lupe-schliessen:hover { opacity: 1; }

@@ -1,0 +1,8 @@
+/* empty css             */import"./modulepreload-polyfill-Dezn_h7o.js";var e=Array.from(document.querySelectorAll(`.galerie-bild > a`));if(e.length){let t=0,n=document.createElement(`div`);n.className=`galerie-lightbox`,n.hidden=!0,n.innerHTML=`
+    <button class="galerie-lb-schliessen" type="button" aria-label="Schließen">×</button>
+    <button class="galerie-lb-pfeil galerie-lb-prev" type="button" aria-label="Vorheriges Bild">‹</button>
+    <figure class="galerie-lb-inhalt">
+      <img alt="" />
+      <figcaption></figcaption>
+    </figure>
+    <button class="galerie-lb-pfeil galerie-lb-next" type="button" aria-label="Nächstes Bild">›</button>`,document.body.appendChild(n);let r=n.querySelector(`img`),i=n.querySelector(`figcaption`),a=n.querySelector(`.galerie-lb-schliessen`),o=n=>{t=(n+e.length)%e.length;let a=e[t],o=a.querySelector(`img`)?.getAttribute(`alt`)||``;r.src=a.getAttribute(`href`),r.alt=o,i.textContent=o},s=e=>{o(e),n.hidden=!1,document.body.style.overflow=`hidden`,a.focus()},c=()=>{n.hidden=!0,document.body.style.overflow=``};e.forEach((e,t)=>e.addEventListener(`click`,e=>{e.preventDefault(),s(t)})),a.addEventListener(`click`,c),n.querySelector(`.galerie-lb-prev`).addEventListener(`click`,()=>o(t-1)),n.querySelector(`.galerie-lb-next`).addEventListener(`click`,()=>o(t+1)),n.addEventListener(`click`,e=>{e.target===n&&c()}),document.addEventListener(`keydown`,e=>{n.hidden||(e.key===`Escape`?c():e.key===`ArrowLeft`?o(t-1):e.key===`ArrowRight`&&o(t+1))})}
