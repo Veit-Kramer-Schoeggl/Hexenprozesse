@@ -1,8 +1,10 @@
-// Personenregister: sortieren und filtern.
+// Personenregister: sortieren, filtern und die Info-Box je Name.
 //
 // Die Zeilen stehen bereits im HTML — dieses Modul ordnet sie nur um und
 // blendet aus. Ohne JavaScript bleibt das Register vollständig lesbar,
 // alphabetisch nach Nachnamen.
+
+import { erstellePopover } from "./popover.js";
 
 const tabelle = document.getElementById("register");
 if (tabelle) {
@@ -63,6 +65,33 @@ if (tabelle) {
       sortieren();
     });
   }
+
+  // Klick auf einen Namen zeigt die Info (Rolle, Prozess, Jahr + Link) als
+  // schwebende Karte — dasselbe Widget wie die Ortskarten auf den
+  // Prozessseiten. Delegiert am Tabellenkörper, damit es auch nach dem
+  // Umsortieren der Zeilen weiter greift.
+  const infoPop = erstellePopover({
+    klasse: "info-popup",
+    label: "Zur Person",
+    beimSchliessen: (el) => el.setAttribute && el.setAttribute("aria-expanded", "false"),
+  });
+  koerper.addEventListener("click", (e) => {
+    const knopf = e.target.closest(".register-name");
+    if (!knopf) return;
+    // gleicher Name nochmal -> schließen
+    if (infoPop.offen() && infoPop.ausloeser === knopf) {
+      infoPop.verbergen(true);
+      return;
+    }
+    const quelle = knopf.parentElement.querySelector(".register-info");
+    if (!quelle) return;
+    document
+      .querySelectorAll('.register-name[aria-expanded="true"]')
+      .forEach((b) => b.setAttribute("aria-expanded", "false"));
+    infoPop.box.innerHTML = quelle.innerHTML;
+    infoPop.zeige(knopf);
+    knopf.setAttribute("aria-expanded", "true");
+  });
 
   suche?.addEventListener("input", filtern);
   filtern();

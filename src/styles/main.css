@@ -1022,10 +1022,10 @@ code {
   outline: none;
 }
 
-.ortskarte {
+/* Gemeinsames Popover-Kärtchen (Ortskarte + Register-Info, siehe popover.js) */
+.popover {
   position: fixed;
   z-index: 60;
-  width: min(34rem, calc(100vw - 2rem));
   padding: var(--space-xs);
   border: 1px solid #cbb98d;
   border-radius: var(--radius);
@@ -1037,7 +1037,36 @@ code {
   transform: translateY(-4px);
   transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
 }
-.ortskarte.sichtbar {
+.ortskarte {
+  width: min(34rem, calc(100vw - 2rem));
+}
+.info-popup {
+  width: min(26rem, calc(100vw - 1.5rem));
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+.info-popup p { margin: 0 0 0.45rem; }
+/* Die Überschrift (Wer ist das) steht zentriert. Passt sie in eine Zeile,
+   bleibt sie einzeilig; wird sie länger, bricht sie mittig um — kein
+   Verschiebe-Balken. */
+.info-popup p:first-child,
+.info-popup .register-info-amt {
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: center;
+}
+.info-popup ul {
+  margin: 0.5rem 0 0;
+  padding-top: 0.45rem;
+  padding-left: 1.1rem;
+  border-top: 1px solid #d8c9a4;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+.info-popup li { margin: 0.2rem 0; }
+.popover.sichtbar {
   opacity: 1;
   visibility: visible;
   transform: none;
@@ -1338,7 +1367,7 @@ mark.erwaehnung { scroll-margin-top: calc(var(--kopf-hoehe, 0px) + 6rem); }
   .site-header,
   .site-footer,
   .fall-nav,
-  .ortskarte,
+  .popover,
   .register-werkzeuge,
   .card-link,
   .erwaehnung-fehlt {
@@ -1633,3 +1662,20 @@ mark.erwaehnung { scroll-margin-top: calc(var(--kopf-hoehe, 0px) + 6rem); }
   opacity: 0.85;
 }
 .lupe-schliessen:hover { opacity: 1; }
+
+/* Personenregister: Name als aufklappbarer Knopf + Info-Box */
+.register-namenszelle { vertical-align: top; }
+.register-name {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--color-accent-dark);
+  cursor: pointer;
+  text-align: left;
+}
+.register-name::after { content: " ▸"; font-size: 0.8em; color: var(--color-muted); }
+.register-name[aria-expanded="true"]::after { content: " ▾"; }
+.register-name:hover { text-decoration: underline; }
+/* .register-info bleibt im HTML verborgen und dient nur als Inhaltsquelle;
+   angezeigt wird sie im schwebenden .info-popup (siehe popover.js). */

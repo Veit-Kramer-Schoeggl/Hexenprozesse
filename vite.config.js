@@ -121,6 +121,103 @@ function personenregisterPlugin() {
       }
     }
 
+    // --- Rolle, Fallname und Auftritte je Person (fuer die Info-Box im Register) ---
+    const ROLLE_LABEL = {
+      beschuldigte: { w: "Angeklagte", m: "Angeklagter", d: "angeklagt" },
+      zeugen: { w: "Zeugin", m: "Zeuge", d: "Zeugin/Zeuge" },
+      bannrichter: { d: "Bannrichter" }, beisitzer: { d: "Beisitzer" },
+      hofrichter: { d: "Hofrichter" }, gerichtsschreiber: { d: "Gerichtsschreiber" },
+      kommissar: { d: "Kommissar" }, scharfrichter: { d: "Scharfrichter" },
+      urteilssprecher: { d: "Urteilssprecher" }, landgerichtsverwalter: { d: "Landgerichtsverwalter" },
+      denunziertVon: { w: "Denunziantin", m: "Denunziant", d: "Denunziant/in" },
+      nennt: { d: "genannt" },
+    };
+    const rolleIn = (feld, g) => {
+      const l = ROLLE_LABEL[feld] || { d: feld };
+      return l[g] || l.d;
+    };
+    const fallname = (pr) => {
+      const namen = personenSchluessel(pr.beschuldigte).map((k) => d.personen[k]?.name).filter(Boolean);
+      if (!namen.length) return "";
+      return namen.length <= 2 ? namen.join(" und ") : `${namen.slice(0, 2).join(", ")} u. a.`;
+    };
+    const auftritteVon = (schluessel) =>
+      [...(vorkommen.get(schluessel) ?? [])]
+        .sort((a, b) => (d.prozesse[a].jahr || 0) - (d.prozesse[b].jahr || 0))
+        .map((datei) => {
+          const pr = d.prozesse[datei];
+          const feld = FELDER_MIT_PERSONEN.find((f) => personenSchluessel(pr[f]).includes(schluessel));
+          return { datei, feld, jahr: pr.jahr, fall: fallname(pr) };
+        });
+    // Handgeschriebener Kurztext aus der Kartei -> HTML. Erlaubt genau eine
+    // Auszeichnung: [Anzeigetext](ziel.html?person=Name) wird zu einem Link auf
+    // eine Prozessseite. Ein Klick darauf springt zur Erwähnung im Text
+    // (erwaehnung.js liest ?person=). Zeilenumbrüche trennen Absätze. Alles
+    // andere wird escaped, damit der Text nichts kaputtmachen kann.
+    const kurztextHtml = (roh) =>
+      String(roh)
+        .split(/\n+/)
+        .map((zeile) => {
+          const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+          let out = "";
+          let last = 0;
+          let m;
+          while ((m = re.exec(zeile))) {
+            out += esc(zeile.slice(last, m.index));
+            // Ziel absolut (/pages/themen/…#anker) oder kurz (kollar.html?person=…,
+            // dann relativ zu den Prozessseiten).
+            const ziel = m[2].startsWith("/") ? m[2] : `/pages/prozesse/${m[2]}`;
+            out += `<a href="${esc(ziel)}">${esc(m[1])}</a>`;
+            last = m.index + m[0].length;
+          }
+          out += esc(zeile.slice(last));
+          return `<p>${out}</p>`;
+        })
+        .join("");
+
+    const infoBox = (auftritte, v) => {
+      // Box gibt es, sobald es einen Auftritt oder einen Kurztext gibt. Personen
+      // ohne Prozess-Eintrag (nur auf einer Themenseite belegt, z. B. die
+      // Schöckl-Beschuldigten) kommen so über kurztext + fussnote trotzdem zu
+      // ihrer Box samt Link.
+      if (!auftritte.length && !v.kurztext) return "";
+      // Sprung zur ersten Erwähnung im Protokoll (erwaehnung.js liest ?person=).
+      const q = new URLSearchParams({ person: v.name });
+      const auch = (v.varianten ?? []).filter((s) => s && s.length >= 3);
+      if (auch.length) q.set("auch", auch.join("|"));
+      const query = `?${q.toString()}`;
+
+      // Kopf: die Selbstauskunft — wer ist das. Handgeschriebener Kurztext,
+      // sonst wenigstens das Amt/die Lebensrolle aus der Kartei.
+      const kopf = v.kurztext
+        ? kurztextHtml(v.kurztext)
+        : v.amt
+          ? `<p class="register-info-amt">${esc(v.amt)}</p>`
+          : "";
+
+      // Fuß-Zeile: die Rolle im Verfahren. Bei Auftritten je Fall automatisch,
+      // sonst — falls hinterlegt — die manuelle fussnote (Themenseiten-Personen).
+      let fuss = "";
+      if (auftritte.length) {
+        const li = auftritte
+          .map((a) => {
+            const fall = a.fall ? `„${esc(a.fall)}“` : esc(a.datei.replace(/\.html$/, ""));
+            // Mit Kurztext liegen die Sprünge zur Erwähnung schon in den Namen
+            // der Beschreibung; die Fuß-Zeile führt dann an den Prozessanfang.
+            // Ohne Kurztext bleibt der Fall-Link selbst der Sprung zur Erwähnung.
+            const ziel = v.kurztext
+              ? `/pages/prozesse/${esc(a.datei)}`
+              : `/pages/prozesse/${esc(a.datei)}${query}`;
+            return `<li>${esc(rolleIn(a.feld, v.geschlecht))} im Prozess <a href="${ziel}">${fall}</a> (${a.jahr})</li>`;
+          })
+          .join("");
+        fuss = `<ul>${li}</ul>`;
+      } else if (v.fussnote) {
+        fuss = `<ul><li><a href="${esc(v.fussnote.ziel)}">${esc(v.fussnote.text)}</a></li></ul>`;
+      }
+      return `<div class="register-info" hidden>${kopf}${fuss}</div>`;
+    };
+
     // Sterbedatum: nur, wenn die Person im betreffenden Verfahren beschuldigt war
     // und das Verfahren mit Tod endete. Sonst bleibt die Spalte leer.
     const sterbedatum = (schluessel) => {
@@ -143,27 +240,15 @@ function personenregisterPlugin() {
 
     for (const [schluessel, v] of Object.entries(d.personen)) {
       const tod = sterbedatum(schluessel);
-      const seiten = [...(vorkommen.get(schluessel) ?? [])].sort();
-      // Wer eine eigene Prozessseite hat, wird dorthin verlinkt — der Name
-      // steht dort in der Überschrift. Alle anderen werden nur im Text eines
-      // Verfahrens genannt; dorthin wird mit ?person= gesprungen, damit die
-      // erste Fundstelle angesteuert und hervorgehoben wird.
-      let linkZiel = null;
-      if (v.seite) {
-        // "seite" ist normal ein Dateiname unter prozesse/, kann aber auch ein
-        // absoluter Pfad sein — etwa fuer die Themenseite zum Schoeckl.
-        linkZiel = v.seite.startsWith("/") ? v.seite : `/pages/prozesse/${v.seite}`;
-      } else if (seiten[0]) {
-        const q = new URLSearchParams({ person: v.name });
-        const auch = (v.varianten ?? []).filter((s) => s && s.length >= 3);
-        if (auch.length) q.set("auch", auch.join("|"));
-        linkZiel = `/pages/prozesse/${seiten[0]}?${q.toString()}`;
-      }
-      const nameZelle = linkZiel
-        ? `<a href="${esc(linkZiel)}">${esc(v.sortname || v.name)}</a>`
-        : esc(v.sortname || v.name);
+      // Klick auf den Namen klappt eine kleine Info-Box auf (Rolle, Fall, Jahr,
+      // Link) — statt "blind" in einen Protokolltext zu springen.
+      const auftritte = auftritteVon(schluessel);
+      const anzeige = esc(v.sortname || v.name);
       const unsicher = v.status === "unsicher" || v.vermutlich
         ? ` <span class="register-unsicher" title="Zuordnung nicht gesichert">(unsicher)</span>` : "";
+      const namenszelle = auftritte.length || v.kurztext
+        ? `<button type="button" class="register-name" aria-expanded="false">${anzeige}</button>${unsicher}${infoBox(auftritte, v)}`
+        : `${anzeige}${unsicher}`;
       const rollen = (v.rollen ?? []).join(", ");
       const sortTod = tod ? jahrAus(tod.datum) : "";
       zeilen.push(
@@ -171,7 +256,7 @@ function personenregisterPlugin() {
         ` data-sort-vorname="${esc((v.vorname || v.sortname || v.name).toLowerCase())}"` +
         ` data-sort-tod="${esc(sortTod)}"` +
         ` data-suche="${esc(`${v.name} ${v.sortname ?? ""} ${(v.varianten ?? []).join(" ")} ${rollen}`.toLowerCase())}">` +
-        `<td>${nameZelle}${unsicher}</td>` +
+        `<td class="register-namenszelle">${namenszelle}</td>` +
         `<td class="spalte-rolle register-rolle">${esc(rollen)}</td>` +
         `<td>${tod ? esc(tod.datum) : "&mdash;"}</td>` +
         `</tr>`
@@ -190,14 +275,16 @@ function personenregisterPlugin() {
       const vor = teile.slice(0, -1).join(" ");
       const sort = teile.length > 1 ? `${nach}, ${vor}` : o.name;
       const zusatz = [o.vulgo ? `vulgo ${o.vulgo}` : null, o.ort].filter(Boolean).join(", ");
+      const opferInfo =
+        `<div class="register-info" hidden><ul><li>Auf der Opferliste von Gleichenberg — überliefert im Prozess <a href="/pages/prozesse/pindter.html?person=${encodeURIComponent(o.name)}">„Susanne Pindter“</a> (1689)</li></ul></div>`;
       zeilen.push(
         `                <tr data-sort-name="${esc(sort.toLowerCase())}"` +
         ` data-sort-vorname="${esc((vor || o.name).toLowerCase())}"` +
         ` data-sort-tod="1689"` +
         ` data-suche="${esc(`${o.name} ${o.vulgo ?? ""} ${o.ort ?? ""} opferliste gleichenberg`.toLowerCase())}">` +
-        `<td><a href="/pages/prozesse/pindter.html?person=${encodeURIComponent(o.name)}">${esc(sort)}</a>` +
-        `${zusatz ? ` <span class="register-rolle">(${esc(zusatz)})</span>` : ""}</td>` +
-        `<td class="spalte-rolle register-rolle"><a href="/pages/prozesse/pindter.html?person=${encodeURIComponent(o.name)}">Opferliste von Gleichenberg</a></td>` +
+        `<td class="register-namenszelle"><button type="button" class="register-name" aria-expanded="false">${esc(sort)}</button>` +
+        `${zusatz ? ` <span class="register-rolle">(${esc(zusatz)})</span>` : ""}${opferInfo}</td>` +
+        `<td class="spalte-rolle register-rolle">Opferliste von Gleichenberg</td>` +
         `<td>1689</td>`
         + `</tr>`
       );

@@ -31,7 +31,8 @@
       "geschlecht": "m",
       "vorname": "Johann Andreas",
       "nachname": "Barth",
-      "sortname": "Barth, Johann Andreas"
+      "sortname": "Barth, Johann Andreas",
+      "kurztext": "[Kaiserlicher Bannrichter in der Steiermark](mosegger.html?person=Johann+Andreas+Barth):\nEiner der aktivsten Bannrichter des Landes: Über fast zwei Jahrzehnte verhörte er die Angeklagten in mindestens sechs der hier dokumentierten Verfahren — von [Martha Mosegger](mosegger.html) (1647) bis [Lorenz Pöllinger](poellinger.html) (1664)."
     },
     "tillerich-johann": {
       "name": "Dr. Johann Tillerich",
@@ -78,7 +79,8 @@
       "geschlecht": "m",
       "vorname": "Peter Lucrety",
       "nachname": "Apostelen",
-      "sortname": "Apostelen, Peter Lucrety von"
+      "sortname": "Apostelen, Peter Lucrety von",
+      "kurztext": "[Kaiserlicher Bannrichter im Viertel Cilli](schepp.html?person=Peter+Lucrety+von+Apostelen):\nAn derselben Gerichtsstätte führte er zwei Hexenverfahren: 1695 gegen [Marina Schepp](schepp.html) und sechs Jahre später, 1701, gegen [Helena Glanitschnigg](glanitschnigg.html)."
     },
     "will-johann-georg-franz-von": {
       "name": "Johann Georg Franz von Will",
@@ -637,7 +639,8 @@
       "geschlecht": "w",
       "vorname": "",
       "nachname": "Apollonia",
-      "sortname": "Apollonia"
+      "sortname": "Apollonia",
+      "kurztext": "[Taglöhnerin, etwa 26 Jahre alt](keyditsch.html?person=Apollonia):\nIhren Zunamen kannte sie nach eigener Aussage selbst nicht. Verhaftet wurde sie im Juni 1661 an der Herrschaft Gutenhag, nachdem [Margaretha Keyditsch](keyditsch.html) — am 22. Juni wegen Zauberei und „sodomistischer Taten“ verbrannt — gegen sie ausgesagt hatte.\nDer Vorwurf: Sie habe für Keyditsch Haare des Gemeindevorstehers Simon Frass besorgt, die dann mit Holzsplittern zum Schadenzauber beschworen wurden, damit er erkranke."
     },
     "juliana-gutenhag": {
       "name": "Juliana",
@@ -1612,7 +1615,8 @@
       "status": "geprueft",
       "vorname": "Agatha",
       "nachname": "",
-      "sortname": "Agatha, Frau des Adam"
+      "sortname": "Agatha, Frau des Adam",
+      "kurztext": "[Frau des Adam, des Winzers der St.-Georgen-Kirche](kollar.html?person=Agatha):\nSie wurde von [Ursula Kollar](kollar.html) im Verhör denunziert. [Ursula Kollar](kollar.html) nennt neben [Agatha](kollar.html?person=Agatha) auch [Frau Ferk](kollar.html?person=Magdalena+Ferk). Sie drei hätten am 1. Mai beim Windischen Kreuz ihre „teuflischen Fressereien und Tänze“ ausgeübt."
     },
     "tschok-michael": {
       "name": "Michael Tschok",
@@ -1778,7 +1782,12 @@
       "status": "geprueft",
       "vorname": "Sebastian",
       "nachname": "Anderhub",
-      "sortname": "Anderhub, Sebastian"
+      "sortname": "Anderhub, Sebastian",
+      "kurztext": "[Untertan des Stiftes Rein, vulgo „Mathl“](/pages/themen/schoeckl.html#anderhub):\n58 Jahre alt, Vater von sechs Kindern. 1686 vor der Stifts- und Landgerichtshoheit Rein wegen Zauberei angeklagt und an fünf Tagen verhört (28. Mai, 30. Juli, 1.–3. August 1686). Einer der am Schöckl Beschuldigten.",
+      "fussnote": {
+        "text": "Angeklagter · Schöckl-Prozesse (1686)",
+        "ziel": "/pages/themen/schoeckl.html#anderhub"
+      }
     },
     "moyses-simon": {
       "name": "Simon Moyses",
@@ -2853,7 +2862,8 @@
       "status": "geprueft",
       "vorname": "Hieronymus",
       "nachname": "Angelati",
-      "sortname": "Angelati, Hieronymus"
+      "sortname": "Angelati, Hieronymus",
+      "kurztext": "[Regierungskommissär der Innerösterreichischen Regierung](glaser.html?person=Hieronymus+Angelati):\nIm Prozess gegen [Hans Glaser](glaser.html) wirkte er 1659 als Kommissar. In seinem Bericht vom 4. Juni 1659 hielt er fest, der Angeklagte habe bereits „so große Folterqualen ausgestanden“, und empfahl, ihn nur auszupeitschen und des Landes zu verweisen — der Zauberei-Vorwurf taucht in seiner Begründung nicht mehr auf."
     },
     "glanitschnigg-helena": {
       "name": "Helena Glanitschnigg",

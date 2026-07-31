@@ -81,9 +81,16 @@ if (gesucht) {
     marke.id = "erwaehnung";
     bereichRange.surroundContents(marke);
 
-    // Der klebende Seitenkopf und der Kastenkopf dürfen die Stelle nicht verdecken
+    // In die Bildschirmmitte scrollen, aber nie unter den klebenden Seitenkopf:
+    // bei einer frühen Erstnennung (wenig Platz oben) landet die Stelle sonst
+    // trotz "center" verdeckt am oberen Rand.
     requestAnimationFrame(() => {
-      marke.scrollIntoView({ block: "center", behavior: "smooth" });
+      const kopf =
+        parseInt(getComputedStyle(document.documentElement).getPropertyValue("--kopf-hoehe"), 10) || 60;
+      const r = marke.getBoundingClientRect();
+      const abstandOben = Math.max(kopf + 16, (window.innerHeight - r.height) / 2);
+      const ziel = window.scrollY + r.top - abstandOben;
+      window.scrollTo({ top: Math.max(0, ziel), behavior: "smooth" });
     });
   } else {
     // Nichts gefunden — das ist möglich, wenn das Protokoll den Namen anders
