@@ -596,7 +596,7 @@
       "rollen": [
         "beschuldigt"
       ],
-      "seite": "schoeckl.html",
+      "seite": "peter-paar.html",
       "status": "geprueft",
       "geschlecht": "m",
       "vorname": "Peter",
@@ -3268,7 +3268,7 @@
       "seiten": [
         "posch.html",
         "jantscher.html",
-        "schoeckl.html",
+        "peter-paar.html",
         "zechner-andreas-2.html"
       ]
     },
@@ -3597,7 +3597,7 @@
       "beschreibung": "Sieben Verfahren aus vier Landgerichten nennen denselben Berg noerdlich von Graz - ueber dreissig Jahre hinweg und aus Entfernungen bis zu sechzig Kilometern. Zwei der Genannten haben ihre Aussage spaeter widerrufen. Eigene Themenseite: /pages/themen/schoeckl.html",
       "einfuehrung": "/pages/themen/schoeckl.html",
       "seiten": [
-        "schoeckl.html",
+        "peter-paar.html",
         "glaser.html",
         "heiser-1.html",
         "rueprecht.html",
@@ -4426,7 +4426,7 @@
       "gruppe": "gutenhag-1661",
       "status": "geprueft"
     },
-    "schoeckl.html": {
+    "peter-paar.html": {
       "beschuldigte": [
         "paar-peter"
       ],
@@ -5200,7 +5200,7 @@
       "keyditsch.html",
       "kollar.html",
       "kopschitsch.html",
-      "schoeckl.html",
+      "peter-paar.html",
       "glaser.html",
       "wukinetz.html",
       "rueprecht.html",
@@ -5208,7 +5208,7 @@
     ],
     "tillerich-johann": [
       "jantscher.html",
-      "schoeckl.html",
+      "peter-paar.html",
       "zechner-andreas-2.html"
     ],
     "schaller-georg": [
@@ -5269,7 +5269,7 @@
     ],
     "tillerich-johann": [
       {
-        "seite": "schoeckl.html",
+        "seite": "peter-paar.html",
         "name": "Peter Paar (vulgo Schupfer)",
         "datum": "4. April 1686",
         "art": "hingerichtet"
