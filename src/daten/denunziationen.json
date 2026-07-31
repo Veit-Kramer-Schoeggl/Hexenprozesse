@@ -931,7 +931,8 @@
       "geschlecht": "w",
       "vorname": "",
       "nachname": "Dornschuster",
-      "sortname": "Dornschuster, die Frau des Georg"
+      "sortname": "Dornschuster, die Frau des Georg",
+      "kurztext": "[Nachbarin der Ursula Neubauer in Wörth](neubauer.html?person=Dornschuster):\nAus einem Nachbarschaftsstreit wurde eine Zauberei-Anklage: Sie hatte der Töpferin [Ursula Neubauer](neubauer.html) Geschirr im Wert von drei Groschen weggenommen; als Neubauer es zurückforderte, bezichtigte die Dornschuster (mit Matthias Gager) sie der Zauberei. Weil nichts gefunden wurde, musste sie öffentlich Abbitte leisten."
     },
     "gager-matthias": {
       "name": "Matthias Gager",
@@ -1606,7 +1607,8 @@
       "status": "unsicher",
       "vorname": "Martha",
       "nachname": "Drosg",
-      "sortname": "Drosg, Martha"
+      "sortname": "Drosg, Martha",
+      "kurztext": "[Unklare Nennung im Kollar-Prozess](kollar.html?person=Drosg):\nTaucht 1661 nur ein einziges Mal auf — in [Ursula Kollars](kollar.html) Aufzählung der Gesellschaft, dort als „die Frau des Martha Drosg“. Die Stelle ist widersprüchlich (Martha ist sonst ein Frauenname) und geht möglicherweise auf einen Übertragungsfehler zurück; mehr geben die Akten nicht her."
     },
     "agatha-winzerin-stgeorgen": {
       "name": "Agatha, Frau des Adam",
@@ -1648,7 +1650,8 @@
       "status": "geprueft",
       "vorname": "Gregor",
       "nachname": "Diviak",
-      "sortname": "Diviak, Gregor"
+      "sortname": "Diviak, Gregor",
+      "kurztext": "[Von Ursula Kollar belastet — und wieder entlastet](kollar.html?person=Gregor+Diviak):\nIm Prozess gegen [Ursula Kollar](kollar.html) 1661 nannte sie ihn als Komplizen: Beim Treffen beim Windischen Kreuz habe „Diviak den Wein aus dem Kreuz gelassen“. Doch am Tag ihrer Hinrichtung, dem 10. Dezember 1661, nahm Kollar die Beschuldigung ausdrücklich zurück und entlastete ihn wieder vollständig — wenige Stunden, bevor sie erwürgt und verbrannt wurde."
     },
     "mlineritsch-jakob": {
       "name": "Jakob Mlineritsch",
@@ -2207,7 +2210,8 @@
       "status": "geprueft",
       "vorname": "",
       "nachname": "Dionys",
-      "sortname": "Dionys"
+      "sortname": "Dionys",
+      "kurztext": "[Fahrender Mann aus Altenhofen, über 40 Jahre alt](dionys.html?person=Dionys):\nAngeklagt 1602 vor dem Landgericht St. Lambrecht. Er gestand nicht nur Wetterzauber — bei dem ihm [Bärbl](dionys.html?person=Bärbl) geholfen habe —, sondern auch einen Totschlag: Bei Obdach habe er einen Schneider aus Wolfsberg erschlagen. Schon einmal war er freigelassen worden; diesmal wurde er lebendig verbrannt, das Rädern „aus Barmherzigkeit“ erlassen."
     },
     "greschl": {
       "name": "die Greschl",
@@ -2486,7 +2490,8 @@
       "status": "geprueft",
       "vorname": "Georg",
       "nachname": "Dopusch",
-      "sortname": "Dopusch, Georg"
+      "sortname": "Dopusch, Georg",
+      "kurztext": "[Rat in Friedau (Ormož)](wed.html?person=Georg+Dopusch):\nAls einer der beiden Räte war er 1677 beim Verhör der [Dorothea Wed](wed.html) zugegen — unter dem Bannrichter Johann Georg Franz von Will, zusammen mit dem Stadtrichter und einem weiteren Rat."
     },
     "koleritsch-martin": {
       "name": "Martin Koleritsch",
@@ -2969,7 +2974,8 @@
       "status": "geprueft",
       "vorname": "Jerne",
       "nachname": "Drnovscheck",
-      "sortname": "Drnovscheck, Jerne"
+      "sortname": "Drnovscheck, Jerne",
+      "kurztext": "[Untertan der Herrschaft Ankenstein](glanitschnigg.html?person=Drnovscheck):\n1701 von [Helena Glanitschnigg](glanitschnigg.html) denunziert: Er habe versucht, sie beim großen Hagelwetter mit der Hand durch das Gefängnisfenster herauszuholen, und sei bei der „Zauberei-Gemeinschaft“ der Trompeter gewesen. Bei der Gegenüberstellung bestritt er alles."
     },
     "mischka-jera": {
       "name": "Jera Mischka",
