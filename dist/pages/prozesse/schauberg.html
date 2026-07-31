@@ -9,7 +9,7 @@
     <script type="module" crossorigin src="/assets/ortskarte-BqzuvMa-.js"></script>
     <script type="module" crossorigin src="/assets/modulepreload-polyfill-Dezn_h7o.js"></script>
     <script type="module" crossorigin src="/assets/erwaehnung-DNhia6GL.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CpZ7JmO0.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-DCbRVJFo.css">
     <link rel="canonical" href="https://hexenprozesse.at/pages/prozesse/schauberg.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Hexenprozesse">
@@ -54,6 +54,7 @@
       </div>
       <a href="/pages/kontakt.html">Kontakt</a>
     </nav>
+    <nav class="sprachwahl" aria-label="Sprache"><span class="sprachwahl-aktuell" aria-current="true">DE</span><span class="sprachwahl-trenner" aria-hidden="true">|</span><span class="sprachwahl-aus" title="Slovensko: noch nicht verfügbar" aria-disabled="true">SL</span><span class="sprachwahl-trenner" aria-hidden="true">|</span><span class="sprachwahl-aus" title="English: noch nicht verfügbar" aria-disabled="true">EN</span></nav>
   </div>
 </header>
 
@@ -272,6 +273,33 @@ document.addEventListener("click", () => {
     ziel.classList.add("fall-nav-aktiv");
     setTimeout(() => { window.location.href = ziel.href; }, 120);
   }, { passive: true });
+})();
+
+// Sprachwechsel: an derselben Stelle bleiben statt an den Seitenanfang zu
+// springen. Vor dem Wechsel den Anteil der Seitenhoehe merken, auf der
+// Zielseite denselben Anteil wiederherstellen. Da die Uebersetzung derselbe
+// Text in anderer Sprache ist, landet man so im gleichen Bereich.
+(() => {
+  const SCHLUESSEL = "sprachwechsel";
+  document.querySelectorAll(".sprachwahl-link").forEach((a) => {
+    a.addEventListener("click", () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const anteil = max > 0 ? window.scrollY / max : 0;
+      try { sessionStorage.setItem(SCHLUESSEL, anteil + "|" + Date.now()); } catch (e) {}
+    });
+  });
+  let roh = null;
+  try { roh = sessionStorage.getItem(SCHLUESSEL); } catch (e) {}
+  if (roh) {
+    try { sessionStorage.removeItem(SCHLUESSEL); } catch (e) {}
+    const [anteil, zeit] = roh.split("|");
+    if (Date.now() - Number(zeit) < 5000) {
+      requestAnimationFrame(() => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        window.scrollTo(0, parseFloat(anteil) * max);
+      });
+    }
+  }
 })();
 </script>
   </body>

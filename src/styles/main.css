@@ -170,6 +170,49 @@ code {
   }
 }
 
+/* Sprachwahl (DE | SL | EN) rechts im Header. brand schiebt sich per
+   margin-right:auto nach links, Navigation und Sprachwahl bleiben rechts. */
+.site-header .container { justify-content: flex-start; }
+.brand { margin-right: auto; }
+.sprachwahl {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  background: #eef3f9;
+  border: 1px solid #cddbec;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+/* aktuelle Sprache: gefüllte Pille, klar hervorgehoben */
+.sprachwahl-aktuell {
+  color: #fff;
+  background: var(--color-accent-dark);
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+}
+.sprachwahl-link {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.sprachwahl-link:hover,
+.sprachwahl-link:focus {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+}
+.sprachwahl-aus {
+  color: var(--color-muted);
+  opacity: 0.45;
+  cursor: default;
+}
+.sprachwahl-trenner {
+  color: #b9cbe0;
+}
+
 /* Dropdown navigation */
 .nav-dropdown {
   position: relative;

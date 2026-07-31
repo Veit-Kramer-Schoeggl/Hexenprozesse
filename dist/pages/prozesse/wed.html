@@ -9,7 +9,7 @@
     <script type="module" crossorigin src="/assets/ortskarte-BqzuvMa-.js"></script>
     <script type="module" crossorigin src="/assets/modulepreload-polyfill-Dezn_h7o.js"></script>
     <script type="module" crossorigin src="/assets/erwaehnung-DNhia6GL.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CpZ7JmO0.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-DCbRVJFo.css">
     <link rel="canonical" href="https://hexenprozesse.at/pages/prozesse/wed.html">
     <link rel="alternate" hreflang="de" href="https://hexenprozesse.at/pages/prozesse/wed.html">
     <link rel="alternate" hreflang="sl" href="https://hexenprozesse.at/pages/prozesse/wed-2.html">
@@ -57,6 +57,7 @@
       </div>
       <a href="/pages/kontakt.html">Kontakt</a>
     </nav>
+    <nav class="sprachwahl" aria-label="Sprache"><span class="sprachwahl-aktuell" aria-current="true">DE</span><span class="sprachwahl-trenner" aria-hidden="true">|</span><a class="sprachwahl-link" href="/pages/prozesse/wed-2.html" lang="sl" hreflang="sl">SL</a><span class="sprachwahl-trenner" aria-hidden="true">|</span><span class="sprachwahl-aus" title="English: noch nicht verfügbar" aria-disabled="true">EN</span></nav>
   </div>
 </header>
 
@@ -70,7 +71,6 @@
 
         <div class="kommentar">
           <h3>Anmerkung</h3>
-          <p>Slowenische Fassung: <a href="./wed-2.html" lang="sl">Postopek proti Dorothei Wed</a> (Übersetzung: Carmen Weissenstein)</p>
           <p><strong>Dorothea Wed war 70 Jahre alt und hat nichts gestanden.</strong> Drei verschärfte Folterungen, dazu vierundzwanzig Stunden auf dem Hexenstuhl — das Protokoll hält fest, dass „kein einziges Zeichen von Schmerzempfinden“ festzustellen war. Danach musste man weitere Folterungen unterlassen, „außer wenn andere Indizien hinzukommen würden“.</p>
           <p><strong>Am 2. Mai wurde sie tot aufgefunden</strong> — nachdem sie am selben Tag „frisch und gesund gegessen und getrunken“ hatte und keine Lebensgefahr zu erkennen war. Der Scharfrichter fand an ihrem Hals blaue und schwarze Zeichen. Das Protokoll erwähnt diesen Befund und lässt ihn stehen; erklärt wird der Tod nicht damit, sondern mit einem nächtlichen Hundelärm im Schloss und einem Sturm, die der Bannrichter als Frohlocken der bösen Geister deutet. Ihr Leichnam wurde am 3. Mai verbrannt.</p>
           <p><strong>Derselbe Schluss wie vier Jahre zuvor in Gutenhag.</strong> Bei <a href="./wukinetz.html">Marina Wukinetz</a> hatte der Bannrichter aus dem Ausbleiben des Geständnisses und den Erscheinungen der letzten Nächte gefolgert, sie müsse „eindeutig eine Hexe gewesen sein“. Hier ist es dieselbe Denkfigur: Weil sie nicht gestand, hätten die Geister „die Justiz ausgespielt“ — und weil sie den Prozess damit gewonnen hätten, sei die Schuld erwiesen. Beide Frauen starben in Haft, ohne Urteil, beide ohne Geständnis.</p>
@@ -290,7 +290,7 @@
         <p><a href="/pages/prozesse/index.html"><strong>&rarr; Alle Prozesse im Überblick</strong></a></p>
         <nav class="fall-nav" aria-label="Navigation zwischen den Prozessen">
           <a class="fall-nav-pfeil fall-nav-zurueck" href="./lipp.html" rel="prev" title="Vorheriger Fall: Michael Lipp (1675)"><span class="fall-nav-zeichen" aria-hidden="true">&lsaquo;</span><span class="fall-nav-text">Michael Lipp</span></a>
-          <a class="fall-nav-pfeil fall-nav-vor" href="./wed-2.html" rel="next" title="Nächster Fall: Dorothea Wed (slovensko) (1677)"><span class="fall-nav-zeichen" aria-hidden="true">&rsaquo;</span><span class="fall-nav-text">Dorothea Wed (slovensko)</span></a>
+          <a class="fall-nav-pfeil fall-nav-vor" href="./heen.html" rel="next" title="Nächster Fall: Marx Heen (1683)"><span class="fall-nav-zeichen" aria-hidden="true">&rsaquo;</span><span class="fall-nav-text">Marx Heen</span></a>
         </nav>
 </article>
     </main>
@@ -395,6 +395,33 @@ document.addEventListener("click", () => {
     ziel.classList.add("fall-nav-aktiv");
     setTimeout(() => { window.location.href = ziel.href; }, 120);
   }, { passive: true });
+})();
+
+// Sprachwechsel: an derselben Stelle bleiben statt an den Seitenanfang zu
+// springen. Vor dem Wechsel den Anteil der Seitenhoehe merken, auf der
+// Zielseite denselben Anteil wiederherstellen. Da die Uebersetzung derselbe
+// Text in anderer Sprache ist, landet man so im gleichen Bereich.
+(() => {
+  const SCHLUESSEL = "sprachwechsel";
+  document.querySelectorAll(".sprachwahl-link").forEach((a) => {
+    a.addEventListener("click", () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const anteil = max > 0 ? window.scrollY / max : 0;
+      try { sessionStorage.setItem(SCHLUESSEL, anteil + "|" + Date.now()); } catch (e) {}
+    });
+  });
+  let roh = null;
+  try { roh = sessionStorage.getItem(SCHLUESSEL); } catch (e) {}
+  if (roh) {
+    try { sessionStorage.removeItem(SCHLUESSEL); } catch (e) {}
+    const [anteil, zeit] = roh.split("|");
+    if (Date.now() - Number(zeit) < 5000) {
+      requestAnimationFrame(() => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        window.scrollTo(0, parseFloat(anteil) * max);
+      });
+    }
+  }
 })();
 </script>
   </body>

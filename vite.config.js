@@ -43,6 +43,62 @@ function htmlIncludePlugin() {
   };
 }
 
+// Plugin: Sprachwahl (DE | SL | EN) im Header. Ersetzt den Platzhalter
+// @@sprachwahl je Seite durch die Umschalt-Leiste. Quelle ist das Feld
+// `uebersetzungen` in der Kartei (z. B. wed.html -> { sl: "wed-2.html" }).
+// Vorhandene Sprachen werden verlinkt, die aktuelle hervorgehoben, fehlende
+// ausgegraut — so ist der mehrsprachige Ausbau sichtbar, auch wo es (noch)
+// nur Deutsch gibt. Läuft als "post", damit der Header bereits eingebunden ist.
+function sprachwahlPlugin() {
+  const karteiPfad = fromSrc("daten", "denunziationen.json");
+  const SPRACHEN = [
+    ["de", "Deutsch"],
+    ["sl", "Slovensko"],
+    ["en", "English"],
+  ];
+  const gruppenBauen = () => {
+    const d = JSON.parse(readFileSync(karteiPfad, "utf-8"));
+    const gruppen = {}; // rel -> { de: rel, sl: rel, ... }
+    for (const [datei, pr] of Object.entries(d.prozesse)) {
+      if (!pr.uebersetzungen) continue;
+      const gruppe = { de: `pages/prozesse/${datei}` };
+      for (const [lang, zdatei] of Object.entries(pr.uebersetzungen)) {
+        gruppe[lang] = `pages/prozesse/${zdatei}`;
+      }
+      for (const rel of Object.values(gruppe)) gruppen[rel] = gruppe;
+    }
+    return gruppen;
+  };
+  return {
+    name: "sprachwahl",
+    transformIndexHtml: {
+      order: "post",
+      handler(html, ctx) {
+        if (!html.includes("@@sprachwahl")) return html;
+        const gruppen = gruppenBauen();
+        let rel = (ctx.path || "/").replace(/^\//, "").split(/[?#]/)[0];
+        if (!rel || rel.endsWith("/")) rel += "index.html";
+        const gruppe = gruppen[rel] || { de: rel };
+        let aktuell = "de";
+        for (const [lang, r] of Object.entries(gruppe)) if (r === rel) aktuell = lang;
+        const items = SPRACHEN.map(([lang, label]) => {
+          const kurz = lang.toUpperCase();
+          if (lang === aktuell) {
+            return `<span class="sprachwahl-aktuell" aria-current="true">${kurz}</span>`;
+          }
+          if (gruppe[lang]) {
+            const url = gruppe[lang] === "index.html" ? "/" : `/${gruppe[lang]}`;
+            return `<a class="sprachwahl-link" href="${url}" lang="${lang}" hreflang="${lang}">${kurz}</a>`;
+          }
+          return `<span class="sprachwahl-aus" title="${label}: noch nicht verfügbar" aria-disabled="true">${kurz}</span>`;
+        }).join('<span class="sprachwahl-trenner" aria-hidden="true">|</span>');
+        const leiste = `<nav class="sprachwahl" aria-label="Sprache">${items}</nav>`;
+        return html.replace(/@@sprachwahl/g, leiste);
+      },
+    },
+  };
+}
+
 // Plugin: Ersetzt @@prozessAnzahl / @@prozessErster / @@prozessLetzter durch
 // die tatsächlichen Werte aus der Prozessliste. So bleiben Angaben wie
 // "35 dokumentierte Prozesse" automatisch richtig, sobald eine Seite dazu
@@ -116,6 +172,7 @@ function personenregisterPlugin() {
       vorkommen.get(schluessel).add(datei);
     };
     for (const [datei, pr] of Object.entries(d.prozesse)) {
+      if (pr.uebersetzungVon) continue; // Übersetzung ist derselbe Fall, nicht doppelt zählen
       for (const feld of FELDER_MIT_PERSONEN) {
         for (const s of personenSchluessel(pr[feld])) merken(s, datei);
       }
@@ -222,6 +279,7 @@ function personenregisterPlugin() {
     // und das Verfahren mit Tod endete. Sonst bleibt die Spalte leer.
     const sterbedatum = (schluessel) => {
       for (const [datei, pr] of Object.entries(d.prozesse)) {
+        if (pr.uebersetzungVon) continue; // Übersetzung ist derselbe Fall
         if (!personenSchluessel(pr.beschuldigte).includes(schluessel)) continue;
         const a = pr.ausgang ?? {};
         if (a.art === "hingerichtet" || a.art === "in-haft-gestorben") {
@@ -1067,6 +1125,7 @@ export default defineConfig({
   publicDir: "assets",
   plugins: [
     htmlIncludePlugin(),
+    sprachwahlPlugin(),
     prozessZahlenPlugin(),
     personenregisterPlugin(),
     seoDateienPlugin(),

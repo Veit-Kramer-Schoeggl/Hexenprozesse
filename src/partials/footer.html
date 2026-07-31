@@ -100,4 +100,31 @@ document.addEventListener("click", () => {
     setTimeout(() => { window.location.href = ziel.href; }, 120);
   }, { passive: true });
 })();
+
+// Sprachwechsel: an derselben Stelle bleiben statt an den Seitenanfang zu
+// springen. Vor dem Wechsel den Anteil der Seitenhoehe merken, auf der
+// Zielseite denselben Anteil wiederherstellen. Da die Uebersetzung derselbe
+// Text in anderer Sprache ist, landet man so im gleichen Bereich.
+(() => {
+  const SCHLUESSEL = "sprachwechsel";
+  document.querySelectorAll(".sprachwahl-link").forEach((a) => {
+    a.addEventListener("click", () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const anteil = max > 0 ? window.scrollY / max : 0;
+      try { sessionStorage.setItem(SCHLUESSEL, anteil + "|" + Date.now()); } catch (e) {}
+    });
+  });
+  let roh = null;
+  try { roh = sessionStorage.getItem(SCHLUESSEL); } catch (e) {}
+  if (roh) {
+    try { sessionStorage.removeItem(SCHLUESSEL); } catch (e) {}
+    const [anteil, zeit] = roh.split("|");
+    if (Date.now() - Number(zeit) < 5000) {
+      requestAnimationFrame(() => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        window.scrollTo(0, parseFloat(anteil) * max);
+      });
+    }
+  }
+})();
 </script>

@@ -4759,7 +4759,10 @@
         "wukinetz.html",
         "wed-2.html"
       ],
-      "status": "geprueft"
+      "status": "geprueft",
+      "uebersetzungen": {
+        "sl": "wed-2.html"
+      }
     },
     "wed-2.html": {
       "beschuldigte": [
@@ -4809,7 +4812,8 @@
       ],
       "status": "geprueft",
       "sprache": "sl",
-      "anmerkung": "Slowenische Fassung derselben Akte, uebersetzt von Carmen Weissenstein."
+      "anmerkung": "Slowenische Fassung derselben Akte, uebersetzt von Carmen Weissenstein.",
+      "uebersetzungVon": "wed.html"
     },
     "freyenthurn.html": {
       "beschuldigte": [
