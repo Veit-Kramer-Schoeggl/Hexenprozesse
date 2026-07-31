@@ -2754,7 +2754,8 @@
       "status": "geprueft",
       "vorname": "Gera",
       "nachname": "",
-      "sortname": "Gera, Tochter der Juliana"
+      "sortname": "Gera, Tochter der Juliana",
+      "kurztext": "[Tochter einer Juliana](kopschitsch.html?person=Gera,+die+Tochter+der+Juliana):\nMehr geben die Akten zu ihr nicht her: [Gera Kopschitsch](kopschitsch.html) zählte sie 1661 unter den Personen auf, die sie am Gradisch-Kreuz bei der „Hexengesellschaft“ erkannt haben wollte."
     },
     "heiser-gertraud": {
       "name": "Gertraud",
@@ -2768,7 +2769,8 @@
       "status": "geprueft",
       "vorname": "",
       "nachname": "Gertraud",
-      "sortname": "Gertraud"
+      "sortname": "Gertraud",
+      "kurztext": "[Frau des Thomas Heiser, Mutter des Gregor](heiser-2.html?person=Gertraud):\nSie hatte ihren Sohn [Gregor](heiser-2.html) nach St. Lambrecht geschickt, den Vater zu holen — woraufhin auch der Junge verhaftet wurde und zehn Tage später starb. Unter der Folter belastete Gregor die eigene Mutter: Sie sei dreimal mitgeflogen, das letzte Mal nicht, „denn damals habe sein Vater die Mutter geschlagen“. Ein Verfahren gegen Gertraud selbst ist nicht überliefert."
     },
     "katzenpuffer-lorenz": {
       "name": "Lorenz Katzenpuffer",
@@ -2965,7 +2967,8 @@
       "status": "geprueft",
       "vorname": "Marina",
       "nachname": "Glanetschnigg",
-      "sortname": "Glanetschnigg, Marina"
+      "sortname": "Glanetschnigg, Marina",
+      "kurztext": "[Frau des Vide Glanetschnigg, vom Paulusberg](glanitschnigg.html?person=Glanetschnigg):\nSie wohnte in einer Weinberghube der Minoriten-Patres. 1701 zählte [Helena Glanitschnigg](glanitschnigg.html) sie unter den Denunzierten auf — eine von mehreren Frauen, die sie der „Zauberei-Gemeinschaft“ bezichtigte."
     },
     "drnovscheck-jerne": {
       "name": "Jerne Drnovscheck",
