@@ -1128,7 +1128,8 @@
       "status": "unsicher",
       "vorname": "",
       "nachname": "Grandl",
-      "sortname": "Grandl"
+      "sortname": "Grandl, der",
+      "kurztext": "[Der „Grandl“ aus Sulz — bereits hingerichtet](rauch.html?person=der+Grandl):\n[Veronika Rauch](rauch.html) nannte ihn 1689 unter den bereits Hingerichteten ihrer Nachbarschaft; beim Treffen habe „der hingerichtete Grandl den Wein aus einer Eiche herausgelassen“. Vermutlich „Hans Gindl vulgo Grandl aus Sulz“ der Gleichenberger Opferliste — ausdrücklich belegt ist die Gleichsetzung aber nicht."
     },
     "grandl-frau": {
       "name": "die Grandl",
@@ -1144,7 +1145,8 @@
       "status": "unsicher",
       "vorname": "",
       "nachname": "Grandl",
-      "sortname": "Grandl"
+      "sortname": "Grandl, die",
+      "kurztext": "[Die „Grandl“ aus Sulz](rauch.html?person=die+Grandl):\nGemeinsam mit „dem Grandl“ — wohl das Ehepaar Gindl aus Sulz — von [Veronika Rauch](rauch.html) 1689 unter den bereits Hingerichteten genannt. Vermutlich „Ursula Gindl vulgo Grandl aus Sulz“ der Gleichenberger Opferliste."
     },
     "takner-mann": {
       "name": "der Takner",
@@ -2701,7 +2703,8 @@
       "status": "geprueft",
       "vorname": "",
       "nachname": "Gregor",
-      "sortname": "Gregor"
+      "sortname": "Gregor",
+      "kurztext": "[Bruder der Gera Kopschitsch](kopschitsch.html?person=Gregor):\nIn [Gera Kopschitschs](kopschitsch.html) Geständnis von 1661 erwartete er sie zusammen mit der Schwester Urscha am Gradisch-Kreuz und habe dort den Wein aus einem Baum gelassen; genannt wird er auch bei der Zusammenkunft auf dem Rohitschberg."
     },
     "kopschitsch-urscha": {
       "name": "Urscha",
