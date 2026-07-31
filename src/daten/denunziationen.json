@@ -697,7 +697,12 @@
       "geschlecht": "m",
       "vorname": "Michael",
       "nachname": "Gregoritsch",
-      "sortname": "Gregoritsch, Michael"
+      "sortname": "Gregoritsch, Michael",
+      "kurztext": "[Beklagter im Verleumdungsprozess von 1671](/pages/themen/byloff/teil-3.html#kap-49):\nKein Hexenprozess, sondern eine Klage dagegen: Die Familie Hörk verklagte 1671 in Radkersburg Michael Gregoritsch und Genossen, weil sie sie der Zauberei bezichtigt hatten. Als Beklagter sagte er aus, er habe mehrfach einen brennenden „Schab-Dämon“ beim Keller des Hörk niederfallen sehen — die Grundlage des Gerüchts. Überliefert bei Byloff (Kap. 49).",
+      "fussnote": {
+        "text": "Beklagter · Verleumdungsprozess Radkersburg (1671)",
+        "ziel": "/pages/themen/byloff/teil-3.html#kap-49"
+      }
     },
     "schepp-marina": {
       "name": "Marina Schepp",
@@ -2528,7 +2533,8 @@
       "status": "geprueft",
       "vorname": "Gera",
       "nachname": "Gregoritsch",
-      "sortname": "Gregoritsch, Gera"
+      "sortname": "Gregoritsch, Gera",
+      "kurztext": "[Zimmermädchen im Schloss Freyenthurn](freyenthurn.html?person=Gera+Gregoritsch):\nIhr wurde vorgeworfen, dem Grafen im Schlaf Haare ausgerupft und das vergiftete Pulver samt einer „Pogatsche“ in die Küche gebracht zu haben. Sie gestand, „eine Zauberin“ zu sein, und war eine der fünf Frauen, die am 4. Dezember 1694 in Freyenthurn (Kärnten) hingerichtet wurden — darunter auch [Bora, die alte Suppan](freyenthurn.html?person=Bora)."
     },
     "sittiher-anna": {
       "name": "Anna Sittiher",
@@ -2732,7 +2738,8 @@
       "status": "geprueft",
       "vorname": "Gregor",
       "nachname": "",
-      "sortname": "Gregor, Sohn der Gera Kopschitsch"
+      "sortname": "Gregor, Sohn der Gera Kopschitsch",
+      "kurztext": "[Fünfjähriger Sohn der Gera Kopschitsch](kopschitsch.html?person=Sohn+namens+Gregor):\nIm Geständnis seiner Mutter [Gera Kopschitsch](kopschitsch.html) von 1661 verlangte der „Böse Geist“ den damals fünfjährigen Jungen als Lohn für seine Dienste. Die Mutter verweigerte ihn — woraufhin der Geist sie mit einem Eisendraht schlagen wollte."
     },
     "treatsch-marina": {
       "name": "Marina Treatsch",
