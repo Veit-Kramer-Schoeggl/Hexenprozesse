@@ -947,7 +947,8 @@
       "geschlecht": "m",
       "vorname": "Matthias",
       "nachname": "Gager",
-      "sortname": "Gager, Matthias"
+      "sortname": "Gager, Matthias",
+      "kurztext": "[Nachbar der Ursula Neubauer in Wörth](neubauer.html?person=Matthias+Gager):\nZusammen mit [der Frau des Georg Dornschuster](neubauer.html?person=Dornschuster) bezichtigte er 1644 die Töpferin [Ursula Neubauer](neubauer.html) der Zauberei — Folge eines Nachbarschaftsstreits um gestohlenes Geschirr. Weil nichts gefunden wurde, mussten beide öffentlich Abbitte leisten."
     },
     "rathall-georg-julius-von": {
       "name": "Georg Julius von Rathall",
@@ -2088,7 +2089,8 @@
       "status": "geprueft",
       "vorname": "Gera",
       "nachname": "",
-      "sortname": "Gera, Schwester der Frau des Lorenz Schmalz"
+      "sortname": "Gera, Schwester der Frau des Lorenz Schmalz",
+      "kurztext": "[Zeugin im Prozess gegen Marina Wukinetz](wukinetz.html?person=Gera):\nAls der [Marina Wukinetz](wukinetz.html) vorgeworfen wurde, den Kindern der Frau Schmalz das Fieber „gesenkt“ zu haben, widersprach deren Schwester Gera: Das habe sie selbst getan, nicht Wukinetz, und diese habe von ihr nie eine Arznei verlangt. Am Todesurteil änderte es nichts."
     },
     "ferlitsch-thomas": {
       "name": "Thomas Ferlitsch",
@@ -2382,7 +2384,8 @@
       "status": "geprueft",
       "vorname": "",
       "nachname": "Gera",
-      "sortname": "Gera"
+      "sortname": "Gera",
+      "kurztext": "[Tochter der Dorothea Wed — früh verstorben](wed.html?person=Gera):\nZum Zeitpunkt des Prozesses 1677 war sie bereits an der „Schwindsucht“ gestorben. Im Verhör fragte der Bannrichter [Dorothea Wed](wed.html) nach ihr aus — ob die Tochter jemanden für ihre Krankheit verdächtigt habe; Wed nannte ihre Schwägerin Margareta."
     },
     "samoda-martin": {
       "name": "Martin Samoda",
