@@ -300,7 +300,8 @@
       "geschlecht": "w",
       "vorname": "Magdalena",
       "nachname": "Ferk",
-      "sortname": "Ferk, Magdalena"
+      "sortname": "Ferk, Magdalena",
+      "kurztext": "[Angeklagte und Denunziantin der Gutenhager Verfahren](kollar.html?person=Magdalena+Ferk):\nEine eigene Akte gibt es zu ihr nicht — sie kommt nur in den Verfahren gegen andere vor. Ihre unter und ohne Folter „mit dem Tod bekräftigten“ Geständnisse belasteten zahlreiche Personen und lösten 1661 weitere Prozesse in Gutenhag aus, u. a. gegen [Ursula Kollar](kollar.html), [Elenka Schauberg](schauberg.html) und [Gera Kopschitsch](kopschitsch.html). Schauberg, einst ihre Freundin, führte Ferks Anschuldigung auf eine Feindschaft zurück."
     },
     "kollar-ursula": {
       "name": "Ursula Kollar",
@@ -1296,7 +1297,8 @@
       "status": "geprueft",
       "vorname": "Christoph",
       "nachname": "Ferstl",
-      "sortname": "Ferstl, Christoph"
+      "sortname": "Ferstl, Christoph",
+      "kurztext": "[Ratsbürger in Gratwein](walburga.html?person=Ferstl):\nAls Beisitzer war er 1652 bei den Verhören der [Walburga Moritz-Bärtl](walburga.html) im Stift Rein zugegen — mehrfach genannt, auch in der Folterkammer, neben drei weiteren Gratweiner Ratsbürgern."
     },
     "poetsch-hans": {
       "name": "Hans Pötsch",
@@ -2100,7 +2102,8 @@
       "status": "geprueft",
       "vorname": "Thomas",
       "nachname": "Ferlitsch",
-      "sortname": "Ferlitsch, Thomas"
+      "sortname": "Ferlitsch, Thomas",
+      "kurztext": "[Zeuge im Prozess gegen Marina Wukinetz](wukinetz.html?person=Ferlitsch):\n1673 wurde er der Angeklagten gegenübergestellt: [Marina Wukinetz](wukinetz.html) habe in seinem Haus über „Hexenweiber“ geredet, unter anderem über die Schwiegertochter des Adam Kotzbeck."
     },
     "kunaetsch-polonia": {
       "name": "Polonia Kunätsch",
