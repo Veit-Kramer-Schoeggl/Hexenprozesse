@@ -132,7 +132,8 @@
       "geschlecht": "m",
       "vorname": "Kommissar",
       "nachname": "Caluuci",
-      "sortname": "Caluuci, Kommissar"
+      "sortname": "Caluuci, Kommissar",
+      "kurztext": "[Regierungskommissär der Innerösterreichischen Regierung](zechner-andreas-1.html?person=Caluuci):\nEigens für den Fall [Stefan Zechners](zechner-andreas-1.html) eingesetzt. Überliefert ist das wörtliche Protokoll ihres Wortwechsels: Der bereits zum Tod verurteilte Bauer sollte noch „Komplizen“ nennen. Caluuci drängte — „Was willst du lang leugnen! Du musst sterben“ —, doch Zechner blieb dabei, er sei „nie ein Zauberer gewesen“ und „rein wie ein kleines unschuldiges Kind“."
     },
     "remigk-joh-bapt": {
       "name": "Joh. Bapt. Remigk",
@@ -171,7 +172,8 @@
       "geschlecht": "w",
       "vorname": "",
       "nachname": "Brunnbäurin",
-      "sortname": "Brunnbäurin"
+      "sortname": "Brunnbäurin",
+      "kurztext": "[Verführerin und Wirtin der „Hexengesellschaft“ — schon vor 1686 hingerichtet](posch.html?person=Brunnbäurin):\nIhren eigenen Namen nennen die Akten nicht; sie heißt nur nach ihrem Hof „die Brunnbäurin“. In mehreren Verfahren des Raums Gratwein wird sie als Verführerin genannt: [Christina Posch](posch.html) will sie am Plesch-Kogel als „Köchin und Wirtin“ der Hexengesellschaft erkannt haben, und laut [Margareth Jantscher](jantscher.html) habe sie das Allerheiligste zur Gesellschaft mitgebracht und zum Fliegen benutzt."
     },
     "christanderl": {
       "name": "die Christanderl",
@@ -185,7 +187,8 @@
       "geschlecht": "w",
       "vorname": "",
       "nachname": "Christanderl",
-      "sortname": "Christanderl"
+      "sortname": "Christanderl",
+      "kurztext": "[Schon vor 1686 hingerichtet — vermutlich Margareth Jantscher](posch.html?person=Christanderl):\nNur unter dem Beinamen „die Christanderl“ fassbar. [Christina Posch](posch.html) nannte sie 1686 unter den bereits Hingerichteten, die sie am Plesch-Kogel bei der „Hexengesellschaft“ erkannt haben wollte. Sehr wahrscheinlich ist sie identisch mit [Margareth Jantscher](jantscher.html), die im Verfahren gegen Peter Paar als „Margret Jantscher vulgo Christanderl“ geführt wird."
     },
     "joergbaeurin": {
       "name": "die Jörgbäurin",
@@ -1076,7 +1079,8 @@
       "status": "geprueft",
       "vorname": "Michael",
       "nachname": "Burg",
-      "sortname": "Burg, Michael"
+      "sortname": "Burg, Michael",
+      "kurztext": "[Einer der acht Beisitzer im Rauch-Prozess](rauch.html?person=Michael+Burg):\nMehr geben die Akten zu ihm nicht her: Sein Name steht 1689 in der Liste der acht Urteiler, die das Todesurteil über [Veronika Rauch](rauch.html) mitfällten."
     },
     "crainer-florian": {
       "name": "Florian Crainer",
@@ -1089,7 +1093,8 @@
       "status": "geprueft",
       "vorname": "Florian",
       "nachname": "Crainer",
-      "sortname": "Crainer, Florian"
+      "sortname": "Crainer, Florian",
+      "kurztext": "[Beisitzer im Prozess gegen Veronika Rauch](rauch.html?person=Florian+Crainer):\nZu ihm ist wie zu den meisten Beisitzern nur der Name überliefert — er steht 1689 unter den acht Urteilern, die [Veronika Rauch](rauch.html) zum Tod verurteilten."
     },
     "tommer-christoph": {
       "name": "Christoph Tommer",
@@ -2236,7 +2241,8 @@
       "status": "geprueft",
       "vorname": "",
       "nachname": "Bärbl",
-      "sortname": "Bärbl"
+      "sortname": "Bärbl",
+      "kurztext": "[Angebliche Näherin aus Teufenbach](dionys.html?person=Bärbl):\nFrau des Thomas Schuster und die eigentliche Hauptfigur beider St.-Lambrecht-Verhöre von 1602 — obwohl sie nie selbst vor Gericht stand. [Dionys](dionys.html) bezichtigte sie, ihm beim Wettermachen geholfen zu haben; ihre erst zehn- bis zwölfjährige Tochter beschrieb ausführlich, wie die Mutter geflogen sei, Wetter gemacht und sechs weitere Frauen das Fliegen gelehrt habe. Ein Verfahren gegen Bärbl selbst ist nicht überliefert."
     },
     "schuster-thomas": {
       "name": "Thomas Schuster",
@@ -2577,7 +2583,8 @@
       "status": "geprueft",
       "vorname": "Bora",
       "nachname": "Suppan",
-      "sortname": "Bora, die alte Suppan"
+      "sortname": "Bora, die alte Suppan",
+      "kurztext": "[Verwalterin — bis zuletzt geschwiegen, dennoch hingerichtet](freyenthurn.html?person=Bora):\nAuch „Bora Adleschitsch“ genannt. 1694 stand sie in der Herrschaft Freyenthurn (Kärnten) unter der Anklage der Zauberei; Mitangeklagte belasteten sie als Komplizin bei einem Schadenzauber gegen die Gräfin. Sie „stellte sich bis zu ihrer letzten Stunde stumm“ und gestand kein Wort — am 4. Dezember 1694 wurde sie mit vier weiteren Frauen dennoch hingerichtet."
     },
     "wazenberg-graefin-von": {
       "name": "die Gräfin von Wazenberg",
@@ -2812,7 +2819,8 @@
       "status": "geprueft",
       "vorname": "Stöber",
       "nachname": "Blasi",
-      "sortname": "Blasi, Stöber"
+      "sortname": "Blasi, Stöber",
+      "kurztext": "[Von Gregor Heiser als Gefährte genannt — bereits verstorben](heiser-2.html?person=Stöber+Blasi):\nIn seinem Geständnis von 1653 zählte [Gregor Heiser](heiser-2.html) ihn zu den Teilnehmern des Hexenflugs: Er, Heisers Vater und der Stöber Blasi seien „in Teufels Namen“ auf einer Ofenschüssel — der hölzernen Brotschaufel — aufgesessen und geflogen, mit dem Spruch, es solle „alles dick erschlagen werden, was es trifft“. Zur Zeit des Prozesses war Blasi bereits tot."
     },
     "marx-im-greith": {
       "name": "der Marx im Greith bei Neumarkt",
@@ -3039,7 +3047,8 @@
       "status": "geprueft",
       "vorname": "Hans Georg",
       "nachname": "Diewalt",
-      "sortname": "Diewalt, Hans Georg"
+      "sortname": "Diewalt, Hans Georg",
+      "kurztext": "[Stadtrichter in Murau](poellinger.html?person=Georg+Diewalt):\nAls Beisitzer nahm er 1663/64 an den Verhören des [Lorenz Pöllinger](poellinger.html) im Schloss Murau teil — mehrfach im Protokoll genannt, neben den Ratsbürgern und dem Stadtschreiber, unter dem Bannrichter [Andreas Barth](poellinger.html?person=Andreas+Barth)."
     },
     "gaestl-veit": {
       "name": "Veit Gästl",
