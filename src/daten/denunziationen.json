@@ -827,7 +827,8 @@
       "geschlecht": "w",
       "vorname": "Eva",
       "nachname": "Hacker",
-      "sortname": "Hacker, Eva"
+      "sortname": "Hacker, Eva",
+      "kurztext": "[Ehefrau des Matthias Hacker — nur in der Abrechnung](hacker.html?person=Eva+Hacker):\nAm 10. Dezember 1694 wurde sie mit ihrem Mann [Matthias](hacker.html) gefangen genommen und am 22. Jänner 1695 mit ihm hingerichtet (Herrschaft Admontbichl). Ihr Verhör ist nicht überliefert — im Protokoll kommt sie kein einziges Mal vor. Sie erscheint nur als Posten des Unkosten-Verzeichnisses, das durchgehend „für zwei Personen“ abrechnet."
     },
     "lipp-michael": {
       "name": "Michael Lipp",
@@ -1473,7 +1474,8 @@
       "status": "geprueft",
       "vorname": "Christoph",
       "nachname": "Haan",
-      "sortname": "Haan, Christoph"
+      "sortname": "Haan, Christoph",
+      "kurztext": "[Beisitzer der St.-Lambrecht-Verfahren 1653](heiser-1.html?person=Haan):\nEr saß 1653 als Beisitzer bei den drei zusammenhängenden Verhören des Landgerichts St. Lambrecht — gegen [Thomas Heiser](heiser-1.html), dessen Sohn [Gregor](heiser-2.html) und [Lorenz Steger](steger.html) — stets neben dem Marktrichter Paul Winkler und Hans Wieser."
     },
     "wieser-hans": {
       "name": "Hans Wieser",
@@ -2492,7 +2494,8 @@
       "status": "geprueft",
       "vorname": "Martin",
       "nachname": "Habitsch",
-      "sortname": "Habitsch, Martin"
+      "sortname": "Habitsch, Martin",
+      "kurztext": "[Rat in Friedau (Ormož)](wed.html?person=Habitsch):\nEiner der beiden Räte beim Verhör der [Dorothea Wed](wed.html) 1677 — zusammen mit [Georg Dopusch](wed.html?person=Georg+Dopusch), dem Stadtrichter und dem Bannrichter Johann Georg Franz von Will."
     },
     "dopusch-georg": {
       "name": "Georg Dopusch",
