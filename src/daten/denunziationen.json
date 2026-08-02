@@ -729,7 +729,8 @@
       "geschlecht": "m",
       "vorname": "Marx",
       "nachname": "Heen",
-      "sortname": "Heen, Marx"
+      "sortname": "Heen, Marx",
+      "kurztext": "[Angeklagter 1683, 26–28 Jahre, aus Neuberg](heen.html?person=Marx+Heen):\nVerhandelt am Landgericht Oberkapfenberg unter dem Bannrichter [Johann Jakob Guisinger](heen.html?person=Guisinger). Die Anklage lautete auf zwei Punkte zugleich — Zauberei und Diebstahl mit Raub —, und das Urteil nannte beide. Am 17. Mai 1683 wurde er hingerichtet."
     },
     "rueprecht-marx": {
       "name": "Marx Rueprecht",
@@ -814,7 +815,8 @@
       "geschlecht": "m",
       "vorname": "Matthias",
       "nachname": "Hacker",
-      "sortname": "Hacker, Matthias"
+      "sortname": "Hacker, Matthias",
+      "kurztext": "[Angeklagt wegen Wolfsbannerei, vulgo „blauer Hiesele“](hacker.html?person=Matthias+Hacker):\n1695 an der Herrschaft Admontbichl unter dem Bannrichter Gottfried Jeremias Pistory verhört — der Vorwurf war „Wolfsbannerei“. Nur sein Verhör ist überliefert, nicht das seiner Frau [Eva](hacker.html?person=Eva+Hacker). Am 22. Jänner 1695 wurden beide hingerichtet."
     },
     "hacker-eva": {
       "name": "Eva Hacker",
@@ -860,7 +862,8 @@
       "geschlecht": "m",
       "vorname": "Abraham",
       "nachname": "Hartmann",
-      "sortname": "Hartmann, Abraham"
+      "sortname": "Hartmann, Abraham",
+      "kurztext": "[Steinmetz — Ankläger im Fall Michael Lipp](lipp.html?person=Abraham+Hartmann):\nAls [Michael Lipp](lipp.html) 1675 im Wirtshaus den Riegersburger Grafen beschuldigte, er lasse die Zauberer nicht einfangen und verbrennen, drehte Hartmann den Vorwurf um: Wer so rede, müsse selbst ein Zauberer sein. Zehn Monate später brachte er die Rede zur Anzeige — der Auslöser des Verfahrens. Ob es zum Verhör kam, ist nicht überliefert."
     },
     "kraiss-georg": {
       "name": "Georg Kraiß",
