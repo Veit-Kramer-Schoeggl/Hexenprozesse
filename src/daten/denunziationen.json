@@ -640,7 +640,8 @@
       "geschlecht": "w",
       "vorname": "Margaretha",
       "nachname": "Keyditsch",
-      "sortname": "Keyditsch, Margaretha"
+      "sortname": "Keyditsch, Margaretha",
+      "kurztext": "[Angeklagte 1661, Herrschaft Gutenhag](keyditsch.html?person=Margaretha+Keyditsch):\nVerhandelt gemeinsam mit der jungen [Apollonia](keyditsch.html?person=Apollonia) unter dem Bannrichter [Johann Andreas Barth](keyditsch.html?person=Johann+Andre+Barth). Sie gestand Schadenzauber — auf ihre Bitte habe die [Juliana](keyditsch.html?person=Juliana) Menschen krank gemacht. Am 22. Juni 1661 wurde sie wegen Zauberei und „sodomistischer Taten“ verbrannt."
     },
     "apollonia-gutenhag": {
       "name": "Apollonia",
@@ -2508,7 +2509,8 @@
       "status": "geprueft",
       "vorname": "Jakob",
       "nachname": "Kinck",
-      "sortname": "Kinck, Jakob"
+      "sortname": "Kinck, Jakob",
+      "kurztext": "[Stadtrichter in Friedau (Ormož)](wed.html?person=Jakob+Kinck):\nAls Stadtrichter saß er 1677 beim Verhör der [Dorothea Wed](wed.html) — neben dem Bannrichter Johann Georg Franz von Will und den Räten [Habitsch](wed.html?person=Habitsch) und [Dopusch](wed.html?person=Georg+Dopusch)."
     },
     "habitsch-martin": {
       "name": "Martin Habitsch",
@@ -2831,7 +2833,8 @@
       "status": "geprueft",
       "vorname": "Lorenz",
       "nachname": "Katzenpuffer",
-      "sortname": "Katzenpuffer, Lorenz"
+      "sortname": "Katzenpuffer, Lorenz",
+      "kurztext": "[Korbmacher im Lungau](heiser-2.html?person=Lorenz+Katzenpuffer):\nEiner der wenigen Namen, die [Vater](heiser-1.html) und [Sohn Heiser](heiser-2.html) 1653 übereinstimmend nannten — beim Vater als „Lorenz, sonst Katzenbuffer“, beim Sohn als Lorenz Katzenpuffer. Diese Überschneidung galt dem Gericht als Bestätigung."
     },
     "katzenpuffer-jodl": {
       "name": "Jodl Katzenpuffer",
