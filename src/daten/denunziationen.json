@@ -237,7 +237,8 @@
       "geschlecht": "m",
       "vorname": "",
       "nachname": "Heyger",
-      "sortname": "Heyger"
+      "sortname": "Heyger",
+      "kurztext": "[Von Christina Posch genannt](posch.html?person=Heyger):\n[Christina Posch](posch.html) zählte ihn 1686 unter den Personen auf, die sie bei der „Hexengesellschaft“ am Pleschkogel gesehen haben wollte — damals noch am Leben. Über den Namen hinaus geben die Akten nichts her."
     },
     "reitermahr-jodl": {
       "name": "der Reitermahr Jodl",
@@ -1251,7 +1252,8 @@
       "status": "unsicher",
       "vorname": "",
       "nachname": "Hiasl",
-      "sortname": "Hiasl"
+      "sortname": "Hiasl",
+      "kurztext": "[Sohn des Schwarz in Waldsberg](rauch.html?person=Hiasl):\n[Veronika Rauch](rauch.html) nannte ihn 1689 unter den noch Lebenden, die sie bei der „Hexengesellschaft“ erkannt haben wollte. Vermutlich „Matthias Schwanz aus Waldsberg“ der Gleichenberger Opferliste — „Hiasl“ ist die Koseform von Matthias."
     },
     "moritz-baertl-walburga": {
       "name": "Walburga Moritz-Bärtl",
@@ -2302,7 +2304,8 @@
       "status": "geprueft",
       "vorname": "Niklas",
       "nachname": "Hilberg",
-      "sortname": "Hilberg, Niklas"
+      "sortname": "Hilberg, Niklas",
+      "kurztext": "[Marktrichter in St. Lambrecht](dionys.html?person=Niklas+Hilberg):\nAls Beisitzer wirkte er 1602 am Verfahren gegen [Dionys](dionys.html) und die [Greschl](dionys.html?person=Greschl) mit — neben dem Hofrichter Ludwig Wurm und mehreren Ratsbürgern von St. Lambrecht."
     },
     "hilberg-valentin": {
       "name": "Valentin Hilberg",
