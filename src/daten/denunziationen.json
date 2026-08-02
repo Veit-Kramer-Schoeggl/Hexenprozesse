@@ -388,7 +388,12 @@
       "geschlecht": "w",
       "vorname": "",
       "nachname": "Juliane",
-      "sortname": "Juliane"
+      "sortname": "Juliane",
+      "kurztext": "[1661 im Kerker gestorben — wohl dieselbe wie „Juliana“](keyditsch.html?person=Juliana):\nDiese Juliane starb 1661 in Gutenhag im Kerker, bevor ein Urteil erging. Sehr wahrscheinlich ist sie identisch mit der [Juliana](keyditsch.html?person=Juliana), die in den Verfahren gegen Keyditsch und Kopschitsch als „Zaubermittel“-Geberin genannt wird — die Akten führen den Namen in beiden Schreibweisen.",
+      "fussnote": {
+        "text": "Angeklagte · Herrschaft Gutenhag (1661)",
+        "ziel": "/pages/prozesse/keyditsch.html"
+      }
     },
     "hans-aus-der-metnitz": {
       "name": "Hans aus der Metnitz",
@@ -1624,7 +1629,8 @@
       "status": "geprueft",
       "vorname": "Katharina",
       "nachname": "Kampfer",
-      "sortname": "Kampfer, Katharina"
+      "sortname": "Kampfer, Katharina",
+      "kurztext": "[Frau des Blasius Kampfer, von Burg Schleinitz](kollar.html?person=Kampfer):\n[Ursula Kollar](kollar.html) nannte sie 1661 unter der Gesellschaft, die sich beim Gradisch-Kreuz getroffen habe. Sie gehörte zur Burg Schleinitz (Slivnica); mehr geben die Akten zu ihr nicht her."
     },
     "drosg-martha": {
       "name": "Martha Drosg",
@@ -2838,7 +2844,8 @@
       "status": "geprueft",
       "vorname": "Jodl",
       "nachname": "Katzenpuffer",
-      "sortname": "Katzenpuffer, Jodl"
+      "sortname": "Katzenpuffer, Jodl",
+      "kurztext": "[Von Gregor Heiser als Gefährte genannt](heiser-2.html?person=Jodl+Katzenpuffer):\nIn seinem Geständnis von 1653 zählte [Gregor Heiser](heiser-2.html) ihn — ledig, im Unterschied zum verheirateten Lorenz Katzenpuffer — unter seinen „Kameraden“ auf. Über die Nennung hinaus ist er nicht belegt."
     },
     "riz": {
       "name": "der Riz",
