@@ -1403,7 +1403,8 @@
       "status": "geprueft",
       "vorname": "Thomas",
       "nachname": "Heiser",
-      "sortname": "Heiser, Thomas"
+      "sortname": "Heiser, Thomas",
+      "kurztext": "[Fahrender Hirte, 84 Jahre alt — lebte vom Wolfsegen](heiser-1.html?person=Thomas+Heiser):\nWas er 1653 in fünfzig Punkten gestand, reichte ein halbes Jahrhundert zurück und quer durch halb Europa. Unter der Folter belastete er den eigenen Sohn [Gregor](heiser-2.html) — er habe ihn dem Teufel versprochen, als der noch im Mutterleib war. Vater und Sohn wurden mit [Lorenz Steger](steger.html) am 4. August 1653 hingerichtet."
     },
     "heiser-gregor": {
       "name": "Gregor Heiser",
@@ -1421,7 +1422,8 @@
       "status": "geprueft",
       "vorname": "Gregor",
       "nachname": "Heiser",
-      "sortname": "Heiser, Gregor"
+      "sortname": "Heiser, Gregor",
+      "kurztext": "[Ziegen- und Schafhirte in der Krakau (18–19 Jahre)](heiser-2.html?person=Gregor+Heiser):\nSeine Mutter [Gertraud](heiser-2.html?person=Gertraud) schickte ihn nach St. Lambrecht, den Vater [Thomas](heiser-1.html) zu holen — dort wurde er neben dem Vater verhaftet. Unter der Folter belastete er die eigene Mutter und gestand, der Teufel habe ihn schon vom Vater verlangt. Am 4. August 1653 wurde er mit Vater und [Lorenz Steger](steger.html) hingerichtet."
     },
     "steger-lorenz": {
       "name": "Lorenz Steger",
@@ -1739,7 +1741,8 @@
       "status": "geprueft",
       "vorname": "Erasmus Friedrich Graf",
       "nachname": "Herberstein",
-      "sortname": "Herberstein, Erasmus Friedrich Graf von"
+      "sortname": "Herberstein, Erasmus Friedrich Graf von",
+      "kurztext": "[Graf, Inhaber der Herrschaft Gutenhag](kollar.html?person=Herberstein):\nUnter seiner Gerichtsbarkeit „über Menschenblut“ liefen die Gutenhager Hexenverfahren — darunter [Ursula Kollar](kollar.html) (1661) und [Marina Wukinetz](wukinetz.html) (1673); im Fall Wukinetz ernannte er den Bannrichter. Selbst trat er nicht auf; er war der Grundherr, unter dessen Hoheit verhandelt wurde."
     },
     "zenz-katharina": {
       "name": "Katharina Zenz",
