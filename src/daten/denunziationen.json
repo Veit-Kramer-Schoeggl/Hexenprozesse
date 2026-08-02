@@ -674,7 +674,12 @@
       "geschlecht": "m",
       "vorname": "Michael",
       "nachname": "Hörk",
-      "sortname": "Hörk, Michael"
+      "sortname": "Hörk, Michael",
+      "kurztext": "[Ehemann der Marina Hörk, Kläger von 1671](hoerk.html?person=Michael+Hörk):\nIm Juni 1671 klagte er mit seiner Frau [Marina](hoerk.html) und deren Schwester [Gera Scherb](scherb.html) in Radkersburg gegen [Michael Gregoritsch](/pages/themen/byloff/teil-3.html#kap-49) und andere, weil diese die Familie der Zauberei bezichtigt hatten. Ein halbes Jahr später wurden seine Frau und ihre Schwester selbst als Hexen verurteilt und hingerichtet.",
+      "fussnote": {
+        "text": "Kläger · Verleumdungsprozess Radkersburg (1671)",
+        "ziel": "/pages/themen/byloff/teil-3.html#kap-49"
+      }
     },
     "werluga-martin": {
       "name": "Martin Werluga",
@@ -1237,7 +1242,8 @@
       "status": "geprueft",
       "vorname": "",
       "nachname": "Hoschhansl",
-      "sortname": "Hoschhansl"
+      "sortname": "Hoschhansl",
+      "kurztext": "[Von Veronika Rauch genannt](rauch.html?person=Hoschhansl):\n[Veronika Rauch](rauch.html) zählte sie 1689 unter den noch Lebenden auf, die sie bei der „Hexengesellschaft“ erkannt haben wollte. Auf der Gleichenberger Opferliste ist sie nicht zu finden; mehr geben die Akten nicht her."
     },
     "schwarz-hiasl": {
       "name": "Hiasl, Sohn des Schwarz in Waldsberg",
@@ -2176,7 +2182,8 @@
       "status": "geprueft",
       "vorname": "Maria",
       "nachname": "Hornegger",
-      "sortname": "Hornegger, Maria"
+      "sortname": "Hornegger, Maria",
+      "kurztext": "[Zeugin gegen Andreas Zechner — dafür hingerichtet](zechner-andreas-2.html?person=Hornegger):\n1686 sagte sie im geheimen und im offenen Recht gegen [Andreas Zechner](zechner-andreas-2.html) aus, sie habe ihn zweimal gesehen. Als die Regierung das fehlende Verhörprotokoll beanstandete, ließ der Bannrichter [Dr. Johann Tillerich](zechner-andreas-2.html?person=Tillerich) die Zeugin „ohne Aufschub hinrichten“, statt die Anordnung abzuwarten — sie blieb bei ihrer Aussage und starb dafür."
     },
     "paur-koloman": {
       "name": "Koloman Paur",
